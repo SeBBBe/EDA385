@@ -1,0 +1,3 @@
+vhdl fsl_hwa_v1_00_c C:\temp\Astroid_EDK\pcores\fsl_hwa_v1_00_c/hdl/vhdl/user_logic.vhd
+vhdl fsl_hwa_v1_00_c C:\temp\Astroid_EDK\pcores\fsl_hwa_v1_00_c/hdl/vhdl/fsl_hwa.vhd
+vhdl work ../hdl/system_fsl_hwa_1_wrapper.vhd

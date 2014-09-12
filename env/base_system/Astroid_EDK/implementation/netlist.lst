@@ -1,0 +1,20 @@
+C:\temp\Astroid_EDK\implementation\system.ngc 1410514362
+C:/temp/Astroid_EDK/implementation/system_push_buttons_4bits_wrapper.ngc 1410514290
+C:/temp/Astroid_EDK/implementation/system_dip_switches_8bits_wrapper.ngc 1410514305
+C:/temp/Astroid_EDK/implementation/system_rs232_uart_1_wrapper.ngc 1410514282
+C:/temp/Astroid_EDK/implementation/system_proc_sys_reset_0_wrapper.ngc 1410514182
+C:/temp/Astroid_EDK/implementation/system_clock_generator_0_wrapper.ngc 1410514337
+C:/temp/Astroid_EDK/implementation/system_microblaze_0_ilmb_wrapper.ngc 1410514327
+C:/temp/Astroid_EDK/implementation/system_microblaze_0_dlmb_wrapper.ngc 1410514330
+C:/temp/Astroid_EDK/implementation/system_fsl_hwa_1_to_microblaze_0_wrapper.ngc 1410514344
+C:/temp/Astroid_EDK/implementation/system_microblaze_0_to_fsl_hwa_1_wrapper.ngc 1410514347
+C:/temp/Astroid_EDK/implementation/system_axi4lite_0_wrapper.ngc 1410514340
+C:/temp/Astroid_EDK/implementation/system_microblaze_0_wrapper.ngc 1410514334
+C:/temp/Astroid_EDK/implementation/system_microblaze_0_i_bram_ctrl_wrapper.ngc 1410514193
+C:/temp/Astroid_EDK/implementation/system_microblaze_0_d_bram_ctrl_wrapper.ngc 1410514203
+C:/temp/Astroid_EDK/implementation/system_fsl_hwa_1_wrapper.ngc 1410514317
+C:/temp/Astroid_EDK/implementation/system_debug_module_wrapper.ngc 1410514249
+C:/temp/Astroid_EDK/implementation/system_axi_timer_0_wrapper.ngc 1410514263
+C:/temp/Astroid_EDK/implementation/system_leds_8bits_wrapper.ngc 1410514298
+C:/temp/Astroid_EDK/implementation/system_microblaze_0_bram_block_wrapper.ngc 1410514210
+OK
