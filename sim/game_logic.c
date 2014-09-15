@@ -5,14 +5,17 @@
 #include "graphics.c"
 
 static const double rotate_amount = 0.07;
+static const double ship_accel = 0.02;
+double ship_x = 0;
+double ship_y = 0;
+double ship_rotation = 0;
+double ship_xvel = 0;
+double ship_yvel = 0;
 
 int main(int argc, char *argv[])
 {
   keymap_t keys;
-  
   vga_init();
-  
-  double ship_rotation = 0;
   
   while(1)
   {
@@ -33,17 +36,24 @@ int main(int argc, char *argv[])
     }
     if(keys & KEY_UP)
     {
-      printf("up\n");
+		//TODO: lookup table
+		ship_xvel += ship_accel * cos(ship_rotation + 4.71);
+		ship_yvel += ship_accel * sin(ship_rotation + 4.71);
     }  
     if(keys & KEY_DOWN)
     {
-      printf("down\n");
+		ship_rotation += 3.14;
     }
     
     vga_clear();
     
-    vga_addpoly(4, rotate(4, ship, ship_rotation, 320, 240));
+    //ship animation
+    ship_x += ship_xvel;
+	ship_y += ship_yvel;
+    vgapoint_t* newship = rotate(4, ship, ship_rotation, 320, 240);
+    offset(4, newship, ship_x, ship_y);
     
+    vga_addpoly(4, newship);
     vga_addpoly(5, asteroid);
     
     usleep(20000);

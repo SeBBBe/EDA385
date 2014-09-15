@@ -22,7 +22,6 @@ vgapoint_t* rotate(int n, vgapoint_t *poly, double rad, int x_pivot, int y_pivot
 {
 	//TODO: lookup table
 	vgapoint_t* newpoly = malloc(sizeof(short) * 2 * n);
-	
 	int i;
 	for (i = 0; i < n; i++)
 	{
@@ -37,6 +36,15 @@ vgapoint_t* rotate(int n, vgapoint_t *poly, double rad, int x_pivot, int y_pivot
 		newpoly[i].x = newx;
 		newpoly[i].y = newy;
 	}
-	
 	return newpoly;
+}
+
+void offset(int n, vgapoint_t *poly, int x, int y)
+{
+	int i;
+	for (i = 0; i < n; i++)
+	{
+		poly[i].x += x;
+		poly[i].y += y;
+	}
 }
