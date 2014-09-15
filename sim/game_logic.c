@@ -4,38 +4,37 @@
 #include "input.h"
 #include "graphics.c"
 
+static const double rotate_amount = 0.07;
+
 int main(int argc, char *argv[])
 {
   keymap_t keys;
   
   vga_init();
   
+  double ship_rotation = 0;
+  
   while(1)
   {
     vga_sync();
     
     keys = input_get_keys();
-    
     if(keys & KEY_SHOOT)
     {
       printf("shoot!\n");
     }
-    
     if(keys & KEY_LEFT)
     {
-      printf("left\n");
+      ship_rotation -= rotate_amount;
     }
-    
     if(keys & KEY_RIGHT)
     {
-      printf("right\n");
+	  ship_rotation += rotate_amount;
     }
-    
     if(keys & KEY_UP)
     {
       printf("up\n");
-    }
-    
+    }  
     if(keys & KEY_DOWN)
     {
       printf("down\n");
@@ -43,8 +42,10 @@ int main(int argc, char *argv[])
     
     vga_clear();
     
-    vga_addpoly(4, ship);
+    vga_addpoly(4, rotate(4, ship, ship_rotation, 320, 240));
     
     vga_addpoly(5, asteroid);
+    
+    usleep(20000);
   }
 }

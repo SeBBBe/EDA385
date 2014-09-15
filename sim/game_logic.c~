@@ -43,8 +43,8 @@ int main(int argc, char *argv[])
     
     vga_clear();
     
-    vga_addpoly(4, test_ship);
+    vga_addpoly(4, ship);
     
-    vga_addpoly(5, test_asteroid);
+    vga_addpoly(5, asteroid);
   }
 }

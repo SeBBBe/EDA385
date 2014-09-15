@@ -3,7 +3,7 @@ test: vga_sim
 
 game:
 	make vga_sim
-	gcc game_logic.c vga_sim.o -o test -lSDL
+	gcc game_logic.c vga_sim.o -o test -lSDL -lm
 
 vga_sim:
 	gcc -c vga_sim.c -o vga_sim.o
