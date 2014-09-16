@@ -1,10 +1,14 @@
-
 typedef unsigned short vgapos_t;
 
 typedef struct vga_point
 {
   vgapos_t x, y;
 } vgapoint_t;
+
+typedef struct f_vga_point
+{
+  double x, y;
+} f_vgapoint_t;
 
 void vga_init();
 int vga_addpoly(int num_points, vgapoint_t *points);
