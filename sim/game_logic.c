@@ -12,6 +12,13 @@ double ship_rotation = 0;
 double ship_xvel = 0;
 double ship_yvel = 0;
 
+typedef struct bullet
+{
+  vgapos_t x, y;
+  double xvel;
+  double yvel;
+} bullet_t;
+
 int main(int argc, char *argv[])
 {
   keymap_t keys;
@@ -50,6 +57,8 @@ int main(int argc, char *argv[])
     //ship animation
     ship_x += ship_xvel;
 	ship_y += ship_yvel;
+	if (ship_rotation > 6.28) ship_rotation = 0;
+	if (ship_rotation < 0) ship_rotation = 6.28;
     vgapoint_t* newship = rotate(4, ship, ship_rotation, 320, 240);
     offset(4, newship, ship_x, ship_y);
     

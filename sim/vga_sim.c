@@ -44,6 +44,12 @@ void vga_init()
 
 int vga_addpoly(int num_points, vgapoint_t *points)
 {
+	int i;
+	for (i = 0; i < num_points; i++)
+	{
+		if (points[i].x < 0 || points[i].y < 0) return 0;
+		if (points[i].x > vga_get_width() || points[i].y > vga_get_height()) return 0;
+	}
   if(polygon_index == SIM_MAX_POLY) return 0;
   
   polygons[polygon_index].num_points = num_points;
