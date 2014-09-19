@@ -58,6 +58,11 @@ void go_hashit(int hit1, int hit2)
 		if (objects[hit1].identifier == OI_BULLET){
 			printf("Asteroid was hit by bullet.\n");
 			objects[hit2].enabled = 0;
+			if (!go_exists(OI_AST1) && !go_exists(OI_AST2) && !go_exists(OI_AST3) && !go_exists(OI_AST4))
+			{
+				printf("No asteroids remain. Player wins.\n");
+				exit(0);
+			}
 		}
 	}
 }
@@ -88,6 +93,17 @@ void go_hitdetection()
 			}
 		}
 	}
+}
+
+//returns 1 if object of current identifier exists in game, else 0
+int go_exists(int identifier)
+{
+	int i;
+	for (i = 0; i < MAX_OBJECTS; i++)
+	{
+		if (objects[i].enabled && objects[i].identifier == identifier) return 1;
+	}
+	return 0;
 }
 
 void go_tick()
