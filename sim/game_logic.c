@@ -81,7 +81,5 @@ int main(int argc, char *argv[])
     vgapoint_t b0p2 = {(short) bullets[0].p2.x, (short) bullets[0].p2.y};
     vgapoint_t b[2] = {b0p1, b0p2};
     vga_addpoly(2, b);
-    
-    usleep(20000);
   }
 }
