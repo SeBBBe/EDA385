@@ -18,6 +18,7 @@ typedef struct game_object {
 } game_object_t;
 
 static const short MAX_OBJECTS = 64;
+static const short HITBOX_SIZE = 20;
 static const short OFFSCREEN_TOL = 100; //number of pixels outside screen before object is reset
 
 game_object_t* objects;
@@ -46,6 +47,47 @@ void go_initialize()
 	objects =  malloc(MAX_OBJECTS * sizeof(game_object_t));
 }
 
+void go_hashit(int hit1, int hit2)
+{
+	if (objects[hit1].identifier == OI_SHIP){
+		if (objects[hit2].identifier >= OI_AST1 && objects[hit2].identifier <= OI_AST4){
+			printf("Ship was hit by asteroid.\n");
+			exit(0);
+		}
+	}
+}
+
+void go_hitdetection()
+{
+	int i;
+	for (i = 0; i < MAX_OBJECTS; i++)
+	{
+		if (!objects[i].enabled) continue;
+		if (objects[i].identifier != OI_SHIP && objects[i].identifier != OI_BULLET) continue;
+		int j;
+		for (j = 0; j < MAX_OBJECTS; j++)
+		{
+			if (!objects[j].enabled || i == j) continue;
+			int realx1, realx2, realy1, realy2;
+			realx1 = objects[i].location.x + objects[i].center_point.x;
+			realy1 = objects[i].location.y + objects[i].center_point.y;
+			realx2 = objects[j].location.x + objects[j].center_point.x;
+			realy2 = objects[j].location.y + objects[j].center_point.y;
+			if (realx1 > (realx2 - HITBOX_SIZE) && realx1 < (realx2 + HITBOX_SIZE))
+			{
+				if (realy1 > (realy2 - HITBOX_SIZE) && realy1 < (realy2 + HITBOX_SIZE))
+				{
+					if (objects[i].identifier == OI_SHIP)
+					{
+						printf("%d collides with %d\n", i, j);
+						go_hashit(i, j);
+					}
+				}
+			}
+		}
+	}
+}
+
 void go_tick()
 {
 	int i;
@@ -57,6 +99,7 @@ void go_tick()
 		objects[i].yvel += objects[i].yaccel;
 		objects[i].angle += objects[i].anglespeed;
 	}
+	go_hitdetection();
 }
 
 void go_draw()
@@ -111,7 +154,7 @@ float rand_FloatRange(float a, float b)
 	return ((b-a)*((float)rand()/RAND_MAX))+a;
 }
 
-//Create an asteroid of poly size n and place in game
+//Create an asteroid of level n and place in game
 void go_createasteroid(int n)
 {
 	//TODO: generate asteroid geometry

@@ -28,7 +28,7 @@ int main(int argc, char *argv[])
   srand(time(NULL));
   int i;
   for (i = 0; i < 10; i++){
-	go_createasteroid(5);
+	go_createasteroid(1);
 	}
   
   game_object_t* ship_o = go_getempty();
