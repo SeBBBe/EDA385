@@ -31,55 +31,55 @@ int main(int argc, char *argv[])
   
   go_initialize();
   
+  game_object_t* ship_o = go_getempty();
+  ship_o->enabled = 1;
+  ship_o->poly_points = 4;
+  ship_o->poly = ship;
+  
   while(1)
   {
-	  go_tick();
+	go_tick();
     vga_sync();
     
     keys = input_get_keys();
     if(keys & KEY_SHOOT)
     {
-      bullets[0].p1.x = ship_x + 320;
-      bullets[0].p1.y = ship_y + 240;
-      bullets[0].xvel = bullet_speed * cos(ship_rotation + 4.71);
-      bullets[0].yvel = bullet_speed * sin(ship_rotation + 4.71);
+      bullets[0].p1.x = ship_o->location.x + 320;
+      bullets[0].p1.y = ship_o->location.y + 240;
+      bullets[0].xvel = bullet_speed * cos(ship_o->angle + 4.71);
+      bullets[0].yvel = bullet_speed * sin(ship_o->angle + 4.71);
       bullets[0].p2.x = bullets[0].p1.x + bullets[0].xvel*4;
       bullets[0].p2.y = bullets[0].p1.y + bullets[0].yvel*4;
     }
     if(keys & KEY_LEFT)
     {
-      ship_rotation -= rotate_amount;
+      ship_o->angle -= rotate_amount;
     }
     if(keys & KEY_RIGHT)
     {
-	  ship_rotation += rotate_amount;
+		ship_o->angle += rotate_amount;
     }
     if(keys & KEY_UP)
     {
 		//TODO: lookup table
-		ship_xvel += ship_accel * cos(ship_rotation + 4.71);
-		ship_yvel += ship_accel * sin(ship_rotation + 4.71);
+		ship_o->xvel += ship_accel * cos(ship_o->angle + 4.71);
+		ship_o->yvel += ship_accel * sin(ship_o->angle + 4.71);
     }  
     if(keys & KEY_DOWN)
     {
-		ship_rotation += 3.14;
+		ship_o->angle += 3.14;
     }
     
     vga_clear();
     
     //animation
-    ship_x += ship_xvel;
-	ship_y += ship_yvel;
 	bullets[0].p1.x += bullets[0].xvel;
 	bullets[0].p1.y += bullets[0].yvel;
 	bullets[0].p2.x += bullets[0].xvel;
 	bullets[0].p2.y += bullets[0].yvel;
-	if (ship_rotation > 6.28) ship_rotation = 0;
-	if (ship_rotation < 0) ship_rotation = 6.28;
-    vgapoint_t* newship = rotate(4, ship, ship_rotation, 320, 240);
-    offset(4, newship, ship_x, ship_y);
     
-    vga_addpoly(4, newship);
+    go_draw();
+    
     vga_addpoly(5, asteroid);
     vgapoint_t b0p1 = {(short) bullets[0].p1.x, (short) bullets[0].p1.y};
     vgapoint_t b0p2 = {(short) bullets[0].p2.x, (short) bullets[0].p2.y};
