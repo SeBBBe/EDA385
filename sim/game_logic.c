@@ -39,6 +39,7 @@ int main(int argc, char *argv[])
   ship_o->center_point.y = 240;
   ship_o->location.x = vga_get_width()/2 - 320;
   ship_o->location.y = vga_get_height()/2 - 240;
+  ship_o->identifier = OI_SHIP;
   
   while(1)
   {
@@ -62,6 +63,8 @@ int main(int argc, char *argv[])
 		  bullet_o->enabled = 1;
 		  bullet_o->poly = bullet_p;
 		  bullet_o->poly_points = 2;
+		  bullet_o->nowrap = 1;
+		  bullet_o->identifier = OI_BULLET;
 		}
     }
     if(keys & KEY_LEFT)

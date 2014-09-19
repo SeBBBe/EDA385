@@ -1,5 +1,12 @@
 #include <math.h>
 
+static const short OI_SHIP = 1;
+static const short OI_BULLET = 2;
+static const short OI_AST1 = 3;
+static const short OI_AST2 = 3;
+static const short OI_AST3 = 3;
+static const short OI_AST4 = 3;
+
 vgapoint_t ship[4] = 
 {
   { 320, 230 },

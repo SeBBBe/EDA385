@@ -12,6 +12,8 @@ typedef struct game_object {
 	double anglespeed;
 	short enabled;
 	short poly_points;
+	short nowrap;
+	short identifier;
 	vgapoint_t* poly;
 } game_object_t;
 
@@ -21,12 +23,8 @@ static const short OFFSCREEN_TOL = 100; //number of pixels outside screen before
 game_object_t* objects;
 short currentpos = 0;
 
-void go_initialize()
+void go_resetobject(int i)
 {
-	objects =  malloc(MAX_OBJECTS * sizeof(game_object_t));
-	int i;
-	for (i = 0; i < MAX_OBJECTS; i++)
-	{
 		objects[i].location.x = 0;
 		objects[i].location.y = 0;
 		objects[i].center_point.x = 0;
@@ -39,7 +37,13 @@ void go_initialize()
 		objects[i].anglespeed = 0;
 		objects[i].poly_points = 0;
 		objects[i].enabled = 0;
-	}
+		objects[i].nowrap = 0;
+		objects[i].identifier = 0;
+}
+
+void go_initialize()
+{
+	objects =  malloc(MAX_OBJECTS * sizeof(game_object_t));
 }
 
 void go_tick()
@@ -71,15 +75,19 @@ void go_draw()
 			int realx = objects[i].location.x + objects[i].center_point.x;
 			int realy = objects[i].location.y + objects[i].center_point.y;
 			if (realx < -OFFSCREEN_TOL){
+				if (objects[i].nowrap) objects[i].enabled = 0;
 				objects[i].location.x = vga_get_width()+OFFSCREEN_TOL-objects[i].center_point.x;
 			}
 			if (realx > vga_get_width()+OFFSCREEN_TOL){
+				if (objects[i].nowrap) objects[i].enabled = 0;
 				objects[i].location.x = -OFFSCREEN_TOL -objects[i].center_point.x;;
 			}
 			if (realy < -OFFSCREEN_TOL){
+				if (objects[i].nowrap) objects[i].enabled = 0;
 				objects[i].location.y = vga_get_height()+OFFSCREEN_TOL-objects[i].center_point.y;
 			}
 			if (realy > vga_get_height()+OFFSCREEN_TOL){
+				if (objects[i].nowrap) objects[i].enabled = 0;
 				objects[i].location.y = -OFFSCREEN_TOL -objects[i].center_point.y;
 			}
 		}
@@ -87,9 +95,14 @@ void go_draw()
 }
 
 game_object_t* go_getempty(){
-	if (currentpos > MAX_OBJECTS) currentpos = 0;
+	while(objects[currentpos].enabled) //this will freeze if max number is reached
+	{
+		currentpos++;
+		if (currentpos > MAX_OBJECTS) currentpos = 0;
+	}
 	int r = currentpos;
 	currentpos++;
+	go_resetobject(r);
 	return &objects[r];
 }
 
@@ -113,4 +126,5 @@ void go_createasteroid(int n)
 	ast_o->anglespeed = rand_FloatRange(0.0, 0.4) - 0.2;
 	ast_o->center_point.x = 65;
 	ast_o->center_point.y = 45;
+	ast_o->identifier = OI_AST1;
 }
