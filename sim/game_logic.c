@@ -3,6 +3,7 @@
 #include "vga.h"
 #include "input.h"
 #include "graphics.c"
+#include "game_objects.c"
 
 static const double rotate_amount = 0.07;
 static const double ship_accel = 0.02;
@@ -28,8 +29,11 @@ int main(int argc, char *argv[])
   vga_init();
   bullet_t* bullets = malloc(64*sizeof(bullet_t));
   
+  go_initialize();
+  
   while(1)
   {
+	  go_tick();
     vga_sync();
     
     keys = input_get_keys();
