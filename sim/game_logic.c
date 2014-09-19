@@ -8,12 +8,7 @@
 static const double rotate_amount = 0.07;
 static const double ship_accel = 0.02;
 static const double bullet_speed = 4;
-double ship_x = 0;
-double ship_y = 0;
-double ship_rotation = 0;
-double ship_xvel = 0;
-double ship_yvel = 0;
-int bullet_c = 0;
+int shoot_limit = 0;
 
 typedef struct bullet
 {
@@ -44,12 +39,19 @@ int main(int argc, char *argv[])
     keys = input_get_keys();
     if(keys & KEY_SHOOT)
     {
-      bullets[0].p1.x = ship_o->location.x + 320;
-      bullets[0].p1.y = ship_o->location.y + 240;
-      bullets[0].xvel = bullet_speed * cos(ship_o->angle + 4.71);
-      bullets[0].yvel = bullet_speed * sin(ship_o->angle + 4.71);
-      bullets[0].p2.x = bullets[0].p1.x + bullets[0].xvel*4;
-      bullets[0].p2.y = bullets[0].p1.y + bullets[0].yvel*4;
+		if (shoot_limit == 0)
+		{
+			shoot_limit = 10;
+			game_object_t* bullet_o = go_getempty();
+		  bullet_o->location.x = ship_o->location.x;
+		  bullet_o->location.y = ship_o->location.y;
+		  bullet_o->xvel = bullet_speed * cos(ship_o->angle + 4.71);
+		  bullet_o->yvel = bullet_speed * sin(ship_o->angle + 4.71);
+		  bullet_o->angle = ship_o->angle;
+		  bullet_o->enabled = 1;
+		  bullet_o->poly = bullet_p;
+		  bullet_o->poly_points = 2;
+		}
     }
     if(keys & KEY_LEFT)
     {
@@ -70,20 +72,11 @@ int main(int argc, char *argv[])
 		ship_o->angle += 3.14;
     }
     
+    if (shoot_limit > 0) shoot_limit--;
+    
     vga_clear();
-    
-    //animation
-	bullets[0].p1.x += bullets[0].xvel;
-	bullets[0].p1.y += bullets[0].yvel;
-	bullets[0].p2.x += bullets[0].xvel;
-	bullets[0].p2.y += bullets[0].yvel;
-    
     go_draw();
     
     vga_addpoly(5, asteroid);
-    vgapoint_t b0p1 = {(short) bullets[0].p1.x, (short) bullets[0].p1.y};
-    vgapoint_t b0p2 = {(short) bullets[0].p2.x, (short) bullets[0].p2.y};
-    vgapoint_t b[2] = {b0p1, b0p2};
-    vga_addpoly(2, b);
   }
 }

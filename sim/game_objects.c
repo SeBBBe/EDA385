@@ -10,13 +10,16 @@ typedef struct game_object {
 	vgapoint_t* poly;
 } game_object_t;
 
+static const short MAX_OBJECTS = 64;
+
 game_object_t* objects;
+short currentpos = 0;
 
 void go_initialize()
 {
-	objects =  malloc(64 * sizeof(game_object_t));
+	objects =  malloc(MAX_OBJECTS * sizeof(game_object_t));
 	int i;
-	for (i = 0; i < 64; i++)
+	for (i = 0; i < MAX_OBJECTS; i++)
 	{
 		objects[i].location.x = 0;
 		objects[i].location.y = 0;
@@ -33,7 +36,7 @@ void go_initialize()
 void go_tick()
 {
 	int i;
-	for (i = 0; i < 64; i++)
+	for (i = 0; i < MAX_OBJECTS; i++)
 	{
 		objects[i].location.x += objects[i].xvel;
 		objects[i].location.y += objects[i].yvel;
@@ -45,7 +48,7 @@ void go_tick()
 void go_draw()
 {
 	int i;
-	for (i = 0; i < 64; i++)
+	for (i = 0; i < MAX_OBJECTS; i++)
 	{
 		if (objects[i].enabled)
 		{
@@ -59,5 +62,8 @@ void go_draw()
 }
 
 game_object_t* go_getempty(){
-	return &objects[0];
+	if (currentpos > MAX_OBJECTS) currentpos = 0;
+	int r = currentpos;
+	currentpos++;
+	return &objects[r];
 }
