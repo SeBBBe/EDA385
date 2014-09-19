@@ -25,12 +25,18 @@ int main(int argc, char *argv[])
   bullet_t* bullets = malloc(64*sizeof(bullet_t));
   
   go_initialize();
-  go_createasteroid(5);
+  srand(time(NULL));
+  int i;
+  for (i = 0; i < 10; i++){
+	go_createasteroid(5);
+	}
   
   game_object_t* ship_o = go_getempty();
   ship_o->enabled = 1;
   ship_o->poly_points = 4;
   ship_o->poly = ship;
+  ship_o->center_point.x = 320;
+  ship_o->center_point.y = 240;
   
   while(1)
   {
@@ -48,6 +54,8 @@ int main(int argc, char *argv[])
 		  bullet_o->location.y = ship_o->location.y;
 		  bullet_o->xvel = bullet_speed * cos(ship_o->angle + 4.71);
 		  bullet_o->yvel = bullet_speed * sin(ship_o->angle + 4.71);
+		  bullet_o->center_point.x = 320;
+          bullet_o->center_point.y = 240;
 		  bullet_o->angle = ship_o->angle;
 		  bullet_o->enabled = 1;
 		  bullet_o->poly = bullet_p;
@@ -77,7 +85,5 @@ int main(int argc, char *argv[])
     
     vga_clear();
     go_draw();
-    
-    vga_addpoly(5, asteroid);
   }
 }
