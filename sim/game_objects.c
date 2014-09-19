@@ -21,6 +21,12 @@ static const short MAX_OBJECTS = 64;
 static const short HITBOX_SIZE = 20;
 static const short OFFSCREEN_TOL = 100; //number of pixels outside screen before object is reset
 
+short go_currentstate = 0;
+
+static const short STATE_NORMAL = 0;
+static const short STATE_DEAD = 1;
+static const short STATE_VICT = 2;
+
 game_object_t* objects;
 short currentpos = 0;
 
@@ -53,7 +59,7 @@ void go_hashit(int hit1, int hit2)
 	if (objects[hit2].identifier >= OI_AST1 && objects[hit2].identifier <= OI_AST4){
 		if (objects[hit1].identifier == OI_SHIP){
 			printf("Ship was hit by asteroid.\n");
-			exit(0);
+			go_currentstate = STATE_DEAD;
 		}
 		if (objects[hit1].identifier == OI_BULLET){
 			printf("Asteroid was hit by bullet.\n");
@@ -61,7 +67,7 @@ void go_hashit(int hit1, int hit2)
 			if (!go_exists(OI_AST1) && !go_exists(OI_AST2) && !go_exists(OI_AST3) && !go_exists(OI_AST4))
 			{
 				printf("No asteroids remain. Player wins.\n");
-				exit(0);
+				go_currentstate = STATE_VICT;
 			}
 		}
 	}

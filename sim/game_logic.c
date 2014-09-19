@@ -18,6 +18,24 @@ typedef struct bullet
   double yvel;
 } bullet_t;
 
+void game_over()
+{
+	vga_clear();
+	offset(6, graphic_game_over, vga_get_width()/2 - 150, vga_get_height()/2 - 150);
+	vga_addpoly(6, graphic_game_over);
+	vga_sync();
+	while(1);
+}
+
+void win()
+{
+	vga_clear();
+	offset(4, graphic_vict, vga_get_width()/2 - 150, vga_get_height()/2 - 150);
+	vga_addpoly(4, graphic_vict);
+	vga_sync();
+	while(1);
+}
+
 int main(int argc, char *argv[])
 {
   keymap_t keys;
@@ -88,6 +106,8 @@ int main(int argc, char *argv[])
     }
     
     if (shoot_limit > 0) shoot_limit--;
+    if (go_currentstate == STATE_DEAD) game_over();
+    if (go_currentstate == STATE_VICT) win();
     
     vga_clear();
     go_draw();
