@@ -8,6 +8,7 @@ typedef struct game_object {
 	double xaccel;
 	double yaccel;
 	double angle;
+	double anglespeed;
 	short enabled;
 	short poly_points;
 	vgapoint_t* poly;
@@ -31,6 +32,7 @@ void go_initialize()
 		objects[i].xaccel = 0;
 		objects[i].yaccel = 0;
 		objects[i].angle = 0;
+		objects[i].anglespeed = 0;
 		objects[i].poly_points = 0;
 		objects[i].enabled = 0;
 	}
@@ -45,6 +47,7 @@ void go_tick()
 		objects[i].location.y += objects[i].yvel;
 		objects[i].xvel += objects[i].xaccel;
 		objects[i].yvel += objects[i].yaccel;
+		objects[i].angle += objects[i].anglespeed;
 	}
 }
 
@@ -71,13 +74,23 @@ game_object_t* go_getempty(){
 	return &objects[r];
 }
 
+float rand_FloatRange(float a, float b)
+{
+	return ((b-a)*((float)rand()/RAND_MAX))+a;
+}
+
 //Create an asteroid of poly size n and place in game
 void go_createasteroid(int n)
 {
 	//TODO: generate asteroid geometry
+	srand(time(NULL));
 	game_object_t* ast_o = go_getempty();
 	ast_o->enabled = 1;
 	ast_o->poly_points = 5;
 	ast_o->poly = asteroid;
-	ast_o->location.x = 
+	ast_o->location.x = rand() % vga_get_width();
+	ast_o->location.y = rand() % vga_get_height();
+	ast_o->xvel = rand_FloatRange(0.5, 2.0);
+	ast_o->yvel = rand_FloatRange(0.5, 2.0);
+	ast_o->anglespeed = rand_FloatRange(0.0, 0.2);
 }

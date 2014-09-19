@@ -25,6 +25,7 @@ int main(int argc, char *argv[])
   bullet_t* bullets = malloc(64*sizeof(bullet_t));
   
   go_initialize();
+  go_createasteroid(5);
   
   game_object_t* ship_o = go_getempty();
   ship_o->enabled = 1;
