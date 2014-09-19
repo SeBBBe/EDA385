@@ -14,11 +14,11 @@ typedef struct game_object {
 	short poly_points;
 	short nowrap;
 	short identifier;
+	short hitbox_size;
 	vgapoint_t* poly;
 } game_object_t;
 
 static const short MAX_OBJECTS = 64;
-static const short HITBOX_SIZE = 20;
 static const short OFFSCREEN_TOL = 100; //number of pixels outside screen before object is reset
 
 short go_currentstate = 0;
@@ -46,6 +46,7 @@ void go_resetobject(int i)
 		objects[i].enabled = 0;
 		objects[i].nowrap = 0;
 		objects[i].identifier = 0;
+		objects[i].hitbox_size = 0;
 }
 
 void go_initialize()
@@ -86,13 +87,14 @@ void go_hitdetection()
 		{
 			if (!objects[j].enabled || i == j) continue;
 			int realx1, realx2, realy1, realy2;
+			int hitbox = objects[j].hitbox_size;
 			realx1 = objects[i].location.x + objects[i].center_point.x;
 			realy1 = objects[i].location.y + objects[i].center_point.y;
 			realx2 = objects[j].location.x + objects[j].center_point.x;
 			realy2 = objects[j].location.y + objects[j].center_point.y;
-			if (realx1 > (realx2 - HITBOX_SIZE) && realx1 < (realx2 + HITBOX_SIZE))
+			if (realx1 > (realx2 - hitbox) && realx1 < (realx2 + hitbox))
 			{
-				if (realy1 > (realy2 - HITBOX_SIZE) && realy1 < (realy2 + HITBOX_SIZE))
+				if (realy1 > (realy2 - hitbox) && realy1 < (realy2 + hitbox))
 				{
 					go_hashit(i, j);
 				}
@@ -194,4 +196,5 @@ void go_createasteroid(int n)
 	ast_o->center_point.x = 65;
 	ast_o->center_point.y = 45;
 	ast_o->identifier = OI_AST1;
+	ast_o->hitbox_size = 25;
 }
