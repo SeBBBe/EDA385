@@ -16,6 +16,7 @@ typedef struct game_object {
 } game_object_t;
 
 static const short MAX_OBJECTS = 64;
+static const short OFFSCREEN_TOL = 100; //number of pixels outside screen before object is reset
 
 game_object_t* objects;
 short currentpos = 0;
@@ -66,6 +67,21 @@ void go_draw()
 			vgapoint_t* newpoly = rotate(objects[i].poly_points, objects[i].poly, objects[i].angle, objects[i].center_point.x, objects[i].center_point.y);
 			offset(objects[i].poly_points, newpoly, objects[i].location.x, objects[i].location.y);
 			vga_addpoly(objects[i].poly_points, newpoly);
+			
+			int realx = objects[i].location.x + objects[i].center_point.x;
+			int realy = objects[i].location.y + objects[i].center_point.y;
+			if (realx < -OFFSCREEN_TOL){
+				objects[i].location.x = vga_get_width()+OFFSCREEN_TOL-objects[i].center_point.x;
+			}
+			if (realx > vga_get_width()+OFFSCREEN_TOL){
+				objects[i].location.x = -OFFSCREEN_TOL -objects[i].center_point.x;;
+			}
+			if (realy < -OFFSCREEN_TOL){
+				objects[i].location.y = vga_get_height()+OFFSCREEN_TOL-objects[i].center_point.y;
+			}
+			if (realy > vga_get_height()+OFFSCREEN_TOL){
+				objects[i].location.y = -OFFSCREEN_TOL -objects[i].center_point.y;
+			}
 		}
 	}
 }
