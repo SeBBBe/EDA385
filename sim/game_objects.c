@@ -1,3 +1,6 @@
+#include <time.h>
+#include <stdlib.h>
+
 typedef struct game_object {
 	f_vgapoint_t location;
 	double xvel;
@@ -66,4 +69,15 @@ game_object_t* go_getempty(){
 	int r = currentpos;
 	currentpos++;
 	return &objects[r];
+}
+
+//Create an asteroid of poly size n and place in game
+void go_createasteroid(int n)
+{
+	//TODO: generate asteroid geometry
+	game_object_t* ast_o = go_getempty();
+	ast_o->enabled = 1;
+	ast_o->poly_points = 5;
+	ast_o->poly = asteroid;
+	ast_o->location.x = 
 }
