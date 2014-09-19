@@ -4,6 +4,8 @@ USE ieee.std_logic_1164.ALL;
 library axi_lite_slave_v1_00_a; --USER-- library name
 use axi_lite_slave_v1_00_a.all;
 
+use work.types.all;
+
 ENTITY vga_tb IS 
 END vga_tb;
 
@@ -12,8 +14,7 @@ ARCHITECTURE behavior OF vga_tb IS
 component axi_lite_slave is
   generic (
     C_S_AXI_ADDR_WIDTH   : integer := 32;
-    C_S_AXI_DATA_WIDTH   : integer := 32;
-	 VGA_POS_WIDTH        : integer := 16
+    C_S_AXI_DATA_WIDTH   : integer := 32
     );
   port(
     -- System Signals
@@ -50,9 +51,9 @@ component axi_lite_slave is
     S_AXI_RREADY : in  std_logic;
 	
 	-- VGA interface
-	VGA_HSYNC	: out std_logic;
+	 VGA_HSYNC	: out std_logic;
     VGA_VSYNC	: out std_logic;
-    VGA_RED	    : out std_logic_vector(0 to 2);
+    VGA_RED	   : out std_logic_vector(0 to 2);
     VGA_GREEN	: out std_logic_vector(0 to 2);
     VGA_BLUE	: out std_logic_vector(0 to 2)
     );
@@ -84,14 +85,14 @@ end component axi_lite_slave;
 	
 	signal vga_hsync : std_logic;
 	signal vga_vsync : std_logic;
-	signal vga_red : std_logic_vector(0 to 2);
+	signal vga_red   : std_logic_vector(0 to 2);
 	signal vga_green : std_logic_vector(0 to 2);
-	signal vga_blue : std_logic_vector(0 to 2);
+	signal vga_blue  : std_logic_vector(0 to 2);
 
 	signal rst : std_logic := '1';
 
    signal clk : std_logic := '0';
-   constant clk_period : time := 1 ns;
+   constant clk_period : time := 1 us;
 
 BEGIN
 
