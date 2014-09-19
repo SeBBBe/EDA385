@@ -37,6 +37,8 @@ int main(int argc, char *argv[])
   ship_o->poly = ship;
   ship_o->center_point.x = 320;
   ship_o->center_point.y = 240;
+  ship_o->location.x = vga_get_width()/2 - 320;
+  ship_o->location.y = vga_get_height()/2 - 240;
   
   while(1)
   {
