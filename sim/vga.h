@@ -1,4 +1,4 @@
-typedef unsigned short vgapos_t;
+typedef short vgapos_t;
 
 typedef struct vga_point
 {

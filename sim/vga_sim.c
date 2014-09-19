@@ -5,8 +5,8 @@
 #include "vga.h"
 #include "input.h"
 
-#define SIM_WIDTH 640
-#define SIM_HEIGHT 480
+#define SIM_WIDTH 1280
+#define SIM_HEIGHT 960
 #define SIM_MAX_POLY 16
 
 struct sim_poly
@@ -17,6 +17,10 @@ struct sim_poly
 
 int polygon_index;
 
+int frame_counter;
+
+unsigned int lastframe;
+
 SDL_Surface *window;
 
 keymap_t input;
@@ -24,6 +28,8 @@ keymap_t input;
 void vga_init()
 {
   polygon_index = 0;
+  frame_counter = 0;
+  lastframe = 0;
   
   if(SDL_Init(SDL_INIT_VIDEO|SDL_INIT_NOPARACHUTE) != 0)
   {
@@ -44,12 +50,6 @@ void vga_init()
 
 int vga_addpoly(int num_points, vgapoint_t *points)
 {
-	int i;
-	for (i = 0; i < num_points; i++)
-	{
-		if (points[i].x < 0 || points[i].y < 0) return 0;
-		if (points[i].x > vga_get_width() || points[i].y > vga_get_height()) return 0;
-	}
   if(polygon_index == SIM_MAX_POLY) return 0;
   
   polygons[polygon_index].num_points = num_points;
@@ -78,7 +78,7 @@ void bresenham(int *pixels, int pitch, int x0, int y0, int x1, int y1)
   int err = (dx>dy ? dx : -dy)/2, e2;
 
   for(;;){
-    pixels[x0 + y0 * (pitch / 4)] = 0xFFFFFFFF;
+    if(x0 >= 0 && y0 >= 0 && x0 < SIM_WIDTH && y0 < SIM_HEIGHT) pixels[x0 + y0 * (pitch / 4)] = 0xFFFFFFFF;
     if (x0==x1 && y0==y1) break;
     e2 = err;
     if (e2 >-dx) { err -= dy; x0 += sx; }
@@ -91,6 +91,11 @@ void vga_sync()
   int i, j;
   int *pixels;
   SDL_Event event;
+  unsigned int lastframe_saved = lastframe;
+  
+  while(lastframe - lastframe_saved < ((frame_counter % 3) ? 17 : 16)) lastframe = SDL_GetTicks();
+  
+  frame_counter++;
   
   SDL_FillRect(window, NULL, 0);
   
