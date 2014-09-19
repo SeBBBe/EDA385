@@ -47,16 +47,22 @@ void go_initialize()
 	objects =  malloc(MAX_OBJECTS * sizeof(game_object_t));
 }
 
+//Called when a hit was detected between object hit1 and hit2
 void go_hashit(int hit1, int hit2)
 {
-	if (objects[hit1].identifier == OI_SHIP){
-		if (objects[hit2].identifier >= OI_AST1 && objects[hit2].identifier <= OI_AST4){
+	if (objects[hit2].identifier >= OI_AST1 && objects[hit2].identifier <= OI_AST4){
+		if (objects[hit1].identifier == OI_SHIP){
 			printf("Ship was hit by asteroid.\n");
 			exit(0);
+		}
+		if (objects[hit1].identifier == OI_BULLET){
+			printf("Asteroid was hit by bullet.\n");
+			objects[hit2].enabled = 0;
 		}
 	}
 }
 
+//Detect hits
 void go_hitdetection()
 {
 	int i;
@@ -77,11 +83,7 @@ void go_hitdetection()
 			{
 				if (realy1 > (realy2 - HITBOX_SIZE) && realy1 < (realy2 + HITBOX_SIZE))
 				{
-					if (objects[i].identifier == OI_SHIP)
-					{
-						printf("%d collides with %d\n", i, j);
-						go_hashit(i, j);
-					}
+					go_hashit(i, j);
 				}
 			}
 		}

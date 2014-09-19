@@ -26,10 +26,6 @@ int main(int argc, char *argv[])
   
   go_initialize();
   srand(time(NULL));
-  int i;
-  for (i = 0; i < 10; i++){
-	go_createasteroid(1);
-	}
   
   game_object_t* ship_o = go_getempty();
   ship_o->enabled = 1;
@@ -40,6 +36,11 @@ int main(int argc, char *argv[])
   ship_o->location.x = vga_get_width()/2 - 320;
   ship_o->location.y = vga_get_height()/2 - 240;
   ship_o->identifier = OI_SHIP;
+  
+   int i;
+  for (i = 0; i < 10; i++){
+	go_createasteroid(1);
+	}
   
   while(1)
   {
