@@ -51,7 +51,7 @@ int main(int argc, char *argv[])
     {
 		if (shoot_limit == 0)
 		{
-			shoot_limit = 10;
+			shoot_limit = 25;
 			game_object_t* bullet_o = go_getempty();
 		  bullet_o->location.x = ship_o->location.x;
 		  bullet_o->location.y = ship_o->location.y;
