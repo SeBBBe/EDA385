@@ -7,7 +7,7 @@
 
 #define SIM_WIDTH 1280
 #define SIM_HEIGHT 960
-#define SIM_MAX_POLY 16
+#define SIM_MAX_POLY 64
 
 struct sim_poly
 {
