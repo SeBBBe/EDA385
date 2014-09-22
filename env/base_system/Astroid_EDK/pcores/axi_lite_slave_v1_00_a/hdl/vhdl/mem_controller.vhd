@@ -44,22 +44,47 @@ entity mem_controller is
     S_AXI_RREADY : in  std_logic;
 	 
 	 VSYNC : in std_logic;
-	 VECMEM : out vecmem_t
+	 OUTPUT : out linereg_t;
+	 TRIGGER : out std_logic
 	 );
 end mem_controller;
 
 architecture Behavioral of mem_controller is
 
-signal vecmem_reg : vecmem_t;
-signal vecmem_next : vecmem_t;
+type state_t is (XY0, XY1);
+
+signal output_reg : linereg_t;
+signal output_next : linereg_t;
+
+signal state_reg : state_t;
+signal state_next : state_t;
 
 signal write_reg : std_logic;
 signal write_next : std_logic;
 
-signal addr_reg : std_logic_vector(C_S_AXI_ADDR_WIDTH-1 downto 0);
-signal addr_next : std_logic_vector(C_S_AXI_ADDR_WIDTH-1 downto 0);
+signal ready_reg : std_logic;
+signal ready_next : std_logic;
+
+signal prog_enable_reg : std_logic;
+signal prog_enable_next : std_logic;
+
+signal prog_done : std_logic;
 
 begin
+
+programmer1 : entity work.line_programmer
+	port map
+	(
+		CLK => ACLK,
+		RST => ARESETN,
+		
+		ENABLE => prog_enable_reg,
+		
+		INPUT => output_reg,
+		OUTPUT => OUTPUT,
+		
+		DONE => prog_done
+	);
 
 S_AXI_ARREADY <= '1';
 S_AXI_RVALID <= '1';
@@ -67,68 +92,62 @@ S_AXI_RDATA <= (others => '0') when VSYNC = '0' else (others => '1');
 S_AXI_RRESP <= (others => '0');
 
 S_AXI_AWREADY <= '1';
-S_AXI_WREADY <= '1' when write_reg = '0' else '0';
+S_AXI_WREADY <= '1' when write_reg = '0' and ready_reg = '1' else '0';
 
 S_AXI_BVALID <= write_reg;
 S_AXI_BRESP <= (others => '0');
 
-VECMEM <= vecmem_reg;
+TRIGGER <= prog_done;
 
 process(ACLK, ARESETN)
 begin
 	if (ARESETN = '0') then
-		vecmem_reg <= (others => (others => '0'));
+		output_reg <= EMPTY_LINE_REG;
+		state_reg <= XY0;
 		write_reg <= '0';
-		addr_reg <= (others => '0');
+		ready_reg <= '1';
+		prog_enable_reg <= '0';
 	elsif rising_edge(ACLK) then
-		vecmem_reg <= vecmem_next;
+		output_reg <= output_next;
+		state_reg <= state_next;
 		write_reg <= write_next;
-		addr_reg <= addr_next;
+		ready_reg <= ready_next;
+		prog_enable_reg <= prog_enable_next;
 	end if;
 end process;
 
-process(S_AXI_AWADDR, S_AXI_AWVALID, addr_reg)
+process(S_AXI_BREADY, S_AXI_WDATA, S_AXI_WVALID, state_reg, write_reg, prog_enable_reg, ready_reg, prog_done, output_reg)
 begin
-	addr_next <= addr_reg;
-	
-	if S_AXI_AWVALID = '1' then
-		addr_next <= S_AXI_AWADDR;
-	end if;
-end process;
-
-process(S_AXI_BREADY, S_AXI_AWADDR, S_AXI_AWVALID, S_AXI_WDATA, S_AXI_WSTRB, S_AXI_WVALID, vecmem_reg, addr_reg, write_reg)
-	variable addr : std_logic_vector(C_S_AXI_ADDR_WIDTH-1 downto 0);
-	variable vecaddr : integer;
-begin
-	vecmem_next <= vecmem_reg;
+	prog_enable_next <= prog_enable_reg;
 	write_next <= write_reg;
-	
-	addr := addr_reg;
+	ready_next <= ready_reg;
+	output_next <= output_reg;
+	state_next <= state_reg;
 
-	if S_AXI_WVALID = '1' and write_reg = '0'	then
-		if S_AXI_AWVALID = '1' then
-			addr := S_AXI_AWADDR;
-		end if;
-		
+	if S_AXI_WVALID = '1' and write_reg = '0' and ready_reg = '1' then
 		write_next <= '1';
 		
-		for I in 0 to (C_S_AXI_ADDR_WIDTH/8-1) loop
-			if S_AXI_WSTRB(I) = '1' then
-				vecaddr := to_integer(unsigned(addr)) + I;
-				
-				if vecaddr mod 2 = 0 then
-					vecmem_next(vecaddr / 2)(7 downto 0) <= S_AXI_WDATA(((I + 1) * 8)-1 downto (I * 8));
-				else
-					vecmem_next(vecaddr / 2)(VGAPOS_WIDTH-1 downto 8) <= S_AXI_WDATA(((I + 1) * 8)-(16-VGAPOS_WIDTH)-1 downto (I * 8));
-				end if;
-			end if;
-		end loop;
+		if state_reg = XY0 then
+			output_next.x0 <= signed(S_AXI_WDATA(VGAPOS_WIDTH-1 downto 0));
+			output_next.y0 <= signed(S_AXI_WDATA(VGAPOS_WIDTH-1+16 downto 16));
+			state_next <= XY1;
+		else
+			output_next.x1 <= signed(S_AXI_WDATA(VGAPOS_WIDTH-1 downto 0));
+			output_next.y1 <= signed(S_AXI_WDATA(VGAPOS_WIDTH-1+16 downto 16));
+			state_next <= XY0;
+			prog_enable_next <= '1';
+			ready_next <= '0';
+		end if;
 	end if;
 	
 	if S_AXI_BREADY = '1' and write_reg = '1' then
 		write_next <= '0';
 	end if;
+	
+	if ready_reg = '0' and prog_done = '1' then
+		ready_next <= '1';
+		prog_enable_next <= '0';
+	end if;
 end process;
 
 end Behavioral;
-

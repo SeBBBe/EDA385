@@ -4,6 +4,7 @@ use ieee.std_logic_1164.all;
 use ieee.std_logic_misc.all;
 use ieee.std_logic_arith.all;
 use ieee.std_logic_unsigned.all;
+use ieee.numeric_std.all;
 
 library axi_lite_slave_v1_00_a; --USER-- library name
 use axi_lite_slave_v1_00_a.all; --USER-- use statement
@@ -16,41 +17,42 @@ entity vga_controller is
     CLK       : in std_logic; -- clock
     RST	      : in std_logic; -- reset, active low
     HSYNC     : out std_logic;
-	VSYNC     : out std_logic;
-	X         : out vgapos_t;
-	Y         : out vgapos_t;
-	VGA_HSYNC : out std_logic;
-	VGA_VSYNC : out std_logic
+	 VSYNC     : out std_logic;
+	 X         : out vgapos_t;
+	 Y         : out vgapos_t;
+	 NEWLINE   : out std_logic;
+	 VGA_HSYNC : out std_logic;
+	 VGA_VSYNC : out std_logic
   );
 end entity vga_controller;
 
 architecture imp of vga_controller is --USER-- change entity name
 
 -- Horizontal timing constants
-constant H_FRONTPORCH:   integer := 0;
-constant H_SYNC:         integer := 1;
-constant H_BACKPORCH:    integer := 0;
-constant H_PIXEL:        integer := 16;
-constant H_PERIOD:       integer := 17;
+--constant H_FRONTPORCH:   integer := 0;
+--constant H_SYNC:         integer := 1;
+--constant H_BACKPORCH:    integer := 0;
+--constant H_PIXEL:        integer := 16;
+--constant H_PERIOD:       integer := 17;
 -- Vertical timing constants
-constant V_FRONTPORCH:   integer := 0;
-constant V_SYNC:         integer := 1;
-constant V_BACKPORCH:    integer := 0;
-constant V_PIXEL:        integer := 16;
-constant V_PERIOD:       integer := 17;
+--constant V_FRONTPORCH:   integer := 0;
+--constant V_SYNC:         integer := 2;
+--constant V_BACKPORCH:    integer := 0;
+--constant V_PIXEL:        integer := 16;
+--constant V_PERIOD:       integer := 18;
 
 -- Horizontal timing constants
---constant H_FRONTPORCH:   integer := 80;
---constant H_SYNC:         integer := 136;
---constant H_BACKPORCH:    integer := 216;
---constant H_PIXEL:        integer := 1280;
---constant H_PERIOD:       integer := 1712;
+constant H_FRONTPORCH:   integer := 80;
+constant H_SYNC:         integer := 136;
+constant H_BACKPORCH:    integer := 216;
+constant H_PIXEL:        integer := 1280;
+constant H_PERIOD:       integer := 1712;
 -- Vertical timing constants
---constant V_FRONTPORCH:   integer := 1;
---constant V_SYNC:         integer := 3;
---constant V_BACKPORCH:    integer := 30;
---constant V_PIXEL:        integer := 960;
---constant V_PERIOD:       integer := 994;
+constant V_FRONTPORCH:   integer := 1;
+constant V_SYNC:         integer := 3;
+constant V_BACKPORCH:    integer := 30;
+constant V_PIXEL:        integer := 960;
+constant V_PERIOD:       integer := 994;
 -- Horizontal timing positions
 constant H_FRONTPORCH_START:   integer := 0;                                   --   0
 constant H_SYNC_START:         integer := H_FRONTPORCH_START + H_FRONTPORCH;   --  80
@@ -91,6 +93,7 @@ process(x_reg, y_reg)
 begin
 	x_next <= x_reg;
 	y_next <= y_reg;
+	NEWLINE <= '0';
 	
 	if (x_reg = H_PIXEL_END - 1) then
 		x_next <= (others => '0');
@@ -99,6 +102,7 @@ begin
 			y_next <= (others => '0');
 		else
 			y_next <= y_reg + 1;
+			NEWLINE <= '1';
 		end if;
 	else
 		x_next <= x_reg + 1;
@@ -109,6 +113,7 @@ VGA_HSYNC <= '0' when (x_reg >= H_SYNC_START and x_reg < H_BACKPORCH_START) else
 VGA_VSYNC <= '0' when (y_reg >= V_SYNC_START and y_reg < V_BACKPORCH_START) else '1';
 
 HSYNC <= '0' when (x_reg >= H_PIXEL_START and x_reg < H_PIXEL_END) else '1';
-VSYNC <= '0' when (y_reg >= V_PIXEL_START and y_reg < V_PIXEL_END) else '1';
+-- line controllers need to start one line before pixel output starts
+VSYNC <= '0' when (y_reg >= V_PIXEL_START-1 and y_reg < V_PIXEL_END) else '1';
 
 end architecture imp;

@@ -11,55 +11,6 @@ END vga_tb;
 
 ARCHITECTURE behavior OF vga_tb IS
 
-component axi_lite_slave is
-  generic (
-    C_S_AXI_ADDR_WIDTH   : integer := 32;
-    C_S_AXI_DATA_WIDTH   : integer := 32
-    );
-  port(
-    -- System Signals
-    ACLK    : in std_logic;
-    ARESETN : in std_logic;
-
-    -- Slave Interface Write Address Ports
-    S_AXI_AWADDR   : in  std_logic_vector(C_S_AXI_ADDR_WIDTH-1 downto 0);
-    S_AXI_AWPROT   : in  std_logic_vector(3-1 downto 0);
-    S_AXI_AWVALID  : in  std_logic;
-    S_AXI_AWREADY  : out std_logic;
-
-    -- Slave Interface Write Data Ports
-    S_AXI_WDATA  : in  std_logic_vector(C_S_AXI_DATA_WIDTH-1 downto 0);
-    S_AXI_WSTRB  : in  std_logic_vector(C_S_AXI_DATA_WIDTH/8-1 downto 0);
-    S_AXI_WVALID : in  std_logic;
-    S_AXI_WREADY : out std_logic;
-
-    -- Slave Interface Write Response Ports
-    S_AXI_BRESP  : out std_logic_vector(2-1 downto 0);
-    S_AXI_BVALID : out std_logic;
-    S_AXI_BREADY : in  std_logic;
-
-    -- Slave Interface Read Address Ports
-    S_AXI_ARADDR   : in  std_logic_vector(C_S_AXI_ADDR_WIDTH-1 downto 0);
-    S_AXI_ARPROT   : in  std_logic_vector(3-1 downto 0);
-    S_AXI_ARVALID  : in  std_logic;
-    S_AXI_ARREADY  : out std_logic;
-
-    -- Slave Interface Read Data Ports
-    S_AXI_RDATA  : out std_logic_vector(C_S_AXI_DATA_WIDTH-1 downto 0);
-    S_AXI_RRESP  : out std_logic_vector(2-1 downto 0);
-    S_AXI_RVALID : out std_logic;
-    S_AXI_RREADY : in  std_logic;
-	
-	-- VGA interface
-	 VGA_HSYNC	: out std_logic;
-    VGA_VSYNC	: out std_logic;
-    VGA_RED	   : out std_logic_vector(0 to 2);
-    VGA_GREEN	: out std_logic_vector(0 to 2);
-    VGA_BLUE	: out std_logic_vector(0 to 2)
-    );
-
-end component axi_lite_slave;
-
 	signal S_AXI_AWADDR : std_logic_vector(32-1 downto 0);
 	signal S_AXI_WDATA  : std_logic_vector(32-1 downto 0);
 	signal S_AXI_WSTRB  : std_logic_vector(32/8-1 downto 0);
@@ -96,7 +47,7 @@ end component axi_lite_slave;
 
 BEGIN
 
-   uut: axi_lite_slave
+   uut: entity work.axi_lite_slave
 		PORT MAP
 		(
 			ACLK => clk,
@@ -142,6 +93,40 @@ BEGIN
 		wait for clk_period * 10;
 		rst <= '1';
 		wait;
+	end process;
+	
+	test_process : process
+	begin
+		wait until S_AXI_RDATA(0) = '1' and S_AXI_WREADY = '1';
+		S_AXI_WDATA <= "00000000000000000000000000000000";
+		S_AXI_WVALID <= '1';
+		wait until S_AXI_BVALID = '1';
+		S_AXI_WVALID <= '0';
+		S_AXI_BREADY <= '1';
+		
+		wait until S_AXI_RDATA(0) = '1' and S_AXI_WREADY = '1';
+		S_AXI_WDATA <= "00000000000011110000000000001111";
+		S_AXI_WVALID <= '1';
+		wait until S_AXI_BVALID = '1';
+		S_AXI_WVALID <= '0';
+		S_AXI_BREADY <= '1';
+		
+		
+		wait until S_AXI_RDATA(0) = '1' and S_AXI_WREADY = '1';
+		S_AXI_WDATA <= "00000000000000000000000000001111";
+		S_AXI_WVALID <= '1';
+		wait until S_AXI_BVALID = '1';
+		S_AXI_WVALID <= '0';
+		S_AXI_BREADY <= '1';
+		
+		wait until S_AXI_RDATA(0) = '1' and S_AXI_WREADY = '1';
+		S_AXI_WDATA <= "00000000000011110000000000000000";
+		S_AXI_WVALID <= '1';
+		wait until S_AXI_BVALID = '1';
+		S_AXI_WVALID <= '0';
+		S_AXI_BREADY <= '1';
+		
+		wait until S_AXI_RDATA(0) = '0';
 	end process;
 
 END;
