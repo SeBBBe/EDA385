@@ -54,7 +54,7 @@ entity axi_lite_slave is
     S_AXI_RREADY : in  std_logic;
 	
 	-- VGA interface
-	VGA_HSYNC	: out std_logic;
+	 VGA_HSYNC	: out std_logic;
     VGA_VSYNC	: out std_logic;
     VGA_RED	    : out std_logic_vector(0 to 2);
     VGA_GREEN	: out std_logic_vector(0 to 2);
@@ -65,6 +65,7 @@ end axi_lite_slave;
 
 architecture implementation of axi_lite_slave is
 
+signal real_hsync, real_vsync : std_logic;
 signal vga_x, vga_y : vgapos_t;
 signal hsync, vsync : std_logic;
 signal output : std_logic;
@@ -88,8 +89,8 @@ vga1 : entity work.vga_controller
 		X => vga_x,
 		Y => vga_y,
 		NEWLINE => newline,
-		VGA_HSYNC => VGA_HSYNC,
-		VGA_VSYNC => VGA_VSYNC
+		VGA_HSYNC => real_hsync,
+		VGA_VSYNC => real_vsync
 	);
 	
 vector1 : entity work.vector_controller
@@ -152,8 +153,11 @@ begin
 	end if;
 end process;
 
-VGA_RED <= "111" when output = '1' else "000";
-VGA_GREEN <= "111" when output = '1' else "000";
-VGA_BLUE <= "111" when output = '1' else "000";
+VGA_RED <= "111" when output = '1' and real_hsync = '1' and real_vsync = '1' else "000";
+VGA_GREEN <= "111" when output = '1' and real_hsync = '1' and real_vsync = '1' else "000";
+VGA_BLUE <= "111" when output = '1' and real_hsync = '1' and real_vsync = '1' else "000";
+
+VGA_HSYNC <= real_hsync;
+VGA_VSYNC <= real_vsync;
 
 end implementation;

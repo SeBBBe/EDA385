@@ -41,21 +41,17 @@ signal line_outputs : per_controller_linereg_t;
 signal line_lineouts : per_controller_stdlogic_t;
 signal line_linexs : per_controller_vgapos_t;
 
+signal bram_pixel_outs : per_controller_stdlogic_t;
+
+signal xplusone : vgapos_t;
 signal yplusone : vgapos_t;
 signal yminusone : vgapos_t;
-
-type pixelrow_t is array (0 to DISPLAY_WIDTH-1) of std_logic;
-
-signal prev_pixels_reg : pixelrow_t;
-signal prev_pixels_next : pixelrow_t;
-
-signal pixels_reg : pixelrow_t;
-signal pixels_next : pixelrow_t;
 
 ------------------------------------------------------------------------------
 begin
 ------------------------------------------------------------------------------
 
+xplusone <= X + 1;
 yplusone <= Y + 1;
 yminusone <= Y - 1;
 
@@ -100,44 +96,33 @@ for I in 1 to LINE_COMP_UNITS-1 generate
 	);
 end generate GEN_LINE_CONTROLLERS;
 
-process(CLK, RST)
-begin
-	if (RST = '0') then
-		prev_pixels_reg <= (others => '0');
-		pixels_reg <= (others => '0');
-	elsif rising_edge(CLK) then
-		prev_pixels_reg <= prev_pixels_next;
-		pixels_reg <= pixels_next;
-	end if;
-end process;
+GEN_PIXELROW_BRAM:
+for I in 0 to LINE_COMP_UNITS-1 generate
+	pixelrow_bramX : entity work.pixelrow_bram
+	port map
+	(
+		CLK => CLK,
+		RST => RST,
+		
+		NEWLINE => NEWLINE,
+		
+		XPLUSONE => xplusone,
+		PIXEL_OUT => bram_pixel_outs(I),
+		
+		WR_X => line_linexs(I),
+		WR_PIXEL => line_lineouts(I)
+	);
+end generate GEN_PIXELROW_BRAM;
 
-process(X, NEWLINE, prev_pixels_reg, pixels_reg, line_lineouts, line_linexs)
-variable pixel_index : integer range 0 to DISPLAY_WIDTH-1;
+process(bram_pixel_outs)
 begin
-	pixels_next <= pixels_reg;
-	prev_pixels_next <= prev_pixels_reg;
-	
 	PIXEL_OUT <= '0';
 	
-	if X >= 0 and X < DISPLAY_WIDTH then
-		PIXEL_OUT <= prev_pixels_reg(0);
-		
-		for I in 0 to DISPLAY_WIDTH-2 loop
-			prev_pixels_next(I) <= prev_pixels_reg(I + 1);
-		end loop;
-	end if;
-	
-	if NEWLINE = '1' then
-		prev_pixels_next <= pixels_reg;
-		pixels_next <= (others => '0');
-	else
-		for I in 0 to LINE_COMP_UNITS-1 loop
-			if line_lineouts(I) = '1' then
-				pixel_index := to_integer(line_linexs(I));
-				pixels_next(pixel_index) <= '1';
-			end if;
-		end loop;
-	end if;
+	for I in 0 to LINE_COMP_UNITS-1 loop
+		if bram_pixel_outs(I) = '1' then
+			PIXEL_OUT <= '1';
+		end if;
+	end loop;
 end process;
 
 end architecture imp;
