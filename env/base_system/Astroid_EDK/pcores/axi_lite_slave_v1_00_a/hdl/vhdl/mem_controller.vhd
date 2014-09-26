@@ -68,6 +68,9 @@ signal ready_next : std_logic;
 signal prog_enable_reg : std_logic;
 signal prog_enable_next : std_logic;
 
+signal rvalid_reg : std_logic;
+signal rvalid_next : std_logic;
+
 signal prog_done : std_logic;
 
 begin
@@ -87,7 +90,7 @@ programmer1 : entity work.line_programmer
 	);
 
 S_AXI_ARREADY <= '1';
-S_AXI_RVALID <= '1';
+S_AXI_RVALID <= rvalid_reg;
 S_AXI_RDATA <= (others => '0') when VSYNC = '0' else (others => '1');
 S_AXI_RRESP <= (others => '0');
 
@@ -106,23 +109,34 @@ begin
 		state_reg <= XY0;
 		write_reg <= '0';
 		ready_reg <= '1';
+		rvalid_reg <= '0';
 		prog_enable_reg <= '0';
 	elsif rising_edge(ACLK) then
 		output_reg <= output_next;
 		state_reg <= state_next;
 		write_reg <= write_next;
 		ready_reg <= ready_next;
+		rvalid_reg <= rvalid_next;
 		prog_enable_reg <= prog_enable_next;
 	end if;
 end process;
 
-process(S_AXI_BREADY, S_AXI_WDATA, S_AXI_WVALID, state_reg, write_reg, prog_enable_reg, ready_reg, prog_done, output_reg)
+process(S_AXI_BREADY, S_AXI_WDATA, S_AXI_WVALID, S_AXI_ARVALID, S_AXI_RREADY, state_reg, write_reg, prog_enable_reg, ready_reg, prog_done, output_reg, rvalid_reg)
 begin
 	prog_enable_next <= prog_enable_reg;
 	write_next <= write_reg;
 	ready_next <= ready_reg;
 	output_next <= output_reg;
 	state_next <= state_reg;
+	rvalid_next <= rvalid_reg;
+	
+	if S_AXI_ARVALID = '1' and rvalid_reg = '0' then
+		rvalid_next <= '1';
+	end if;
+	
+	if S_AXI_RREADY = '1' and rvalid_reg = '1' then
+		rvalid_next <= '0';
+	end if;
 
 	if S_AXI_WVALID = '1' and write_reg = '0' and ready_reg = '1' then
 		write_next <= '1';
