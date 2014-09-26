@@ -30,7 +30,7 @@ INFO:Timing:3339 - The clock-to-out numbers in this timing report are based on
 ================================================================================
 Timing constraint: PATH "TS_TIG_microblaze_0_Reset_path" TIG;
 
- 3 paths analyzed, 3 endpoints analyzed, 0 failing endpoints
+ 3 paths analyzed, 1 endpoint analyzed, 0 failing endpoints
  0 timing errors detected. (0 setup errors, 0 hold errors)
 --------------------------------------------------------------------------------
 
@@ -71,9 +71,9 @@ PERIOD TIMEGRP         "clock_generator_0_clock_generator_0_SIG_PLL0_CLKOUT0"
 TS_sys_clk_pin         HIGH 50%;
 For more information, see Period Analysis in the Timing Closure User Guide (UG612).
 
- 326250 paths analyzed, 12255 endpoints analyzed, 0 failing endpoints
+ 1006145 paths analyzed, 30456 endpoints analyzed, 0 failing endpoints
  0 timing errors detected. (0 setup errors, 0 hold errors, 0 component switching limit errors)
- Minimum period is   9.687ns.
+ Minimum period is   9.495ns.
 --------------------------------------------------------------------------------
 
 
@@ -84,8 +84,8 @@ Derived Constraints for TS_sys_clk_pin
 |           Constraint          | Requirement |-------------+-------------|-------------+-------------|-------------+-------------|
 |                               |             |   Direct    | Derivative  |   Direct    | Derivative  |   Direct    | Derivative  |
 +-------------------------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+
-|TS_sys_clk_pin                 |     10.000ns|      3.334ns|      9.687ns|            0|            0|            0|       326250|
-| TS_clock_generator_0_clock_gen|     10.000ns|      9.687ns|          N/A|            0|            0|       326250|            0|
+|TS_sys_clk_pin                 |     10.000ns|      3.334ns|      9.495ns|            0|            0|            0|      1006145|
+| TS_clock_generator_0_clock_gen|     10.000ns|      9.495ns|          N/A|            0|            0|      1006145|            0|
 | erator_0_SIG_PLL0_CLKOUT0     |             |             |             |             |             |             |             |
 +-------------------------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+
 
@@ -101,7 +101,7 @@ Clock to Setup on destination clock GCLK
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-GCLK           |    9.687|         |         |         |
+GCLK           |    9.495|         |         |         |
 ---------------+---------+---------+---------+---------+
 
 
@@ -110,20 +110,20 @@ Timing summary:
 
 Timing errors: 0  Score: 0  (Setup/Max: 0, Hold: 0)
 
-Constraints cover 326263 paths, 0 nets, and 14937 connections
+Constraints cover 1006158 paths, 0 nets, and 35625 connections
 
 Design statistics:
-   Minimum period:   9.687ns   (Maximum frequency: 103.231MHz)
+   Minimum period:   9.495ns   (Maximum frequency: 105.319MHz)
 
 
-Analysis completed Mon Sep 15 11:00:02 2014 
+Analysis completed Fri Sep 26 12:59:49 2014 
 --------------------------------------------------------------------------------
 
 Trace Settings:
 -------------------------
 Trace Settings 
 
-Peak Memory Usage: 285 MB
+Peak Memory Usage: 392 MB
 
 
 

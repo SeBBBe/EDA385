@@ -18,6 +18,11 @@
  PORT LEDs_8Bits_TRI_O = LEDs_8Bits_TRI_O, DIR = O, VEC = [7:0]
  PORT GCLK = GCLK, DIR = I, SIGIS = CLK, CLK_FREQ = 100000000
  PORT DIP_Switches_8Bits_TRI_I = DIP_Switches_8Bits_TRI_I, DIR = I, VEC = [7:0]
+ PORT VGA_HSYNC = axi_lite_slave_0_VGA_HSYNC, DIR = O
+ PORT VGA_VSYNC = axi_lite_slave_0_VGA_VSYNC, DIR = O
+ PORT VGA_RED = axi_lite_slave_0_VGA_RED, DIR = O, VEC = [2:0]
+ PORT VGA_GREEN = axi_lite_slave_0_VGA_GREEN, DIR = O, VEC = [2:0]
+ PORT VGA_BLUE = axi_lite_slave_0_VGA_BLUE, DIR = O, VEC = [2:0]
 
 
 BEGIN proc_sys_reset
@@ -88,13 +93,10 @@ BEGIN microblaze
  PARAMETER C_DCACHE_HIGHADDR = 0X3FFFFFFF
  PARAMETER C_USE_DCACHE = 0
  PARAMETER C_DCACHE_ALWAYS_USED = 0
- PARAMETER C_FSL_LINKS = 1
  BUS_INTERFACE ILMB = microblaze_0_ilmb
  BUS_INTERFACE DLMB = microblaze_0_dlmb
  BUS_INTERFACE M_AXI_DP = axi4lite_0
  BUS_INTERFACE DEBUG = microblaze_0_debug
- BUS_INTERFACE SFSL0 = fsl_hwa_1_to_microblaze_0
- BUS_INTERFACE MFSL0 = microblaze_0_to_fsl_hwa_1
  PORT MB_RESET = proc_sys_reset_0_MB_Reset
  PORT CLK = clk_100_0000MHz
 END
@@ -200,27 +202,17 @@ BEGIN axi_gpio
  PORT GPIO_IO_I = DIP_Switches_8Bits_TRI_I
 END
 
-BEGIN fsl_v20
- PARAMETER INSTANCE = fsl_hwa_1_to_microblaze_0
- PARAMETER HW_VER = 2.11.e
- PARAMETER C_EXT_RESET_HIGH = 1
- PORT FSL_Clk = clk_100_0000MHz
- PORT SYS_Rst = proc_sys_reset_0_Peripheral_Reset
-END
-
-BEGIN fsl_hwa
- PARAMETER INSTANCE = fsl_hwa_1
- PARAMETER HW_VER = 1.00.c
- BUS_INTERFACE MFSL = fsl_hwa_1_to_microblaze_0
- BUS_INTERFACE SFSL = microblaze_0_to_fsl_hwa_1
- PORT fsl_clk = clk_100_0000MHz
-END
-
-BEGIN fsl_v20
- PARAMETER INSTANCE = microblaze_0_to_fsl_hwa_1
- PARAMETER HW_VER = 2.11.e
- PARAMETER C_EXT_RESET_HIGH = 1
- PORT FSL_Clk = clk_100_0000MHz
- PORT SYS_Rst = proc_sys_reset_0_Peripheral_Reset
+BEGIN axi_lite_slave
+ PARAMETER INSTANCE = axi_lite_slave_0
+ PARAMETER HW_VER = 1.00.a
+ PARAMETER C_S_AXI_RNG00_BASEADDR = 0x7f800000
+ PARAMETER C_S_AXI_RNG00_HIGHADDR = 0x7f80ffff
+ BUS_INTERFACE S_AXI = axi4lite_0
+ PORT ACLK = clk_100_0000MHz
+ PORT VGA_HSYNC = axi_lite_slave_0_VGA_HSYNC
+ PORT VGA_VSYNC = axi_lite_slave_0_VGA_VSYNC
+ PORT VGA_RED = axi_lite_slave_0_VGA_RED
+ PORT VGA_GREEN = axi_lite_slave_0_VGA_GREEN
+ PORT VGA_BLUE = axi_lite_slave_0_VGA_BLUE
 END
 

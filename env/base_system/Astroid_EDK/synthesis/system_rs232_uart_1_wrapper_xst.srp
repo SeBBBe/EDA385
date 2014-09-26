@@ -1,6 +1,6 @@
 Release 14.2 - xst P.28xd (nt64)
 Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
---> Parameter TMPDIR set to C:\temp\Astroid_EDK\synthesis\xst_temp_dir\
+--> Parameter TMPDIR set to C:\temp\env\base_system\Astroid_EDK\synthesis\xst_temp_dir\
 
 
 Total REAL time to Xst completion: 0.00 secs
@@ -35,7 +35,7 @@ TABLE OF CONTENTS
 ---- Source Parameters
 Input Format                       : MIXED
 Input File Name                    : "system_rs232_uart_1_wrapper_xst.prj"
-Verilog Include Directory          : {"C:\temp\Astroid_EDK\pcores\" "C:\Xilinx\BSP\Nexys3_AXI_BSB_Support\lib\Digilent\pcores\" "C:\Xilinx\14.2\ISE_DS\EDK\hw\XilinxBFMinterface\pcores\" "C:\Xilinx\14.2\ISE_DS\EDK\hw\XilinxProcessorIPLib\pcores\" }
+Verilog Include Directory          : {"C:\temp\env\base_system\Astroid_EDK\pcores\" "C:\Xilinx\BSP\Nexys3_AXI_BSB_Support\lib\Digilent\pcores\" "C:\Xilinx\14.2\ISE_DS\EDK\hw\XilinxBFMinterface\pcores\" "C:\Xilinx\14.2\ISE_DS\EDK\hw\XilinxProcessorIPLib\pcores\" }
 
 ---- Target Parameters
 Target Device                      : xc6slx16csg324-3
@@ -442,7 +442,7 @@ Parsing architecture <RTL> of entity <uartlite_core>.
 Parsing VHDL file "C:/Xilinx/14.2/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/axi_uartlite_v1_02_a/hdl/vhdl/axi_uartlite.vhd" into library axi_uartlite_v1_02_a
 Parsing entity <axi_uartlite>.
 Parsing architecture <RTL> of entity <axi_uartlite>.
-Parsing VHDL file "C:\temp\Astroid_EDK\hdl\system_rs232_uart_1_wrapper.vhd" into library work
+Parsing VHDL file "C:\temp\env\base_system\Astroid_EDK\hdl\system_rs232_uart_1_wrapper.vhd" into library work
 Parsing entity <system_rs232_uart_1_wrapper>.
 Parsing architecture <STRUCTURE> of entity <system_rs232_uart_1_wrapper>.
 
@@ -499,7 +499,7 @@ INFO:HDLCompiler:679 - "C:/Xilinx/14.2/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores
 =========================================================================
 
 Synthesizing Unit <system_rs232_uart_1_wrapper>.
-    Related source file is "C:\temp\Astroid_EDK\hdl\system_rs232_uart_1_wrapper.vhd".
+    Related source file is "C:\temp\env\base_system\Astroid_EDK\hdl\system_rs232_uart_1_wrapper.vhd".
     Summary:
 	no macro.
 Unit <system_rs232_uart_1_wrapper> synthesized.
@@ -1177,11 +1177,11 @@ S_AXI_ACLK     |    3.730|         |         |         |
 
 
 Total REAL time to Xst completion: 7.00 secs
-Total CPU time to Xst completion: 6.63 secs
+Total CPU time to Xst completion: 6.53 secs
  
 --> 
 
-Total memory usage is 283120 kilobytes
+Total memory usage is 283248 kilobytes
 
 Number of errors   :    0 (   0 filtered)
 Number of warnings :   18 (   0 filtered)

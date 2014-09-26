@@ -45,7 +45,14 @@
 ##
 ###############################################################################
 
-
-lib axi_lite_slave_v1_00_a axi_lite_slave.v verilog
-#lib axi_lite_slave_v1_00_a axi_lite_slave.vhd vhdl
-
+lib axi_lite_slave_v1_00_a axi_lite_slave
+lib axi_lite_slave_v1_00_a types
+lib axi_lite_slave_v1_00_a vga_controller
+lib axi_lite_slave_v1_00_a vector_controller
+lib axi_lite_slave_v1_00_a line_controller
+lib axi_lite_slave_v1_00_a line_programmer
+lib axi_lite_slave_v1_00_a mem_controller
+lib axi_lite_slave_v1_00_a line_comp_unit
+lib axi_lite_slave_v1_00_a line_reg_unit
+lib axi_lite_slave_v1_00_a pixelrow_bram
+lib axi_lite_slave_v1_00_a bram

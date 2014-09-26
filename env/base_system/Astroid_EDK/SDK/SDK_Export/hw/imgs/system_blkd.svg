@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/svg11-tiny.dtd">
 
-<svg width="992" height="1617">
+<svg width="928" height="1499">
   <defs>
     <g xmlns:svg="http://www.w3.org/2000/svg" id="G_IOPort">
       <rect x="0" y="0" width="16" height="16" fill="#CCCCFF" stroke="#000088" stroke-width="1"/>
@@ -65,17 +65,6 @@
     <g id="LMB_busconn_MASTER">
       <rect x="0" y="0" width="24" height="24" style="fill:#DDDDFF; stroke:#7777FF; stroke-width:1"/>
       <rect x="5.5" y="5" width="14" height="14" style="fill:#7777FF; stroke:none;"/>
-    </g>
-    <g id="FSL_BifLabel">
-      <rect x="0" y="0" rx="3" ry="3" width="32" height="16" style="fill:#CC00CC; stroke:black; stroke-width:1"/>
-    </g>
-    <g id="FSL_busconn_SLAVE">
-      <circle cx="12" cy="12" r="12" style="fill:#FFBBFF; stroke:#CC00CC; stroke-width:1"/>
-      <circle cx="12.5" cy="12" r="7" style="fill:#CC00CC; stroke:none;"/>
-    </g>
-    <g id="FSL_busconn_MASTER">
-      <rect x="0" y="0" width="24" height="24" style="fill:#FFBBFF; stroke:#CC00CC; stroke-width:1"/>
-      <rect x="5.5" y="5" width="14" height="14" style="fill:#CC00CC; stroke:none;"/>
     </g>
     <g id="KEY_BifLabel">
       <rect x="0" y="0" rx="3" ry="3" width="32" height="16" style="fill:#444444; stroke:black; stroke-width:1"/>
@@ -551,23 +540,23 @@
     </g>
     <g id="AXI_SharedBus">
       <use xmlns:xlink="http://www.w3.org/1999/xlink" x="0" y="0" xlink:href="#AXI_BusArrowWest"/>
-      <use xmlns:xlink="http://www.w3.org/1999/xlink" x="766" y="0" xlink:href="#AXI_BusArrowEast"/>
-      <rect x="8" y="2" width="758" height="8" style="stroke:none; fill:#0084AB"/>
+      <use xmlns:xlink="http://www.w3.org/1999/xlink" x="702" y="0" xlink:href="#AXI_BusArrowEast"/>
+      <rect x="8" y="2" width="694" height="8" style="stroke:none; fill:#0084AB"/>
     </g>
     <g id="OPB_SharedBus">
       <use xmlns:xlink="http://www.w3.org/1999/xlink" x="0" y="0" xlink:href="#OPB_BusArrowWest"/>
-      <use xmlns:xlink="http://www.w3.org/1999/xlink" x="766" y="0" xlink:href="#OPB_BusArrowEast"/>
-      <rect x="8" y="2" width="758" height="8" style="stroke:none; fill:#339900"/>
+      <use xmlns:xlink="http://www.w3.org/1999/xlink" x="702" y="0" xlink:href="#OPB_BusArrowEast"/>
+      <rect x="8" y="2" width="694" height="8" style="stroke:none; fill:#339900"/>
     </g>
     <g id="PLB_SharedBus">
       <use xmlns:xlink="http://www.w3.org/1999/xlink" x="0" y="0" xlink:href="#PLB_BusArrowWest"/>
-      <use xmlns:xlink="http://www.w3.org/1999/xlink" x="766" y="0" xlink:href="#PLB_BusArrowEast"/>
-      <rect x="8" y="2" width="758" height="8" style="stroke:none; fill:#FF5500"/>
+      <use xmlns:xlink="http://www.w3.org/1999/xlink" x="702" y="0" xlink:href="#PLB_BusArrowEast"/>
+      <rect x="8" y="2" width="694" height="8" style="stroke:none; fill:#FF5500"/>
     </g>
     <g id="PLBV46_SharedBus">
       <use xmlns:xlink="http://www.w3.org/1999/xlink" x="0" y="0" xlink:href="#PLBV46_BusArrowWest"/>
-      <use xmlns:xlink="http://www.w3.org/1999/xlink" x="766" y="0" xlink:href="#PLBV46_BusArrowEast"/>
-      <rect x="8" y="2" width="758" height="8" style="stroke:none; fill:#BB9955"/>
+      <use xmlns:xlink="http://www.w3.org/1999/xlink" x="702" y="0" xlink:href="#PLBV46_BusArrowEast"/>
+      <rect x="8" y="2" width="694" height="8" style="stroke:none; fill:#BB9955"/>
     </g>
     <g id="group_sharedBusses">
       <use xmlns:xlink="http://www.w3.org/1999/xlink" x="0" y="0" xlink:href="#AXI_SharedBus"/>
@@ -605,6 +594,15 @@
       <use xmlns:xlink="http://www.w3.org/1999/xlink" x="33" y="0" xlink:href="#AXI_busconn_SLAVE"/>
       <text x="45" y="39" fill="#000000" stroke="none" font-size="10pt" font-style="italic" font-weight="900" text-anchor="middle" font-family="Verdana Courier Arial Helvetica san-serif">S_AXI</text>
     </g>
+    <g id="sbsbktmodule_axi_lite_slave_0">
+      <rect x="0" y="24" rx="6" ry="6" width="90" height="74" style="fill:#CCCCCC; stroke:#FFFFFF; stroke-width:2"/>
+      <rect x="11" y="56" rx="3" ry="3" width="68" height="38" style="fill:#FFFFFF; stroke:none;"/>
+      <text x="45" y="64" fill="#AA0017" stroke="none" font-size="10pt" font-style="italic" font-weight="900" text-anchor="middle" font-family="Verdana Arial Helvetica san-serif">axi_lite_slave</text>
+      <text x="45" y="74" fill="#000000" stroke="none" font-size="10pt" font-style="italic" font-weight="900" text-anchor="middle" font-family="Courier Arial Helvetica san-serif">axi_lite_slave_0</text>
+      <use xmlns:xlink="http://www.w3.org/1999/xlink" x="29" y="28" xlink:href="#AXI_BifLabel"/>
+      <use xmlns:xlink="http://www.w3.org/1999/xlink" x="33" y="0" xlink:href="#AXI_busconn_SLAVE"/>
+      <text x="45" y="39" fill="#000000" stroke="none" font-size="10pt" font-style="italic" font-weight="900" text-anchor="middle" font-family="Verdana Courier Arial Helvetica san-serif">S_AXI</text>
+    </g>
     <g id="sbsbktmodule_axi_timer_0">
       <rect x="0" y="24" rx="6" ry="6" width="90" height="74" style="fill:#CCCCCC; stroke:#FFFFFF; stroke-width:2"/>
       <rect x="11" y="56" rx="3" ry="3" width="68" height="38" style="fill:#FFFFFF; stroke:none;"/>
@@ -631,10 +629,12 @@
       <rect x="61" y="24" width="106" height="8" style="fill:#0084AB"/>
       <use xmlns:xlink="http://www.w3.org/1999/xlink" x="228" y="16" xlink:href="#sbsbktmodule_DIP_Switches_8Bits"/>
       <rect x="167" y="24" width="106" height="8" style="fill:#0084AB"/>
-      <use xmlns:xlink="http://www.w3.org/1999/xlink" x="16" y="130" xlink:href="#sbsbktmodule_axi_timer_0"/>
+      <use xmlns:xlink="http://www.w3.org/1999/xlink" x="16" y="130" xlink:href="#sbsbktmodule_axi_lite_slave_0"/>
       <rect x="0" y="138" width="61" height="8" style="fill:#0084AB"/>
-      <use xmlns:xlink="http://www.w3.org/1999/xlink" x="122" y="130" xlink:href="#sbsbktmodule_RS232_Uart_1"/>
+      <use xmlns:xlink="http://www.w3.org/1999/xlink" x="122" y="130" xlink:href="#sbsbktmodule_axi_timer_0"/>
       <rect x="61" y="138" width="106" height="8" style="fill:#0084AB"/>
+      <use xmlns:xlink="http://www.w3.org/1999/xlink" x="228" y="130" xlink:href="#sbsbktmodule_RS232_Uart_1"/>
+      <rect x="167" y="138" width="106" height="8" style="fill:#0084AB"/>
       <rect x="0" y="24" width="8" height="114" style="fill:#0084AB"/>
     </g>
     <g id="ipbktmodule_clock_generator_0">
@@ -654,7 +654,7 @@
       <use xmlns:xlink="http://www.w3.org/1999/xlink" x="16" y="16" xlink:href="#ipbktmodule_proc_sys_reset_0"/>
       <use xmlns:xlink="http://www.w3.org/1999/xlink" x="122" y="16" xlink:href="#ipbktmodule_clock_generator_0"/>
     </g>
-    <g id="symbol_STACK_0_SHAPE_3">
+    <g id="symbol_STACK_0_SHAPE_2">
       <rect x="0" y="0" rx="6" ry="6" width="90" height="74" style="fill:#CCCCCC; stroke:#FFFFFF; stroke-width:2"/>
       <rect x="11" y="4" rx="3" ry="3" width="68" height="38" style="fill:#FFFFFF; stroke:none;"/>
       <text x="45" y="12" fill="#AA0017" stroke="none" font-size="10pt" font-style="italic" font-weight="900" text-anchor="middle" font-family="Verdana Arial Helvetica san-serif">mdm</text>
@@ -665,18 +665,6 @@
       <line x1="0" y1="64" x2="11" y2="64" style="stroke:#990066;stroke-width:1"/>
       <use xmlns:xlink="http://www.w3.org/1999/xlink" x="11" y="54" xlink:href="#XIL_BifLabel"/>
       <text x="27" y="65" fill="#000000" stroke="none" font-size="10pt" font-style="italic" font-weight="900" text-anchor="middle" font-family="Verdana Courier Arial Helvetica san-serif">MBDE</text>
-    </g>
-    <g id="symbol_STACK_0_SHAPE_0">
-      <rect x="0" y="0" rx="6" ry="6" width="90" height="74" style="fill:#CCCCCC; stroke:#FFFFFF; stroke-width:2"/>
-      <rect x="11" y="4" rx="3" ry="3" width="68" height="38" style="fill:#FFFFFF; stroke:none;"/>
-      <text x="45" y="12" fill="#AA0017" stroke="none" font-size="10pt" font-style="italic" font-weight="900" text-anchor="middle" font-family="Verdana Arial Helvetica san-serif">fsl_hwa</text>
-      <text x="45" y="20" fill="#000000" stroke="none" font-size="10pt" font-style="italic" font-weight="900" text-anchor="middle" font-family="Courier Arial Helvetica san-serif">fsl_hwa_1</text>
-      <line x1="0" y1="64" x2="11" y2="64" style="stroke:#CC00CC;stroke-width:1"/>
-      <use xmlns:xlink="http://www.w3.org/1999/xlink" x="11" y="54" xlink:href="#FSL_BifLabel"/>
-      <text x="27" y="65" fill="#000000" stroke="none" font-size="10pt" font-style="italic" font-weight="900" text-anchor="middle" font-family="Verdana Courier Arial Helvetica san-serif">MFSL</text>
-      <line x1="79" y1="64" x2="91" y2="64" style="stroke:#CC00CC;stroke-width:1"/>
-      <use xmlns:xlink="http://www.w3.org/1999/xlink" x="47" y="54" xlink:href="#FSL_BifLabel"/>
-      <text x="63" y="65" fill="#000000" stroke="none" font-size="10pt" font-style="italic" font-weight="900" text-anchor="middle" font-family="Verdana Courier Arial Helvetica san-serif">SFSL</text>
     </g>
     <g id="symbol_microblaze_0_bram_block">
       <rect x="0" y="0" rx="6" ry="6" width="90" height="74" style="fill:#CCCCCC; stroke:#FFFFFF; stroke-width:2"/>
@@ -710,14 +698,14 @@
       <use xmlns:xlink="http://www.w3.org/1999/xlink" x="47" y="4" xlink:href="#XIL_BifLabel"/>
       <text x="63" y="15" fill="#000000" stroke="none" font-size="10pt" font-style="italic" font-weight="900" text-anchor="middle" font-family="Verdana Courier Arial Helvetica san-serif">BRAM</text>
     </g>
-    <g id="symbol_STACK_0_SHAPE_1">
+    <g id="symbol_STACK_0_SHAPE_0">
       <rect x="0" y="0" rx="6" ry="6" width="180" height="148" style="fill:#CCCCCC; stroke:#FFFFFF; stroke-width:2"/>
       <use xmlns:xlink="http://www.w3.org/1999/xlink" x="45" y="0" xlink:href="#symbol_microblaze_0_bram_block"/>
       <use xmlns:xlink="http://www.w3.org/1999/xlink" x="0" y="74" xlink:href="#symbol_microblaze_0_d_bram_ctrl"/>
       <use xmlns:xlink="http://www.w3.org/1999/xlink" x="90" y="74" xlink:href="#symbol_microblaze_0_i_bram_ctrl"/>
     </g>
-    <g id="symbol_STACK_0_SHAPE_2">
-      <rect x="0" y="0" rx="6" ry="6" width="90" height="170" style="fill:#222222; stroke:#FFFFFF; stroke-width:2"/>
+    <g id="symbol_STACK_0_SHAPE_1">
+      <rect x="0" y="0" rx="6" ry="6" width="90" height="142" style="fill:#222222; stroke:#FFFFFF; stroke-width:2"/>
       <rect x="11" y="4" rx="3" ry="3" width="68" height="38" style="fill:#FFFFFF; stroke:none;"/>
       <text x="45" y="12" fill="#AA0017" stroke="none" font-size="10pt" font-style="italic" font-weight="900" text-anchor="middle" font-family="Verdana Arial Helvetica san-serif">microblaze</text>
       <text x="45" y="20" fill="#000000" stroke="none" font-size="10pt" font-style="italic" font-weight="900" text-anchor="middle" font-family="Courier Arial Helvetica san-serif">microblaze_0</text>
@@ -727,68 +715,45 @@
       <line x1="0" y1="64" x2="11" y2="64" style="stroke:#7777FF;stroke-width:1"/>
       <use xmlns:xlink="http://www.w3.org/1999/xlink" x="11" y="54" xlink:href="#LMB_BifLabel"/>
       <text x="27" y="65" fill="#000000" stroke="none" font-size="10pt" font-style="italic" font-weight="900" text-anchor="middle" font-family="Verdana Courier Arial Helvetica san-serif">DLMB</text>
-      <line x1="0" y1="148" x2="11" y2="148" style="stroke:#0084AB;stroke-width:1"/>
-      <use xmlns:xlink="http://www.w3.org/1999/xlink" x="11" y="138" xlink:href="#AXI_BifLabel"/>
-      <text x="27" y="149" fill="#000000" stroke="none" font-size="10pt" font-style="italic" font-weight="900" text-anchor="middle" font-family="Verdana Courier Arial Helvetica san-serif">M_AX</text>
-      <line x1="0" y1="120" x2="11" y2="120" style="stroke:#990066;stroke-width:1"/>
-      <use xmlns:xlink="http://www.w3.org/1999/xlink" x="11" y="110" xlink:href="#XIL_BifLabel"/>
-      <text x="27" y="121" fill="#000000" stroke="none" font-size="10pt" font-style="italic" font-weight="900" text-anchor="middle" font-family="Verdana Courier Arial Helvetica san-serif">DEBUG</text>
-      <line x1="0" y1="92" x2="11" y2="92" style="stroke:#CC00CC;stroke-width:1"/>
-      <use xmlns:xlink="http://www.w3.org/1999/xlink" x="11" y="82" xlink:href="#FSL_BifLabel"/>
-      <text x="27" y="93" fill="#000000" stroke="none" font-size="10pt" font-style="italic" font-weight="900" text-anchor="middle" font-family="Verdana Courier Arial Helvetica san-serif">SFSL0</text>
-      <line x1="79" y1="120" x2="91" y2="120" style="stroke:#CC00CC;stroke-width:1"/>
-      <use xmlns:xlink="http://www.w3.org/1999/xlink" x="47" y="110" xlink:href="#FSL_BifLabel"/>
-      <text x="63" y="121" fill="#000000" stroke="none" font-size="10pt" font-style="italic" font-weight="900" text-anchor="middle" font-family="Verdana Courier Arial Helvetica san-serif">MFSL0</text>
+      <line x1="0" y1="120" x2="11" y2="120" style="stroke:#0084AB;stroke-width:1"/>
+      <use xmlns:xlink="http://www.w3.org/1999/xlink" x="11" y="110" xlink:href="#AXI_BifLabel"/>
+      <text x="27" y="121" fill="#000000" stroke="none" font-size="10pt" font-style="italic" font-weight="900" text-anchor="middle" font-family="Verdana Courier Arial Helvetica san-serif">M_AX</text>
+      <line x1="0" y1="92" x2="11" y2="92" style="stroke:#990066;stroke-width:1"/>
+      <use xmlns:xlink="http://www.w3.org/1999/xlink" x="11" y="82" xlink:href="#XIL_BifLabel"/>
+      <text x="27" y="93" fill="#000000" stroke="none" font-size="10pt" font-style="italic" font-weight="900" text-anchor="middle" font-family="Verdana Courier Arial Helvetica san-serif">DEBUG</text>
     </g>
     <g id="symbol_STACK_0">
-      <rect x="0" y="0" rx="6" ry="6" width="334" height="794" style="fill:#CCCCCC; stroke:none;"/>
-      <use xmlns:xlink="http://www.w3.org/1999/xlink" x="77" y="90" xlink:href="#symbol_STACK_0_SHAPE_1"/>
-      <use xmlns:xlink="http://www.w3.org/1999/xlink" x="122" y="566" xlink:href="#symbol_STACK_0_SHAPE_3"/>
-      <use xmlns:xlink="http://www.w3.org/1999/xlink" x="122" y="0" xlink:href="#symbol_STACK_0_SHAPE_0"/>
-      <use xmlns:xlink="http://www.w3.org/1999/xlink" x="0" y="656" xlink:href="#sbsbucket_axi4lite_0"/>
-      <text x="0" y="652" fill="#000000" stroke="none" font-size="9pt" font-style="normal" font-weight="900" text-anchor="start" font-family="Arial Helvetica san-serif">SLAVES OF axi4lite_0</text>
-      <use xmlns:xlink="http://www.w3.org/1999/xlink" x="122" y="254" xlink:href="#symbol_STACK_0_SHAPE_2"/>
-      <text x="122" y="250" fill="#000000" stroke="none" font-size="9pt" font-style="normal" font-weight="900" text-anchor="start" font-family="Arial Helvetica san-serif">PROCESSOR</text>
+      <rect x="0" y="0" rx="6" ry="6" width="334" height="676" style="fill:#CCCCCC; stroke:none;"/>
+      <use xmlns:xlink="http://www.w3.org/1999/xlink" x="77" y="0" xlink:href="#symbol_STACK_0_SHAPE_0"/>
+      <use xmlns:xlink="http://www.w3.org/1999/xlink" x="122" y="448" xlink:href="#symbol_STACK_0_SHAPE_2"/>
+      <use xmlns:xlink="http://www.w3.org/1999/xlink" x="0" y="538" xlink:href="#sbsbucket_axi4lite_0"/>
+      <text x="0" y="534" fill="#000000" stroke="none" font-size="9pt" font-style="normal" font-weight="900" text-anchor="start" font-family="Arial Helvetica san-serif">SLAVES OF axi4lite_0</text>
+      <use xmlns:xlink="http://www.w3.org/1999/xlink" x="122" y="164" xlink:href="#symbol_STACK_0_SHAPE_1"/>
+      <text x="122" y="160" fill="#000000" stroke="none" font-size="9pt" font-style="normal" font-weight="900" text-anchor="start" font-family="Arial Helvetica san-serif">PROCESSOR</text>
     </g>
     <g id="symbol_SPACE_WEST_NONE_EAST_0">
-      <use xmlns:xlink="http://www.w3.org/1999/xlink" x="258" y="304" xlink:href="#LMB_busconn_MASTER"/>
-      <use xmlns:xlink="http://www.w3.org/1999/xlink" x="250" y="310" xlink:href="#LMB_BusArrowEast"/>
-      <rect x="76" y="312" width="174" height="8" style="stroke:none; fill:#7777FF"/>
-      <use xmlns:xlink="http://www.w3.org/1999/xlink" x="213" y="164" xlink:href="#LMB_busconn_SLAVE"/>
-      <use xmlns:xlink="http://www.w3.org/1999/xlink" x="205" y="170" xlink:href="#LMB_BusArrowEast"/>
-      <rect x="76" y="172" width="129" height="8" style="stroke:none; fill:#7777FF"/>
-      <rect x="72" y="172" width="8" height="148" style="stroke:none; fill:#7777FF"/>
-      <rect x="72" y="312" width="16" height="8" style="stroke:none; fill:#7777FF"/>
-      <text x="84" y="200" fill="#000000" stroke="none" font-size="8pt" font-style="italic" font-weight="900" text-anchor="start" font-family="Verdana Courier Arial Helvetica san-serif">microblaze_0_dlmb</text>
-      <use xmlns:xlink="http://www.w3.org/1999/xlink" x="258" y="388" xlink:href="#AXI_busconn_MASTER"/>
-      <rect x="112" y="402" width="8" height="64" style="stroke:none; fill:#0084AB"/>
-      <rect x="112" y="396" width="152" height="8" style="stroke:none; fill:#0084AB"/>
-      <rect x="40" y="58" width="8" height="290" style="stroke:none;fill:#CC00CC"/>
-      <text x="52" y="86" fill="#000000" stroke="none" font-size="8pt" font-style="italic" font-weight="900" text-anchor="start" font-family="Verdana Courier Arial Helvetica san-serif">fsl_hwa_1_to_microblaze_0</text>
-      <use xmlns:xlink="http://www.w3.org/1999/xlink" x="258" y="332" xlink:href="#FSL_busconn_SLAVE"/>
-      <use xmlns:xlink="http://www.w3.org/1999/xlink" x="250" y="338" xlink:href="#FSL_BusArrowEast"/>
-      <rect x="44" y="340" width="206" height="8" style="stroke:none; fill:#CC00CC"/>
-      <use xmlns:xlink="http://www.w3.org/1999/xlink" x="258" y="50" xlink:href="#FSL_busconn_MASTER"/>
-      <use xmlns:xlink="http://www.w3.org/1999/xlink" x="250" y="56" xlink:href="#FSL_BusArrowHInitiator"/>
-      <rect x="44" y="58" width="206" height="8" style="stroke:none; fill:#CC00CC"/>
+      <use xmlns:xlink="http://www.w3.org/1999/xlink" x="218" y="214" xlink:href="#LMB_busconn_MASTER"/>
+      <use xmlns:xlink="http://www.w3.org/1999/xlink" x="210" y="220" xlink:href="#LMB_BusArrowEast"/>
+      <rect x="36" y="222" width="174" height="8" style="stroke:none; fill:#7777FF"/>
+      <use xmlns:xlink="http://www.w3.org/1999/xlink" x="173" y="74" xlink:href="#LMB_busconn_SLAVE"/>
+      <use xmlns:xlink="http://www.w3.org/1999/xlink" x="165" y="80" xlink:href="#LMB_BusArrowEast"/>
+      <rect x="36" y="82" width="129" height="8" style="stroke:none; fill:#7777FF"/>
+      <rect x="32" y="82" width="8" height="148" style="stroke:none; fill:#7777FF"/>
+      <rect x="32" y="222" width="16" height="8" style="stroke:none; fill:#7777FF"/>
+      <text x="44" y="110" fill="#000000" stroke="none" font-size="8pt" font-style="italic" font-weight="900" text-anchor="start" font-family="Verdana Courier Arial Helvetica san-serif">microblaze_0_dlmb</text>
+      <use xmlns:xlink="http://www.w3.org/1999/xlink" x="218" y="270" xlink:href="#AXI_busconn_MASTER"/>
+      <rect x="72" y="284" width="8" height="64" style="stroke:none; fill:#0084AB"/>
+      <rect x="72" y="278" width="152" height="8" style="stroke:none; fill:#0084AB"/>
     </g>
     <g id="symbol_SPACE_WEST_0_EAST_NONE">
-      <use xmlns:xlink="http://www.w3.org/1999/xlink" x="45" y="304" xlink:href="#LMB_busconn_MASTER"/>
-      <use xmlns:xlink="http://www.w3.org/1999/xlink" x="69" y="310" xlink:href="#LMB_BusArrowWest"/>
-      <rect x="77" y="312" width="142" height="8" style="stroke:none; fill:#7777FF"/>
-      <use xmlns:xlink="http://www.w3.org/1999/xlink" x="90" y="164" xlink:href="#LMB_busconn_SLAVE"/>
-      <use xmlns:xlink="http://www.w3.org/1999/xlink" x="114" y="170" xlink:href="#LMB_BusArrowWest"/>
-      <rect x="122" y="172" width="97" height="8" style="stroke:none; fill:#7777FF"/>
-      <rect x="215" y="172" width="8" height="148" style="stroke:none; fill:#7777FF"/>
-      <text x="227" y="200" fill="#000000" stroke="none" font-size="8pt" font-style="italic" font-weight="900" text-anchor="start" font-family="Verdana Courier Arial Helvetica san-serif">microblaze_0_ilmb</text>
-      <rect x="263" y="58" width="8" height="318" style="stroke:none;fill:#CC00CC"/>
-      <text x="275" y="86" fill="#000000" stroke="none" font-size="8pt" font-style="italic" font-weight="900" text-anchor="start" font-family="Verdana Courier Arial Helvetica san-serif">microblaze_0_to_fsl_hwa_1</text>
-      <use xmlns:xlink="http://www.w3.org/1999/xlink" x="45" y="360" xlink:href="#FSL_busconn_MASTER"/>
-      <use xmlns:xlink="http://www.w3.org/1999/xlink" x="69" y="366" xlink:href="#FSL_BusArrowHInitiator"/>
-      <rect x="76" y="368" width="192" height="8" style="stroke:none; fill:#CC00CC"/>
-      <use xmlns:xlink="http://www.w3.org/1999/xlink" x="45" y="50" xlink:href="#FSL_busconn_SLAVE"/>
-      <use xmlns:xlink="http://www.w3.org/1999/xlink" x="69" y="56" xlink:href="#FSL_BusArrowWest"/>
-      <rect x="76" y="58" width="192" height="8" style="stroke:none; fill:#CC00CC"/>
+      <use xmlns:xlink="http://www.w3.org/1999/xlink" x="45" y="214" xlink:href="#LMB_busconn_MASTER"/>
+      <use xmlns:xlink="http://www.w3.org/1999/xlink" x="69" y="220" xlink:href="#LMB_BusArrowWest"/>
+      <rect x="77" y="222" width="142" height="8" style="stroke:none; fill:#7777FF"/>
+      <use xmlns:xlink="http://www.w3.org/1999/xlink" x="90" y="74" xlink:href="#LMB_busconn_SLAVE"/>
+      <use xmlns:xlink="http://www.w3.org/1999/xlink" x="114" y="80" xlink:href="#LMB_BusArrowWest"/>
+      <rect x="122" y="82" width="97" height="8" style="stroke:none; fill:#7777FF"/>
+      <rect x="215" y="82" width="8" height="148" style="stroke:none; fill:#7777FF"/>
+      <text x="227" y="110" fill="#000000" stroke="none" font-size="8pt" font-style="italic" font-weight="900" text-anchor="start" font-family="Verdana Courier Arial Helvetica san-serif">microblaze_0_ilmb</text>
     </g>
     <g id="KEY_IntrCntrl">
       <rect x="0" y="0" rx="3" ry="3" width="9" height="18" style="fill:#888888; stroke:none; stroke-width:1"/>
@@ -882,18 +847,18 @@
       <text x="241" y="72" fill="#000000" stroke="none" font-size="10pt" font-style="italic" font-weight="bold" text-anchor="middle" font-family="Courier Arial Helvetica san-serif">xc6slx16csg324-3</text>
       <rect x="0" y="80" width="300" height="16" style="fill:#EEEEEE; stroke:none;"/>
       <text x="4" y="92" fill="#000000" stroke="none" font-size="10pt" font-weight="bold" text-anchor="start" font-family="Arial Helvetica san-serif">GENERATED</text>
-      <text x="217" y="92" fill="#000000" stroke="none" font-size="10pt" font-style="italic" font-weight="bold" text-anchor="middle" font-family="Courier Arial Helvetica san-serif">Mon Sep 15 10:57:02 2014</text>
+      <text x="217" y="92" fill="#000000" stroke="none" font-size="10pt" font-style="italic" font-weight="bold" text-anchor="middle" font-family="Courier Arial Helvetica san-serif">Fri Sep 26 12:07:21 2014</text>
     </g>
   </defs>
-  <rect x="0" y="0" width="992" height="1617" fill="#FFFFFF" stroke="#000000" stroke-width="4"/>
-  <rect x="48" y="40" width="896" height="1276" style="fill:#000088"/>
-  <rect x="64" y="56" rx="8" ry="8" width="864" height="1244" fill="#CCCCCC"/>
-  <use xmlns:xlink="http://www.w3.org/1999/xlink" x="429" y="101" xlink:href="#symbol_STACK_0"/>
+  <rect x="0" y="0" width="928" height="1499" fill="#FFFFFF" stroke="#000000" stroke-width="4"/>
+  <rect x="48" y="40" width="832" height="1158" style="fill:#000088"/>
+  <rect x="64" y="56" rx="8" ry="8" width="800" height="1126" fill="#CCCCCC"/>
+  <use xmlns:xlink="http://www.w3.org/1999/xlink" x="389" y="101" xlink:href="#symbol_STACK_0"/>
   <use xmlns:xlink="http://www.w3.org/1999/xlink" x="269" y="101" xlink:href="#symbol_SPACE_WEST_NONE_EAST_0"/>
-  <use xmlns:xlink="http://www.w3.org/1999/xlink" x="596" y="101" xlink:href="#symbol_SPACE_WEST_0_EAST_NONE"/>
-  <use xmlns:xlink="http://www.w3.org/1999/xlink" x="109" y="561" xlink:href="#group_sharedBusses"/>
-  <text x="382" y="1087" fill="#000000" stroke="none" font-size="9pt" font-style="normal" font-weight="900" text-anchor="start" font-family="Arial Helvetica san-serif">IP</text>
-  <use xmlns:xlink="http://www.w3.org/1999/xlink" x="382" y="1091" xlink:href="#ipbucket"/>
-  <use xmlns:xlink="http://www.w3.org/1999/xlink" x="476" y="1359" xlink:href="#BlkDiagram_Key"/>
-  <use xmlns:xlink="http://www.w3.org/1999/xlink" x="48" y="1359" xlink:href="#BlkDiagram_Specs"/>
+  <use xmlns:xlink="http://www.w3.org/1999/xlink" x="556" y="101" xlink:href="#symbol_SPACE_WEST_0_EAST_NONE"/>
+  <use xmlns:xlink="http://www.w3.org/1999/xlink" x="109" y="443" xlink:href="#group_sharedBusses"/>
+  <text x="350" y="969" fill="#000000" stroke="none" font-size="9pt" font-style="normal" font-weight="900" text-anchor="start" font-family="Arial Helvetica san-serif">IP</text>
+  <use xmlns:xlink="http://www.w3.org/1999/xlink" x="350" y="973" xlink:href="#ipbucket"/>
+  <use xmlns:xlink="http://www.w3.org/1999/xlink" x="412" y="1241" xlink:href="#BlkDiagram_Key"/>
+  <use xmlns:xlink="http://www.w3.org/1999/xlink" x="48" y="1241" xlink:href="#BlkDiagram_Specs"/>
 </svg>

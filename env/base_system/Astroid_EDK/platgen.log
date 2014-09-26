@@ -6,7 +6,7 @@ Command Line: platgen -p xc6slx16csg324-3 -lang vhdl -intstyle default -lp
 C:/Xilinx/BSP/Nexys3_AXI_BSB_Support/lib/ -msg __xps/ise/xmsgprops.lst
 system.mhs 
 
-Parse C:/temp/Astroid_EDK/system.mhs ...
+Parse C:/temp/env/base_system/Astroid_EDK/system.mhs ...
 
 Read MPD definitions ...
 
@@ -35,16 +35,6 @@ INFO:EDK:740 - Cannot determine the input clock associated with port :
 INFO:EDK:740 - Cannot determine the input clock associated with port :
    microblaze_0_d_bram_ctrl:BRAM_Clk_A. Clock DRCs will not be performed on this
    core and cores connected to it. 
-INFO:EDK:1039 - Did not update the value for parameter:
-   fsl_hwa_1_to_microblaze_0:C_READ_CLOCK_PERIOD. Top-level frequency could not
-   be propagated to this IP. Please make sure that you have specified the
-   frequency of the top-level clock port, and that the clocks are properly
-   connected.
-INFO:EDK:1039 - Did not update the value for parameter:
-   microblaze_0_to_fsl_hwa_1:C_READ_CLOCK_PERIOD. Top-level frequency could not
-   be propagated to this IP. Please make sure that you have specified the
-   frequency of the top-level clock port, and that the clocks are properly
-   connected.
 
 Performing IP level DRCs on properties...
 
@@ -58,6 +48,7 @@ Address Map for Processor microblaze_0
   (0x40600000-0x4060ffff) RS232_Uart_1	axi4lite_0
   (0x41400000-0x4140ffff) debug_module	axi4lite_0
   (0x41c00000-0x41c0ffff) axi_timer_0	axi4lite_0
+  (0x7f800000-0x7f80ffff) axi_lite_slave_0	axi4lite_0
 INFO:EDK:4130 - IPNAME: lmb_v10, INSTANCE:microblaze_0_ilmb - tool is overriding
    PARAMETER C_LMB_NUM_SLAVES value to 1 -
    C:\Xilinx\14.2\ISE_DS\EDK\hw\XilinxProcessorIPLib\pcores\lmb_v10_v2_00_b\data
@@ -76,37 +67,14 @@ Checking platform address map ...
 Checking platform configuration ...
 IPNAME: lmb_v10, INSTANCE: microblaze_0_ilmb - 1 master(s) : 1 slave(s) 
 IPNAME: lmb_v10, INSTANCE: microblaze_0_dlmb - 1 master(s) : 1 slave(s) 
-IPNAME: axi_interconnect, INSTANCE: axi4lite_0 - 1 master(s) : 6 slave(s) 
-IPNAME: fsl_v20, INSTANCE: fsl_hwa_1_to_microblaze_0 - 1 master(s) : 1 slave(s) 
-IPNAME: fsl_v20, INSTANCE: microblaze_0_to_fsl_hwa_1 - 1 master(s) : 1 slave(s) 
+IPNAME: axi_interconnect, INSTANCE: axi4lite_0 - 1 master(s) : 7 slave(s) 
 
 Checking port drivers...
-WARNING:EDK:4181 - PORT: FSL0_S_CLK, CONNECTOR:
-   fsl_hwa_1_to_microblaze_0_FSL_S_Clk - floating connection -
-   C:\Xilinx\14.2\ISE_DS\EDK\hw\XilinxProcessorIPLib\pcores\microblaze_v8_40_a\d
-   ata\microblaze_v2_1_0.mpd line 698 
-WARNING:EDK:4181 - PORT: FSL0_M_CLK, CONNECTOR:
-   microblaze_0_to_fsl_hwa_1_FSL_M_Clk - floating connection -
-   C:\Xilinx\14.2\ISE_DS\EDK\hw\XilinxProcessorIPLib\pcores\microblaze_v8_40_a\d
-   ata\microblaze_v2_1_0.mpd line 703 
-WARNING:EDK:4181 - PORT: fsl_s_clk, CONNECTOR:
-   microblaze_0_to_fsl_hwa_1_FSL_S_Clk - floating connection -
-   C:\temp\Astroid_EDK\pcores\fsl_hwa_v1_00_c\data\fsl_hwa_v2_1_0.mpd line 23 
-WARNING:EDK:4181 - PORT: fsl_m_clk, CONNECTOR:
-   fsl_hwa_1_to_microblaze_0_FSL_M_Clk - floating connection -
-   C:\temp\Astroid_EDK\pcores\fsl_hwa_v1_00_c\data\fsl_hwa_v2_1_0.mpd line 30 
+WARNING:EDK:4181 - PORT: Peripheral_Reset, CONNECTOR:
+   proc_sys_reset_0_Peripheral_Reset - floating connection -
+   C:\temp\env\base_system\Astroid_EDK\system.mhs line 39 
 
 Performing Clock DRCs...
-INFO:EDK:4060 - INSTANCE: fsl_hwa_1_to_microblaze_0, PARAMETER:
-   C_READ_CLOCK_PERIOD - Did not implement clock DRCs for the parameter.
-   Top-level frequency could not be propagated to this IP. Please make sure that
-   you have specified the frequency of the top-level clock port, and that the
-   clocks are properly connected.
-INFO:EDK:4060 - INSTANCE: microblaze_0_to_fsl_hwa_1, PARAMETER:
-   C_READ_CLOCK_PERIOD - Did not implement clock DRCs for the parameter.
-   Top-level frequency could not be propagated to this IP. Please make sure that
-   you have specified the frequency of the top-level clock port, and that the
-   clocks are properly connected.
 
 Performing Reset DRCs...
 
@@ -173,18 +141,6 @@ implementation/microblaze_0_wrapper/microblaze_0_wrapper.ucf.
 It can be overridden by constraints placed in the system.ucf file.
 
 INFO: No asynchronous clock conversions in axi_interconnect axi4lite_0.
-INFO: The fsl_hwa_1_to_microblaze_0 core has constraints automatically generated
-by XPS in
-implementation/fsl_hwa_1_to_microblaze_0_wrapper/fsl_hwa_1_to_microblaze_0_wrapp
-er.ucf.
-It can be overridden by constraints placed in the system.ucf file.
-
-INFO: The microblaze_0_to_fsl_hwa_1 core has constraints automatically generated
-by XPS in
-implementation/microblaze_0_to_fsl_hwa_1_wrapper/microblaze_0_to_fsl_hwa_1_wrapp
-er.ucf.
-It can be overridden by constraints placed in the system.ucf file.
-
 
 Modify defaults ...
 
@@ -198,46 +154,12 @@ Creating hardware output directories ...
 Managing hardware (BBD-specified) netlist files ...
 
 Managing cache ...
-IPNAME:proc_sys_reset INSTANCE:proc_sys_reset_0 - C:\temp\Astroid_EDK\system.mhs
-line 23 - Copying cache implementation netlist
-IPNAME:lmb_v10 INSTANCE:microblaze_0_ilmb - C:\temp\Astroid_EDK\system.mhs line
-37 - Copying cache implementation netlist
-IPNAME:lmb_bram_if_cntlr INSTANCE:microblaze_0_i_bram_ctrl -
-C:\temp\Astroid_EDK\system.mhs line 44 - Copying cache implementation netlist
-IPNAME:lmb_v10 INSTANCE:microblaze_0_dlmb - C:\temp\Astroid_EDK\system.mhs line
-53 - Copying cache implementation netlist
-IPNAME:lmb_bram_if_cntlr INSTANCE:microblaze_0_d_bram_ctrl -
-C:\temp\Astroid_EDK\system.mhs line 60 - Copying cache implementation netlist
-IPNAME:bram_block INSTANCE:microblaze_0_bram_block -
-C:\temp\Astroid_EDK\system.mhs line 69 - Copying cache implementation netlist
-IPNAME:microblaze INSTANCE:microblaze_0 - C:\temp\Astroid_EDK\system.mhs line 76
-- Copying cache implementation netlist
-IPNAME:mdm INSTANCE:debug_module - C:\temp\Astroid_EDK\system.mhs line 102 -
-Copying cache implementation netlist
-IPNAME:axi_timer INSTANCE:axi_timer_0 - C:\temp\Astroid_EDK\system.mhs line 127
-- Copying cache implementation netlist
-IPNAME:axi_interconnect INSTANCE:axi4lite_0 - C:\temp\Astroid_EDK\system.mhs
-line 138 - Copying cache implementation netlist
-IPNAME:axi_uartlite INSTANCE:rs232_uart_1 - C:\temp\Astroid_EDK\system.mhs line
-146 - Copying cache implementation netlist
-IPNAME:axi_gpio INSTANCE:push_buttons_4bits - C:\temp\Astroid_EDK\system.mhs
-line 161 - Copying cache implementation netlist
-IPNAME:axi_gpio INSTANCE:leds_8bits - C:\temp\Astroid_EDK\system.mhs line 175 -
-Copying cache implementation netlist
-IPNAME:axi_gpio INSTANCE:dip_switches_8bits - C:\temp\Astroid_EDK\system.mhs
-line 189 - Copying cache implementation netlist
-IPNAME:fsl_v20 INSTANCE:fsl_hwa_1_to_microblaze_0 -
-C:\temp\Astroid_EDK\system.mhs line 203 - Copying cache implementation netlist
-IPNAME:fsl_hwa INSTANCE:fsl_hwa_1 - C:\temp\Astroid_EDK\system.mhs line 211 -
-Copying cache implementation netlist
-IPNAME:fsl_v20 INSTANCE:microblaze_0_to_fsl_hwa_1 -
-C:\temp\Astroid_EDK\system.mhs line 219 - Copying cache implementation netlist
 
 Elaborating instances ...
 IPNAME:bram_block INSTANCE:microblaze_0_bram_block -
-C:\temp\Astroid_EDK\system.mhs line 69 - elaborating IP
+C:\temp\env\base_system\Astroid_EDK\system.mhs line 74 - elaborating IP
 IPNAME:clock_generator INSTANCE:clock_generator_0 -
-C:\temp\Astroid_EDK\system.mhs line 115 - elaborating IP
+C:\temp\env\base_system\Astroid_EDK\system.mhs line 117 - elaborating IP
 ClkGen elaborate status: PASSED
 ----------------------------------------
 ----------------------------------------
@@ -245,7 +167,7 @@ ClkGen elaborate status: PASSED
 Writing HDL for elaborated instances ...
 
 Inserting wrapper level ...
-Completion time: 1.00 seconds
+Completion time: 0.00 seconds
 
 Constructing platform-level connectivity ...
 Completion time: 0.00 seconds
@@ -261,16 +183,54 @@ Running XST synthesis ...
 INFO:EDK:4211 - The following instances are synthesized with XST. The MPD option
    IMP_NETLIST=TRUE indicates that a NGC file is to be produced using XST
    synthesis. IMP_NETLIST=FALSE (default) instances are not synthesized. 
-INSTANCE:clock_generator_0 - C:\temp\Astroid_EDK\system.mhs line 115 - Running
-XST synthesis
+INSTANCE:proc_sys_reset_0 - C:\temp\env\base_system\Astroid_EDK\system.mhs line
+28 - Running XST synthesis
+INSTANCE:microblaze_0_ilmb - C:\temp\env\base_system\Astroid_EDK\system.mhs line
+42 - Running XST synthesis
+INSTANCE:microblaze_0_i_bram_ctrl -
+C:\temp\env\base_system\Astroid_EDK\system.mhs line 49 - Running XST synthesis
+INSTANCE:microblaze_0_dlmb - C:\temp\env\base_system\Astroid_EDK\system.mhs line
+58 - Running XST synthesis
+INSTANCE:microblaze_0_d_bram_ctrl -
+C:\temp\env\base_system\Astroid_EDK\system.mhs line 65 - Running XST synthesis
+INSTANCE:microblaze_0_bram_block -
+C:\temp\env\base_system\Astroid_EDK\system.mhs line 74 - Running XST synthesis
+INSTANCE:microblaze_0 - C:\temp\env\base_system\Astroid_EDK\system.mhs line 81 -
+Running XST synthesis
+INSTANCE:debug_module - C:\temp\env\base_system\Astroid_EDK\system.mhs line 104
+- Running XST synthesis
+INSTANCE:clock_generator_0 - C:\temp\env\base_system\Astroid_EDK\system.mhs line
+117 - Running XST synthesis
+INSTANCE:axi_timer_0 - C:\temp\env\base_system\Astroid_EDK\system.mhs line 129 -
+Running XST synthesis
+INSTANCE:axi4lite_0 - C:\temp\env\base_system\Astroid_EDK\system.mhs line 140 -
+Running XST synthesis
+INSTANCE:rs232_uart_1 - C:\temp\env\base_system\Astroid_EDK\system.mhs line 148
+- Running XST synthesis
+INSTANCE:push_buttons_4bits - C:\temp\env\base_system\Astroid_EDK\system.mhs
+line 163 - Running XST synthesis
+INSTANCE:leds_8bits - C:\temp\env\base_system\Astroid_EDK\system.mhs line 177 -
+Running XST synthesis
+INSTANCE:dip_switches_8bits - C:\temp\env\base_system\Astroid_EDK\system.mhs
+line 191 - Running XST synthesis
+INSTANCE:axi_lite_slave_0 - C:\temp\env\base_system\Astroid_EDK\system.mhs line
+205 - Running XST synthesis
 
 Running NGCBUILD ...
+IPNAME:system_microblaze_0_ilmb_wrapper INSTANCE:microblaze_0_ilmb -
+C:\temp\env\base_system\Astroid_EDK\system.mhs line 42 - Running NGCBUILD
+IPNAME:system_microblaze_0_dlmb_wrapper INSTANCE:microblaze_0_dlmb -
+C:\temp\env\base_system\Astroid_EDK\system.mhs line 58 - Running NGCBUILD
+IPNAME:system_microblaze_0_wrapper INSTANCE:microblaze_0 -
+C:\temp\env\base_system\Astroid_EDK\system.mhs line 81 - Running NGCBUILD
 IPNAME:system_clock_generator_0_wrapper INSTANCE:clock_generator_0 -
-C:\temp\Astroid_EDK\system.mhs line 115 - Running NGCBUILD
+C:\temp\env\base_system\Astroid_EDK\system.mhs line 117 - Running NGCBUILD
+IPNAME:system_axi4lite_0_wrapper INSTANCE:axi4lite_0 -
+C:\temp\env\base_system\Astroid_EDK\system.mhs line 140 - Running NGCBUILD
 INFO:EDK:3509 - NCF files should not be modified as they will be regenerated.
    If any constraint needs to be overridden, this should be done by modifying
    the data/system.ucf file.
 
 Rebuilding cache ...
 
-Total run time: 16.00 seconds
+Total run time: 204.00 seconds

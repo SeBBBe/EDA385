@@ -2,25 +2,12 @@
 Checking platform configuration ...
 IPNAME: lmb_v10, INSTANCE: microblaze_0_ilmb - 1 master(s) : 1 slave(s) 
 IPNAME: lmb_v10, INSTANCE: microblaze_0_dlmb - 1 master(s) : 1 slave(s) 
-IPNAME: axi_interconnect, INSTANCE: axi4lite_0 - 1 master(s) : 6 slave(s) 
-IPNAME: fsl_v20, INSTANCE: fsl_hwa_1_to_microblaze_0 - 1 master(s) : 1 slave(s) 
-IPNAME: fsl_v20, INSTANCE: microblaze_0_to_fsl_hwa_1 - 1 master(s) : 1 slave(s) 
+IPNAME: axi_interconnect, INSTANCE: axi4lite_0 - 1 master(s) : 7 slave(s) 
 
 Checking port drivers...
-WARNING:EDK:4181 - PORT: FSL0_S_CLK, CONNECTOR:
-   fsl_hwa_1_to_microblaze_0_FSL_S_Clk - floating connection -
-   C:\Xilinx\14.2\ISE_DS\EDK\hw\XilinxProcessorIPLib\pcores\microblaze_v8_40_a\d
-   ata\microblaze_v2_1_0.mpd line 698 
-WARNING:EDK:4181 - PORT: FSL0_M_CLK, CONNECTOR:
-   microblaze_0_to_fsl_hwa_1_FSL_M_Clk - floating connection -
-   C:\Xilinx\14.2\ISE_DS\EDK\hw\XilinxProcessorIPLib\pcores\microblaze_v8_40_a\d
-   ata\microblaze_v2_1_0.mpd line 703 
-WARNING:EDK:4181 - PORT: fsl_s_clk, CONNECTOR:
-   microblaze_0_to_fsl_hwa_1_FSL_S_Clk - floating connection -
-   C:\temp\Astroid_EDK\pcores\fsl_hwa_v1_00_c\data\fsl_hwa_v2_1_0.mpd line 23 
-WARNING:EDK:4181 - PORT: fsl_m_clk, CONNECTOR:
-   fsl_hwa_1_to_microblaze_0_FSL_M_Clk - floating connection -
-   C:\temp\Astroid_EDK\pcores\fsl_hwa_v1_00_c\data\fsl_hwa_v2_1_0.mpd line 30 
+WARNING:EDK:4181 - PORT: Peripheral_Reset, CONNECTOR:
+   proc_sys_reset_0_Peripheral_Reset - floating connection -
+   C:\temp\env\base_system\Astroid_EDK\system.mhs line 39 
 
 Performing Clock DRCs...
 
