@@ -187,15 +187,23 @@ void go_createasteroid(int n)
 	//TODO: generate asteroid geometry
 	game_object_t* ast_o = go_getempty();
 	ast_o->enabled = 1;
-	ast_o->poly_points = 5;
-	ast_o->poly = asteroid;
+	ast_o->poly_points = 8;
+	
+	ast_o->poly = malloc(ast_o->poly_points * sizeof(short) * 2);
+	memcpy(ast_o->poly, &asteroid_r, ast_o->poly_points * sizeof(short) * 2);
+	int i;
+	for (i = 0; i < ast_o->poly_points; i++)
+	{
+		ast_o->poly[i].x += (rand() % 60) - 30;
+	}
+	
 	ast_o->location.x = rand() % vga_get_width();
 	ast_o->location.y = rand() % vga_get_height();
 	ast_o->xvel = rand_FloatRange(0.0, 4.0) - 2.0;
 	ast_o->yvel = rand_FloatRange(0.0, 4.0) - 2.0;
 	ast_o->anglespeed = rand_FloatRange(0.0, 0.4) - 0.2;
-	ast_o->center_point.x = 65;
-	ast_o->center_point.y = 45;
+	ast_o->center_point.x = 40;
+	ast_o->center_point.y = 40;
 	ast_o->identifier = OI_AST1;
 	ast_o->hitbox_size = 25;
 }
