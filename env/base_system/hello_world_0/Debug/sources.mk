@@ -17,6 +17,7 @@ S_UPPER_DEPS :=
 
 # Every subdirectory with source files must be described here
 SUBDIRS := \
-src/tmrctr_v2_04_a/src \
 src \
+src/tmrctr_v2_04_a/src \
+.metadata/.plugins/org.eclipse.cdt.make.core \
 

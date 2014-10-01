@@ -9,8 +9,9 @@ RM := rm -rf
 # All of the sources participating in the build are defined here
 -include sources.mk
 -include subdir.mk
--include src/tmrctr_v2_04_a/src/subdir.mk
 -include src/subdir.mk
+-include src/tmrctr_v2_04_a/src/subdir.mk
+-include .metadata/.plugins/org.eclipse.cdt.make.core/subdir.mk
 -include objects.mk
 
 ifneq ($(MAKECMDGOALS),clean)
@@ -39,7 +40,7 @@ all: hello_world_0.elf secondary-outputs
 hello_world_0.elf: $(OBJS) ../src/lscript.ld $(USER_OBJS)
 	@echo Building target: $@
 	@echo Invoking: MicroBlaze gcc linker
-	mb-gcc -Wl,--no-relax -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/microblaze_0/lib -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.40.a -mno-xl-soft-mul -o"hello_world_0.elf" $(OBJS) $(USER_OBJS) $(LIBS)
+	mb-gcc -Wl,--no-relax -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/microblaze_0/lib -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.40.a -mno-xl-soft-mul -mhard-float -o"hello_world_0.elf" $(OBJS) $(USER_OBJS) $(LIBS)
 	@echo Finished building target: $@
 	@echo ' '
 

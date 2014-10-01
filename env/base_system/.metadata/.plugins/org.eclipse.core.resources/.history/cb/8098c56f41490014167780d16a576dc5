@@ -1,0 +1,17 @@
+
+typedef struct game_object {
+	f_vgapoint_t location;
+	f_vgapoint_t center_point;
+	double xvel;
+	double yvel;
+	double xaccel;
+	double yaccel;
+	double angle;
+	double anglespeed;
+	short enabled;
+	short poly_points;
+	short nowrap;
+	short identifier;
+	short hitbox_size;
+	vgapoint_t* poly;
+} game_object_t;

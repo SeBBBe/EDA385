@@ -43,12 +43,15 @@ Address Map for Processor microblaze_0
   (0000000000-0x00007fff) microblaze_0_d_bram_ctrl	microblaze_0_dlmb
   (0000000000-0x00007fff) microblaze_0_i_bram_ctrl	microblaze_0_ilmb
   (0x40000000-0x4000ffff) Push_Buttons_4Bits	axi4lite_0
-  (0x40020000-0x4002ffff) LEDs_8Bits	axi4lite_0
   (0x40040000-0x4004ffff) DIP_Switches_8Bits	axi4lite_0
   (0x40600000-0x4060ffff) RS232_Uart_1	axi4lite_0
-  (0x41400000-0x4140ffff) debug_module	axi4lite_0
   (0x41c00000-0x41c0ffff) axi_timer_0	axi4lite_0
   (0x7f800000-0x7f80ffff) axi_lite_slave_0	axi4lite_0
+
+
+WARNING:EDK:2137 - Peripheral debug_module_0 is not accessible from any
+   processor in the system. Check Bus Interface connections and address
+   parameters. 
 INFO:EDK:4130 - IPNAME: lmb_v10, INSTANCE:microblaze_0_ilmb - tool is overriding
    PARAMETER C_LMB_NUM_SLAVES value to 1 -
    C:\Xilinx\14.2\ISE_DS\EDK\hw\XilinxProcessorIPLib\pcores\lmb_v10_v2_00_b\data
@@ -67,12 +70,12 @@ Checking platform address map ...
 Checking platform configuration ...
 IPNAME: lmb_v10, INSTANCE: microblaze_0_ilmb - 1 master(s) : 1 slave(s) 
 IPNAME: lmb_v10, INSTANCE: microblaze_0_dlmb - 1 master(s) : 1 slave(s) 
-IPNAME: axi_interconnect, INSTANCE: axi4lite_0 - 1 master(s) : 7 slave(s) 
+IPNAME: axi_interconnect, INSTANCE: axi4lite_0 - 1 master(s) : 5 slave(s) 
 
 Checking port drivers...
 WARNING:EDK:4181 - PORT: Peripheral_Reset, CONNECTOR:
    proc_sys_reset_0_Peripheral_Reset - floating connection -
-   C:\temp\env\base_system\Astroid_EDK\system.mhs line 39 
+   C:\temp\env\base_system\Astroid_EDK\system.mhs line 37 
 
 Performing Clock DRCs...
 
@@ -154,12 +157,42 @@ Creating hardware output directories ...
 Managing hardware (BBD-specified) netlist files ...
 
 Managing cache ...
+IPNAME:proc_sys_reset INSTANCE:proc_sys_reset_0 -
+C:\temp\env\base_system\Astroid_EDK\system.mhs line 27 - Copying cache
+implementation netlist
+IPNAME:lmb_v10 INSTANCE:microblaze_0_ilmb -
+C:\temp\env\base_system\Astroid_EDK\system.mhs line 41 - Copying cache
+implementation netlist
+IPNAME:lmb_v10 INSTANCE:microblaze_0_dlmb -
+C:\temp\env\base_system\Astroid_EDK\system.mhs line 57 - Copying cache
+implementation netlist
+IPNAME:axi_timer INSTANCE:axi_timer_0 -
+C:\temp\env\base_system\Astroid_EDK\system.mhs line 116 - Copying cache
+implementation netlist
+IPNAME:axi_interconnect INSTANCE:axi4lite_0 -
+C:\temp\env\base_system\Astroid_EDK\system.mhs line 127 - Copying cache
+implementation netlist
+IPNAME:axi_uartlite INSTANCE:rs232_uart_1 -
+C:\temp\env\base_system\Astroid_EDK\system.mhs line 135 - Copying cache
+implementation netlist
+IPNAME:axi_gpio INSTANCE:push_buttons_4bits -
+C:\temp\env\base_system\Astroid_EDK\system.mhs line 150 - Copying cache
+implementation netlist
+IPNAME:axi_gpio INSTANCE:dip_switches_8bits -
+C:\temp\env\base_system\Astroid_EDK\system.mhs line 164 - Copying cache
+implementation netlist
+IPNAME:axi_lite_slave INSTANCE:axi_lite_slave_0 -
+C:\temp\env\base_system\Astroid_EDK\system.mhs line 178 - Copying cache
+implementation netlist
+IPNAME:mdm INSTANCE:debug_module_0 -
+C:\temp\env\base_system\Astroid_EDK\system.mhs line 192 - Copying cache
+implementation netlist
 
 Elaborating instances ...
 IPNAME:bram_block INSTANCE:microblaze_0_bram_block -
-C:\temp\env\base_system\Astroid_EDK\system.mhs line 74 - elaborating IP
+C:\temp\env\base_system\Astroid_EDK\system.mhs line 73 - elaborating IP
 IPNAME:clock_generator INSTANCE:clock_generator_0 -
-C:\temp\env\base_system\Astroid_EDK\system.mhs line 117 - elaborating IP
+C:\temp\env\base_system\Astroid_EDK\system.mhs line 104 - elaborating IP
 ClkGen elaborate status: PASSED
 ----------------------------------------
 ----------------------------------------
@@ -167,7 +200,7 @@ ClkGen elaborate status: PASSED
 Writing HDL for elaborated instances ...
 
 Inserting wrapper level ...
-Completion time: 0.00 seconds
+Completion time: 1.00 seconds
 
 Constructing platform-level connectivity ...
 Completion time: 0.00 seconds
@@ -183,54 +216,26 @@ Running XST synthesis ...
 INFO:EDK:4211 - The following instances are synthesized with XST. The MPD option
    IMP_NETLIST=TRUE indicates that a NGC file is to be produced using XST
    synthesis. IMP_NETLIST=FALSE (default) instances are not synthesized. 
-INSTANCE:proc_sys_reset_0 - C:\temp\env\base_system\Astroid_EDK\system.mhs line
-28 - Running XST synthesis
-INSTANCE:microblaze_0_ilmb - C:\temp\env\base_system\Astroid_EDK\system.mhs line
-42 - Running XST synthesis
 INSTANCE:microblaze_0_i_bram_ctrl -
-C:\temp\env\base_system\Astroid_EDK\system.mhs line 49 - Running XST synthesis
-INSTANCE:microblaze_0_dlmb - C:\temp\env\base_system\Astroid_EDK\system.mhs line
-58 - Running XST synthesis
+C:\temp\env\base_system\Astroid_EDK\system.mhs line 48 - Running XST synthesis
 INSTANCE:microblaze_0_d_bram_ctrl -
-C:\temp\env\base_system\Astroid_EDK\system.mhs line 65 - Running XST synthesis
+C:\temp\env\base_system\Astroid_EDK\system.mhs line 64 - Running XST synthesis
 INSTANCE:microblaze_0_bram_block -
-C:\temp\env\base_system\Astroid_EDK\system.mhs line 74 - Running XST synthesis
-INSTANCE:microblaze_0 - C:\temp\env\base_system\Astroid_EDK\system.mhs line 81 -
+C:\temp\env\base_system\Astroid_EDK\system.mhs line 73 - Running XST synthesis
+INSTANCE:microblaze_0 - C:\temp\env\base_system\Astroid_EDK\system.mhs line 80 -
 Running XST synthesis
-INSTANCE:debug_module - C:\temp\env\base_system\Astroid_EDK\system.mhs line 104
-- Running XST synthesis
 INSTANCE:clock_generator_0 - C:\temp\env\base_system\Astroid_EDK\system.mhs line
-117 - Running XST synthesis
-INSTANCE:axi_timer_0 - C:\temp\env\base_system\Astroid_EDK\system.mhs line 129 -
-Running XST synthesis
-INSTANCE:axi4lite_0 - C:\temp\env\base_system\Astroid_EDK\system.mhs line 140 -
-Running XST synthesis
-INSTANCE:rs232_uart_1 - C:\temp\env\base_system\Astroid_EDK\system.mhs line 148
-- Running XST synthesis
-INSTANCE:push_buttons_4bits - C:\temp\env\base_system\Astroid_EDK\system.mhs
-line 163 - Running XST synthesis
-INSTANCE:leds_8bits - C:\temp\env\base_system\Astroid_EDK\system.mhs line 177 -
-Running XST synthesis
-INSTANCE:dip_switches_8bits - C:\temp\env\base_system\Astroid_EDK\system.mhs
-line 191 - Running XST synthesis
-INSTANCE:axi_lite_slave_0 - C:\temp\env\base_system\Astroid_EDK\system.mhs line
-205 - Running XST synthesis
+104 - Running XST synthesis
 
 Running NGCBUILD ...
-IPNAME:system_microblaze_0_ilmb_wrapper INSTANCE:microblaze_0_ilmb -
-C:\temp\env\base_system\Astroid_EDK\system.mhs line 42 - Running NGCBUILD
-IPNAME:system_microblaze_0_dlmb_wrapper INSTANCE:microblaze_0_dlmb -
-C:\temp\env\base_system\Astroid_EDK\system.mhs line 58 - Running NGCBUILD
 IPNAME:system_microblaze_0_wrapper INSTANCE:microblaze_0 -
-C:\temp\env\base_system\Astroid_EDK\system.mhs line 81 - Running NGCBUILD
+C:\temp\env\base_system\Astroid_EDK\system.mhs line 80 - Running NGCBUILD
 IPNAME:system_clock_generator_0_wrapper INSTANCE:clock_generator_0 -
-C:\temp\env\base_system\Astroid_EDK\system.mhs line 117 - Running NGCBUILD
-IPNAME:system_axi4lite_0_wrapper INSTANCE:axi4lite_0 -
-C:\temp\env\base_system\Astroid_EDK\system.mhs line 140 - Running NGCBUILD
+C:\temp\env\base_system\Astroid_EDK\system.mhs line 104 - Running NGCBUILD
 INFO:EDK:3509 - NCF files should not be modified as they will be regenerated.
    If any constraint needs to be overridden, this should be done by modifying
    the data/system.ucf file.
 
 Rebuilding cache ...
 
-Total run time: 204.00 seconds
+Total run time: 68.00 seconds

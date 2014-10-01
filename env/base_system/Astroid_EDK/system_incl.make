@@ -69,15 +69,14 @@ implementation/system_microblaze_0_dlmb_wrapper.ngc \
 implementation/system_microblaze_0_d_bram_ctrl_wrapper.ngc \
 implementation/system_microblaze_0_bram_block_wrapper.ngc \
 implementation/system_microblaze_0_wrapper.ngc \
-implementation/system_debug_module_wrapper.ngc \
 implementation/system_clock_generator_0_wrapper.ngc \
 implementation/system_axi_timer_0_wrapper.ngc \
 implementation/system_axi4lite_0_wrapper.ngc \
 implementation/system_rs232_uart_1_wrapper.ngc \
 implementation/system_push_buttons_4bits_wrapper.ngc \
-implementation/system_leds_8bits_wrapper.ngc \
 implementation/system_dip_switches_8bits_wrapper.ngc \
-implementation/system_axi_lite_slave_0_wrapper.ngc
+implementation/system_axi_lite_slave_0_wrapper.ngc \
+implementation/system_debug_module_0_wrapper.ngc
 
 POSTSYN_NETLIST = implementation/$(SYSTEM).ngc
 

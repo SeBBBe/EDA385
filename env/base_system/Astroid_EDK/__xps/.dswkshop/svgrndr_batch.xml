@@ -15,8 +15,6 @@
 
   <RENDERIMG RASNAME="C:\temp\env\base_system\Astroid_EDK\SDK\SDK_Export\hw\imgs\microblaze_0.jpg" SVGNAME="C:\temp\env\base_system\Astroid_EDK\SDK\SDK_Export\hw\imgs\microblaze_0.svg" TMPSVGFN="C:\temp\env\base_system\Astroid_EDK\__xps\.dswkshop\microblaze_0.svg"/>
 
-  <RENDERIMG RASNAME="C:\temp\env\base_system\Astroid_EDK\SDK\SDK_Export\hw\imgs\debug_module.jpg" SVGNAME="C:\temp\env\base_system\Astroid_EDK\SDK\SDK_Export\hw\imgs\debug_module.svg" TMPSVGFN="C:\temp\env\base_system\Astroid_EDK\__xps\.dswkshop\debug_module.svg"/>
-
   <RENDERIMG RASNAME="C:\temp\env\base_system\Astroid_EDK\SDK\SDK_Export\hw\imgs\clock_generator_0.jpg" SVGNAME="C:\temp\env\base_system\Astroid_EDK\SDK\SDK_Export\hw\imgs\clock_generator_0.svg" TMPSVGFN="C:\temp\env\base_system\Astroid_EDK\__xps\.dswkshop\clock_generator_0.svg"/>
 
   <RENDERIMG RASNAME="C:\temp\env\base_system\Astroid_EDK\SDK\SDK_Export\hw\imgs\axi_timer_0.jpg" SVGNAME="C:\temp\env\base_system\Astroid_EDK\SDK\SDK_Export\hw\imgs\axi_timer_0.svg" TMPSVGFN="C:\temp\env\base_system\Astroid_EDK\__xps\.dswkshop\axi_timer_0.svg"/>
@@ -27,11 +25,11 @@
 
   <RENDERIMG RASNAME="C:\temp\env\base_system\Astroid_EDK\SDK\SDK_Export\hw\imgs\Push_Buttons_4Bits.jpg" SVGNAME="C:\temp\env\base_system\Astroid_EDK\SDK\SDK_Export\hw\imgs\Push_Buttons_4Bits.svg" TMPSVGFN="C:\temp\env\base_system\Astroid_EDK\__xps\.dswkshop\Push_Buttons_4Bits.svg"/>
 
-  <RENDERIMG RASNAME="C:\temp\env\base_system\Astroid_EDK\SDK\SDK_Export\hw\imgs\LEDs_8Bits.jpg" SVGNAME="C:\temp\env\base_system\Astroid_EDK\SDK\SDK_Export\hw\imgs\LEDs_8Bits.svg" TMPSVGFN="C:\temp\env\base_system\Astroid_EDK\__xps\.dswkshop\LEDs_8Bits.svg"/>
-
   <RENDERIMG RASNAME="C:\temp\env\base_system\Astroid_EDK\SDK\SDK_Export\hw\imgs\DIP_Switches_8Bits.jpg" SVGNAME="C:\temp\env\base_system\Astroid_EDK\SDK\SDK_Export\hw\imgs\DIP_Switches_8Bits.svg" TMPSVGFN="C:\temp\env\base_system\Astroid_EDK\__xps\.dswkshop\DIP_Switches_8Bits.svg"/>
 
   <RENDERIMG RASNAME="C:\temp\env\base_system\Astroid_EDK\SDK\SDK_Export\hw\imgs\axi_lite_slave_0.jpg" SVGNAME="C:\temp\env\base_system\Astroid_EDK\SDK\SDK_Export\hw\imgs\axi_lite_slave_0.svg" TMPSVGFN="C:\temp\env\base_system\Astroid_EDK\__xps\.dswkshop\axi_lite_slave_0.svg"/>
+
+  <RENDERIMG RASNAME="C:\temp\env\base_system\Astroid_EDK\SDK\SDK_Export\hw\imgs\debug_module_0.jpg" SVGNAME="C:\temp\env\base_system\Astroid_EDK\SDK\SDK_Export\hw\imgs\debug_module_0.svg" TMPSVGFN="C:\temp\env\base_system\Astroid_EDK\__xps\.dswkshop\debug_module_0.svg"/>
 
   <RENDERIMG RASNAME="C:\temp\env\base_system\Astroid_EDK\SDK\SDK_Export\hw\imgs\system_blkd.jpg" SVGNAME="C:\temp\env\base_system\Astroid_EDK\SDK\SDK_Export\hw\imgs\system_blkd.svg" TMPSVGFN="C:\temp\env\base_system\Astroid_EDK\__xps\.dswkshop\system_blkd.svg"/>
 

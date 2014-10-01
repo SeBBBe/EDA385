@@ -42,14 +42,11 @@ Loading design module
 "C:/temp/env/base_system/Astroid_EDK/implementation/system_microblaze_0_d_bram_c
 trl_wrapper.ngc"...
 Loading design module
-"C:/temp/env/base_system/Astroid_EDK/implementation/system_debug_module_wrapper.
-ngc"...
+"C:/temp/env/base_system/Astroid_EDK/implementation/system_debug_module_0_wrappe
+r.ngc"...
 Loading design module
 "C:/temp/env/base_system/Astroid_EDK/implementation/system_axi_timer_0_wrapper.n
 gc"...
-Loading design module
-"C:/temp/env/base_system/Astroid_EDK/implementation/system_leds_8bits_wrapper.ng
-c"...
 Loading design module
 "C:/temp/env/base_system/Astroid_EDK/implementation/system_axi_lite_slave_0_wrap
 per.ngc"...
@@ -105,9 +102,6 @@ Done...
 Processing BMM file "system.bmm" ...
 
 Checking expanded design ...
-WARNING:NgdBuild:443 - SFF primitive
-   'microblaze_0/microblaze_0/MicroBlaze_Core_I/Performance.Decode_I/Using_FPGA.
-   Gen_Bits[27].MEM_EX_Result_Inst' has unconnected output pin
 
 Partition Implementation Status
 -------------------------------
@@ -118,9 +112,9 @@ Partition Implementation Status
 
 NGDBUILD Design Results Summary:
   Number of errors:     0
-  Number of warnings:   4
+  Number of warnings:   3
 
-Total memory usage is 272216 kilobytes
+Total memory usage is 273816 kilobytes
 
 Writing NGD file "system.ngd" ...
 Total REAL time to NGDBUILD completion:  46 sec

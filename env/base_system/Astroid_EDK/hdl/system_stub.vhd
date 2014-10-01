@@ -13,7 +13,6 @@ entity system_stub is
     RS232_Uart_1_sin : in std_logic;
     RESET : in std_logic;
     Push_Buttons_4Bits_TRI_I : in std_logic_vector(0 to 3);
-    LEDs_8Bits_TRI_O : out std_logic_vector(7 downto 0);
     GCLK : in std_logic;
     DIP_Switches_8Bits_TRI_I : in std_logic_vector(7 downto 0);
     VGA_HSYNC : out std_logic;
@@ -32,7 +31,6 @@ architecture STRUCTURE of system_stub is
       RS232_Uart_1_sin : in std_logic;
       RESET : in std_logic;
       Push_Buttons_4Bits_TRI_I : in std_logic_vector(0 to 3);
-      LEDs_8Bits_TRI_O : out std_logic_vector(7 downto 0);
       GCLK : in std_logic;
       DIP_Switches_8Bits_TRI_I : in std_logic_vector(7 downto 0);
       VGA_HSYNC : out std_logic;
@@ -54,7 +52,6 @@ begin
       RS232_Uart_1_sin => RS232_Uart_1_sin,
       RESET => RESET,
       Push_Buttons_4Bits_TRI_I => Push_Buttons_4Bits_TRI_I,
-      LEDs_8Bits_TRI_O => LEDs_8Bits_TRI_O,
       GCLK => GCLK,
       DIP_Switches_8Bits_TRI_I => DIP_Switches_8Bits_TRI_I,
       VGA_HSYNC => VGA_HSYNC,
