@@ -40,7 +40,6 @@ int main(int argc, char *argv[])
 {
   keymap_t keys;
   vga_init();
-  bullet_t* bullets = malloc(64*sizeof(bullet_t));
   
   go_initialize();
   srand(time(NULL));

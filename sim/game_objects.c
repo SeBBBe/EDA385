@@ -51,7 +51,7 @@ void go_resetobject(int i)
 
 void go_initialize()
 {
-	objects =  malloc(MAX_OBJECTS * sizeof(game_object_t));
+	objects =  calloc(MAX_OBJECTS * sizeof(game_object_t), 1);
 }
 
 //Called when a hit was detected between object hit1 and hit2
@@ -140,6 +140,7 @@ void go_draw()
 			vgapoint_t* newpoly = rotate(objects[i].poly_points, objects[i].poly, objects[i].angle, objects[i].center_point.x, objects[i].center_point.y);
 			offset(objects[i].poly_points, newpoly, objects[i].location.x, objects[i].location.y);
 			vga_addpoly(objects[i].poly_points, newpoly);
+			free(newpoly);
 			
 			int realx = objects[i].location.x + objects[i].center_point.x;
 			int realy = objects[i].location.y + objects[i].center_point.y;
