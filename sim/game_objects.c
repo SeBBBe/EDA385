@@ -57,6 +57,8 @@ void go_initialize()
 //Called when a hit was detected between object hit1 and hit2
 void go_hashit(int hit1, int hit2)
 {
+	if (!objects[hit1].enabled) return;
+	if (!objects[hit2].enabled) return;
 	if (objects[hit2].identifier >= OI_AST1 && objects[hit2].identifier <= OI_AST4){
 		if (objects[hit1].identifier == OI_SHIP){
 			printf("Ship was hit by asteroid.\n");
@@ -64,11 +66,16 @@ void go_hashit(int hit1, int hit2)
 		}
 		if (objects[hit1].identifier == OI_BULLET){
 			printf("Asteroid was hit by bullet.\n");
-			if (objects[hit2].identifier >= OI_AST1)
+			if (objects[hit2].identifier == OI_AST1)
 			{
 				go_createasteroidxy(2, objects[hit2].location.x, objects[hit2].location.y);
-				printf("%f %f\n", objects[hit2].location.x, objects[hit2].location.y);
 				go_createasteroidxy(2, objects[hit2].location.x, objects[hit2].location.y);
+			}
+			else if (objects[hit2].identifier == OI_AST2)
+			{
+				go_createasteroidxy(3, objects[hit2].location.x, objects[hit2].location.y);
+				go_createasteroidxy(3, objects[hit2].location.x, objects[hit2].location.y);
+				go_createasteroidxy(3, objects[hit2].location.x, objects[hit2].location.y);
 			}
 			objects[hit2].enabled = 0;
 			objects[hit1].enabled = 0;
@@ -191,7 +198,6 @@ float rand_FloatRange(float a, float b)
 //Create an asteroid of level n and place in game
 void go_createasteroid(int n)
 {
-	printf("%f\n", (double)(rand() % vga_get_width()));
 	go_createasteroidxy(n, (double)(rand() % vga_get_width()), (double)(rand() % vga_get_width()));
 }
 
@@ -220,6 +226,14 @@ void go_createasteroidxy(int n, double x, double y)
 		hitbox = 30;
 		center = 40;
 		ast_o->identifier = OI_AST2;
+	}
+	if (n == 3)
+	{
+		polypointer = &asteroid_r3;
+		randdev = 30;
+		hitbox = 15;
+		center = 20;
+		ast_o->identifier = OI_AST3;
 	}
 	
 	ast_o->poly = malloc(ast_o->poly_points * sizeof(short) * 2);

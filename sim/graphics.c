@@ -3,9 +3,9 @@
 static const short OI_SHIP = 1;
 static const short OI_BULLET = 2;
 static const short OI_AST1 = 3;
-static const short OI_AST2 = 3;
-static const short OI_AST3 = 3;
-static const short OI_AST4 = 3;
+static const short OI_AST2 = 4;
+static const short OI_AST3 = 5;
+static const short OI_AST4 = 6;
 
 vgapoint_t ship[4] = 
 {
@@ -13,6 +13,18 @@ vgapoint_t ship[4] =
   { 310, 250 },
   { 320, 245 },
   { 330, 250 },
+};
+
+vgapoint_t asteroid_r3[8] = 
+{
+  { 10, 10 },
+  { 20, 0 },
+  { 30, 10 },
+  { 40, 20 },
+  { 30, 30 },
+  { 20, 40 },
+  { 10, 30 },
+  { 0, 20 },
 };
 
 vgapoint_t asteroid_r2[8] = 
