@@ -55,7 +55,7 @@ int main(int argc, char *argv[])
   ship_o->identifier = OI_SHIP;
   
    int i;
-  for (i = 0; i < 10; i++){
+  for (i = 0; i < 4; i++){
 	go_createasteroid(1);
 	}
   

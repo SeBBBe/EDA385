@@ -15,16 +15,7 @@ vgapoint_t ship[4] =
   { 330, 250 },
 };
 
-vgapoint_t asteroid[5] = 
-{
-  { 70, 20 },
-  { 30, 40 },
-  { 50, 70 },
-  { 80, 70 },
-  { 100, 40 },
-};
-
-vgapoint_t asteroid_r[8] = 
+vgapoint_t asteroid_r2[8] = 
 {
   { 12, 12 },
   { 40, 0 },
@@ -34,6 +25,18 @@ vgapoint_t asteroid_r[8] =
   { 40, 80 },
   { 12, 68 },
   { 0, 40 },
+};
+
+vgapoint_t asteroid_r1[8] = 
+{
+  { 40, 40 },
+  { 80, 0 },
+  { 120, 40 },
+  { 160, 80 },
+  { 120, 120 },
+  { 80, 160 },
+  { 40, 120 },
+  { 0, 80 },
 };
 
 vgapoint_t bullet_p[2] = 
