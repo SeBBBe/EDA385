@@ -64,7 +64,14 @@ void go_hashit(int hit1, int hit2)
 		}
 		if (objects[hit1].identifier == OI_BULLET){
 			printf("Asteroid was hit by bullet.\n");
+			if (objects[hit2].identifier >= OI_AST1)
+			{
+				go_createasteroidxy(2, objects[hit2].location.x, objects[hit2].location.y);
+				printf("%f %f\n", objects[hit2].location.x, objects[hit2].location.y);
+				go_createasteroidxy(2, objects[hit2].location.x, objects[hit2].location.y);
+			}
 			objects[hit2].enabled = 0;
+			objects[hit1].enabled = 0;
 			if (!go_exists(OI_AST1) && !go_exists(OI_AST2) && !go_exists(OI_AST3) && !go_exists(OI_AST4))
 			{
 				printf("No asteroids remain. Player wins.\n");
@@ -184,7 +191,12 @@ float rand_FloatRange(float a, float b)
 //Create an asteroid of level n and place in game
 void go_createasteroid(int n)
 {
-	//TODO: generate asteroid geometry
+	printf("%f\n", (double)(rand() % vga_get_width()));
+	go_createasteroidxy(n, (double)(rand() % vga_get_width()), (double)(rand() % vga_get_width()));
+}
+
+void go_createasteroidxy(int n, double x, double y)
+{
 	game_object_t* ast_o = go_getempty();
 	ast_o->enabled = 1;
 	ast_o->poly_points = 8;
@@ -197,8 +209,17 @@ void go_createasteroid(int n)
 	{
 		polypointer = &asteroid_r1;
 		randdev = 120;
-		hitbox = 100;
+		hitbox = 70;
 		center = 80;
+		ast_o->identifier = OI_AST1;
+	}
+	if (n == 2)
+	{
+		polypointer = &asteroid_r2;
+		randdev = 60;
+		hitbox = 30;
+		center = 40;
+		ast_o->identifier = OI_AST2;
 	}
 	
 	ast_o->poly = malloc(ast_o->poly_points * sizeof(short) * 2);
@@ -209,13 +230,12 @@ void go_createasteroid(int n)
 		ast_o->poly[i].x += (rand() % randdev) - (randdev/2);
 	}
 	
-	ast_o->location.x = rand() % vga_get_width();
-	ast_o->location.y = rand() % vga_get_height();
+	ast_o->location.x = x;
+	ast_o->location.y = y;
 	ast_o->xvel = rand_FloatRange(0.0, 4.0) - 2.0;
 	ast_o->yvel = rand_FloatRange(0.0, 4.0) - 2.0;
 	ast_o->anglespeed = rand_FloatRange(0.0, 0.4) - 0.2;
 	ast_o->center_point.x = center;
 	ast_o->center_point.y = center;
-	ast_o->identifier = OI_AST1;
 	ast_o->hitbox_size = hitbox;
 }
