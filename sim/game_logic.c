@@ -2,8 +2,8 @@
 
 #include "vga.h"
 #include "input.h"
-#include "graphics.c"
-#include "game_objects.c"
+#include "graphics.h"
+#include "game_objects.h"
 
 static const double rotate_amount = 0.07;
 static const double ship_accel = 0.02;
@@ -99,10 +99,10 @@ int main(int argc, char *argv[])
 		ship_o->xvel += ship_accel * cos(ship_o->angle + 4.71);
 		ship_o->yvel += ship_accel * sin(ship_o->angle + 4.71);
     }  
-    if(keys & KEY_DOWN)
+    /*if(keys & KEY_DOWN)
     {
 		ship_o->angle += 3.14;
-    }
+    }*/
     
     if (shoot_limit > 0) shoot_limit--;
     if (go_currentstate == STATE_DEAD) game_over();

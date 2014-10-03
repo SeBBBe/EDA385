@@ -144,9 +144,9 @@ void vga_sync()
 	  case SDLK_UP:
 	    keys |= KEY_UP;
 	    break;
-	  case SDLK_DOWN:
+	  /*case SDLK_DOWN:
 	    keys |= KEY_DOWN;
-	    break;
+	    break;*/
 	  case SDLK_SPACE:
 	    keys |= KEY_SHOOT;
 	    break;

@@ -61,11 +61,9 @@ void go_hashit(int hit1, int hit2)
 	if (!objects[hit2].enabled) return;
 	if (objects[hit2].identifier >= OI_AST1 && objects[hit2].identifier <= OI_AST4){
 		if (objects[hit1].identifier == OI_SHIP){
-			printf("Ship was hit by asteroid.\n");
 			go_currentstate = STATE_DEAD;
 		}
 		if (objects[hit1].identifier == OI_BULLET){
-			printf("Asteroid was hit by bullet.\n");
 			if (objects[hit2].identifier == OI_AST1)
 			{
 				go_createasteroidxy(2, objects[hit2].location.x, objects[hit2].location.y);
@@ -81,7 +79,6 @@ void go_hashit(int hit1, int hit2)
 			objects[hit1].enabled = 0;
 			if (!go_exists(OI_AST1) && !go_exists(OI_AST2) && !go_exists(OI_AST3) && !go_exists(OI_AST4))
 			{
-				printf("No asteroids remain. Player wins.\n");
 				go_currentstate = STATE_VICT;
 			}
 		}
