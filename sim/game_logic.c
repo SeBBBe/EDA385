@@ -73,8 +73,8 @@ int main(int argc, char *argv[])
 			game_object_t* bullet_o = go_getempty();
 		  bullet_o->location.x = ship_o->location.x;
 		  bullet_o->location.y = ship_o->location.y;
-		  bullet_o->xvel = bullet_speed * cos(ship_o->angle + 4.71);
-		  bullet_o->yvel = bullet_speed * sin(ship_o->angle + 4.71);
+		  bullet_o->xvel = bullet_speed * cosine(ship_o->angle + 4.71);
+		  bullet_o->yvel = bullet_speed * sine(ship_o->angle + 4.71);
 		  bullet_o->center_point.x = 320;
           bullet_o->center_point.y = 240;
 		  bullet_o->angle = ship_o->angle;
@@ -96,8 +96,8 @@ int main(int argc, char *argv[])
     if(keys & KEY_UP)
     {
 		//TODO: lookup table
-		ship_o->xvel += ship_accel * cos(ship_o->angle + 4.71);
-		ship_o->yvel += ship_accel * sin(ship_o->angle + 4.71);
+		ship_o->xvel += ship_accel * cosine(ship_o->angle + 4.71);
+		ship_o->yvel += ship_accel * sine(ship_o->angle + 4.71);
     }  
     /*if(keys & KEY_DOWN)
     {
