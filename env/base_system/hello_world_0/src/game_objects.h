@@ -4,12 +4,12 @@
 typedef struct game_object {
 	f_vgapoint_t location;
 	f_vgapoint_t center_point;
-	double xvel;
-	double yvel;
-	double xaccel;
-	double yaccel;
-	double angle;
-	double anglespeed;
+	float xvel;
+	float yvel;
+	float xaccel;
+	float yaccel;
+	float angle;
+	float anglespeed;
 	short enabled;
 	short poly_points;
 	short nowrap;
@@ -51,18 +51,34 @@ void go_resetobject(int i)
 
 void go_initialize()
 {
-	objects =  malloc(MAX_OBJECTS * sizeof(game_object_t));
+	objects = calloc(MAX_OBJECTS * sizeof(game_object_t), 1);
+
+	xil_printf("objects = %x\r\n", objects);
 }
 
 //Called when a hit was detected between object hit1 and hit2
 void go_hashit(int hit1, int hit2)
 {
+	if (!objects[hit1].enabled) return;
+	if (!objects[hit2].enabled) return;
 	if (objects[hit2].identifier >= OI_AST1 && objects[hit2].identifier <= OI_AST4){
 		if (objects[hit1].identifier == OI_SHIP){
 			go_currentstate = STATE_DEAD;
 		}
 		if (objects[hit1].identifier == OI_BULLET){
+			if (objects[hit2].identifier == OI_AST1)
+			{
+				go_createasteroidxy(2, objects[hit2].location.x, objects[hit2].location.y);
+				go_createasteroidxy(2, objects[hit2].location.x, objects[hit2].location.y);
+			}
+			else if (objects[hit2].identifier == OI_AST2)
+			{
+				go_createasteroidxy(3, objects[hit2].location.x, objects[hit2].location.y);
+				go_createasteroidxy(3, objects[hit2].location.x, objects[hit2].location.y);
+				go_createasteroidxy(3, objects[hit2].location.x, objects[hit2].location.y);
+			}
 			objects[hit2].enabled = 0;
+			objects[hit1].enabled = 0;
 			if (!go_exists(OI_AST1) && !go_exists(OI_AST2) && !go_exists(OI_AST3) && !go_exists(OI_AST4))
 			{
 				go_currentstate = STATE_VICT;
@@ -132,11 +148,12 @@ void go_draw()
 	{
 		if (objects[i].enabled)
 		{
-			//if (objects[i].angle > 6.28) objects[i].angle = 0;
-			//if (objects[i].angle < 0) objects[i].angle = 6.28;
+			if (objects[i].angle > 6.28) objects[i].angle = 0;
+			if (objects[i].angle < 0) objects[i].angle = 6.28;
 			vgapoint_t* newpoly = rotate(objects[i].poly_points, objects[i].poly, objects[i].angle, objects[i].center_point.x, objects[i].center_point.y);
 			offset(objects[i].poly_points, newpoly, objects[i].location.x, objects[i].location.y);
 			vga_addpoly(objects[i].poly_points, newpoly);
+			free(newpoly);
 			
 			int realx = objects[i].location.x + objects[i].center_point.x;
 			int realy = objects[i].location.y + objects[i].center_point.y;
@@ -180,18 +197,58 @@ float rand_FloatRange(float a, float b)
 //Create an asteroid of level n and place in game
 void go_createasteroid(int n)
 {
-	//TODO: generate asteroid geometry
+	go_createasteroidxy(n, (float)(rand() % vga_get_width()), (float)(rand() % vga_get_height()));
+}
+
+void go_createasteroidxy(int n, float x, float y)
+{
 	game_object_t* ast_o = go_getempty();
 	ast_o->enabled = 1;
-	ast_o->poly_points = 5;
-	ast_o->poly = asteroid;
-	ast_o->location.x = rand() % vga_get_width();
-	ast_o->location.y = rand() % vga_get_height();
+	ast_o->poly_points = 8;
+	
+	vgapoint_t** polypointer;
+	int randdev;
+	int center;
+	int hitbox;
+	if (n == 1)
+	{
+		polypointer = &asteroid_r1;
+		randdev = 120;
+		hitbox = 70;
+		center = 80;
+		ast_o->identifier = OI_AST1;
+	}
+	if (n == 2)
+	{
+		polypointer = &asteroid_r2;
+		randdev = 60;
+		hitbox = 30;
+		center = 40;
+		ast_o->identifier = OI_AST2;
+	}
+	if (n == 3)
+	{
+		polypointer = &asteroid_r3;
+		randdev = 30;
+		hitbox = 15;
+		center = 20;
+		ast_o->identifier = OI_AST3;
+	}
+	
+	ast_o->poly = malloc(ast_o->poly_points * sizeof(short) * 2);
+	memcpy(ast_o->poly, polypointer, ast_o->poly_points * sizeof(short) * 2);
+	int i;
+	for (i = 0; i < ast_o->poly_points; i++)
+	{
+		ast_o->poly[i].x += (rand() % randdev) - (randdev/2);
+	}
+	
+	ast_o->location.x = x;
+	ast_o->location.y = y;
 	ast_o->xvel = rand_FloatRange(0.0, 4.0) - 2.0;
 	ast_o->yvel = rand_FloatRange(0.0, 4.0) - 2.0;
 	ast_o->anglespeed = rand_FloatRange(0.0, 0.4) - 0.2;
-	ast_o->center_point.x = 65;
-	ast_o->center_point.y = 45;
-	ast_o->identifier = OI_AST1;
-	ast_o->hitbox_size = 25;
+	ast_o->center_point.x = center;
+	ast_o->center_point.y = center;
+	ast_o->hitbox_size = hitbox;
 }

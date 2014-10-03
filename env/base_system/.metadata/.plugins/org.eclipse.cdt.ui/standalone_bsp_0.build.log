@@ -28,9 +28,9 @@ Running libs - 'make -s libs "COMPILER=mb-gcc" "ARCHIVER=mb-ar"
 "Compiling common"
 "Compiling standalone";
 "Compiling tmrctr"
-"Compiling gpio"
 "Compiling bram"
 "Compiling uartlite"
+"Compiling gpio"
 "Compiling cpu"
 Running execs_generate.
 'Finished building libraries'

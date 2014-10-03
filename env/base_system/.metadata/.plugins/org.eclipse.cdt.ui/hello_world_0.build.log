@@ -7,24 +7,33 @@ Invoking: MicroBlaze gcc compiler
 mb-gcc -Wall -Os -ffast-math -c -fmessage-length=0 -Wl,--no-relax -I../../standalone_bsp_0/microblaze_0/include -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.40.a -mno-xl-soft-mul -mhard-float -MMD -MP -MF"src/game_logic.d" -MT"src/game_logic.d" -o"src/game_logic.o" "../src/game_logic.c"
 In file included from ../src/game_logic.c:5:0:
 ../src/graphics.h: In function 'rotate':
-../src/graphics.h:56:2: warning: implicit declaration of function 'malloc' [-Wimplicit-function-declaration]
-../src/graphics.h:56:24: warning: incompatible implicit declaration of built-in function 'malloc' [enabled by default]
+../src/graphics.h:94:2: warning: implicit declaration of function 'malloc' [-Wimplicit-function-declaration]
+../src/graphics.h:94:24: warning: incompatible implicit declaration of built-in function 'malloc' [enabled by default]
 In file included from ../src/game_logic.c:6:0:
 ../src/game_objects.h: In function 'go_hashit':
-../src/game_objects.h:66:4: warning: implicit declaration of function 'go_exists' [-Wimplicit-function-declaration]
-../src/game_logic.c: In function 'game_main':
-../src/game_logic.c:43:13: warning: unused variable 'bullets' [-Wunused-variable]
+../src/game_objects.h:71:5: warning: implicit declaration of function 'go_createasteroidxy' [-Wimplicit-function-declaration]
+../src/game_objects.h:82:4: warning: implicit declaration of function 'go_exists' [-Wimplicit-function-declaration]
+In file included from ../src/game_logic.c:6:0:
+../src/game_objects.h: At top level:
+../src/game_objects.h:203:6: warning: conflicting types for 'go_createasteroidxy' [enabled by default]
+../src/game_objects.h:71:5: note: previous implicit declaration of 'go_createasteroidxy' was here
+../src/game_objects.h: In function 'go_createasteroidxy':
+../src/game_objects.h:215:15: warning: assignment from incompatible pointer type [enabled by default]
+../src/game_objects.h:223:15: warning: assignment from incompatible pointer type [enabled by default]
+../src/game_objects.h:231:15: warning: assignment from incompatible pointer type [enabled by default]
+../src/game_objects.h:239:2: warning: implicit declaration of function 'memcpy' [-Wimplicit-function-declaration]
+../src/game_objects.h:239:2: warning: incompatible implicit declaration of built-in function 'memcpy' [enabled by default]
 Finished building: ../src/game_logic.c
 ' '
 Building target: hello_world_0.elf
 Invoking: MicroBlaze gcc linker
-mb-gcc -Wl,--no-relax -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/microblaze_0/lib -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.40.a -mno-xl-soft-mul -mhard-float -o"hello_world_0.elf"  ./src/game_logic.o ./src/helloworld.o ./src/platform.o ./src/vga.o  ./src/tmrctr_v2_04_a/src/xtmrctr.o ./src/tmrctr_v2_04_a/src/xtmrctr_g.o ./src/tmrctr_v2_04_a/src/xtmrctr_intr.o ./src/tmrctr_v2_04_a/src/xtmrctr_l.o ./src/tmrctr_v2_04_a/src/xtmrctr_options.o ./src/tmrctr_v2_04_a/src/xtmrctr_selftest.o ./src/tmrctr_v2_04_a/src/xtmrctr_stats.o  ./.metadata/.plugins/org.eclipse.cdt.make.core/specs.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+mb-gcc -nodefaultlibs -Wl,--no-relax -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/microblaze_0/lib -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.40.a -mno-xl-soft-mul -mhard-float -o"hello_world_0.elf"  ./src/game_logic.o ./src/helloworld.o ./src/platform.o ./src/vga.o  ./src/tmrctr_v2_04_a/src/xtmrctr.o ./src/tmrctr_v2_04_a/src/xtmrctr_g.o ./src/tmrctr_v2_04_a/src/xtmrctr_intr.o ./src/tmrctr_v2_04_a/src/xtmrctr_l.o ./src/tmrctr_v2_04_a/src/xtmrctr_options.o ./src/tmrctr_v2_04_a/src/xtmrctr_selftest.o ./src/tmrctr_v2_04_a/src/xtmrctr_stats.o  ./.metadata/.plugins/org.eclipse.cdt.make.core/specs.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
 Finished building target: hello_world_0.elf
 ' '
 Invoking: MicroBlaze Print Size
 mb-size hello_world_0.elf  |tee "hello_world_0.elf.size"
    text	   data	    bss	    dec	    hex	filename
-  23502	   1444	   4224	  29170	   71f2	hello_world_0.elf
+  25706	   2380	   7306	  35392	   8a40	hello_world_0.elf
 Finished building: hello_world_0.elf.size
 ' '
 Invoking: Xilinx ELF Check

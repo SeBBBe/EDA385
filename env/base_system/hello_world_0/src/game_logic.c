@@ -5,17 +5,17 @@
 #include "graphics.h"
 #include "game_objects.h"
 
-static const double rotate_amount = 0.07;
-static const double ship_accel = 0.02;
-static const double bullet_speed = 4;
+static const float rotate_amount = 0.07;
+static const float ship_accel = 10.0;
+static const float bullet_speed = 10;
 int shoot_limit = 0;
 
 typedef struct bullet
 {
   f_vgapoint_t p1;
   f_vgapoint_t p2;
-  double xvel;
-  double yvel;
+  float xvel;
+  float yvel;
 } bullet_t;
 
 void game_over()
@@ -40,7 +40,6 @@ int game_main(int argc, char *argv[])
 {
   keymap_t keys;
   vga_init();
-  bullet_t* bullets = malloc(64*sizeof(bullet_t));
   
   go_initialize();
   srand(time(NULL));
@@ -56,7 +55,7 @@ int game_main(int argc, char *argv[])
   ship_o->identifier = OI_SHIP;
   
    int i;
-  for (i = 0; i < 10; i++){
+  for (i = 0; i < 4; i++){
 	go_createasteroid(1);
 	}
   
@@ -74,8 +73,8 @@ int game_main(int argc, char *argv[])
 			game_object_t* bullet_o = go_getempty();
 		  bullet_o->location.x = ship_o->location.x;
 		  bullet_o->location.y = ship_o->location.y;
-		  bullet_o->xvel = bullet_speed * 1.0;//cos(ship_o->angle + 4.71);
-		  bullet_o->yvel = bullet_speed * 0.0;//sin(ship_o->angle + 4.71);
+		  bullet_o->xvel = bullet_speed * cosine(ship_o->angle + 4.71);
+		  bullet_o->yvel = bullet_speed * sine(ship_o->angle + 4.71);
 		  bullet_o->center_point.x = 320;
           bullet_o->center_point.y = 240;
 		  bullet_o->angle = ship_o->angle;
@@ -97,9 +96,13 @@ int game_main(int argc, char *argv[])
     if(keys & KEY_UP)
     {
 		//TODO: lookup table
-		ship_o->xvel += ship_accel * 1.0;//cos(ship_o->angle + 4.71);
-		ship_o->yvel += ship_accel * 0.0;//sin(ship_o->angle + 4.71);
-    }
+		ship_o->xvel += ship_accel * cosine(ship_o->angle + 4.71);
+		ship_o->yvel += ship_accel * sine(ship_o->angle + 4.71);
+    }  
+    /*if(keys & KEY_DOWN)
+    {
+		ship_o->angle += 3.14;
+    }*/
     
     if (shoot_limit > 0) shoot_limit--;
     if (go_currentstate == STATE_DEAD) game_over();

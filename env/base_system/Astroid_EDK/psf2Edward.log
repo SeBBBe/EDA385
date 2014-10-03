@@ -1,16 +1,13 @@
-WARNING:EDK:2137 - Peripheral debug_module_0 is not accessible from any
-   processor in the system. Check Bus Interface connections and address
-   parameters. 
 
 Checking platform configuration ...
-IPNAME: lmb_v10, INSTANCE: microblaze_0_ilmb - 1 master(s) : 1 slave(s) 
-IPNAME: lmb_v10, INSTANCE: microblaze_0_dlmb - 1 master(s) : 1 slave(s) 
-IPNAME: axi_interconnect, INSTANCE: axi4lite_0 - 1 master(s) : 5 slave(s) 
+IPNAME: lmb_v10, INSTANCE: microblaze_0_ilmb - 1 master(s) : 2 slave(s) 
+IPNAME: lmb_v10, INSTANCE: microblaze_0_dlmb - 1 master(s) : 2 slave(s) 
+IPNAME: axi_interconnect, INSTANCE: axi4lite_0 - 1 master(s) : 6 slave(s) 
 
 Checking port drivers...
 WARNING:EDK:4181 - PORT: Peripheral_Reset, CONNECTOR:
    proc_sys_reset_0_Peripheral_Reset - floating connection -
-   C:\temp\env\base_system\Astroid_EDK\system.mhs line 37 
+   C:\temp\EDA385\env\base_system\Astroid_EDK\system.mhs line 37 
 
 Performing Clock DRCs...
 

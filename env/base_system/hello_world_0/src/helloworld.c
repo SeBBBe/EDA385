@@ -3,8 +3,19 @@
 
 #include "xuartlite_l.h"
 #include "xparameters.h"
+#include "vga.h"
 
 void print(char *str);
+
+extern int volatile *vga;
+
+vgapoint_t aship[4] =
+{
+  { 320, 230 },
+  { 310, 250 },
+  { 320, 245 },
+  { 330, 250 },
+};
 
 int main()
 {
@@ -16,17 +27,17 @@ int main()
     //read input data
     xil_printf("start\n\r");
 
-    while(!*((int *)0x7F800000));
+    while(!*vga);
 
-    while(*((int *)0x7F800000));
+    while(*vga);
 
-    while(!*((int *)0x7F800000));
+    while(!*vga);
 
     XTmrCtr_Start(&timer, 0);
 
-    while(*((int *)0x7F800000));
+    while(*vga);
 
-    while(!*((int *)0x7F800000));
+    while(!*vga);
 
     XTmrCtr_Stop(&timer, 0);
     int c = XTmrCtr_GetValue(&timer, 0);

@@ -1,5 +1,4 @@
 #include <stdio.h>
-#include <malloc.h>
 
 #include "vga.h"
 #include "input.h"
@@ -10,6 +9,8 @@
 
 #define INPUT_BASE_ADDRESS 0x40000000
 #define VGA_BASE_ADDRESS 0x7F800000
+
+int volatile *vga = 0x7F800000;
 
 struct vga_line
 {
@@ -72,7 +73,7 @@ void vga_sync()
   int i, p0, p1;
 
   // wait for vsync
-  while(!*((int *)VGA_BASE_ADDRESS));
+  while(!*vga);
   
   // all 256 lines must be pushed to the VGA controller every frame to clear the shift register
   for(i = 0; i < VGA_MAX_LINES; i++)
@@ -88,12 +89,12 @@ void vga_sync()
 	  p1 = 0;
 	}
   
-    *((int *)VGA_BASE_ADDRESS) = p0;
-    *((int *)VGA_BASE_ADDRESS) = p1;
+    *vga = p0;
+    *vga = p1;
   }
   
   // wait for end of vsync
-  while(*((int *)VGA_BASE_ADDRESS));
+  while(*vga);
 }
 
 vgapos_t vga_get_width()

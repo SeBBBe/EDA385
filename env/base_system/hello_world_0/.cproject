@@ -72,7 +72,7 @@
 								<option id="xilinx.gnu.c.linker.option.lscript.2120908014" name="Linker Script" superClass="xilinx.gnu.c.linker.option.lscript" value="../src/lscript.ld" valueType="string"/>
 								<option id="xilinx.gnu.mb.linker.inferred.fpu.732731855" name="FPU" superClass="xilinx.gnu.mb.linker.inferred.fpu" value="xilinx.gnu.mb.linker.inferred.fpu.basic" valueType="enumerated"/>
 								<option id="xilinx.gnu.c.link.option.nostart.745566758" name="Do not use standard start files (-nostartfiles)" superClass="xilinx.gnu.c.link.option.nostart" value="false" valueType="boolean"/>
-								<option id="xilinx.gnu.c.link.option.nodeflibs.2057479080" name="Do not use default libraries (-nodefaultlibs)" superClass="xilinx.gnu.c.link.option.nodeflibs" value="false" valueType="boolean"/>
+								<option id="xilinx.gnu.c.link.option.nodeflibs.2057479080" name="Do not use default libraries (-nodefaultlibs)" superClass="xilinx.gnu.c.link.option.nodeflibs" value="true" valueType="boolean"/>
 								<option id="xilinx.gnu.c.link.option.nostdlibs.2054741046" name="No startup or default libs (-nostdlib)" superClass="xilinx.gnu.c.link.option.nostdlibs" value="false" valueType="boolean"/>
 								<inputType id="xilinx.gnu.linker.input.941592367" superClass="xilinx.gnu.linker.input">
 									<additionalInput kind="additionalinputdependency" paths="$(USER_OBJS)"/>

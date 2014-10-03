@@ -8,7 +8,7 @@ library axi_lite_slave_v1_00_a; --USER-- library names
 package types is
 	constant DISPLAY_WIDTH : integer := 1280; --16; --
 	constant LINE_REG_UNITS : integer := 256; --2; --
-	constant LINE_COMP_UNITS : integer := 16; --1; --
+	constant LINE_COMP_UNITS : integer := 8; --1; --
 	constant LINES_PER_COMP_UNIT : integer := LINE_REG_UNITS / LINE_COMP_UNITS;
 	constant VGAPOS_WIDTH : integer := 12;
 	subtype vgapos_t is signed(VGAPOS_WIDTH-1 downto 0);
