@@ -3,9 +3,9 @@
 
 int main(int argc, char *argv[])
 {
-	double v;
-	for (v = 0; v < 6.29; v+=0.01)
+	float v;
+	for (v = 0; v < 6.29; v+=0.03)
 	{
-		printf("%f,",cos(v));
+		printf("%f,",(float)sin(v));
 	}
 }
