@@ -4,12 +4,12 @@
 typedef struct game_object {
 	f_vgapoint_t location;
 	f_vgapoint_t center_point;
-	double xvel;
-	double yvel;
-	double xaccel;
-	double yaccel;
-	double angle;
-	double anglespeed;
+	float xvel;
+	float yvel;
+	float xaccel;
+	float yaccel;
+	float angle;
+	float anglespeed;
 	short enabled;
 	short poly_points;
 	short nowrap;
@@ -195,10 +195,10 @@ float rand_FloatRange(float a, float b)
 //Create an asteroid of level n and place in game
 void go_createasteroid(int n)
 {
-	go_createasteroidxy(n, (double)(rand() % vga_get_width()), (double)(rand() % vga_get_width()));
+	go_createasteroidxy(n, (float)(rand() % vga_get_width()), (float)(rand() % vga_get_height()));
 }
 
-void go_createasteroidxy(int n, double x, double y)
+void go_createasteroidxy(int n, float x, float y)
 {
 	game_object_t* ast_o = go_getempty();
 	ast_o->enabled = 1;

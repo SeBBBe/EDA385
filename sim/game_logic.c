@@ -5,17 +5,17 @@
 #include "graphics.h"
 #include "game_objects.h"
 
-static const double rotate_amount = 0.07;
-static const double ship_accel = 0.02;
-static const double bullet_speed = 4;
+static const float rotate_amount = 0.07;
+static const float ship_accel = 0.02;
+static const float bullet_speed = 4;
 int shoot_limit = 0;
 
 typedef struct bullet
 {
   f_vgapoint_t p1;
   f_vgapoint_t p2;
-  double xvel;
-  double yvel;
+  float xvel;
+  float yvel;
 } bullet_t;
 
 void game_over()

@@ -7,7 +7,7 @@ typedef struct vga_point
 
 typedef struct f_vga_point
 {
-  double x, y;
+  float x, y;
 } f_vgapoint_t;
 
 void vga_init();
