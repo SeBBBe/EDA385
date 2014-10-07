@@ -75,9 +75,12 @@ void go_hashit(int hit1, int hit2)
 				go_createasteroidxy(3, objects[hit2].location.x, objects[hit2].location.y);
 				go_createasteroidxy(3, objects[hit2].location.x, objects[hit2].location.y);
 			}
-			objects[hit2].enabled = 0;
-			free(objects[hit2].poly);
-			objects[hit1].enabled = 0;
+			if (objects[hit2].identifier == OI_AST1 || objects[hit2].identifier == OI_AST2 || objects[hit2].identifier == OI_AST3 || objects[hit2].identifier == OI_AST4)
+			{
+				objects[hit2].enabled = 0;
+				free(objects[hit2].poly);
+				objects[hit1].enabled = 0;
+			}
 			if (!go_exists(OI_AST1) && !go_exists(OI_AST2) && !go_exists(OI_AST3) && !go_exists(OI_AST4))
 			{
 				go_currentstate = STATE_VICT;
