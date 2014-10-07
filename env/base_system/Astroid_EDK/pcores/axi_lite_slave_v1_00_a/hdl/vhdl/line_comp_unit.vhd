@@ -10,12 +10,14 @@ use work.types.all;
 entity line_comp_unit is
   port
   (
-	 YPLUSONE        : in vgapos_t;
-	 YMINUSONE       : in vgapos_t;
-	 INPUT           : in linereg_t;
-	 OUTPUT          : out linereg_t;
-	 LINE_OUT   	  : out std_logic;
-	 LINE_X     	  : out vgapos_t
+	 YPLUSONE   : in vgapos_t;
+	 
+	 INPUT      : in linereg_t;
+	 OUTPUT     : out linereg_t;
+	 
+	 LINE_COLOR : out color_t;
+	 LINE_OUT   : out std_logic;
+	 LINE_X     : out vgapos_t
   );
 end line_comp_unit;
 
@@ -23,21 +25,34 @@ architecture Behavioral of line_comp_unit is
 
 begin
 
-process(YPLUSONE, YMINUSONE, INPUT)
+process(YPLUSONE, INPUT)
 	variable err_tmp : vgapos_t;
 	variable x0_tmp : vgapos_t;
+	variable step : boolean;
 begin
 	OUTPUT <= INPUT;
+	LINE_COLOR <= INPUT.color;
 	LINE_OUT <= '0';
 	LINE_X <= (others => '0');
 	
 	if INPUT.enable = '1' then
+		step := false;
+		
+		LINE_X <= INPUT.x0;
+		
 		if INPUT.y0 = YPLUSONE then
+			LINE_OUT <= '1';
+			step := true;
+		end if;
+		
+		if INPUT.y0 < YPLUSONE then
+			LINE_OUT <= '0';
+			step := true;
+		end if;
+		
+		if step then
 			x0_tmp := INPUT.x0;
 			err_tmp := INPUT.err;
-			
-			LINE_OUT <= '1';
-			LINE_X <= INPUT.x0;
 			
 			if INPUT.err > INPUT.negdx then
 				if INPUT.sx = '1' then
@@ -58,9 +73,8 @@ begin
 		
 		if INPUT.x0 = INPUT.x1 and INPUT.y0 = INPUT.y1 then
 			OUTPUT.enable <= '0';
+			LINE_OUT <= '0';
 		end if;
-		
-		-- TODO: X end condition
 	end if;
 end process;
 

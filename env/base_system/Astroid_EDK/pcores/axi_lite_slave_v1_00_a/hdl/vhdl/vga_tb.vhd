@@ -38,7 +38,7 @@ ARCHITECTURE behavior OF vga_tb IS
 	signal vga_vsync : std_logic;
 	signal vga_red   : std_logic_vector(0 to 2);
 	signal vga_green : std_logic_vector(0 to 2);
-	signal vga_blue  : std_logic_vector(0 to 2);
+	signal vga_blue  : std_logic_vector(0 to 1);
 
 	signal rst : std_logic := '1';
 
@@ -98,14 +98,14 @@ BEGIN
 	test_process : process
 	begin
 		wait until S_AXI_RDATA(0) = '1' and S_AXI_WREADY = '1';
-		S_AXI_WDATA <= "00000000000000000000000000000000";
+		S_AXI_WDATA <= "1110000000000000" & "1110000000000000";
 		S_AXI_WVALID <= '1';
 		wait until S_AXI_BVALID = '1';
 		S_AXI_WVALID <= '0';
 		S_AXI_BREADY <= '1';
 		
 		wait until S_AXI_RDATA(0) = '1' and S_AXI_WREADY = '1';
-		S_AXI_WDATA <= "00000000000011110000000000001111";
+		S_AXI_WDATA <= "1110000000001111" & "1110000000001111";
 		S_AXI_WVALID <= '1';
 		wait until S_AXI_BVALID = '1';
 		S_AXI_WVALID <= '0';
@@ -113,14 +113,14 @@ BEGIN
 		
 		
 		wait until S_AXI_RDATA(0) = '1' and S_AXI_WREADY = '1';
-		S_AXI_WDATA <= "00000000000000000000000000001111";
+		S_AXI_WDATA <= "1110000000000000" & "1110000000001111";
 		S_AXI_WVALID <= '1';
 		wait until S_AXI_BVALID = '1';
 		S_AXI_WVALID <= '0';
 		S_AXI_BREADY <= '1';
 		
 		wait until S_AXI_RDATA(0) = '1' and S_AXI_WREADY = '1';
-		S_AXI_WDATA <= "00000000000011110000000000000000";
+		S_AXI_WDATA <= "1110000000001111" & "1110000000000000";
 		S_AXI_WVALID <= '1';
 		wait until S_AXI_BVALID = '1';
 		S_AXI_WVALID <= '0';

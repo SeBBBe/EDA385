@@ -11,7 +11,6 @@ entity line_reg_unit is
   port
   (
 	 CLK             : in std_logic;
-	 RST             : in std_logic;
 	 
 	 ENABLE          : in std_logic;
 	 
@@ -30,11 +29,9 @@ begin
 
 OUTPUT <= line_reg(LINES_PER_COMP_UNIT-1);
 
-process(CLK, RST)
+process(CLK)
 begin
-	if (RST = '0') then
-		line_reg <= (others => EMPTY_LINE_REG);
-	elsif rising_edge(CLK) then
+	if rising_edge(CLK) then
 		if ENABLE = '1' then
 			for I in 0 to LINES_PER_COMP_UNIT-2 loop
 				line_reg(I+1) <= line_reg(I);

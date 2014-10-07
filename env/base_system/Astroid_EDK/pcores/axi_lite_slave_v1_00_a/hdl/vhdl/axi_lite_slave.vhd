@@ -58,7 +58,7 @@ entity axi_lite_slave is
     VGA_VSYNC	: out std_logic;
     VGA_RED	    : out std_logic_vector(0 to 2);
     VGA_GREEN	: out std_logic_vector(0 to 2);
-    VGA_BLUE	: out std_logic_vector(0 to 2)
+    VGA_BLUE	: out std_logic_vector(0 to 1)
     );
 
 end axi_lite_slave;
@@ -66,9 +66,8 @@ end axi_lite_slave;
 architecture implementation of axi_lite_slave is
 
 signal real_hsync, real_vsync : std_logic;
-signal vga_x, vga_y : vgapos_t;
 signal hsync, vsync : std_logic;
-signal output : std_logic;
+signal output : color_t;
 
 signal mem_output : linereg_t;
 signal mem_trigger : std_logic;
@@ -86,8 +85,6 @@ vga1 : entity work.vga_controller
 		RST => ARESETN,
 		HSYNC => hsync,
 		VSYNC => vsync,
-		X => vga_x,
-		Y => vga_y,
 		NEWLINE => newline,
 		VGA_HSYNC => real_hsync,
 		VGA_VSYNC => real_vsync
@@ -98,13 +95,8 @@ vector1 : entity work.vector_controller
 	(
 		CLK => ACLK,
 		RST => ARESETN,
-		HSYNC => hsync,
-		VSYNC => vsync,
-		X => vga_x,
-		Y => vga_y,
 		NEWLINE => newline,
-		PROGRAM => vsync,
-		ENABLE => vector_enable,
+		ENABLE => mem_trigger,
 		INPUT => mem_output,
 		PIXEL_OUT => output
 	);
@@ -144,18 +136,9 @@ mem1 : entity work.mem_controller
 		TRIGGER => mem_trigger
 	);
 
-process(vsync, mem_trigger)
-begin
-	if vsync = '1' then
-		vector_enable <= mem_trigger;
-	else
-		vector_enable <= '1';
-	end if;
-end process;
-
-VGA_RED <= "111" when output = '1' and real_hsync = '1' and real_vsync = '1' else "000";
-VGA_GREEN <= "111" when output = '1' and real_hsync = '1' and real_vsync = '1' else "000";
-VGA_BLUE <= "111" when output = '1' and real_hsync = '1' and real_vsync = '1' else "000";
+VGA_RED <= std_logic_vector(output(2 downto 0)) when real_hsync = '1' and real_vsync = '1' else "000";
+VGA_GREEN <= std_logic_vector(output(5 downto 3)) when real_hsync = '1' and real_vsync = '1' else "000";
+VGA_BLUE <= std_logic_vector(output(7 downto 6)) when real_hsync = '1' and real_vsync = '1' else "00";
 
 VGA_HSYNC <= real_hsync;
 VGA_VSYNC <= real_vsync;

@@ -42,7 +42,7 @@ end line_programmer;
 
 architecture Behavioral of line_programmer is
 
-type state_t is (CALC_DX, CALC_DY, CALC_ERR, CALC_DONE);
+type state_t is (CALC_DX, CALC_DY, CALC_ERR, CALC_ERR2, CALC_DONE);
 
 signal state_reg : state_t;
 signal state_next : state_t;
@@ -80,6 +80,8 @@ begin
 	if ENABLE = '1' then
 		case state_reg is
 			when CALC_DX =>
+				target_next <= INPUT;
+				
 				if INPUT.x1 > INPUT.x0 then
 					target_next.sx <= '1';
 					target_next.negdx <= INPUT.x0 - INPUT.x1;
@@ -88,25 +90,25 @@ begin
 					target_next.negdx <= INPUT.x1 - INPUT.x0;
 				end if;
 				
-				target_next.x0 <= INPUT.x0;
-				target_next.y0 <= INPUT.y0;
-				target_next.x1 <= INPUT.x1;
-				target_next.y1 <= INPUT.y1;
-				
 				state_next <= CALC_DY;
 			when CALC_DY =>
 				if INPUT.y1 > INPUT.y0 then
-					target_next.dy <= INPUT.y1 - INPUT.y0;
+					target_next.dy <= target_reg.y1 - target_reg.y0;
 				else
-					target_next.dy <= INPUT.y0 - INPUT.y1;
+					target_next.dy <= target_reg.y0 - target_reg.y1;
 				end if;
 				state_next <= CALC_ERR;
 			when CALC_ERR =>
 				if -target_reg.negdx > target_reg.dy then
-					target_next.err <= -target_reg.negdx / 2;
+					-- err = dx / 2 after CALC_ERR2
+					target_next.err <= target_reg.negdx / 2;
 				else
-					target_next.err <= -target_reg.dy / 2;
+					-- err = -dy / 2 after CALC_ERR2
+					target_next.err <= target_reg.dy / 2;
 				end if;
+				state_next <= CALC_ERR2;
+			when CALC_ERR2 =>
+				target_next.err <= -target_reg.err;
 				target_next.enable <= '1';
 				state_next <= CALC_DONE;
 				done_next <= '1';

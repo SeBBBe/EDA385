@@ -16,17 +16,12 @@ entity vector_controller is
     CLK       : in std_logic; -- clock
     RST	     : in std_logic; -- reset, active low
 	 
-    HSYNC     : in std_logic;
-	 VSYNC     : in std_logic;
-	 X         : in vgapos_t;
-	 Y         : in vgapos_t;
 	 NEWLINE   : in std_logic;
 	 
-	 PROGRAM   : in std_logic;
 	 ENABLE    : in std_logic;
 	 INPUT     : in linereg_t;
 	 
-	 PIXEL_OUT : out std_logic
+	 PIXEL_OUT : out color_t
   );
 end entity vector_controller;
 
@@ -34,26 +29,26 @@ architecture imp of vector_controller is --USER-- change entity name
 
 type per_controller_stdlogic_t is array (0 to LINE_COMP_UNITS-1) of std_logic;
 type per_controller_vgapos_t is array (0 to LINE_COMP_UNITS-1) of vgapos_t;
+type per_controller_color_t is array (0 to LINE_COMP_UNITS-1) of color_t;
 type per_controller_linereg_t is array (0 to LINE_COMP_UNITS-1) of linereg_t;
+
+type per_bram_bramiface_in_t is array (0 to (LINE_COMP_UNITS*2)-1) of bramiface_in_t;
+type per_bram_bramiface_out_t is array (0 to (LINE_COMP_UNITS*2)-1) of bramiface_out_t;
 
 signal line_outputs : per_controller_linereg_t;
 
+signal line_linecolors : per_controller_color_t;
 signal line_lineouts : per_controller_stdlogic_t;
 signal line_linexs : per_controller_vgapos_t;
 
-signal bram_pixel_outs : per_controller_stdlogic_t;
+signal bram_ins : per_bram_bramiface_in_t;
+signal bram_outs : per_bram_bramiface_out_t;
 
-signal xplusone : vgapos_t;
-signal yplusone : vgapos_t;
-signal yminusone : vgapos_t;
+signal bram_pixel_outs : per_controller_color_t;
 
 ------------------------------------------------------------------------------
 begin
 ------------------------------------------------------------------------------
-
-xplusone <= X + 1;
-yplusone <= Y + 1;
-yminusone <= Y - 1;
 
 line_controller0 : entity work.line_controller
 	port map
@@ -61,15 +56,12 @@ line_controller0 : entity work.line_controller
 		CLK => CLK,
 		RST => RST,
 		
-		YPLUSONE => yplusone,
-	   YMINUSONE => yminusone,
-		
 		ENABLE => ENABLE,
-		PROGRAM => PROGRAM,
 		
 		INPUT => INPUT,
 		OUTPUT => line_outputs(0),
 		
+		LINE_COLOR => line_linecolors(0),
 		LINE_OUT => line_lineouts(0),
 		LINE_X => line_linexs(0)
 	);
@@ -82,15 +74,12 @@ for I in 1 to LINE_COMP_UNITS-1 generate
 		CLK => CLK,
 		RST => RST,
 		
-		YPLUSONE => yplusone,
-	   YMINUSONE => yminusone,
-		
 		ENABLE => ENABLE,
-		PROGRAM => PROGRAM,
 		
 		INPUT => line_outputs(I - 1),
 		OUTPUT => line_outputs(I),
 		
+		LINE_COLOR => line_linecolors(I),
 		LINE_OUT => line_lineouts(I),
 		LINE_X => line_linexs(I)
 	);
@@ -98,6 +87,18 @@ end generate GEN_LINE_CONTROLLERS;
 
 GEN_PIXELROW_BRAM:
 for I in 0 to LINE_COMP_UNITS-1 generate
+	bramX : entity work.bram
+	port map
+	(
+		CLK => CLK,
+		RST => RST,
+
+		PORTA_IN => bram_ins(I*2),
+		PORTB_IN => bram_ins(I*2+1),
+		PORTA_OUT => bram_outs(I*2),
+		PORTB_OUT => bram_outs(I*2+1)
+	);
+
 	pixelrow_bramX : entity work.pixelrow_bram
 	port map
 	(
@@ -106,23 +107,29 @@ for I in 0 to LINE_COMP_UNITS-1 generate
 		
 		NEWLINE => NEWLINE,
 		
-		XPLUSONE => xplusone,
 		PIXEL_OUT => bram_pixel_outs(I),
 		
 		WR_X => line_linexs(I),
-		WR_PIXEL => line_lineouts(I)
+		WR_EN => line_lineouts(I),
+		WR_PIXEL => line_linecolors(I),
+		
+		BRAM_EVEN_IN => bram_outs(I),
+		BRAM_ODD_IN => bram_outs(I+LINE_COMP_UNITS),
+		BRAM_EVEN_OUT => bram_ins(I),
+		BRAM_ODD_OUT => bram_ins(I+LINE_COMP_UNITS)
 	);
 end generate GEN_PIXELROW_BRAM;
 
 process(bram_pixel_outs)
+variable tmp_pixel_out : color_t;
 begin
-	PIXEL_OUT <= '0';
+	tmp_pixel_out := (others => '0');
 	
 	for I in 0 to LINE_COMP_UNITS-1 loop
-		if bram_pixel_outs(I) = '1' then
-			PIXEL_OUT <= '1';
-		end if;
+		tmp_pixel_out := bram_pixel_outs(I) or tmp_pixel_out;
 	end loop;
+	
+	PIXEL_OUT <= tmp_pixel_out;
 end process;
 
 end architecture imp;

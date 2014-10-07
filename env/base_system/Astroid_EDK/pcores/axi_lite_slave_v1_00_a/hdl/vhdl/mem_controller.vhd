@@ -143,11 +143,16 @@ begin
 		
 		if state_reg = XY0 then
 			output_next.x0 <= signed(S_AXI_WDATA(VGAPOS_WIDTH-1 downto 0));
+			output_next.color(16-VGAPOS_WIDTH-1 downto 0) <= unsigned(S_AXI_WDATA(15 downto VGAPOS_WIDTH));
 			output_next.y0 <= signed(S_AXI_WDATA(VGAPOS_WIDTH-1+16 downto 16));
+			output_next.color((16-VGAPOS_WIDTH)*2-1 downto 16-VGAPOS_WIDTH) <= unsigned(S_AXI_WDATA(31 downto 16+VGAPOS_WIDTH));
 			state_next <= XY1;
 		else
 			output_next.x1 <= signed(S_AXI_WDATA(VGAPOS_WIDTH-1 downto 0));
+			output_next.color(7 downto (16-VGAPOS_WIDTH)*2) <= unsigned(S_AXI_WDATA(14 downto VGAPOS_WIDTH));
+			--output_next.color((16-VGAPOS_WIDTH)*3-1 downto (16-VGAPOS_WIDTH)*2) <= unsigned(S_AXI_WDATA(15 downto VGAPOS_WIDTH));
 			output_next.y1 <= signed(S_AXI_WDATA(VGAPOS_WIDTH-1+16 downto 16));
+			--output_next.color((16-VGAPOS_WIDTH)*4-1 downto (16-VGAPOS_WIDTH)*3) <= unsigned(S_AXI_WDATA(31 downto 16+VGAPOS_WIDTH));
 			state_next <= XY0;
 			prog_enable_next <= '1';
 			ready_next <= '0';
