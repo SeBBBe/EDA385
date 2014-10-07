@@ -19,8 +19,8 @@ entity system_stub is
     VGA_VSYNC : out std_logic;
     VGA_RED : out std_logic_vector(2 downto 0);
     VGA_GREEN : out std_logic_vector(2 downto 0);
-    VGA_BLUE : out std_logic_vector(2 downto 0);
-    JA : out std_logic_vector(7 downto 0)
+    JA : out std_logic_vector(7 downto 0);
+    VGA_BLUE : out std_logic_vector(1 downto 0)
   );
 end system_stub;
 
@@ -38,8 +38,8 @@ architecture STRUCTURE of system_stub is
       VGA_VSYNC : out std_logic;
       VGA_RED : out std_logic_vector(2 downto 0);
       VGA_GREEN : out std_logic_vector(2 downto 0);
-      VGA_BLUE : out std_logic_vector(2 downto 0);
-      JA : out std_logic_vector(7 downto 0)
+      JA : out std_logic_vector(7 downto 0);
+      VGA_BLUE : out std_logic_vector(1 downto 0)
     );
   end component;
 
@@ -60,8 +60,8 @@ begin
       VGA_VSYNC => VGA_VSYNC,
       VGA_RED => VGA_RED,
       VGA_GREEN => VGA_GREEN,
-      VGA_BLUE => VGA_BLUE,
-      JA => JA
+      JA => JA,
+      VGA_BLUE => VGA_BLUE
     );
 
 end architecture STRUCTURE;

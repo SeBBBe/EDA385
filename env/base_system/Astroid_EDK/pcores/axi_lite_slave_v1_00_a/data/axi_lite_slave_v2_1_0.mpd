@@ -99,6 +99,6 @@ PORT VGA_HSYNC = "", DIR = O
 PORT VGA_VSYNC = "", DIR = O
 PORT VGA_RED = "", DIR = O, VEC = [2:0]
 PORT VGA_GREEN = "", DIR = O, VEC = [2:0]
-PORT VGA_BLUE = "", DIR = O, VEC = [2:0]
+PORT VGA_BLUE = "", DIR = O, VEC = [1:0]
 
 END

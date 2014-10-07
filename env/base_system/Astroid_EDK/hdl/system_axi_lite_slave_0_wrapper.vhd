@@ -37,7 +37,7 @@ entity system_axi_lite_slave_0_wrapper is
     VGA_VSYNC : out std_logic;
     VGA_RED : out std_logic_vector(2 downto 0);
     VGA_GREEN : out std_logic_vector(2 downto 0);
-    VGA_BLUE : out std_logic_vector(2 downto 0)
+    VGA_BLUE : out std_logic_vector(1 downto 0)
   );
 end system_axi_lite_slave_0_wrapper;
 
@@ -74,7 +74,7 @@ architecture STRUCTURE of system_axi_lite_slave_0_wrapper is
       VGA_VSYNC : out std_logic;
       VGA_RED : out std_logic_vector(2 downto 0);
       VGA_GREEN : out std_logic_vector(2 downto 0);
-      VGA_BLUE : out std_logic_vector(2 downto 0)
+      VGA_BLUE : out std_logic_vector(1 downto 0)
     );
   end component;
 

@@ -2780,6 +2780,24 @@
 <msg type="info" file="Xst" num="2260" delta="new" >The FF/Latch &lt;<arg fmt="%s" index="1">axi_timer_0/AXI4_LITE_I/I_SLAVE_ATTACHMENT/I_DECODER/Bus_RNW_reg</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">axi_timer_0</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">FF/Latch</arg> : <arg fmt="%s" index="4">&lt;axi_timer_0/AXI4_LITE_I/I_SLAVE_ATTACHMENT/I_DECODER/Bus_RNW_reg_1&gt; </arg>
 </msg>
 
+<msg type="info" file="Xst" num="2260" delta="new" >The FF/Latch &lt;<arg fmt="%s" index="1">axi_lite_slave_0/vector1/line_controller0/vga_counter1/vsync_reg</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">axi_lite_slave_0</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">FF/Latch</arg> : <arg fmt="%s" index="4">&lt;axi_lite_slave_0/vector1/line_controller0/vga_counter1/vsync_reg_1&gt; </arg>
+</msg>
+
+<msg type="info" file="Xst" num="2260" delta="new" >The FF/Latch &lt;<arg fmt="%s" index="1">axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[1].line_controllerX/vga_counter1/vsync_reg</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">axi_lite_slave_0</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">FF/Latch</arg> : <arg fmt="%s" index="4">&lt;axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[1].line_controllerX/vga_counter1/vsync_reg_1&gt; </arg>
+</msg>
+
+<msg type="info" file="Xst" num="2260" delta="new" >The FF/Latch &lt;<arg fmt="%s" index="1">axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[4].line_controllerX/vga_counter1/vsync_reg</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">axi_lite_slave_0</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">FF/Latch</arg> : <arg fmt="%s" index="4">&lt;axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[4].line_controllerX/vga_counter1/vsync_reg_1&gt; </arg>
+</msg>
+
+<msg type="info" file="Xst" num="2260" delta="new" >The FF/Latch &lt;<arg fmt="%s" index="1">axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[3].line_controllerX/vga_counter1/vsync_reg</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">axi_lite_slave_0</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">FF/Latch</arg> : <arg fmt="%s" index="4">&lt;axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[3].line_controllerX/vga_counter1/vsync_reg_1&gt; </arg>
+</msg>
+
+<msg type="info" file="Xst" num="2260" delta="new" >The FF/Latch &lt;<arg fmt="%s" index="1">axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[5].line_controllerX/vga_counter1/vsync_reg</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">axi_lite_slave_0</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">FF/Latch</arg> : <arg fmt="%s" index="4">&lt;axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[5].line_controllerX/vga_counter1/vsync_reg_1&gt; </arg>
+</msg>
+
+<msg type="info" file="Xst" num="2260" delta="new" >The FF/Latch &lt;<arg fmt="%s" index="1">axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[2].line_controllerX/vga_counter1/vsync_reg</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">axi_lite_slave_0</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">FF/Latch</arg> : <arg fmt="%s" index="4">&lt;axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[2].line_controllerX/vga_counter1/vsync_reg_1&gt; </arg>
+</msg>
+
 <msg type="info" file="Xst" num="2260" delta="new" >The FF/Latch &lt;<arg fmt="%s" index="1">axi_gpio_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/cs_out_i_0</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">axi_gpio_0</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">FF/Latch</arg> : <arg fmt="%s" index="4">&lt;axi_gpio_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/cs_out_i_0_1&gt; </arg>
 </msg>
 
@@ -2808,6 +2826,24 @@
 </msg>
 
 <msg type="info" file="Xst" num="2260" delta="new" >The FF/Latch &lt;<arg fmt="%s" index="1">axi_timer_0/AXI4_LITE_I/I_SLAVE_ATTACHMENT/I_DECODER/Bus_RNW_reg</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">axi_timer_0</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">FF/Latch</arg> : <arg fmt="%s" index="4">&lt;axi_timer_0/AXI4_LITE_I/I_SLAVE_ATTACHMENT/I_DECODER/Bus_RNW_reg_1&gt; </arg>
+</msg>
+
+<msg type="info" file="Xst" num="2260" delta="new" >The FF/Latch &lt;<arg fmt="%s" index="1">axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[5].line_controllerX/vga_counter1/vsync_reg</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">axi_lite_slave_0</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">FF/Latch</arg> : <arg fmt="%s" index="4">&lt;axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[5].line_controllerX/vga_counter1/vsync_reg_1&gt; </arg>
+</msg>
+
+<msg type="info" file="Xst" num="2260" delta="new" >The FF/Latch &lt;<arg fmt="%s" index="1">axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[3].line_controllerX/vga_counter1/vsync_reg</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">axi_lite_slave_0</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">FF/Latch</arg> : <arg fmt="%s" index="4">&lt;axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[3].line_controllerX/vga_counter1/vsync_reg_1&gt; </arg>
+</msg>
+
+<msg type="info" file="Xst" num="2260" delta="new" >The FF/Latch &lt;<arg fmt="%s" index="1">axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[4].line_controllerX/vga_counter1/vsync_reg</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">axi_lite_slave_0</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">FF/Latch</arg> : <arg fmt="%s" index="4">&lt;axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[4].line_controllerX/vga_counter1/vsync_reg_1&gt; </arg>
+</msg>
+
+<msg type="info" file="Xst" num="2260" delta="new" >The FF/Latch &lt;<arg fmt="%s" index="1">axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[2].line_controllerX/vga_counter1/vsync_reg</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">axi_lite_slave_0</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">FF/Latch</arg> : <arg fmt="%s" index="4">&lt;axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[2].line_controllerX/vga_counter1/vsync_reg_1&gt; </arg>
+</msg>
+
+<msg type="info" file="Xst" num="2260" delta="new" >The FF/Latch &lt;<arg fmt="%s" index="1">axi_lite_slave_0/vector1/line_controller0/vga_counter1/vsync_reg</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">axi_lite_slave_0</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">FF/Latch</arg> : <arg fmt="%s" index="4">&lt;axi_lite_slave_0/vector1/line_controller0/vga_counter1/vsync_reg_1&gt; </arg>
+</msg>
+
+<msg type="info" file="Xst" num="2260" delta="new" >The FF/Latch &lt;<arg fmt="%s" index="1">axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[1].line_controllerX/vga_counter1/vsync_reg</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">axi_lite_slave_0</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">FF/Latch</arg> : <arg fmt="%s" index="4">&lt;axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[1].line_controllerX/vga_counter1/vsync_reg_1&gt; </arg>
 </msg>
 
 <msg type="info" file="Xst" num="2260" delta="new" >The FF/Latch &lt;<arg fmt="%s" index="1">axi_gpio_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/cs_out_i_0</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">axi_gpio_0</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">FF/Latch</arg> : <arg fmt="%s" index="4">&lt;axi_gpio_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/cs_out_i_0_1&gt; </arg>

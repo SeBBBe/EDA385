@@ -21,8 +21,8 @@
  PORT VGA_VSYNC = axi_lite_slave_0_VGA_VSYNC, DIR = O
  PORT VGA_RED = axi_lite_slave_0_VGA_RED, DIR = O, VEC = [2:0]
  PORT VGA_GREEN = axi_lite_slave_0_VGA_GREEN, DIR = O, VEC = [2:0]
- PORT VGA_BLUE = axi_lite_slave_0_VGA_BLUE, DIR = O, VEC = [2:0]
  PORT JA = axi_gpio_0_GPIO_IO_O, DIR = O, VEC = [7:0]
+ PORT VGA_BLUE = axi_lite_slave_0_VGA_BLUE, DIR = O, VEC = [1:0]
 
 
 BEGIN proc_sys_reset

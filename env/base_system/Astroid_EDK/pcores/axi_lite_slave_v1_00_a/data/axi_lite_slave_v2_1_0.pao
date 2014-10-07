@@ -56,3 +56,4 @@ lib axi_lite_slave_v1_00_a line_comp_unit
 lib axi_lite_slave_v1_00_a line_reg_unit
 lib axi_lite_slave_v1_00_a pixelrow_bram
 lib axi_lite_slave_v1_00_a bram
+lib axi_lite_slave_v1_00_a vga_counter

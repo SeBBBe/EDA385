@@ -5,7 +5,7 @@
 
 #define VGA_WIDTH 1280
 #define VGA_HEIGHT 960
-#define VGA_MAX_LINES 256
+#define VGA_MAX_LINES 192
 
 #define INPUT_BASE_ADDRESS 0x40000000
 #define VGA_BASE_ADDRESS 0x7F800000
@@ -80,8 +80,12 @@ void vga_sync()
   {
     if(i < line_index)
 	{
-	  p0 = (lines[i].p0.x & 0xFFFF) | (lines[i].p0.y << 16);
-	  p1 = (lines[i].p1.x & 0xFFFF) | (lines[i].p1.y << 16);
+      int r = 0b000 << 13;
+      int g = 0b111 << 29;
+      int b = 0b00  << 13;
+
+	  p0 = (lines[i].p0.x & 0x1FFF) | ((lines[i].p0.y & 0x1FFF) << 16) | r | g;
+	  p1 = (lines[i].p1.x & 0x1FFF) | ((lines[i].p1.y & 0x1FFF) << 16) | b;
 	}
 	else
 	{

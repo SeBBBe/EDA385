@@ -19,8 +19,8 @@ entity system is
     VGA_VSYNC : out std_logic;
     VGA_RED : out std_logic_vector(2 downto 0);
     VGA_GREEN : out std_logic_vector(2 downto 0);
-    VGA_BLUE : out std_logic_vector(2 downto 0);
-    JA : out std_logic_vector(7 downto 0)
+    JA : out std_logic_vector(7 downto 0);
+    VGA_BLUE : out std_logic_vector(1 downto 0)
   );
 end system;
 
@@ -1363,7 +1363,7 @@ architecture STRUCTURE of system is
       VGA_VSYNC : out std_logic;
       VGA_RED : out std_logic_vector(2 downto 0);
       VGA_GREEN : out std_logic_vector(2 downto 0);
-      VGA_BLUE : out std_logic_vector(2 downto 0)
+      VGA_BLUE : out std_logic_vector(1 downto 0)
     );
   end component;
 
@@ -2069,7 +2069,7 @@ architecture STRUCTURE of system is
   signal axi4lite_0_S_WSTRB : std_logic_vector(3 downto 0);
   signal axi4lite_0_S_WVALID : std_logic_vector(0 to 0);
   signal axi_gpio_0_GPIO_IO_O : std_logic_vector(7 downto 0);
-  signal axi_lite_slave_0_VGA_BLUE : std_logic_vector(2 downto 0);
+  signal axi_lite_slave_0_VGA_BLUE : std_logic_vector(1 downto 0);
   signal axi_lite_slave_0_VGA_GREEN : std_logic_vector(2 downto 0);
   signal axi_lite_slave_0_VGA_HSYNC : std_logic;
   signal axi_lite_slave_0_VGA_RED : std_logic_vector(2 downto 0);
@@ -2201,8 +2201,8 @@ begin
   VGA_VSYNC <= axi_lite_slave_0_VGA_VSYNC;
   VGA_RED <= axi_lite_slave_0_VGA_RED;
   VGA_GREEN <= axi_lite_slave_0_VGA_GREEN;
-  VGA_BLUE <= axi_lite_slave_0_VGA_BLUE;
   JA <= axi_gpio_0_GPIO_IO_O;
+  VGA_BLUE <= axi_lite_slave_0_VGA_BLUE;
   pgassign1(6 downto 6) <= clk_100_0000MHz(0 to 0);
   pgassign1(5 downto 5) <= clk_100_0000MHz(0 to 0);
   pgassign1(4 downto 4) <= clk_100_0000MHz(0 to 0);

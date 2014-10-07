@@ -198,6 +198,9 @@ implementation netlist
 IPNAME:axi_timer INSTANCE:axi_timer_0 -
 C:\temp\EDA385\env\base_system\Astroid_EDK\system.mhs line 117 - Copying cache
 implementation netlist
+IPNAME:axi_interconnect INSTANCE:axi4lite_0 -
+C:\temp\EDA385\env\base_system\Astroid_EDK\system.mhs line 128 - Copying cache
+implementation netlist
 IPNAME:axi_uartlite INSTANCE:rs232_uart_1 -
 C:\temp\EDA385\env\base_system\Astroid_EDK\system.mhs line 136 - Copying cache
 implementation netlist
@@ -206,21 +209,6 @@ C:\temp\EDA385\env\base_system\Astroid_EDK\system.mhs line 151 - Copying cache
 implementation netlist
 IPNAME:axi_gpio INSTANCE:dip_switches_8bits -
 C:\temp\EDA385\env\base_system\Astroid_EDK\system.mhs line 165 - Copying cache
-implementation netlist
-IPNAME:axi_lite_slave INSTANCE:axi_lite_slave_0 -
-C:\temp\EDA385\env\base_system\Astroid_EDK\system.mhs line 179 - Copying cache
-implementation netlist
-IPNAME:mdm INSTANCE:debug_module_0 -
-C:\temp\EDA385\env\base_system\Astroid_EDK\system.mhs line 193 - Copying cache
-implementation netlist
-IPNAME:bram_block INSTANCE:bram_block_0 -
-C:\temp\EDA385\env\base_system\Astroid_EDK\system.mhs line 205 - Copying cache
-implementation netlist
-IPNAME:lmb_bram_if_cntlr INSTANCE:bram_cntlr_0 -
-C:\temp\EDA385\env\base_system\Astroid_EDK\system.mhs line 212 - Copying cache
-implementation netlist
-IPNAME:lmb_bram_if_cntlr INSTANCE:bram_cntlr_1 -
-C:\temp\EDA385\env\base_system\Astroid_EDK\system.mhs line 221 - Copying cache
 implementation netlist
 
 Elaborating instances ...
@@ -240,7 +228,7 @@ Inserting wrapper level ...
 Completion time: 0.00 seconds
 
 Constructing platform-level connectivity ...
-Completion time: 0.00 seconds
+Completion time: 1.00 seconds
 
 Writing (top-level) BMM ...
 
@@ -256,8 +244,17 @@ INFO:EDK:4211 - The following instances are synthesized with XST. The MPD option
 INSTANCE:clock_generator_0 -
 C:\temp\EDA385\env\base_system\Astroid_EDK\system.mhs line 105 - Running XST
 synthesis
-INSTANCE:axi4lite_0 - C:\temp\EDA385\env\base_system\Astroid_EDK\system.mhs line
-128 - Running XST synthesis
+INSTANCE:axi_lite_slave_0 -
+C:\temp\EDA385\env\base_system\Astroid_EDK\system.mhs line 179 - Running XST
+synthesis
+INSTANCE:debug_module_0 - C:\temp\EDA385\env\base_system\Astroid_EDK\system.mhs
+line 193 - Running XST synthesis
+INSTANCE:bram_block_0 - C:\temp\EDA385\env\base_system\Astroid_EDK\system.mhs
+line 205 - Running XST synthesis
+INSTANCE:bram_cntlr_0 - C:\temp\EDA385\env\base_system\Astroid_EDK\system.mhs
+line 212 - Running XST synthesis
+INSTANCE:bram_cntlr_1 - C:\temp\EDA385\env\base_system\Astroid_EDK\system.mhs
+line 221 - Running XST synthesis
 INSTANCE:axi_gpio_0 - C:\temp\EDA385\env\base_system\Astroid_EDK\system.mhs line
 230 - Running XST synthesis
 
@@ -265,13 +262,10 @@ Running NGCBUILD ...
 IPNAME:system_clock_generator_0_wrapper INSTANCE:clock_generator_0 -
 C:\temp\EDA385\env\base_system\Astroid_EDK\system.mhs line 105 - Running
 NGCBUILD
-IPNAME:system_axi4lite_0_wrapper INSTANCE:axi4lite_0 -
-C:\temp\EDA385\env\base_system\Astroid_EDK\system.mhs line 128 - Running
-NGCBUILD
 INFO:EDK:3509 - NCF files should not be modified as they will be regenerated.
    If any constraint needs to be overridden, this should be done by modifying
    the data/system.ucf file.
 
 Rebuilding cache ...
 
-Total run time: 40.00 seconds
+Total run time: 80.00 seconds
