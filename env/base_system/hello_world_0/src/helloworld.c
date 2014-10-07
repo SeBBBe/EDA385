@@ -8,6 +8,8 @@
 
 extern int volatile *vga;
 
+//int volatile *spu = 0x40080000;
+
 int main()
 {
     init_platform();
@@ -37,6 +39,22 @@ int main()
     xil_printf("bin clock cycles = %d\n\r", c);
 
     xil_printf("main loop\n\r");
+
+    /*int f = 100;
+
+    while(1)
+    {
+    	volatile int i;
+    	volatile int l = 50000000 / f++;
+
+    	*spu = 0xFFFFFFFF;
+
+    	for(i = 0; i < l; i++);
+
+    	*spu = 0;
+
+    	for(i = 0; i < l; i++);
+    }*/
 
     game_main();
 

@@ -55,7 +55,7 @@ void go_initialize()
 {
 	int i;
 
-	objects = malloc(MAX_OBJECTS * sizeof(game_object_t));
+	objects = memmgr_alloc(MAX_OBJECTS * sizeof(game_object_t));
 
 	for(i = 0; i < MAX_OBJECTS; i++)
 	{
@@ -81,6 +81,7 @@ void go_hashit(int hit1, int hit2)
 			{
 				go_createasteroidxy(2, objects[hit2].location.x, objects[hit2].location.y);
 				go_createasteroidxy(2, objects[hit2].location.x, objects[hit2].location.y);
+				go_createasteroidxy(2, objects[hit2].location.x, objects[hit2].location.y);
 			}
 			else if (objects[hit2].identifier == OI_AST2)
 			{
@@ -89,7 +90,7 @@ void go_hashit(int hit1, int hit2)
 				go_createasteroidxy(3, objects[hit2].location.x, objects[hit2].location.y);
 			}
 			objects[hit2].enabled = 0;
-			free(objects[hit2].poly);
+			memmgr_free(objects[hit2].poly);
 			objects[hit1].enabled = 0;
 			if (!go_exists(OI_AST1) && !go_exists(OI_AST2) && !go_exists(OI_AST3) && !go_exists(OI_AST4))
 			{
@@ -166,7 +167,7 @@ void go_draw()
 			vgapoint_t* newpoly = rotate(objects[i].poly_points, objects[i].poly, objects[i].angle, objects[i].center_point.x, objects[i].center_point.y);
 			offset(objects[i].poly_points, newpoly, objects[i].location.x, objects[i].location.y);
 			vga_addpoly(objects[i].poly_points, newpoly);
-			free(newpoly);
+			memmgr_free(newpoly);
 			
 			int realx = objects[i].location.x + objects[i].center_point.x;
 			int realy = objects[i].location.y + objects[i].center_point.y;
@@ -219,37 +220,41 @@ void go_createasteroidxy(int n, float x, float y)
 	ast_o->enabled = 1;
 	ast_o->poly_points = 8;
 	
-	vgapoint_t** polypointer;
+	vgapoint_t *polypointer;
 	int randdev;
 	int center;
 	int hitbox;
+	float speed;
 	if (n == 1)
 	{
-		polypointer = &asteroid_r1;
+		polypointer = asteroid_r1;
 		randdev = 120;
 		hitbox = 70;
 		center = 80;
+		speed = 1.8;
 		ast_o->identifier = OI_AST1;
 	}
 	if (n == 2)
 	{
-		polypointer = &asteroid_r2;
+		polypointer = asteroid_r2;
 		randdev = 60;
 		hitbox = 30;
 		center = 40;
+		speed = 6.0;
 		ast_o->identifier = OI_AST2;
 	}
 	if (n == 3)
 	{
-		polypointer = &asteroid_r3;
+		polypointer = asteroid_r3;
 		randdev = 30;
 		hitbox = 15;
 		center = 20;
+		speed = 10.0;
 		ast_o->identifier = OI_AST3;
 	}
 	
-	ast_o->poly = malloc(ast_o->poly_points * sizeof(short) * 2);
-	memcpy(ast_o->poly, polypointer, ast_o->poly_points * sizeof(short) * 2);
+	ast_o->poly = copy_poly(ast_o->poly_points, polypointer);
+
 	int i;
 	for (i = 0; i < ast_o->poly_points; i++)
 	{
@@ -258,9 +263,9 @@ void go_createasteroidxy(int n, float x, float y)
 	
 	ast_o->location.x = x;
 	ast_o->location.y = y;
-	ast_o->xvel = rand_FloatRange(0.0, 4.0) - 2.0;
-	ast_o->yvel = rand_FloatRange(0.0, 4.0) - 2.0;
-	ast_o->anglespeed = rand_FloatRange(0.0, 0.4) - 0.2;
+	ast_o->xvel = rand_FloatRange(0.0, speed) - (speed/2);
+	ast_o->yvel = rand_FloatRange(0.0, speed) - (speed/2);
+	ast_o->anglespeed = rand_FloatRange(0.0, speed/15) - (speed/30);
 	ast_o->center_point.x = center;
 	ast_o->center_point.y = center;
 	ast_o->hitbox_size = hitbox;

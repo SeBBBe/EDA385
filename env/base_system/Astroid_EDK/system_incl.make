@@ -79,7 +79,8 @@ implementation/system_axi_lite_slave_0_wrapper.ngc \
 implementation/system_debug_module_0_wrapper.ngc \
 implementation/system_bram_block_0_wrapper.ngc \
 implementation/system_bram_cntlr_0_wrapper.ngc \
-implementation/system_bram_cntlr_1_wrapper.ngc
+implementation/system_bram_cntlr_1_wrapper.ngc \
+implementation/system_axi_gpio_0_wrapper.ngc
 
 POSTSYN_NETLIST = implementation/$(SYSTEM).ngc
 

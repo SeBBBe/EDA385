@@ -1,5 +1,5 @@
 //! **************************************************************************
-// Written by: Map P.28xd on Tue Oct 07 08:40:24 2014
+// Written by: Map P.28xd on Tue Oct 07 10:42:58 2014
 //! **************************************************************************
 
 SCHEMATIC START;
@@ -14,6 +14,14 @@ COMP "VGA_RED<1>" LOCATE = SITE "V7" LEVEL 1;
 COMP "VGA_RED<2>" LOCATE = SITE "N7" LEVEL 1;
 COMP "VGA_BLUE<1>" LOCATE = SITE "R7" LEVEL 1;
 COMP "VGA_BLUE<2>" LOCATE = SITE "T7" LEVEL 1;
+COMP "JA<0>" LOCATE = SITE "T12" LEVEL 1;
+COMP "JA<1>" LOCATE = SITE "V12" LEVEL 1;
+COMP "JA<2>" LOCATE = SITE "N10" LEVEL 1;
+COMP "JA<3>" LOCATE = SITE "P11" LEVEL 1;
+COMP "JA<4>" LOCATE = SITE "M10" LEVEL 1;
+COMP "JA<5>" LOCATE = SITE "N9" LEVEL 1;
+COMP "JA<6>" LOCATE = SITE "U11" LEVEL 1;
+COMP "JA<7>" LOCATE = SITE "V11" LEVEL 1;
 COMP "RESET" LOCATE = SITE "B8" LEVEL 1;
 COMP "RS232_Uart_1_sout" LOCATE = SITE "N18" LEVEL 1;
 COMP "VGA_GREEN<0>" LOCATE = SITE "P8" LEVEL 1;
@@ -697,23 +705,17 @@ TIMEGRP clock_generator_0_clock_generator_0_SIG_PLL0_CLKOUT0 = PIN
         "clock_generator_0/clock_generator_0/PLL0_CLKOUT0_BUFG_INST" BEL
         "microblaze_0_ilmb/microblaze_0_ilmb/POR_FF_I" BEL
         "microblaze_0_dlmb/microblaze_0_dlmb/POR_FF_I" BEL
-        "axi4lite_0/axi4lite_0/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/m_valid_i_3"
-        BEL
-        "axi4lite_0/axi4lite_0/crossbar_samd/gen_sasd.crossbar_sasd_0/m_atarget_enc_0_2"
-        BEL
-        "axi4lite_0/axi4lite_0/crossbar_samd/gen_sasd.crossbar_sasd_0/m_atarget_enc_1_1"
+        "axi4lite_0/axi4lite_0/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/grant_rnw_3"
         BEL
         "axi4lite_0/axi4lite_0/crossbar_samd/gen_sasd.crossbar_sasd_0/m_atarget_enc_0_1"
-        BEL
-        "axi4lite_0/axi4lite_0/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/grant_rnw_3"
         BEL
         "axi4lite_0/axi4lite_0/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/m_valid_i_2"
         BEL
         "axi4lite_0/axi4lite_0/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/grant_rnw_2"
         BEL
-        "axi4lite_0/axi4lite_0/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/grant_rnw_1"
-        BEL
         "axi4lite_0/axi4lite_0/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/m_valid_i_1"
+        BEL
+        "axi4lite_0/axi4lite_0/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/grant_rnw_1"
         BEL
         "axi4lite_0/axi4lite_0/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.splitter_ar/m_ready_d_0"
         BEL
@@ -732,6 +734,12 @@ TIMEGRP clock_generator_0_clock_generator_0_SIG_PLL0_CLKOUT0 = PIN
         "axi4lite_0/axi4lite_0/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/m_valid_i"
         BEL
         "axi4lite_0/axi4lite_0/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/m_grant_hot_i_0"
+        BEL
+        "axi4lite_0/axi4lite_0/mi_protocol_conv_bank/gen_protocol_slot[6].gen_prot_conv.conv_inst/gen_axilite.gen_axilite_conv.axilite_conv_inst/busy"
+        BEL
+        "axi4lite_0/axi4lite_0/mi_protocol_conv_bank/gen_protocol_slot[6].gen_prot_conv.conv_inst/gen_axilite.gen_axilite_conv.axilite_conv_inst/read_active"
+        BEL
+        "axi4lite_0/axi4lite_0/mi_protocol_conv_bank/gen_protocol_slot[6].gen_prot_conv.conv_inst/gen_axilite.gen_axilite_conv.axilite_conv_inst/write_active"
         BEL
         "axi4lite_0/axi4lite_0/mi_protocol_conv_bank/gen_protocol_slot[5].gen_prot_conv.conv_inst/gen_axilite.gen_axilite_conv.axilite_conv_inst/busy"
         BEL
@@ -841,11 +849,15 @@ TIMEGRP clock_generator_0_clock_generator_0_SIG_PLL0_CLKOUT0 = PIN
         BEL
         "axi4lite_0/axi4lite_0/crossbar_samd/gen_sasd.crossbar_sasd_0/m_atarget_hot_6"
         BEL
+        "axi4lite_0/axi4lite_0/crossbar_samd/gen_sasd.crossbar_sasd_0/m_atarget_hot_7"
+        BEL
         "axi4lite_0/axi4lite_0/crossbar_samd/gen_sasd.crossbar_sasd_0/m_atarget_enc_0"
         BEL
         "axi4lite_0/axi4lite_0/crossbar_samd/gen_sasd.crossbar_sasd_0/m_atarget_enc_1"
         BEL
         "axi4lite_0/axi4lite_0/crossbar_samd/gen_sasd.crossbar_sasd_0/m_atarget_enc_2"
+        BEL
+        "axi4lite_0/axi4lite_0/mi_protocol_conv_bank/gen_protocol_slot[6].gen_prot_conv.conv_inst/gen_axilite.gen_axilite_conv.axilite_conv_inst/areset_d_1"
         BEL
         "axi4lite_0/axi4lite_0/mi_protocol_conv_bank/gen_protocol_slot[5].gen_prot_conv.conv_inst/gen_axilite.gen_axilite_conv.axilite_conv_inst/areset_d_1"
         BEL
@@ -871,6 +883,8 @@ TIMEGRP clock_generator_0_clock_generator_0_SIG_PLL0_CLKOUT0 = PIN
         BEL
         "axi4lite_0/axi4lite_0/si_converter_bank/gen_conv_slot[0].clock_conv_inst/interconnect_aresetn_pipe_2"
         BEL
+        "axi4lite_0/axi4lite_0/mi_converter_bank/gen_conv_slot[6].clock_conv_inst/m_axi_reset_out_n_i"
+        BEL
         "axi4lite_0/axi4lite_0/mi_converter_bank/gen_conv_slot[5].clock_conv_inst/m_axi_reset_out_n_i"
         BEL
         "axi4lite_0/axi4lite_0/mi_converter_bank/gen_conv_slot[4].clock_conv_inst/m_axi_reset_out_n_i"
@@ -894,6 +908,8 @@ TIMEGRP clock_generator_0_clock_generator_0_SIG_PLL0_CLKOUT0 = PIN
         "axi4lite_0/axi4lite_0/mi_register_slice_bank/gen_reg_slot[4].register_slice_inst/reset"
         BEL
         "axi4lite_0/axi4lite_0/mi_register_slice_bank/gen_reg_slot[5].register_slice_inst/reset"
+        BEL
+        "axi4lite_0/axi4lite_0/mi_register_slice_bank/gen_reg_slot[6].register_slice_inst/reset"
         BEL
         "microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Data_Flow_I/Using_FPU.FPU_I/Use_FPU.FPU_DIV_I/mem_div_delay_2"
         BEL
@@ -9283,6 +9299,91 @@ TIMEGRP clock_generator_0_clock_generator_0_SIG_PLL0_CLKOUT0 = PIN
         "axi_lite_slave_0/axi_lite_slave_0/vga1/y_reg_9" BEL
         "axi_lite_slave_0/axi_lite_slave_0/vga1/y_reg_10" BEL
         "axi_lite_slave_0/axi_lite_slave_0/vga1/y_reg_11" BEL
+        "axi_gpio_0/axi_gpio_0/gpio_core_1/gpio_Data_In_7" BEL
+        "axi_gpio_0/axi_gpio_0/gpio_core_1/Mshreg_gpio_Data_In_7" BEL
+        "axi_gpio_0/axi_gpio_0/gpio_core_1/gpio_Data_In_6" BEL
+        "axi_gpio_0/axi_gpio_0/gpio_core_1/Mshreg_gpio_Data_In_6" BEL
+        "axi_gpio_0/axi_gpio_0/gpio_core_1/gpio_Data_In_5" BEL
+        "axi_gpio_0/axi_gpio_0/gpio_core_1/Mshreg_gpio_Data_In_5" BEL
+        "axi_gpio_0/axi_gpio_0/gpio_core_1/gpio_Data_In_4" BEL
+        "axi_gpio_0/axi_gpio_0/gpio_core_1/Mshreg_gpio_Data_In_4" BEL
+        "axi_gpio_0/axi_gpio_0/gpio_core_1/gpio_Data_In_3" BEL
+        "axi_gpio_0/axi_gpio_0/gpio_core_1/Mshreg_gpio_Data_In_3" BEL
+        "axi_gpio_0/axi_gpio_0/gpio_core_1/gpio_Data_In_2" BEL
+        "axi_gpio_0/axi_gpio_0/gpio_core_1/Mshreg_gpio_Data_In_2" BEL
+        "axi_gpio_0/axi_gpio_0/gpio_core_1/gpio_Data_In_1" BEL
+        "axi_gpio_0/axi_gpio_0/gpio_core_1/Mshreg_gpio_Data_In_1" BEL
+        "axi_gpio_0/axi_gpio_0/gpio_core_1/gpio_Data_In_0" BEL
+        "axi_gpio_0/axi_gpio_0/gpio_core_1/Mshreg_gpio_Data_In_0" BEL
+        "axi_gpio_0/axi_gpio_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/INCLUDE_DPHASE_TIMER.dpto_cnt_3"
+        BEL
+        "axi_gpio_0/axi_gpio_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/INCLUDE_DPHASE_TIMER.dpto_cnt_0"
+        BEL
+        "axi_gpio_0/axi_gpio_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/INCLUDE_DPHASE_TIMER.dpto_cnt_1"
+        BEL
+        "axi_gpio_0/axi_gpio_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/INCLUDE_DPHASE_TIMER.dpto_cnt_2"
+        BEL
+        "axi_gpio_0/axi_gpio_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/cs_out_i_0_1"
+        BEL "axi_gpio_0/axi_gpio_0/gpio_core_1/GPIO_DBus_i_24" BEL
+        "axi_gpio_0/axi_gpio_0/gpio_core_1/GPIO_DBus_i_25" BEL
+        "axi_gpio_0/axi_gpio_0/gpio_core_1/GPIO_DBus_i_26" BEL
+        "axi_gpio_0/axi_gpio_0/gpio_core_1/GPIO_DBus_i_27" BEL
+        "axi_gpio_0/axi_gpio_0/gpio_core_1/GPIO_DBus_i_28" BEL
+        "axi_gpio_0/axi_gpio_0/gpio_core_1/GPIO_DBus_i_29" BEL
+        "axi_gpio_0/axi_gpio_0/gpio_core_1/GPIO_DBus_i_30" BEL
+        "axi_gpio_0/axi_gpio_0/gpio_core_1/GPIO_DBus_i_31" BEL
+        "axi_gpio_0/axi_gpio_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/cs_out_i_0"
+        BEL "axi_gpio_0/axi_gpio_0/bus2ip_reset" BEL
+        "axi_gpio_0/axi_gpio_0/ip2bus_rdack_i_D1" BEL
+        "axi_gpio_0/axi_gpio_0/ip2bus_wrack_i_D1" BEL
+        "axi_gpio_0/axi_gpio_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rvalid_i"
+        BEL
+        "axi_gpio_0/axi_gpio_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_bvalid_i"
+        BEL "axi_gpio_0/axi_gpio_0/gpio_core_1/gpio_Data_Out_7" BEL
+        "axi_gpio_0/axi_gpio_0/gpio_core_1/gpio_Data_Out_6" BEL
+        "axi_gpio_0/axi_gpio_0/gpio_core_1/gpio_Data_Out_5" BEL
+        "axi_gpio_0/axi_gpio_0/gpio_core_1/gpio_Data_Out_4" BEL
+        "axi_gpio_0/axi_gpio_0/gpio_core_1/gpio_Data_Out_3" BEL
+        "axi_gpio_0/axi_gpio_0/gpio_core_1/gpio_Data_Out_2" BEL
+        "axi_gpio_0/axi_gpio_0/gpio_core_1/gpio_Data_Out_1" BEL
+        "axi_gpio_0/axi_gpio_0/gpio_core_1/gpio_Data_Out_0" BEL
+        "axi_gpio_0/axi_gpio_0/gpio_core_1/gpio_OE_7" BEL
+        "axi_gpio_0/axi_gpio_0/gpio_core_1/gpio_OE_6" BEL
+        "axi_gpio_0/axi_gpio_0/gpio_core_1/gpio_OE_5" BEL
+        "axi_gpio_0/axi_gpio_0/gpio_core_1/gpio_OE_4" BEL
+        "axi_gpio_0/axi_gpio_0/gpio_core_1/gpio_OE_3" BEL
+        "axi_gpio_0/axi_gpio_0/gpio_core_1/gpio_OE_2" BEL
+        "axi_gpio_0/axi_gpio_0/gpio_core_1/gpio_OE_1" BEL
+        "axi_gpio_0/axi_gpio_0/gpio_core_1/gpio_OE_0" BEL
+        "axi_gpio_0/axi_gpio_0/gpio_core_1/iGPIO_xferAck" BEL
+        "axi_gpio_0/axi_gpio_0/gpio_core_1/gpio_xferAck_Reg" BEL
+        "axi_gpio_0/axi_gpio_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_0"
+        BEL
+        "axi_gpio_0/axi_gpio_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_1"
+        BEL
+        "axi_gpio_0/axi_gpio_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_2"
+        BEL
+        "axi_gpio_0/axi_gpio_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_3"
+        BEL
+        "axi_gpio_0/axi_gpio_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_4"
+        BEL
+        "axi_gpio_0/axi_gpio_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_5"
+        BEL
+        "axi_gpio_0/axi_gpio_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_6"
+        BEL
+        "axi_gpio_0/axi_gpio_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_7"
+        BEL
+        "axi_gpio_0/axi_gpio_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/state_FSM_FFd2"
+        BEL
+        "axi_gpio_0/axi_gpio_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/state_FSM_FFd1"
+        BEL "axi_gpio_0/axi_gpio_0/ip2bus_data_i_D1_31" BEL
+        "axi_gpio_0/axi_gpio_0/ip2bus_data_i_D1_30" BEL
+        "axi_gpio_0/axi_gpio_0/ip2bus_data_i_D1_29" BEL
+        "axi_gpio_0/axi_gpio_0/ip2bus_data_i_D1_28" BEL
+        "axi_gpio_0/axi_gpio_0/ip2bus_data_i_D1_27" BEL
+        "axi_gpio_0/axi_gpio_0/ip2bus_data_i_D1_26" BEL
+        "axi_gpio_0/axi_gpio_0/ip2bus_data_i_D1_25" BEL
+        "axi_gpio_0/axi_gpio_0/ip2bus_data_i_D1_24" BEL
         "microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Data_Flow_I/Register_File_I/Using_FPGA.Gen_RegFile[0].Register_File_Bit_I/Using_LUT6.RegFile_X2/SP"
         BEL
         "microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Data_Flow_I/Register_File_I/Using_FPGA.Gen_RegFile[0].Register_File_Bit_I/Using_LUT6.RegFile_X2/DP"

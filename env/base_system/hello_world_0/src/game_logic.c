@@ -2,18 +2,17 @@
 
 #include "memmgr.h"
 
-#define malloc(X) memmgr_alloc(X)
-#define free(X) memmgr_free(X)
-
 #include "vga.h"
 #include "input.h"
 #include "graphics.h"
 #include "game_objects.h"
 
 static const float rotate_amount = 0.07;
-static const float ship_accel = 0.02;
+static const float ship_accel = 0.2;
+static const float ship_fric = 0.02;
 static const float bullet_speed = 10;
 int shoot_limit = 0;
+int shoot_buffer = 0;
 
 typedef struct bullet
 {
@@ -25,24 +24,26 @@ typedef struct bullet
 
 void game_over()
 {
-	offset(6, graphic_game_over, vga_get_width()/2 - 150, vga_get_height()/2 - 150);
+	vgapoint_t *poly = copy_poly(6, graphic_game_over);
+	offset(6, poly, vga_get_width()/2 - 150, vga_get_height()/2 - 150);
 
 	while(1)
 	{
 		vga_clear();
-		vga_addpoly(6, graphic_game_over);
+		vga_addpoly(6, poly);
 		vga_sync();
 	}
 }
 
 void win()
 {
-	offset(4, graphic_vict, vga_get_width()/2 - 150, vga_get_height()/2 - 150);
+	vgapoint_t *poly = copy_poly(4, graphic_vict);
+	offset(4, poly, vga_get_width()/2 - 150, vga_get_height()/2 - 150);
 
 	while(1)
 	{
 		vga_clear();
-		vga_addpoly(4, graphic_vict);
+		vga_addpoly(4, poly);
 		vga_sync();
 	}
 }
@@ -53,7 +54,7 @@ void game_main()
   vga_init();
   
   go_initialize();
-  srand(1337);
+  srand(1339);
   
   game_object_t* ship_o = go_getempty();
   ship_o->enabled = 1;
@@ -66,7 +67,7 @@ void game_main()
   ship_o->identifier = OI_SHIP;
   
    int i;
-  for (i = 0; i < 4; i++){
+  for (i = 0; i < 5; i++){
 	go_createasteroid(1);
 	}
   
@@ -80,7 +81,8 @@ void game_main()
     {
 		if (shoot_limit == 0)
 		{
-			shoot_limit = 5;
+			shoot_limit = 15;
+			if (shoot_buffer == 0) shoot_limit = 60;
 			game_object_t* bullet_o = go_getempty();
 		  bullet_o->location.x = ship_o->location.x;
 		  bullet_o->location.y = ship_o->location.y;
@@ -106,10 +108,17 @@ void game_main()
     }
     if(keys & KEY_UP)
     {
+    	shoot_buffer += 4;
+    	if (shoot_buffer > 300) shoot_buffer = 300;
 		//TODO: lookup table
 		ship_o->xvel += ship_accel * cosine(ship_o->angle + 4.71);
 		ship_o->yvel += ship_accel * sine(ship_o->angle + 4.71);
     }  
+
+    ship_o->xvel += ship_fric * -ship_o->xvel;
+    ship_o->yvel += ship_fric * -ship_o->yvel;
+    if (shoot_buffer > 0) shoot_buffer--;
+
     /*if(keys & KEY_DOWN)
     {
 		ship_o->angle += 3.14;

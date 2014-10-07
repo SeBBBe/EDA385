@@ -1,4 +1,3 @@
-#include <math.h>
 
 static const short OI_SHIP = 1;
 static const short OI_BULLET = 2;
@@ -91,7 +90,7 @@ float cosine(float angle){
 //Rotate the polygon poly of n points, rad radians around the point (x_pivot, y_pivot)
 vgapoint_t* rotate(int n, vgapoint_t *poly, float rad, int x_pivot, int y_pivot)
 {
-	vgapoint_t* newpoly = malloc(sizeof(short) * 2 * n);
+	vgapoint_t* newpoly = memmgr_alloc(sizeof(*newpoly) * n);
 	int i;
 	for (i = 0; i < n; i++)
 	{
@@ -117,4 +116,12 @@ void offset(int n, vgapoint_t *poly, int x, int y)
 		poly[i].x += x;
 		poly[i].y += y;
 	}
+}
+
+vgapoint_t *copy_poly(int n, vgapoint_t *poly)
+{
+	vgapoint_t* newpoly = memmgr_alloc(sizeof(*newpoly) * n);
+	memcpy(newpoly, poly, sizeof(*newpoly) * n);
+
+	return newpoly;
 }

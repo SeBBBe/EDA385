@@ -5,13 +5,10 @@ make all
 Building file: ../src/game_logic.c
 Invoking: MicroBlaze gcc compiler
 mb-gcc -Wall -Os -ffast-math -c -fmessage-length=0 -Wl,--no-relax -I../../standalone_bsp_0/microblaze_0/include -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.40.a -mno-xl-soft-mul -mhard-float -MMD -MP -MF"src/game_logic.d" -MT"src/game_logic.d" -o"src/game_logic.o" "../src/game_logic.c"
-In file included from ../src/game_logic.c:11:0:
-../src/game_objects.h: In function 'go_createasteroidxy':
-../src/game_objects.h:228:15: warning: assignment from incompatible pointer type [enabled by default]
-../src/game_objects.h:236:15: warning: assignment from incompatible pointer type [enabled by default]
-../src/game_objects.h:244:15: warning: assignment from incompatible pointer type [enabled by default]
-../src/game_objects.h:252:2: warning: implicit declaration of function 'memcpy' [-Wimplicit-function-declaration]
-../src/game_objects.h:252:2: warning: incompatible implicit declaration of built-in function 'memcpy' [enabled by default]
+In file included from ../src/game_logic.c:7:0:
+../src/graphics.h: In function 'copy_poly':
+../src/graphics.h:124:2: warning: implicit declaration of function 'memcpy' [-Wimplicit-function-declaration]
+../src/graphics.h:124:2: warning: incompatible implicit declaration of built-in function 'memcpy' [enabled by default]
 Finished building: ../src/game_logic.c
 ' '
 Building target: hello_world_0.elf
@@ -22,7 +19,7 @@ Finished building target: hello_world_0.elf
 Invoking: MicroBlaze Print Size
 mb-size hello_world_0.elf  |tee "hello_world_0.elf.size"
    text	   data	    bss	    dec	    hex	filename
-  25666	   2364	  12442	  40472	   9e18	hello_world_0.elf
+  25926	   2364	  12440	  40730	   9f1a	hello_world_0.elf
 Finished building: hello_world_0.elf.size
 ' '
 Invoking: Xilinx ELF Check

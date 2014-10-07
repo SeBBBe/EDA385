@@ -17,6 +17,35 @@
 
 /******************************************************************/
 
+/* Definitions for driver GPIO */
+#define XPAR_XGPIO_NUM_INSTANCES 3
+
+/* Definitions for peripheral AXI_GPIO_0 */
+#define XPAR_AXI_GPIO_0_BASEADDR 0x40080000
+#define XPAR_AXI_GPIO_0_HIGHADDR 0x4008FFFF
+#define XPAR_AXI_GPIO_0_DEVICE_ID 0
+#define XPAR_AXI_GPIO_0_INTERRUPT_PRESENT 0
+#define XPAR_AXI_GPIO_0_IS_DUAL 0
+
+
+/* Definitions for peripheral DIP_SWITCHES_8BITS */
+#define XPAR_DIP_SWITCHES_8BITS_BASEADDR 0x40040000
+#define XPAR_DIP_SWITCHES_8BITS_HIGHADDR 0x4004FFFF
+#define XPAR_DIP_SWITCHES_8BITS_DEVICE_ID 1
+#define XPAR_DIP_SWITCHES_8BITS_INTERRUPT_PRESENT 0
+#define XPAR_DIP_SWITCHES_8BITS_IS_DUAL 0
+
+
+/* Definitions for peripheral PUSH_BUTTONS_4BITS */
+#define XPAR_PUSH_BUTTONS_4BITS_BASEADDR 0x40000000
+#define XPAR_PUSH_BUTTONS_4BITS_HIGHADDR 0x4000FFFF
+#define XPAR_PUSH_BUTTONS_4BITS_DEVICE_ID 2
+#define XPAR_PUSH_BUTTONS_4BITS_INTERRUPT_PRESENT 0
+#define XPAR_PUSH_BUTTONS_4BITS_IS_DUAL 0
+
+
+/******************************************************************/
+
 
 /* Definitions for peripheral AXI_LITE_SLAVE_0 */
 #define XPAR_AXI_LITE_SLAVE_0_S_AXI_RNG00_BASEADDR 0x7F800000
@@ -221,27 +250,6 @@
 #define XPAR_UARTLITE_1_ODD_PARITY 1
 #define XPAR_UARTLITE_1_DATA_BITS 8
 #define XPAR_UARTLITE_1_SIO_CHAN 0
-
-
-/******************************************************************/
-
-/* Definitions for driver GPIO */
-#define XPAR_XGPIO_NUM_INSTANCES 2
-
-/* Definitions for peripheral DIP_SWITCHES_8BITS */
-#define XPAR_DIP_SWITCHES_8BITS_BASEADDR 0x40040000
-#define XPAR_DIP_SWITCHES_8BITS_HIGHADDR 0x4004FFFF
-#define XPAR_DIP_SWITCHES_8BITS_DEVICE_ID 0
-#define XPAR_DIP_SWITCHES_8BITS_INTERRUPT_PRESENT 0
-#define XPAR_DIP_SWITCHES_8BITS_IS_DUAL 0
-
-
-/* Definitions for peripheral PUSH_BUTTONS_4BITS */
-#define XPAR_PUSH_BUTTONS_4BITS_BASEADDR 0x40000000
-#define XPAR_PUSH_BUTTONS_4BITS_HIGHADDR 0x4000FFFF
-#define XPAR_PUSH_BUTTONS_4BITS_DEVICE_ID 1
-#define XPAR_PUSH_BUTTONS_4BITS_INTERRUPT_PRESENT 0
-#define XPAR_PUSH_BUTTONS_4BITS_IS_DUAL 0
 
 
 /******************************************************************/

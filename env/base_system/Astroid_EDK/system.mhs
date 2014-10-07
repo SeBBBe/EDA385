@@ -22,6 +22,7 @@
  PORT VGA_RED = axi_lite_slave_0_VGA_RED, DIR = O, VEC = [2:0]
  PORT VGA_GREEN = axi_lite_slave_0_VGA_GREEN, DIR = O, VEC = [2:0]
  PORT VGA_BLUE = axi_lite_slave_0_VGA_BLUE, DIR = O, VEC = [2:0]
+ PORT JA = axi_gpio_0_GPIO_IO_O, DIR = O, VEC = [7:0]
 
 
 BEGIN proc_sys_reset
@@ -224,5 +225,16 @@ BEGIN lmb_bram_if_cntlr
  PARAMETER C_HIGHADDR = 0x0000bfff
  BUS_INTERFACE SLMB = microblaze_0_ilmb
  BUS_INTERFACE BRAM_PORT = bram_cntlr_1_BRAM_PORT
+END
+
+BEGIN axi_gpio
+ PARAMETER INSTANCE = axi_gpio_0
+ PARAMETER HW_VER = 1.01.b
+ PARAMETER C_GPIO_WIDTH = 8
+ PARAMETER C_BASEADDR = 0x40080000
+ PARAMETER C_HIGHADDR = 0x4008ffff
+ BUS_INTERFACE S_AXI = axi4lite_0
+ PORT S_AXI_ACLK = clk_100_0000MHz
+ PORT GPIO_IO_O = axi_gpio_0_GPIO_IO_O
 END
 
