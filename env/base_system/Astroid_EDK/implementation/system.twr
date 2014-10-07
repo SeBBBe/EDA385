@@ -37,8 +37,19 @@ Timing constraint: PATH "TS_TIG_microblaze_0_Reset_path" TIG;
 ================================================================================
 Timing constraint: PATH "TS_axi4lite_0_reset_resync_path" TIG;
 
- 8 paths analyzed, 8 endpoints analyzed, 0 failing endpoints
+ 24 paths analyzed, 24 endpoints analyzed, 0 failing endpoints
  0 timing errors detected. (0 setup errors, 0 hold errors)
+--------------------------------------------------------------------------------
+
+================================================================================
+Timing constraint: TS_axi4lite_0_async_clock_conv = MAXDELAY FROM TIMEGRP 
+"RAMS" TO TIMEGRP         "axi4lite_0_async_clock_conv_FFDEST" 10 ns 
+DATAPATHONLY;
+For more information, see From:To (Multicycle) Analysis in the Timing Closure User Guide (UG612).
+
+ 67 paths analyzed, 67 endpoints analyzed, 0 failing endpoints
+ 0 timing errors detected. (0 setup errors, 0 hold errors)
+ Maximum delay is   3.138ns.
 --------------------------------------------------------------------------------
 
 ================================================================================
@@ -60,20 +71,31 @@ Timing constraint: TS_sys_clk_pin = PERIOD TIMEGRP "sys_clk_pin" 100 MHz HIGH
 50%;
 For more information, see Period Analysis in the Timing Closure User Guide (UG612).
 
- 0 paths analyzed, 0 endpoints analyzed, 0 failing endpoints
- 0 timing errors detected. (0 component switching limit errors)
- Minimum period is   3.334ns.
+ 3 paths analyzed, 3 endpoints analyzed, 0 failing endpoints
+ 0 timing errors detected. (0 setup errors, 0 hold errors, 0 component switching limit errors)
+ Minimum period is   5.340ns.
 --------------------------------------------------------------------------------
 
 ================================================================================
-Timing constraint: TS_clock_generator_0_clock_generator_0_SIG_PLL0_CLKOUT0 = 
-PERIOD TIMEGRP         "clock_generator_0_clock_generator_0_SIG_PLL0_CLKOUT0" 
+Timing constraint: TS_clock_generator_0_clock_generator_0_SIG_DCM0_CLKFX = 
+PERIOD TIMEGRP         "clock_generator_0_clock_generator_0_SIG_DCM0_CLKFX" 
+TS_sys_clk_pin *         1.38888889 HIGH 50%;
+For more information, see Period Analysis in the Timing Closure User Guide (UG612).
+
+ 175424 paths analyzed, 8971 endpoints analyzed, 0 failing endpoints
+ 0 timing errors detected. (0 setup errors, 0 hold errors, 0 component switching limit errors)
+ Minimum period is   6.879ns.
+--------------------------------------------------------------------------------
+
+================================================================================
+Timing constraint: TS_clock_generator_0_clock_generator_0_SIG_DCM0_CLK0 = 
+PERIOD TIMEGRP         "clock_generator_0_clock_generator_0_SIG_DCM0_CLK0" 
 TS_sys_clk_pin         HIGH 50%;
 For more information, see Period Analysis in the Timing Closure User Guide (UG612).
 
- 420883 paths analyzed, 18153 endpoints analyzed, 0 failing endpoints
+ 250928 paths analyzed, 12211 endpoints analyzed, 0 failing endpoints
  0 timing errors detected. (0 setup errors, 0 hold errors, 0 component switching limit errors)
- Minimum period is   9.528ns.
+ Minimum period is   9.926ns.
 --------------------------------------------------------------------------------
 
 
@@ -84,9 +106,11 @@ Derived Constraints for TS_sys_clk_pin
 |           Constraint          | Requirement |-------------+-------------|-------------+-------------|-------------+-------------|
 |                               |             |   Direct    | Derivative  |   Direct    | Derivative  |   Direct    | Derivative  |
 +-------------------------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+
-|TS_sys_clk_pin                 |     10.000ns|      3.334ns|      9.528ns|            0|            0|            0|       420883|
-| TS_clock_generator_0_clock_gen|     10.000ns|      9.528ns|          N/A|            0|            0|       420883|            0|
-| erator_0_SIG_PLL0_CLKOUT0     |             |             |             |             |             |             |             |
+|TS_sys_clk_pin                 |     10.000ns|      5.340ns|      9.926ns|            0|            0|            3|       426352|
+| TS_clock_generator_0_clock_gen|      7.200ns|      6.879ns|          N/A|            0|            0|       175424|            0|
+| erator_0_SIG_DCM0_CLKFX       |             |             |             |             |             |             |             |
+| TS_clock_generator_0_clock_gen|     10.000ns|      9.926ns|          N/A|            0|            0|       250928|            0|
+| erator_0_SIG_DCM0_CLK0        |             |             |             |             |             |             |             |
 +-------------------------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+
 
 All constraints were met.
@@ -101,7 +125,7 @@ Clock to Setup on destination clock GCLK
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-GCLK           |    9.528|         |         |         |
+GCLK           |    9.926|         |         |         |
 ---------------+---------+---------+---------+---------+
 
 
@@ -110,20 +134,21 @@ Timing summary:
 
 Timing errors: 0  Score: 0  (Setup/Max: 0, Hold: 0)
 
-Constraints cover 420896 paths, 0 nets, and 24942 connections
+Constraints cover 426451 paths, 0 nets, and 27560 connections
 
 Design statistics:
-   Minimum period:   9.528ns   (Maximum frequency: 104.954MHz)
+   Minimum period:   9.926ns   (Maximum frequency: 100.746MHz)
+   Maximum path delay from/to any node:   3.138ns
 
 
-Analysis completed Tue Oct 07 15:02:01 2014 
+Analysis completed Tue Oct 07 20:28:02 2014 
 --------------------------------------------------------------------------------
 
 Trace Settings:
 -------------------------
 Trace Settings 
 
-Peak Memory Usage: 338 MB
+Peak Memory Usage: 354 MB
 
 
 

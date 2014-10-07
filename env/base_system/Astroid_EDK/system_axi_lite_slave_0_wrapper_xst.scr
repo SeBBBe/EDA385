@@ -1,0 +1,56 @@
+set -tmpdir C:\temp\EDA385\env\base_system\Astroid_EDK\synthesis\xst_temp_dir\
+run
+-opt_mode speed
+-netlist_hierarchy as_optimized
+-opt_level 2
+-p xc6slx16csg324-3
+-top system_axi_lite_slave_0_wrapper
+-ifmt MIXED
+-ifn system_axi_lite_slave_0_wrapper_xst.prj
+-ofn ../implementation/system_axi_lite_slave_0_wrapper.ngc
+-hierarchy_separator /
+-sd {../implementation}
+-vlgincdir {"C:\temp\EDA385\env\base_system\Astroid_EDK\pcores\" "C:\Xilinx\BSP\Nexys3_AXI_BSB_Support\lib\Digilent\pcores\" "C:\Xilinx\14.2\ISE_DS\EDK\hw\XilinxBFMinterface\pcores\" "C:\Xilinx\14.2\ISE_DS\EDK\hw\XilinxProcessorIPLib\pcores\" }
+-power NO
+-iuc NO
+-keep_hierarchy NO
+-rtlview YES
+-glob_opt AllClockNets
+-read_cores YES
+-write_timing_constraints NO
+-cross_clock_analysis NO
+-hierarchy_separator /
+-bus_delimiter <>
+-case Maintain
+-slice_utilization_ratio 100
+-bram_utilization_ratio 100
+-dsp_utilization_ratio 100
+-lc Auto
+-reduce_control_sets Auto
+-fsm_extract YES -fsm_encoding Auto
+-safe_implementation No
+-fsm_style LUT
+-ram_extract YES
+-ram_style Auto
+-rom_extract YES
+-shreg_extract YES
+-rom_style Auto
+-auto_bram_packing YES
+-resource_sharing YES
+-async_to_sync YES
+-shreg_min_size 2
+-use_dsp48 Auto
+-iobuf NO
+-max_fanout 100000
+-bufg 16
+-register_duplication YES
+-register_balancing YES
+-move_first_stage YES
+-move_last_stage YES
+-optimize_primitives NO
+-use_clock_enable Auto
+-use_sync_set Auto
+-use_sync_reset Auto
+-iob False
+-equivalent_register_removal NO
+-slice_utilization_ratio_maxmargin 5

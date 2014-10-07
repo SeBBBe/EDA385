@@ -26,4 +26,22 @@ Running system level DRCs...
 Performing System level DRCs on properties...
 
 Running DRC Tcl procedures for OPTION SYSLEVEL_DRC_PROC...
+WARNING:EDK -  ****************************************************************
+WARNING:EDK -  Optimization Alert: axi_interconnect axi4lite_0: One or more SI 
+WARNING:EDK -  or MI slots uses AXI4-Lite protocol and has a W or R channel 
+WARNING:EDK -  register slice configured as "Fully-registered" 
+WARNING:EDK -  (C_S/M_AXI_W/R_REGISTER = 1). AXI4-Lite data transfers generally 
+WARNING:EDK -  cannot take advantage of fully-registered performance. To reduce 
+WARNING:EDK -  resources, use "Light-weight" reg-slices on all channels of 
+WARNING:EDK -  AXI4-Lite slots (C_S/M_AXI_*_REGISTER = 7).
+
+WARNING:EDK -  ****************************************************************
+WARNING:EDK -  Optimization Alert: axi_interconnect axi4lite_0: One or more SI 
+WARNING:EDK -  or MI slots uses register slices configured as 
+WARNING:EDK -  "Fully-registered" on their AW, AR or B channels 
+WARNING:EDK -  (C_S/M_AXI_AW/AR/B_REGISTER = 1). These control channels 
+WARNING:EDK -  generally cannot take advantage of fully-registered performance. 
+WARNING:EDK -  To reduce resources, use "Light-weight" reg-slices on AW, AR or 
+WARNING:EDK -  B channels (C_S/M_AXI_AW/AR/B_REGISTER = 7).
+
 Conversion to XML complete.

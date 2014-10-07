@@ -140,7 +140,7 @@ VGA_RED <= std_logic_vector(output(2 downto 0)) when real_hsync = '1' and real_v
 VGA_GREEN <= std_logic_vector(output(5 downto 3)) when real_hsync = '1' and real_vsync = '1' else "000";
 VGA_BLUE <= std_logic_vector(output(7 downto 6)) when real_hsync = '1' and real_vsync = '1' else "00";
 
-VGA_HSYNC <= real_hsync;
+VGA_HSYNC <= not real_hsync;
 VGA_VSYNC <= real_vsync;
 
 end implementation;

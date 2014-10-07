@@ -55,7 +55,7 @@
 <TD COLSPAN="2" BGCOLOR="#AA0017" ALIGN="CENTER"><SPAN style="color:#FFFFFF; font: bold 14px Verdana,Arial,Helvetica,sans-serif">Specifics</SPAN></TD>
 <TR></TR>
 <TD COLSPAN="1" BGCOLOR="#CECECE" ALIGN="LEFT" WIDTH="30%"><SPAN style="color:#000000; font: bold 12px Verdana,Arial,Helvetica,sans-serif">Generated</SPAN></TD>
-<TD COLSPAN="1" BGCOLOR="#FFFFFF" ALIGN="CENTER" WIDTH="70%"><SPAN style="color:#000000; font: bold 12px Verdana,Arial,Helvetica,sans-serif">Tue Oct 07 14:57:19 2014</SPAN></TD>
+<TD COLSPAN="1" BGCOLOR="#FFFFFF" ALIGN="CENTER" WIDTH="70%"><SPAN style="color:#000000; font: bold 12px Verdana,Arial,Helvetica,sans-serif">Tue Oct 07 19:55:31 2014</SPAN></TD>
 <TR></TR>
 <TD COLSPAN="1" BGCOLOR="#CECECE" ALIGN="LEFT" WIDTH="30%"><SPAN style="color:#000000; font: bold 12px Verdana,Arial,Helvetica,sans-serif">EDK Version</SPAN></TD>
 <TD COLSPAN="1" BGCOLOR="#FFFFFF" ALIGN="CENTER"><SPAN style="color:#000000; font: bold 12px Verdana,Arial,Helvetica,sans-serif">14.2</SPAN></TD>
@@ -3478,7 +3478,7 @@
 <TD COLSPAN="2" WIDTH="25%" ALIGN="LEFT" BGCOLOR="#FFFFFF"><SPAN style="color:#000000;   font: normal 12px Verdana,Arial,Helvetica,sans-serif">ACLK</SPAN></TD>
 <TD COLSPAN="1" WIDTH="10%" ALIGN="CENTER" BGCOLOR="#FFFFFF"><SPAN style="color:#000000; font: bold 10px Verdana,Arial,Helvetica,sans-serif">I</SPAN></TD>
 <TD COLSPAN="1" WIDTH="10%" ALIGN="CENTER" BGCOLOR="#FFFFFF"><SPAN style="color:#000000; font: bold 10px Verdana,Arial,Helvetica,sans-serif">1</SPAN></TD>
-<TD COLSPAN="2" WIDTH="50%" ALIGN="LEFT" BGCOLOR="#FFFFFF"><SPAN style="color:#000000; font: normal 12px Verdana,Arial,Helvetica,sans-serif">clk_100_0000MHz</SPAN></TD>
+<TD COLSPAN="2" WIDTH="50%" ALIGN="LEFT" BGCOLOR="#FFFFFF"><SPAN style="color:#000000; font: normal 12px Verdana,Arial,Helvetica,sans-serif">clock_generator_0_CLKOUT1</SPAN></TD>
 <TR></TR>
 <TD COLSPAN="1" WIDTH="5%" ALIGN="CENTER" BGCOLOR="#FFFFFF"><SPAN style="color:#000000;   font: bold 12px Verdana,Arial,Helvetica,sans-serif">1</SPAN></TD>
 <TD COLSPAN="2" WIDTH="25%" ALIGN="LEFT" BGCOLOR="#FFFFFF"><SPAN style="color:#000000;   font: normal 12px Verdana,Arial,Helvetica,sans-serif">VGA_HSYNC</SPAN></TD>
@@ -3571,32 +3571,49 @@
 <TR></TR>
 <TD COLSPAN="1" WIDTH="50%" ALIGN="left" BGCOLOR="#FFFFAA"><SPAN style="color:#000000;  font: normal 12px Verdana,Arial,Helvetica,sans-serif">C_S_AXI_RNG00_BASEADDR</SPAN></TD>
 <TD COLSPAN="1" WIDTH="50%" ALIGN="CENTER" BGCOLOR="#FFFFAA"><SPAN style="color:#000000; font: normal 12px Verdana,Arial,Helvetica,sans-serif">0x7F800000</SPAN></TD>
+<TR></TR>
+<TD COLSPAN="1" WIDTH="50%" ALIGN="left" BGCOLOR="#FFFFAA"><SPAN style="color:#000000;  font: normal 12px Verdana,Arial,Helvetica,sans-serif">C_S_AXI_RNG00_HIGHADDR</SPAN></TD>
+<TD COLSPAN="1" WIDTH="50%" ALIGN="CENTER" BGCOLOR="#FFFFAA"><SPAN style="color:#000000; font: normal 12px Verdana,Arial,Helvetica,sans-serif">0x7F80FFFF</SPAN></TD>
+<TR></TR>
+<TD COLSPAN="1" WIDTH="50%" ALIGN="left" BGCOLOR="#CECECE"><SPAN style="color:#000000;  font: normal 12px Verdana,Arial,Helvetica,sans-serif">C_S_AXI_RNG01_BASEADDR</SPAN></TD>
+<TD COLSPAN="1" WIDTH="50%" ALIGN="CENTER" BGCOLOR="#CECECE"><SPAN style="color:#000000; font: normal 12px Verdana,Arial,Helvetica,sans-serif">0xFFFFFFFF</SPAN></TD>
+<TR></TR>
+<TD COLSPAN="1" WIDTH="50%" ALIGN="left" BGCOLOR="#FFFFFF"><SPAN style="color:#000000;  font: normal 12px Verdana,Arial,Helvetica,sans-serif">C_S_AXI_RNG01_HIGHADDR</SPAN></TD>
+<TD COLSPAN="1" WIDTH="50%" ALIGN="CENTER" BGCOLOR="#FFFFFF"><SPAN style="color:#000000; font: normal 12px Verdana,Arial,Helvetica,sans-serif">0x00000000</SPAN></TD>
 </TABLE></TD>
 <TD COLSPAN="1" WIDTH="2%"><TABLE BGCOLOR="#CECECE" WIDTH="100%" COLS="1" CELLSPACING="0" CELLPADDING="0" BORDER="0"><TD COLSPAN="1" ALIGN="CENTER" BGCOLOR="#CECECE"><SPAN style="color:#AA0017; font: bold 10px Verdana,Arial,Helvetica,sans-serif"> </SPAN></TD></TABLE></TD>
 <TD COLSPAN="2" WIDTH="49%"><TABLE BGCOLOR="#000000" WIDTH="100%" COLS="2" CELLSPACING="1" CELLPADDING="0" BORDER="0">
 <TD COLSPAN="1" WIDTH="50%" ALIGN="CENTER" BGCOLOR="#CECECE"><SPAN style="color:#000000; font: bold 10px Verdana,Arial,Helvetica,sans-serif">Name</SPAN></TD>
 <TD COLSPAN="1" WIDTH="50%" ALIGN="CENTER" BGCOLOR="#CECECE"><SPAN style="color:#000000; font: bold 10px Verdana,Arial,Helvetica,sans-serif">Value</SPAN></TD>
 <TR></TR>
-<TD COLSPAN="1" WIDTH="50%" ALIGN="LEFT" BGCOLOR="#FFFFAA"><SPAN style="color:#000000;  font: normal 12px Verdana,Arial,Helvetica,sans-serif">C_S_AXI_RNG00_HIGHADDR</SPAN></TD>
-<TD COLSPAN="1" WIDTH="50%" ALIGN="CENTER" BGCOLOR="#FFFFAA"><SPAN style="color:#000000; font: normal 12px Verdana,Arial,Helvetica,sans-serif">0x7F80FFFF</SPAN></TD>
+<TD COLSPAN="1" WIDTH="50%" ALIGN="LEFT" BGCOLOR="#CECECE"><SPAN style="color:#000000;  font: normal 12px Verdana,Arial,Helvetica,sans-serif">C_S_AXI_RNG02_BASEADDR</SPAN></TD>
+<TD COLSPAN="1" WIDTH="50%" ALIGN="CENTER" BGCOLOR="#CECECE"><SPAN style="color:#000000; font: normal 12px Verdana,Arial,Helvetica,sans-serif">0xFFFFFFFF</SPAN></TD>
 <TR></TR>
-<TD COLSPAN="1" WIDTH="50%" ALIGN="LEFT" BGCOLOR="#FFFFFF"><SPAN style="color:#000000;  font: normal 12px Verdana,Arial,Helvetica,sans-serif">C_S_AXI_RNG01_BASEADDR</SPAN></TD>
-<TD COLSPAN="1" WIDTH="50%" ALIGN="CENTER" BGCOLOR="#FFFFFF"><SPAN style="color:#000000; font: normal 12px Verdana,Arial,Helvetica,sans-serif">0xFFFFFFFF</SPAN></TD>
+<TD COLSPAN="1" WIDTH="50%" ALIGN="LEFT" BGCOLOR="#FFFFFF"><SPAN style="color:#000000;  font: normal 12px Verdana,Arial,Helvetica,sans-serif">C_S_AXI_RNG02_HIGHADDR</SPAN></TD>
+<TD COLSPAN="1" WIDTH="50%" ALIGN="CENTER" BGCOLOR="#FFFFFF"><SPAN style="color:#000000; font: normal 12px Verdana,Arial,Helvetica,sans-serif">0x00000000</SPAN></TD>
 <TR></TR>
-<TD COLSPAN="1" WIDTH="50%" ALIGN="LEFT" BGCOLOR="#CECECE"><SPAN style="color:#000000;  font: normal 12px Verdana,Arial,Helvetica,sans-serif">C_S_AXI_RNG01_HIGHADDR</SPAN></TD>
-<TD COLSPAN="1" WIDTH="50%" ALIGN="CENTER" BGCOLOR="#CECECE"><SPAN style="color:#000000; font: normal 12px Verdana,Arial,Helvetica,sans-serif">0x00000000</SPAN></TD>
+<TD COLSPAN="1" WIDTH="50%" ALIGN="LEFT" BGCOLOR="#CECECE"><SPAN style="color:#000000;  font: normal 12px Verdana,Arial,Helvetica,sans-serif">C_S_AXI_RNG03_BASEADDR</SPAN></TD>
+<TD COLSPAN="1" WIDTH="50%" ALIGN="CENTER" BGCOLOR="#CECECE"><SPAN style="color:#000000; font: normal 12px Verdana,Arial,Helvetica,sans-serif">0xFFFFFFFF</SPAN></TD>
 <TR></TR>
-<TD COLSPAN="1" WIDTH="50%" ALIGN="LEFT" BGCOLOR="#FFFFFF"><SPAN style="color:#000000;  font: normal 12px Verdana,Arial,Helvetica,sans-serif">C_S_AXI_RNG02_BASEADDR</SPAN></TD>
-<TD COLSPAN="1" WIDTH="50%" ALIGN="CENTER" BGCOLOR="#FFFFFF"><SPAN style="color:#000000; font: normal 12px Verdana,Arial,Helvetica,sans-serif">0xFFFFFFFF</SPAN></TD>
+<TD COLSPAN="1" WIDTH="50%" ALIGN="LEFT" BGCOLOR="#FFFFFF"><SPAN style="color:#000000;  font: normal 12px Verdana,Arial,Helvetica,sans-serif">C_S_AXI_RNG03_HIGHADDR</SPAN></TD>
+<TD COLSPAN="1" WIDTH="50%" ALIGN="CENTER" BGCOLOR="#FFFFFF"><SPAN style="color:#000000; font: normal 12px Verdana,Arial,Helvetica,sans-serif">0x00000000</SPAN></TD>
 <TR></TR>
-<TD COLSPAN="1" WIDTH="50%" ALIGN="LEFT" BGCOLOR="#CECECE"><SPAN style="color:#000000;  font: normal 12px Verdana,Arial,Helvetica,sans-serif">C_S_AXI_RNG02_HIGHADDR</SPAN></TD>
-<TD COLSPAN="1" WIDTH="50%" ALIGN="CENTER" BGCOLOR="#CECECE"><SPAN style="color:#000000; font: normal 12px Verdana,Arial,Helvetica,sans-serif">0x00000000</SPAN></TD>
+<TD COLSPAN="1" WIDTH="50%" ALIGN="LEFT" BGCOLOR="#CECECE"><SPAN style="color:#000000;  font: normal 12px Verdana,Arial,Helvetica,sans-serif">C_INTERCONNECT_S_AXI_AW_REGISTER</SPAN></TD>
+<TD COLSPAN="1" WIDTH="50%" ALIGN="CENTER" BGCOLOR="#CECECE"><SPAN style="color:#000000; font: normal 12px Verdana,Arial,Helvetica,sans-serif">1</SPAN></TD>
 <TR></TR>
-<TD COLSPAN="1" WIDTH="50%" ALIGN="LEFT" BGCOLOR="#FFFFFF"><SPAN style="color:#000000;  font: normal 12px Verdana,Arial,Helvetica,sans-serif">C_S_AXI_RNG03_BASEADDR</SPAN></TD>
-<TD COLSPAN="1" WIDTH="50%" ALIGN="CENTER" BGCOLOR="#FFFFFF"><SPAN style="color:#000000; font: normal 12px Verdana,Arial,Helvetica,sans-serif">0xFFFFFFFF</SPAN></TD>
+<TD COLSPAN="1" WIDTH="50%" ALIGN="LEFT" BGCOLOR="#FFFFFF"><SPAN style="color:#000000;  font: normal 12px Verdana,Arial,Helvetica,sans-serif">C_INTERCONNECT_S_AXI_AR_REGISTER</SPAN></TD>
+<TD COLSPAN="1" WIDTH="50%" ALIGN="CENTER" BGCOLOR="#FFFFFF"><SPAN style="color:#000000; font: normal 12px Verdana,Arial,Helvetica,sans-serif">1</SPAN></TD>
 <TR></TR>
-<TD COLSPAN="1" WIDTH="50%" ALIGN="LEFT" BGCOLOR="#CECECE"><SPAN style="color:#000000;  font: normal 12px Verdana,Arial,Helvetica,sans-serif">C_S_AXI_RNG03_HIGHADDR</SPAN></TD>
-<TD COLSPAN="1" WIDTH="50%" ALIGN="CENTER" BGCOLOR="#CECECE"><SPAN style="color:#000000; font: normal 12px Verdana,Arial,Helvetica,sans-serif">0x00000000</SPAN></TD>
+<TD COLSPAN="1" WIDTH="50%" ALIGN="LEFT" BGCOLOR="#CECECE"><SPAN style="color:#000000;  font: normal 12px Verdana,Arial,Helvetica,sans-serif">C_INTERCONNECT_S_AXI_W_REGISTER</SPAN></TD>
+<TD COLSPAN="1" WIDTH="50%" ALIGN="CENTER" BGCOLOR="#CECECE"><SPAN style="color:#000000; font: normal 12px Verdana,Arial,Helvetica,sans-serif">1</SPAN></TD>
+<TR></TR>
+<TD COLSPAN="1" WIDTH="50%" ALIGN="LEFT" BGCOLOR="#FFFFFF"><SPAN style="color:#000000;  font: normal 12px Verdana,Arial,Helvetica,sans-serif">C_INTERCONNECT_S_AXI_R_REGISTER</SPAN></TD>
+<TD COLSPAN="1" WIDTH="50%" ALIGN="CENTER" BGCOLOR="#FFFFFF"><SPAN style="color:#000000; font: normal 12px Verdana,Arial,Helvetica,sans-serif">1</SPAN></TD>
+<TR></TR>
+<TD COLSPAN="1" WIDTH="50%" ALIGN="LEFT" BGCOLOR="#CECECE"><SPAN style="color:#000000;  font: normal 12px Verdana,Arial,Helvetica,sans-serif">C_INTERCONNECT_S_AXI_B_REGISTER</SPAN></TD>
+<TD COLSPAN="1" WIDTH="50%" ALIGN="CENTER" BGCOLOR="#CECECE"><SPAN style="color:#000000; font: normal 12px Verdana,Arial,Helvetica,sans-serif">1</SPAN></TD>
+<TR></TR>
+<TD COLSPAN="2" WIDTH="100%" ALIGN="left" BGCOLOR="#FFFFFF"><SPAN style="color:#FFFFFF; font: bold 10px Verdana,Arial,Helvetica,sans-serif"> </SPAN></TD>
 </TABLE></TD>
 </TABLE></TD>
 </TABLE>
@@ -3827,6 +3844,12 @@
 <TD COLSPAN="1" WIDTH="10%" ALIGN="CENTER" BGCOLOR="#FFFFFF"><SPAN style="color:#000000; font: bold 10px Verdana,Arial,Helvetica,sans-serif">I</SPAN></TD>
 <TD COLSPAN="1" WIDTH="10%" ALIGN="CENTER" BGCOLOR="#FFFFFF"><SPAN style="color:#000000; font: bold 10px Verdana,Arial,Helvetica,sans-serif">1</SPAN></TD>
 <TD COLSPAN="2" WIDTH="50%" ALIGN="LEFT" BGCOLOR="#FFFFFF"><SPAN style="color:#000000; font: normal 12px Verdana,Arial,Helvetica,sans-serif">GCLK</SPAN></TD>
+<TR></TR>
+<TD COLSPAN="1" WIDTH="5%" ALIGN="CENTER" BGCOLOR="#FFFFFF"><SPAN style="color:#000000;   font: bold 12px Verdana,Arial,Helvetica,sans-serif">4</SPAN></TD>
+<TD COLSPAN="2" WIDTH="25%" ALIGN="LEFT" BGCOLOR="#FFFFFF"><SPAN style="color:#000000;   font: normal 12px Verdana,Arial,Helvetica,sans-serif">CLKOUT1</SPAN></TD>
+<TD COLSPAN="1" WIDTH="10%" ALIGN="CENTER" BGCOLOR="#FFFFFF"><SPAN style="color:#000000; font: bold 10px Verdana,Arial,Helvetica,sans-serif">O</SPAN></TD>
+<TD COLSPAN="1" WIDTH="10%" ALIGN="CENTER" BGCOLOR="#FFFFFF"><SPAN style="color:#000000; font: bold 10px Verdana,Arial,Helvetica,sans-serif">1</SPAN></TD>
+<TD COLSPAN="2" WIDTH="50%" ALIGN="LEFT" BGCOLOR="#FFFFFF"><SPAN style="color:#000000; font: normal 12px Verdana,Arial,Helvetica,sans-serif">clock_generator_0_CLKOUT1</SPAN></TD>
 </TABLE>
 <BR><BR>
 </TD>
@@ -3885,14 +3908,14 @@
 <TD COLSPAN="1" WIDTH="50%" ALIGN="left" BGCOLOR="#FFFFFF"><SPAN style="color:#000000;  font: normal 12px Verdana,Arial,Helvetica,sans-serif">C_CLKOUT0_VARIABLE_PHASE</SPAN></TD>
 <TD COLSPAN="1" WIDTH="50%" ALIGN="CENTER" BGCOLOR="#FFFFFF"><SPAN style="color:#000000; font: normal 12px Verdana,Arial,Helvetica,sans-serif">FALSE</SPAN></TD>
 <TR></TR>
-<TD COLSPAN="1" WIDTH="50%" ALIGN="left" BGCOLOR="#CECECE"><SPAN style="color:#000000;  font: normal 12px Verdana,Arial,Helvetica,sans-serif">C_CLKOUT1_FREQ</SPAN></TD>
-<TD COLSPAN="1" WIDTH="50%" ALIGN="CENTER" BGCOLOR="#CECECE"><SPAN style="color:#000000; font: normal 12px Verdana,Arial,Helvetica,sans-serif">0</SPAN></TD>
+<TD COLSPAN="1" WIDTH="50%" ALIGN="left" BGCOLOR="#FFFFAA"><SPAN style="color:#000000;  font: normal 12px Verdana,Arial,Helvetica,sans-serif">C_CLKOUT1_FREQ</SPAN></TD>
+<TD COLSPAN="1" WIDTH="50%" ALIGN="CENTER" BGCOLOR="#FFFFAA"><SPAN style="color:#000000; font: normal 12px Verdana,Arial,Helvetica,sans-serif">138888889</SPAN></TD>
 <TR></TR>
 <TD COLSPAN="1" WIDTH="50%" ALIGN="left" BGCOLOR="#FFFFFF"><SPAN style="color:#000000;  font: normal 12px Verdana,Arial,Helvetica,sans-serif">C_CLKOUT1_PHASE</SPAN></TD>
 <TD COLSPAN="1" WIDTH="50%" ALIGN="CENTER" BGCOLOR="#FFFFFF"><SPAN style="color:#000000; font: normal 12px Verdana,Arial,Helvetica,sans-serif">0</SPAN></TD>
 <TR></TR>
-<TD COLSPAN="1" WIDTH="50%" ALIGN="left" BGCOLOR="#CECECE"><SPAN style="color:#000000;  font: normal 12px Verdana,Arial,Helvetica,sans-serif">C_CLKOUT1_GROUP</SPAN></TD>
-<TD COLSPAN="1" WIDTH="50%" ALIGN="CENTER" BGCOLOR="#CECECE"><SPAN style="color:#000000; font: normal 12px Verdana,Arial,Helvetica,sans-serif">NONE</SPAN></TD>
+<TD COLSPAN="1" WIDTH="50%" ALIGN="left" BGCOLOR="#FFFFAA"><SPAN style="color:#000000;  font: normal 12px Verdana,Arial,Helvetica,sans-serif">C_CLKOUT1_GROUP</SPAN></TD>
+<TD COLSPAN="1" WIDTH="50%" ALIGN="CENTER" BGCOLOR="#FFFFAA"><SPAN style="color:#000000; font: normal 12px Verdana,Arial,Helvetica,sans-serif">DCM0</SPAN></TD>
 <TR></TR>
 <TD COLSPAN="1" WIDTH="50%" ALIGN="left" BGCOLOR="#FFFFFF"><SPAN style="color:#000000;  font: normal 12px Verdana,Arial,Helvetica,sans-serif">C_CLKOUT1_BUF</SPAN></TD>
 <TD COLSPAN="1" WIDTH="50%" ALIGN="CENTER" BGCOLOR="#FFFFFF"><SPAN style="color:#000000; font: normal 12px Verdana,Arial,Helvetica,sans-serif">TRUE</SPAN></TD>

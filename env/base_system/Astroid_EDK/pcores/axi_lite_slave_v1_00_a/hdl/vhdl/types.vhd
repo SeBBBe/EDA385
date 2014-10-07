@@ -53,31 +53,31 @@ package types is
 	
 	-- 1280x960
 	-- Horizontal timing constants
-	constant H_FRONTPORCH:   integer := 80;
-	constant H_SYNC:         integer := 136;
-	constant H_BACKPORCH:    integer := 216;
-	constant H_PIXEL:        integer := 1280;
-	constant H_PERIOD:       integer := 1712;
+	--constant H_FRONTPORCH:   integer := 80;
+	--constant H_SYNC:         integer := 136;
+	--constant H_BACKPORCH:    integer := 216;
+	--constant H_PIXEL:        integer := 1280;
+	--constant H_PERIOD:       integer := 1712;
 	-- Vertical timing constants
-	constant V_FRONTPORCH:   integer := 1;
-	constant V_SYNC:         integer := 3;
-	constant V_BACKPORCH:    integer := 30;
-	constant V_PIXEL:        integer := 960;
-	constant V_PERIOD:       integer := 994;
+	--constant V_FRONTPORCH:   integer := 1;
+	--constant V_SYNC:         integer := 3;
+	--constant V_BACKPORCH:    integer := 30;
+	--constant V_PIXEL:        integer := 960;
+	--constant V_PERIOD:       integer := 994;
 	
 	-- 1920x1080
 	-- Horizontal timing constants
-	--constant H_FRONTPORCH:   integer := 32;
-	--constant H_SYNC:         integer := 696;
-	--constant H_BACKPORCH:    integer := 32;
-	--constant H_PIXEL:        integer := 1920;
-	--constant H_PERIOD:       integer := 2680;
+	constant H_FRONTPORCH:   integer := 29;
+	constant H_SYNC:         integer := 100;
+	constant H_BACKPORCH:    integer := 29;
+	constant H_PIXEL:        integer := 1920;
+	constant H_PERIOD:       integer := 2078;
 	-- Vertical timing constants
-	--constant V_FRONTPORCH:   integer := 22;
-	--constant V_SYNC:         integer := 11;
-	--constant V_BACKPORCH:    integer := 22;
-	--constant V_PIXEL:        integer := 1080;
-	--constant V_PERIOD:       integer := 1135;
+	constant V_FRONTPORCH:   integer := 5;
+	constant V_SYNC:         integer := 22;
+	constant V_BACKPORCH:    integer := 5;
+	constant V_PIXEL:        integer := 1080;
+	constant V_PERIOD:       integer := 1112;
 	
 	-- Horizontal timing positions
 	constant H_FRONTPORCH_START:   integer := 0;                                   --   0

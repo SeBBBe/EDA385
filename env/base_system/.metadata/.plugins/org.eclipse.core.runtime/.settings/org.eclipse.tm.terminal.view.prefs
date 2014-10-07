@@ -1,5 +1,5 @@
-#Tue Oct 07 10:39:04 CEST 2014
-Connectors.org.eclipse.tm.internal.terminal.serial.SerialConnector.SerialPort=COM4
+#Tue Oct 07 19:29:25 CEST 2014
+Connectors.org.eclipse.tm.internal.terminal.serial.SerialConnector.SerialPort=COM5
 Connectors.org.eclipse.tm.internal.terminal.serial.SerialConnector.StopBits=1
 Connectors.org.eclipse.tm.internal.terminal.serial.SerialConnector.DataBits=8
 eclipse.preferences.version=1

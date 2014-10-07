@@ -3,8 +3,8 @@
 #include "vga.h"
 #include "input.h"
 
-#define VGA_WIDTH 1280
-#define VGA_HEIGHT 960
+#define VGA_WIDTH 1920
+#define VGA_HEIGHT 1080
 #define VGA_MAX_LINES 192
 
 #define INPUT_BASE_ADDRESS 0x40000000

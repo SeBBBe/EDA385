@@ -65,86 +65,56 @@ architecture STRUCTURE of clock_generator is
   -- Components ( copy from entity, exact the same in low level parameters )
   ----------------------------------------------------------------------------
 
-  component pll_module is
+  component dcm_module is
     generic (
-      C_BANDWIDTH              : string  := "OPTIMIZED";           
-      C_CLKFBOUT_MULT          : integer := 1;  
-      C_CLKFBOUT_PHASE         : real    := 0.0;  
-      C_CLKIN1_PERIOD          : real    := 0.000;  
-      -- C_CLKIN2_PERIOD       : real    := 0.000;  
-      C_CLKOUT0_DIVIDE         : integer := 1;  
-      C_CLKOUT0_DUTY_CYCLE     : real    := 0.5;  
-      C_CLKOUT0_PHASE          : real    := 0.0;  
-      C_CLKOUT1_DIVIDE         : integer := 1;  
-      C_CLKOUT1_DUTY_CYCLE     : real    := 0.5;  
-      C_CLKOUT1_PHASE          : real    := 0.0;  
-      C_CLKOUT2_DIVIDE         : integer := 1;  
-      C_CLKOUT2_DUTY_CYCLE     : real    := 0.5;  
-      C_CLKOUT2_PHASE          : real    := 0.0;  
-      C_CLKOUT3_DIVIDE         : integer := 1;  
-      C_CLKOUT3_DUTY_CYCLE     : real    := 0.5;  
-      C_CLKOUT3_PHASE          : real    := 0.0;  
-      C_CLKOUT4_DIVIDE         : integer := 1;  
-      C_CLKOUT4_DUTY_CYCLE     : real    := 0.5;  
-      C_CLKOUT4_PHASE          : real    := 0.0;  
-      C_CLKOUT5_DIVIDE         : integer := 1;  
-      C_CLKOUT5_DUTY_CYCLE     : real    := 0.5;  
-      C_CLKOUT5_PHASE          : real    := 0.0;  
-      C_COMPENSATION           : string  := "SYSTEM_SYNCHRONOUS";  
-      C_DIVCLK_DIVIDE          : integer := 1;  
-      -- C_EN_REL              : boolean := false;  
-      -- C_PLL_PMCD_MODE       : boolean := false;  
-      C_REF_JITTER             : real    := 0.100;  
-      C_RESET_ON_LOSS_OF_LOCK  : boolean := false;  
-      C_RST_DEASSERT_CLK       : string  := "CLKIN1";  
-      C_CLKOUT0_DESKEW_ADJUST  : string  := "NONE";  
-      C_CLKOUT1_DESKEW_ADJUST  : string  := "NONE";  
-      C_CLKOUT2_DESKEW_ADJUST  : string  := "NONE"; 
-      C_CLKOUT3_DESKEW_ADJUST  : string  := "NONE"; 
-      C_CLKOUT4_DESKEW_ADJUST  : string  := "NONE"; 
-      C_CLKOUT5_DESKEW_ADJUST  : string  := "NONE"; 
-      C_CLKFBOUT_DESKEW_ADJUST : string  := "NONE"; 
-      C_CLKIN1_BUF             : boolean := false;
-      -- C_CLKIN2_BUF          : boolean := false;
-      C_CLKFBOUT_BUF           : boolean := false;
-      C_CLKOUT0_BUF            : boolean := false;
-      C_CLKOUT1_BUF            : boolean := false;
-      C_CLKOUT2_BUF            : boolean := false;
-      C_CLKOUT3_BUF            : boolean := false;
-      C_CLKOUT4_BUF            : boolean := false;
-      C_CLKOUT5_BUF            : boolean := false;
-      C_EXT_RESET_HIGH         : integer := 1;
-      C_FAMILY                 : string  := "spartan6"
+      C_DFS_FREQUENCY_MODE    : string  := "LOW";
+      C_DLL_FREQUENCY_MODE    : string  := "LOW";
+      C_DUTY_CYCLE_CORRECTION : boolean := true;
+      C_CLKIN_DIVIDE_BY_2     : boolean := false;
+      C_CLK_FEEDBACK          : string  := "1X";
+      C_CLKOUT_PHASE_SHIFT    : string  := "NONE";
+      C_DSS_MODE              : string  := "NONE";
+      C_STARTUP_WAIT          : boolean := false;
+      C_PHASE_SHIFT           : integer := 0;
+      C_CLKFX_MULTIPLY        : integer := 4;
+      C_CLKFX_DIVIDE          : integer := 1;
+      C_CLKDV_DIVIDE          : real    := 2.0;
+      C_CLKIN_PERIOD          : real    := 41.6666666;
+      C_DESKEW_ADJUST         : string  := "SYSTEM_SYNCHRONOUS";
+      C_CLKIN_BUF             : boolean := false;
+      C_CLKFB_BUF             : boolean := false;
+      C_CLK0_BUF              : boolean := false;
+      C_CLK90_BUF             : boolean := false;
+      C_CLK180_BUF            : boolean := false;
+      C_CLK270_BUF            : boolean := false;
+      C_CLKDV_BUF             : boolean := false;
+      C_CLK2X_BUF             : boolean := false;
+      C_CLK2X180_BUF          : boolean := false;
+      C_CLKFX_BUF             : boolean := false;
+      C_CLKFX180_BUF          : boolean := false;
+      C_EXT_RESET_HIGH        : integer := 1;
+      C_FAMILY                : string  := "spartan6"
       );
     port (
-      CLKFBDCM         : out std_logic;
-      CLKFBOUT         : out std_logic;
-      CLKOUT0          : out std_logic;
-      CLKOUT1          : out std_logic;
-      CLKOUT2          : out std_logic;
-      CLKOUT3          : out std_logic;
-      CLKOUT4          : out std_logic;
-      CLKOUT5          : out std_logic;
-      CLKOUTDCM0       : out std_logic;
-      CLKOUTDCM1       : out std_logic;
-      CLKOUTDCM2       : out std_logic;
-      CLKOUTDCM3       : out std_logic;
-      CLKOUTDCM4       : out std_logic;
-      CLKOUTDCM5       : out std_logic;
-      -- DO               : out std_logic_vector (15 downto 0);
-      -- DRDY             : out std_logic;
-      LOCKED           : out std_logic;
-      CLKFBIN          : in  std_logic;
-      CLKIN1           : in  std_logic;
-      -- CLKIN2           : in  std_logic;
-      -- CLKINSEL         : in  std_logic;
-      -- DADDR            : in  std_logic_vector (4 downto 0);
-      -- DCLK             : in  std_logic;
-      -- DEN              : in  std_logic;
-      -- DI               : in  std_logic_vector (15 downto 0);
-      -- DWE              : in  std_logic;
-      -- REL              : in  std_logic;
-      RST              : in  std_logic
+      RST      : in  std_logic;
+      CLKIN    : in  std_logic;
+      CLKFB    : in  std_logic;
+      PSEN     : in  std_logic;
+      PSINCDEC : in  std_logic;
+      PSCLK    : in  std_logic;
+      DSSEN    : in  std_logic;
+      CLK0     : out std_logic;
+      CLK90    : out std_logic;
+      CLK180   : out std_logic;
+      CLK270   : out std_logic;
+      CLKDV    : out std_logic;
+      CLK2X    : out std_logic;
+      CLK2X180 : out std_logic;
+      CLKFX    : out std_logic;
+      CLKFX180 : out std_logic;
+      STATUS   : out std_logic_vector(7 downto 0);
+      LOCKED   : out std_logic;
+      PSDONE   : out std_logic
       );
   end component;
 
@@ -220,34 +190,39 @@ architecture STRUCTURE of clock_generator is
   signal net_vdd0  : std_logic;
 
 
-  -- signals : PLL0 wrapper
+  -- signals : DCM0 wrapper
  
-  signal   SIG_PLL0_CLKFBDCM         : std_logic;
-  signal   SIG_PLL0_CLKFBOUT         : std_logic;
-  signal   SIG_PLL0_CLKOUT0          : std_logic;
-  signal   SIG_PLL0_CLKOUT1          : std_logic;
-  signal   SIG_PLL0_CLKOUT2          : std_logic;
-  signal   SIG_PLL0_CLKOUT3          : std_logic;
-  signal   SIG_PLL0_CLKOUT4          : std_logic;
-  signal   SIG_PLL0_CLKOUT5          : std_logic;
-  signal   SIG_PLL0_CLKOUTDCM0       : std_logic;
-  signal   SIG_PLL0_CLKOUTDCM1       : std_logic;
-  signal   SIG_PLL0_CLKOUTDCM2       : std_logic;
-  signal   SIG_PLL0_CLKOUTDCM3       : std_logic;
-  signal   SIG_PLL0_CLKOUTDCM4       : std_logic;
-  signal   SIG_PLL0_CLKOUTDCM5       : std_logic;
-  signal   SIG_PLL0_LOCKED           : std_logic;
-  signal   SIG_PLL0_CLKFBIN          : std_logic;
-  signal   SIG_PLL0_CLKIN1           : std_logic;
-  signal   SIG_PLL0_RST              : std_logic;
+  signal   SIG_DCM0_RST              : std_logic;
+  signal   SIG_DCM0_CLKIN            : std_logic;
+  signal   SIG_DCM0_CLKFB            : std_logic;
+  signal   SIG_DCM0_PSEN             : std_logic;
+  signal   SIG_DCM0_PSINCDEC         : std_logic;
+  signal   SIG_DCM0_PSCLK            : std_logic;
+  signal   SIG_DCM0_DSSEN            : std_logic;
+  signal   SIG_DCM0_CLK0             : std_logic;
+  signal   SIG_DCM0_CLK90            : std_logic;
+  signal   SIG_DCM0_CLK180           : std_logic;
+  signal   SIG_DCM0_CLK270           : std_logic;
+  signal   SIG_DCM0_CLKDV            : std_logic;
+  signal   SIG_DCM0_CLKDV180         : std_logic;
+  signal   SIG_DCM0_CLK2X            : std_logic;
+  signal   SIG_DCM0_CLK2X180         : std_logic;
+  signal   SIG_DCM0_CLKFX            : std_logic;
+  signal   SIG_DCM0_CLKFX180         : std_logic;
+  signal   SIG_DCM0_STATUS           : std_logic;
+  signal   SIG_DCM0_LOCKED           : std_logic;
+  signal   SIG_DCM0_PSDONE           : std_logic;
 
-  signal   SIG_PLL0_CLKFBOUT_BUF     : std_logic;
-  signal   SIG_PLL0_CLKOUT0_BUF      : std_logic;
-  signal   SIG_PLL0_CLKOUT1_BUF      : std_logic;
-  signal   SIG_PLL0_CLKOUT2_BUF      : std_logic;
-  signal   SIG_PLL0_CLKOUT3_BUF      : std_logic;
-  signal   SIG_PLL0_CLKOUT4_BUF      : std_logic;
-  signal   SIG_PLL0_CLKOUT5_BUF      : std_logic;
+  signal   SIG_DCM0_CLK0_BUF         : std_logic;
+  signal   SIG_DCM0_CLK90_BUF        : std_logic;
+  signal   SIG_DCM0_CLK180_BUF       : std_logic;
+  signal   SIG_DCM0_CLK270_BUF       : std_logic;
+  signal   SIG_DCM0_CLKDV_BUF        : std_logic;
+  signal   SIG_DCM0_CLKDV180_BUF     : std_logic;
+  signal   SIG_DCM0_CLK2X_BUF        : std_logic;
+  signal   SIG_DCM0_CLK2X180_BUF     : std_logic;
+  signal   SIG_DCM0_CLKFX_BUF        : std_logic;
+  signal   SIG_DCM0_CLKFX180_BUF     : std_logic;
 
 
 begin
@@ -269,140 +244,126 @@ begin
   ----------------------------------------------------------------------------
 
 
-  ----------------------------------------------------------------------------
-  -- PLL wrappers
-  ----------------------------------------------------------------------------
-
-
-  -- PLL0 wrapper
+  -- DCM0 wrapper
  
-  PLL0_INST : pll_module
+  DCM0_INST : dcm_module
     generic map (
-      C_BANDWIDTH => "OPTIMIZED",
-      C_CLKFBOUT_MULT => 10,
-      C_CLKFBOUT_PHASE => 0.0,
-      C_CLKIN1_PERIOD => 10.000000,
-      C_CLKOUT0_DIVIDE => 10,
-      C_CLKOUT0_DUTY_CYCLE => 0.5,
-      C_CLKOUT0_PHASE => 0.0000,
-      C_CLKOUT1_DIVIDE => 1,
-      C_CLKOUT1_DUTY_CYCLE => 0.5,
-      C_CLKOUT1_PHASE => 0.0,
-      C_CLKOUT2_DIVIDE => 1,
-      C_CLKOUT2_DUTY_CYCLE => 0.5,
-      C_CLKOUT2_PHASE => 0.0,
-      C_CLKOUT3_DIVIDE => 1,
-      C_CLKOUT3_DUTY_CYCLE => 0.5,
-      C_CLKOUT3_PHASE => 0.0,
-      C_CLKOUT4_DIVIDE => 1,
-      C_CLKOUT4_DUTY_CYCLE => 0.5,
-      C_CLKOUT4_PHASE => 0.0,
-      C_CLKOUT5_DIVIDE => 1,
-      C_CLKOUT5_DUTY_CYCLE => 0.5,
-      C_CLKOUT5_PHASE => 0.0,
-      C_COMPENSATION => "SYSTEM_SYNCHRONOUS",
-      C_DIVCLK_DIVIDE => 1,
-      C_REF_JITTER => 0.100,
-      C_RESET_ON_LOSS_OF_LOCK => false,
-      C_RST_DEASSERT_CLK => "CLKIN1",
-      C_CLKOUT0_DESKEW_ADJUST => "NONE",
-      C_CLKOUT1_DESKEW_ADJUST => "NONE",
-      C_CLKOUT2_DESKEW_ADJUST => "NONE",
-      C_CLKOUT3_DESKEW_ADJUST => "NONE",
-      C_CLKOUT4_DESKEW_ADJUST => "NONE",
-      C_CLKOUT5_DESKEW_ADJUST => "NONE",
-      C_CLKFBOUT_DESKEW_ADJUST => "NONE",
-      C_CLKIN1_BUF => false,
-      C_CLKFBOUT_BUF => false,
-      C_CLKOUT0_BUF => false,
-      C_CLKOUT1_BUF => false,
-      C_CLKOUT2_BUF => false,
-      C_CLKOUT3_BUF => false,
-      C_CLKOUT4_BUF => false,
-      C_CLKOUT5_BUF => false,
+      C_DFS_FREQUENCY_MODE => "LOW",
+      C_DLL_FREQUENCY_MODE => "LOW",
+      C_DUTY_CYCLE_CORRECTION => true,
+      C_CLKIN_DIVIDE_BY_2 => false,
+      C_CLK_FEEDBACK => "1X",
+      C_CLKOUT_PHASE_SHIFT => "NONE",
+      C_DSS_MODE => "NONE",
+      C_STARTUP_WAIT => false,
+      C_PHASE_SHIFT => 0,
+      C_CLKFX_MULTIPLY => 25,
+      C_CLKFX_DIVIDE => 18,
+      C_CLKDV_DIVIDE => 2.0,
+      C_CLKIN_PERIOD => 10.000000,
+      C_DESKEW_ADJUST => "SYSTEM_SYNCHRONOUS",
+      C_CLKIN_BUF => false,
+      C_CLKFB_BUF => false,
+      C_CLK0_BUF => false,
+      C_CLK90_BUF => false,
+      C_CLK180_BUF => false,
+      C_CLK270_BUF => false,
+      C_CLKDV_BUF => false,
+      C_CLK2X_BUF => false,
+      C_CLK2X180_BUF => false,
+      C_CLKFX_BUF => false,
+      C_CLKFX180_BUF => false,
       C_EXT_RESET_HIGH => 1,
       C_FAMILY => "spartan6"
       )
     port map (
-      CLKFBDCM                 => SIG_PLL0_CLKFBDCM,
-      CLKFBOUT                 => SIG_PLL0_CLKFBOUT,
-      CLKOUT0                  => SIG_PLL0_CLKOUT0,
-      CLKOUT1                  => SIG_PLL0_CLKOUT1,
-      CLKOUT2                  => SIG_PLL0_CLKOUT2,
-      CLKOUT3                  => SIG_PLL0_CLKOUT3,
-      CLKOUT4                  => SIG_PLL0_CLKOUT4,
-      CLKOUT5                  => SIG_PLL0_CLKOUT5,
-      CLKOUTDCM0               => SIG_PLL0_CLKOUTDCM0,
-      CLKOUTDCM1               => SIG_PLL0_CLKOUTDCM1,
-      CLKOUTDCM2               => SIG_PLL0_CLKOUTDCM2,
-      CLKOUTDCM3               => SIG_PLL0_CLKOUTDCM3,
-      CLKOUTDCM4               => SIG_PLL0_CLKOUTDCM4,
-      CLKOUTDCM5               => SIG_PLL0_CLKOUTDCM5,
-      -- DO
-      -- DRDY
-      LOCKED                   => SIG_PLL0_LOCKED,
-      CLKFBIN                  => SIG_PLL0_CLKFBIN,
-      CLKIN1                   => SIG_PLL0_CLKIN1,
-      -- CLKIN2
-      -- CLKINSEL
-      -- DADDR
-      -- DCLK
-      -- DEN
-      -- DI
-      -- DWE
-      -- REL
-      RST                      => SIG_PLL0_RST  
+      RST                      => SIG_DCM0_RST,
+      CLKIN                    => SIG_DCM0_CLKIN,
+      CLKFB                    => SIG_DCM0_CLKFB,
+      PSEN                     => SIG_DCM0_PSEN,
+      PSINCDEC                 => SIG_DCM0_PSINCDEC,
+      PSCLK                    => SIG_DCM0_PSCLK,
+      DSSEN                    => net_gnd0,
+      CLK0                     => SIG_DCM0_CLK0,
+      CLK90                    => SIG_DCM0_CLK90,
+      CLK180                   => open,
+      CLK270                   => SIG_DCM0_CLK270,
+      CLKDV                    => SIG_DCM0_CLKDV,
+      CLK2X                    => SIG_DCM0_CLK2X,
+      CLK2X180                 => open,
+      CLKFX                    => SIG_DCM0_CLKFX,   
+      CLKFX180                 => open,
+      STATUS                   => open, 
+      LOCKED                   => SIG_DCM0_LOCKED,
+      PSDONE                   => SIG_DCM0_PSDONE
       );
 
 
-  -- wrapper of clkout : CLKOUT0 
+  -- wrapper of clkout : CLK0 and clkinv : CLK180
 
 
-  PLL0_CLKOUT0_BUFG_INST : BUFG
+  DCM0_CLK0_BUFG_INST : BUFG
     port map (
-      I => SIG_PLL0_CLKOUT0,
-      O => SIG_PLL0_CLKOUT0_BUF
+      I => SIG_DCM0_CLK0,
+      O => SIG_DCM0_CLK0_BUF
       );
 
 
-  -- wrapper of clkout : CLKOUT1 
+  SIG_DCM0_CLK180 <= NOT SIG_DCM0_CLK0;
+  SIG_DCM0_CLK180_BUF <= NOT SIG_DCM0_CLK0_BUF;
 
 
-  SIG_PLL0_CLKOUT1_BUF <= SIG_PLL0_CLKOUT1;
+  -- wrapper of clkout : CLK2X and clkinv : CLK2X180
 
 
-  -- wrapper of clkout : CLKOUT2 
+  SIG_DCM0_CLK2X_BUF <= SIG_DCM0_CLK2X;
 
 
-  SIG_PLL0_CLKOUT2_BUF <= SIG_PLL0_CLKOUT2;
+  SIG_DCM0_CLK2X180 <= NOT SIG_DCM0_CLK2X;
+  SIG_DCM0_CLK2X180_BUF <= NOT SIG_DCM0_CLK2X_BUF;
 
 
-  -- wrapper of clkout : CLKOUT3 
+  -- wrapper of clkout : CLKDV and clkinv : CLKDV180
 
 
-  SIG_PLL0_CLKOUT3_BUF <= SIG_PLL0_CLKOUT3;
+  SIG_DCM0_CLKDV_BUF <= SIG_DCM0_CLKDV;
 
 
-  -- wrapper of clkout : CLKOUT4 
+  SIG_DCM0_CLKDV180 <= NOT SIG_DCM0_CLKDV;
+  SIG_DCM0_CLKDV180_BUF <= NOT SIG_DCM0_CLKDV_BUF;
 
 
-  SIG_PLL0_CLKOUT4_BUF <= SIG_PLL0_CLKOUT4;
+  -- wrapper of clkout : CLKFX and clkinv : CLKFX180
 
 
-  -- wrapper of clkout : CLKOUT5 
-
-
-  SIG_PLL0_CLKOUT5_BUF <= SIG_PLL0_CLKOUT5;
-
-
-  -- wrapper of clkout : CLKFBOUT 
-
-
-  PLL0_CLKFBOUT_BUFG_INST : BUFG
+  DCM0_CLKFX_BUFG_INST : BUFG
     port map (
-      I => SIG_PLL0_CLKFBOUT,
-      O => SIG_PLL0_CLKFBOUT_BUF
+      I => SIG_DCM0_CLKFX,
+      O => SIG_DCM0_CLKFX_BUF
       );
+
+
+  SIG_DCM0_CLKFX180 <= NOT SIG_DCM0_CLKFX;
+  SIG_DCM0_CLKFX180_BUF <= NOT SIG_DCM0_CLKFX_BUF;
+
+
+  DCM0_CLK90_BUFG_INST : BUFG
+    port map (
+      I => SIG_DCM0_CLK90,
+      O => SIG_DCM0_CLK90_BUF
+      );
+
+
+  DCM0_CLK270_BUFG_INST : BUFG
+    port map (
+      I => SIG_DCM0_CLK270,
+      O => SIG_DCM0_CLK270_BUF
+      );
+
+
+  ----------------------------------------------------------------------------
+  -- PLL wrappers
+  ----------------------------------------------------------------------------
 
 
   ----------------------------------------------------------------------------
@@ -420,23 +381,23 @@ begin
   ----------------------------------------------------------------------------
 
 
+  -- DCM0 CLKIN
+ 
+  SIG_DCM0_CLKIN <= CLKIN;
+
+  -- DCM0 CLKFB
+ 
+  SIG_DCM0_CLKFB <= SIG_DCM0_CLK0_BUF;
+
+  -- DCM0 RST
+ 
+  SIG_DCM0_RST <= RST;
+
+
+
   ----------------------------------------------------------------------------
   -- PLLs CLKIN1, CLKFBIN and RST signal connection
   ----------------------------------------------------------------------------
-
-
-  -- PLL0 CLKIN1
- 
-  SIG_PLL0_CLKIN1 <= CLKIN;
-
-  -- PLL0 CLKFBIN
- 
-  SIG_PLL0_CLKFBIN <= SIG_PLL0_CLKFBOUT;
-
-  -- PLL0 RST
- 
-  SIG_PLL0_RST <= RST;
-
 
 
   ----------------------------------------------------------------------------
@@ -457,11 +418,11 @@ begin
   -- CLKGEN CLKOUT
 
   
-  CLKOUT0 <= SIG_PLL0_CLKOUT0_BUF;
+  CLKOUT0 <= SIG_DCM0_CLK0_BUF;
              
-
-  CLKOUT1 <= '0';
-
+  
+  CLKOUT1 <= SIG_DCM0_CLKFX_BUF;
+             
 
   CLKOUT2 <= '0';
 
@@ -511,7 +472,7 @@ begin
   -- CLKGEN LOCKED 
 
   
-  LOCKED <= SIG_PLL0_LOCKED; 
+  LOCKED <= SIG_DCM0_LOCKED; 
 
 
 end architecture STRUCTURE;
@@ -583,9 +544,9 @@ end architecture STRUCTURE;
 -- C_CLKOUT0_GROUP = NONE
 -- C_CLKOUT0_BUF = TRUE
 -- C_CLKOUT0_VARIABLE_PHASE = FALSE
--- C_CLKOUT1_FREQ = 0
+-- C_CLKOUT1_FREQ = 138888889
 -- C_CLKOUT1_PHASE = 0
--- C_CLKOUT1_GROUP = NONE
+-- C_CLKOUT1_GROUP = DCM0
 -- C_CLKOUT1_BUF = TRUE
 -- C_CLKOUT1_VARIABLE_PHASE = FALSE
 -- C_CLKOUT2_FREQ = 0
@@ -676,10 +637,10 @@ end architecture STRUCTURE;
 -- Low level parameters
 ------------------------------------------------------------------------------
 
--- C_CLKOUT0_MODULE = PLL0
--- C_CLKOUT0_PORT = CLKOUT0B
--- C_CLKOUT1_MODULE = NONE
--- C_CLKOUT1_PORT = NONE
+-- C_CLKOUT0_MODULE = DCM0
+-- C_CLKOUT0_PORT = CLK0B
+-- C_CLKOUT1_MODULE = DCM0
+-- C_CLKOUT1_PORT = CLKFXB
 -- C_CLKOUT2_MODULE = NONE
 -- C_CLKOUT2_PORT = NONE
 -- C_CLKOUT3_MODULE = NONE
@@ -730,30 +691,30 @@ end architecture STRUCTURE;
 -- C_DCM0_DSS_MODE = "NONE"
 -- C_DCM0_STARTUP_WAIT = false
 -- C_DCM0_PHASE_SHIFT = 0
--- C_DCM0_CLKFX_MULTIPLY = 4
--- C_DCM0_CLKFX_DIVIDE = 1
+-- C_DCM0_CLKFX_MULTIPLY = 25
+-- C_DCM0_CLKFX_DIVIDE = 18
 -- C_DCM0_CLKDV_DIVIDE = 2.0
--- C_DCM0_CLKIN_PERIOD = 41.6666666
+-- C_DCM0_CLKIN_PERIOD = 10.000000
 -- C_DCM0_DESKEW_ADJUST = "SYSTEM_SYNCHRONOUS"
 -- C_DCM0_CLKIN_BUF = false
 -- C_DCM0_CLKFB_BUF = false
--- C_DCM0_CLK0_BUF = false
+-- C_DCM0_CLK0_BUF = TRUE
 -- C_DCM0_CLK90_BUF = false
 -- C_DCM0_CLK180_BUF = false
 -- C_DCM0_CLK270_BUF = false
 -- C_DCM0_CLKDV_BUF = false
 -- C_DCM0_CLK2X_BUF = false
 -- C_DCM0_CLK2X180_BUF = false
--- C_DCM0_CLKFX_BUF = false
+-- C_DCM0_CLKFX_BUF = TRUE
 -- C_DCM0_CLKFX180_BUF = false
 -- C_DCM0_EXT_RESET_HIGH = 1
 -- C_DCM0_FAMILY = "spartan6"
 
--- C_DCM0_CLKIN_MODULE = NONE
--- C_DCM0_CLKIN_PORT = NONE
--- C_DCM0_CLKFB_MODULE = NONE
--- C_DCM0_CLKFB_PORT = NONE
--- C_DCM0_RST_MODULE = NONE
+-- C_DCM0_CLKIN_MODULE = CLKGEN
+-- C_DCM0_CLKIN_PORT = CLKIN
+-- C_DCM0_CLKFB_MODULE = DCM0
+-- C_DCM0_CLKFB_PORT = CLK0B
+-- C_DCM0_RST_MODULE = CLKGEN
 
 -- C_DCM1_DFS_FREQUENCY_MODE = "LOW"
 -- C_DCM1_DLL_FREQUENCY_MODE = "LOW"
@@ -861,12 +822,12 @@ end architecture STRUCTURE;
 ----------------------------------------
 
 -- C_PLL0_BANDWIDTH = "OPTIMIZED"
--- C_PLL0_CLKFBOUT_MULT = 10
+-- C_PLL0_CLKFBOUT_MULT = 1
 -- C_PLL0_CLKFBOUT_PHASE = 0.0
--- C_PLL0_CLKIN1_PERIOD = 10.000000
--- C_PLL0_CLKOUT0_DIVIDE = 10
+-- C_PLL0_CLKIN1_PERIOD = 0.000
+-- C_PLL0_CLKOUT0_DIVIDE = 1
 -- C_PLL0_CLKOUT0_DUTY_CYCLE = 0.5
--- C_PLL0_CLKOUT0_PHASE = 0.0000
+-- C_PLL0_CLKOUT0_PHASE = 0.0
 -- C_PLL0_CLKOUT1_DIVIDE = 1
 -- C_PLL0_CLKOUT1_DUTY_CYCLE = 0.5
 -- C_PLL0_CLKOUT1_PHASE = 0.0
@@ -895,8 +856,8 @@ end architecture STRUCTURE;
 -- C_PLL0_CLKOUT5_DESKEW_ADJUST = "NONE"
 -- C_PLL0_CLKFBOUT_DESKEW_ADJUST = "NONE"
 -- C_PLL0_CLKIN1_BUF = false
--- C_PLL0_CLKFBOUT_BUF = TRUE
--- C_PLL0_CLKOUT0_BUF = TRUE
+-- C_PLL0_CLKFBOUT_BUF = false
+-- C_PLL0_CLKOUT0_BUF = false
 -- C_PLL0_CLKOUT1_BUF = false
 -- C_PLL0_CLKOUT2_BUF = false
 -- C_PLL0_CLKOUT3_BUF = false
@@ -905,11 +866,11 @@ end architecture STRUCTURE;
 -- C_PLL0_EXT_RESET_HIGH = 1
 -- C_PLL0_FAMILY = "spartan6"
 
--- C_PLL0_CLKIN1_MODULE = CLKGEN
--- C_PLL0_CLKIN1_PORT = CLKIN
--- C_PLL0_CLKFBIN_MODULE = PLL0
--- C_PLL0_CLKFBIN_PORT = CLKFBOUT
--- C_PLL0_RST_MODULE = CLKGEN
+-- C_PLL0_CLKIN1_MODULE = NONE
+-- C_PLL0_CLKIN1_PORT = NONE
+-- C_PLL0_CLKFBIN_MODULE = NONE
+-- C_PLL0_CLKFBIN_PORT = NONE
+-- C_PLL0_RST_MODULE = NONE
 
 -- C_PLL1_BANDWIDTH = "OPTIMIZED"
 -- C_PLL1_CLKFBOUT_MULT = 1

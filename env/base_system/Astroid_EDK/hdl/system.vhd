@@ -2089,6 +2089,7 @@ architecture STRUCTURE of system is
   signal bram_cntlr_1_BRAM_PORT_BRAM_Rst : std_logic;
   signal bram_cntlr_1_BRAM_PORT_BRAM_WEN : std_logic_vector(0 to 3);
   signal clk_100_0000MHz : std_logic_vector(0 to 0);
+  signal clock_generator_0_CLKOUT1 : std_logic;
   signal debug_module_0_Debug_SYS_Rst : std_logic;
   signal debug_module_0_MBDEBUG_0_Dbg_Capture : std_logic;
   signal debug_module_0_MBDEBUG_0_Dbg_Clk : std_logic;
@@ -2205,7 +2206,7 @@ begin
   VGA_BLUE <= axi_lite_slave_0_VGA_BLUE;
   pgassign1(6 downto 6) <= clk_100_0000MHz(0 to 0);
   pgassign1(5 downto 5) <= clk_100_0000MHz(0 to 0);
-  pgassign1(4 downto 4) <= clk_100_0000MHz(0 to 0);
+  pgassign1(4) <= clock_generator_0_CLKOUT1;
   pgassign1(3 downto 3) <= clk_100_0000MHz(0 to 0);
   pgassign1(2 downto 2) <= clk_100_0000MHz(0 to 0);
   pgassign1(1 downto 1) <= clk_100_0000MHz(0 to 0);
@@ -3170,7 +3171,7 @@ begin
     port map (
       CLKIN => GCLK,
       CLKOUT0 => clk_100_0000MHz(0),
-      CLKOUT1 => open,
+      CLKOUT1 => clock_generator_0_CLKOUT1,
       CLKOUT2 => open,
       CLKOUT3 => open,
       CLKOUT4 => open,
@@ -3521,7 +3522,7 @@ begin
 
   axi_lite_slave_0 : system_axi_lite_slave_0_wrapper
     port map (
-      ACLK => pgassign1(6),
+      ACLK => pgassign1(4),
       ARESETN => axi4lite_0_M_ARESETN(4),
       S_AXI_AWADDR => axi4lite_0_M_AWADDR(159 downto 128),
       S_AXI_AWPROT => axi4lite_0_M_AWPROT(14 downto 12),

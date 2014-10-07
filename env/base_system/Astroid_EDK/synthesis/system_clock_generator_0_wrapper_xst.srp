@@ -88,15 +88,21 @@ Parsing architecture <STRUCTURE> of entity <system_clock_generator_0_wrapper>.
 Elaborating entity <system_clock_generator_0_wrapper> (architecture <STRUCTURE>) from library <work>.
 
 Elaborating entity <clock_generator> (architecture <STRUCTURE>) with generics from library <clock_generator_0_v4_03_a>.
-WARNING:HDLCompiler:1127 - "C:/temp/EDA385/env/base_system/Astroid_EDK/hdl/elaborate/clock_generator_0_v4_03_a/hdl/vhdl/clock_generator.vhd" Line 260: Assignment to net_gnd0 ignored, since the identifier is never used
-WARNING:HDLCompiler:1127 - "C:/temp/EDA385/env/base_system/Astroid_EDK/hdl/elaborate/clock_generator_0_v4_03_a/hdl/vhdl/clock_generator.vhd" Line 264: Assignment to net_vdd0 ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "C:/temp/EDA385/env/base_system/Astroid_EDK/hdl/elaborate/clock_generator_0_v4_03_a/hdl/vhdl/clock_generator.vhd" Line 239: Assignment to net_vdd0 ignored, since the identifier is never used
 
-Elaborating entity <pll_module> (architecture <STRUCT>) with generics from library <clock_generator_v4_03_a>.
-WARNING:HDLCompiler:1127 - "C:/temp/EDA385/env/base_system/Astroid_EDK/hdl/elaborate/clock_generator_0_v4_03_a/hdl/vhdl/clock_generator.vhd" Line 371: Assignment to sig_pll0_clkout1_buf ignored, since the identifier is never used
-WARNING:HDLCompiler:1127 - "C:/temp/EDA385/env/base_system/Astroid_EDK/hdl/elaborate/clock_generator_0_v4_03_a/hdl/vhdl/clock_generator.vhd" Line 377: Assignment to sig_pll0_clkout2_buf ignored, since the identifier is never used
-WARNING:HDLCompiler:1127 - "C:/temp/EDA385/env/base_system/Astroid_EDK/hdl/elaborate/clock_generator_0_v4_03_a/hdl/vhdl/clock_generator.vhd" Line 383: Assignment to sig_pll0_clkout3_buf ignored, since the identifier is never used
-WARNING:HDLCompiler:1127 - "C:/temp/EDA385/env/base_system/Astroid_EDK/hdl/elaborate/clock_generator_0_v4_03_a/hdl/vhdl/clock_generator.vhd" Line 389: Assignment to sig_pll0_clkout4_buf ignored, since the identifier is never used
-WARNING:HDLCompiler:1127 - "C:/temp/EDA385/env/base_system/Astroid_EDK/hdl/elaborate/clock_generator_0_v4_03_a/hdl/vhdl/clock_generator.vhd" Line 395: Assignment to sig_pll0_clkout5_buf ignored, since the identifier is never used
+Elaborating entity <dcm_module> (architecture <STRUCT>) with generics from library <clock_generator_v4_03_a>.
+WARNING:HDLCompiler:92 - "C:/Xilinx/14.2/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/clock_generator_v4_03_a/hdl/vhdl/dcm_module.vhd" Line 262: reset should be on the sensitivity list of the process
+WARNING:HDLCompiler:1127 - "C:/temp/EDA385/env/base_system/Astroid_EDK/hdl/elaborate/clock_generator_0_v4_03_a/hdl/vhdl/clock_generator.vhd" Line 312: Assignment to sig_dcm0_clk180 ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "C:/temp/EDA385/env/base_system/Astroid_EDK/hdl/elaborate/clock_generator_0_v4_03_a/hdl/vhdl/clock_generator.vhd" Line 313: Assignment to sig_dcm0_clk180_buf ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "C:/temp/EDA385/env/base_system/Astroid_EDK/hdl/elaborate/clock_generator_0_v4_03_a/hdl/vhdl/clock_generator.vhd" Line 322: Assignment to sig_dcm0_clk2x180 ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "C:/temp/EDA385/env/base_system/Astroid_EDK/hdl/elaborate/clock_generator_0_v4_03_a/hdl/vhdl/clock_generator.vhd" Line 323: Assignment to sig_dcm0_clk2x180_buf ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "C:/temp/EDA385/env/base_system/Astroid_EDK/hdl/elaborate/clock_generator_0_v4_03_a/hdl/vhdl/clock_generator.vhd" Line 332: Assignment to sig_dcm0_clkdv180 ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "C:/temp/EDA385/env/base_system/Astroid_EDK/hdl/elaborate/clock_generator_0_v4_03_a/hdl/vhdl/clock_generator.vhd" Line 333: Assignment to sig_dcm0_clkdv180_buf ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "C:/temp/EDA385/env/base_system/Astroid_EDK/hdl/elaborate/clock_generator_0_v4_03_a/hdl/vhdl/clock_generator.vhd" Line 346: Assignment to sig_dcm0_clkfx180 ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "C:/temp/EDA385/env/base_system/Astroid_EDK/hdl/elaborate/clock_generator_0_v4_03_a/hdl/vhdl/clock_generator.vhd" Line 347: Assignment to sig_dcm0_clkfx180_buf ignored, since the identifier is never used
+WARNING:HDLCompiler:634 - "C:/temp/EDA385/env/base_system/Astroid_EDK/hdl/elaborate/clock_generator_0_v4_03_a/hdl/vhdl/clock_generator.vhd" Line 198: Net <SIG_DCM0_PSEN> does not have a driver.
+WARNING:HDLCompiler:634 - "C:/temp/EDA385/env/base_system/Astroid_EDK/hdl/elaborate/clock_generator_0_v4_03_a/hdl/vhdl/clock_generator.vhd" Line 199: Net <SIG_DCM0_PSINCDEC> does not have a driver.
+WARNING:HDLCompiler:634 - "C:/temp/EDA385/env/base_system/Astroid_EDK/hdl/elaborate/clock_generator_0_v4_03_a/hdl/vhdl/clock_generator.vhd" Line 200: Net <SIG_DCM0_PSCLK> does not have a driver.
 
 =========================================================================
 *                           HDL Synthesis                               *
@@ -119,76 +125,63 @@ WARNING:Xst:647 - Input <CLKFBIN> is never used. This port will be preserved and
 WARNING:Xst:647 - Input <PSCLK> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 WARNING:Xst:647 - Input <PSEN> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 WARNING:Xst:647 - Input <PSINCDEC> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
-INFO:Xst:3210 - "C:/temp/EDA385/env/base_system/Astroid_EDK/hdl/elaborate/clock_generator_0_v4_03_a/hdl/vhdl/clock_generator.vhd" line 279: Output port <CLKFBDCM> of the instance <PLL0_INST> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "C:/temp/EDA385/env/base_system/Astroid_EDK/hdl/elaborate/clock_generator_0_v4_03_a/hdl/vhdl/clock_generator.vhd" line 279: Output port <CLKOUT1> of the instance <PLL0_INST> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "C:/temp/EDA385/env/base_system/Astroid_EDK/hdl/elaborate/clock_generator_0_v4_03_a/hdl/vhdl/clock_generator.vhd" line 279: Output port <CLKOUT2> of the instance <PLL0_INST> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "C:/temp/EDA385/env/base_system/Astroid_EDK/hdl/elaborate/clock_generator_0_v4_03_a/hdl/vhdl/clock_generator.vhd" line 279: Output port <CLKOUT3> of the instance <PLL0_INST> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "C:/temp/EDA385/env/base_system/Astroid_EDK/hdl/elaborate/clock_generator_0_v4_03_a/hdl/vhdl/clock_generator.vhd" line 279: Output port <CLKOUT4> of the instance <PLL0_INST> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "C:/temp/EDA385/env/base_system/Astroid_EDK/hdl/elaborate/clock_generator_0_v4_03_a/hdl/vhdl/clock_generator.vhd" line 279: Output port <CLKOUT5> of the instance <PLL0_INST> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "C:/temp/EDA385/env/base_system/Astroid_EDK/hdl/elaborate/clock_generator_0_v4_03_a/hdl/vhdl/clock_generator.vhd" line 279: Output port <CLKOUTDCM0> of the instance <PLL0_INST> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "C:/temp/EDA385/env/base_system/Astroid_EDK/hdl/elaborate/clock_generator_0_v4_03_a/hdl/vhdl/clock_generator.vhd" line 279: Output port <CLKOUTDCM1> of the instance <PLL0_INST> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "C:/temp/EDA385/env/base_system/Astroid_EDK/hdl/elaborate/clock_generator_0_v4_03_a/hdl/vhdl/clock_generator.vhd" line 279: Output port <CLKOUTDCM2> of the instance <PLL0_INST> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "C:/temp/EDA385/env/base_system/Astroid_EDK/hdl/elaborate/clock_generator_0_v4_03_a/hdl/vhdl/clock_generator.vhd" line 279: Output port <CLKOUTDCM3> of the instance <PLL0_INST> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "C:/temp/EDA385/env/base_system/Astroid_EDK/hdl/elaborate/clock_generator_0_v4_03_a/hdl/vhdl/clock_generator.vhd" line 279: Output port <CLKOUTDCM4> of the instance <PLL0_INST> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "C:/temp/EDA385/env/base_system/Astroid_EDK/hdl/elaborate/clock_generator_0_v4_03_a/hdl/vhdl/clock_generator.vhd" line 279: Output port <CLKOUTDCM5> of the instance <PLL0_INST> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:/temp/EDA385/env/base_system/Astroid_EDK/hdl/elaborate/clock_generator_0_v4_03_a/hdl/vhdl/clock_generator.vhd" line 249: Output port <STATUS> of the instance <DCM0_INST> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:/temp/EDA385/env/base_system/Astroid_EDK/hdl/elaborate/clock_generator_0_v4_03_a/hdl/vhdl/clock_generator.vhd" line 249: Output port <CLK180> of the instance <DCM0_INST> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:/temp/EDA385/env/base_system/Astroid_EDK/hdl/elaborate/clock_generator_0_v4_03_a/hdl/vhdl/clock_generator.vhd" line 249: Output port <CLKDV> of the instance <DCM0_INST> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:/temp/EDA385/env/base_system/Astroid_EDK/hdl/elaborate/clock_generator_0_v4_03_a/hdl/vhdl/clock_generator.vhd" line 249: Output port <CLK2X> of the instance <DCM0_INST> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:/temp/EDA385/env/base_system/Astroid_EDK/hdl/elaborate/clock_generator_0_v4_03_a/hdl/vhdl/clock_generator.vhd" line 249: Output port <CLK2X180> of the instance <DCM0_INST> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:/temp/EDA385/env/base_system/Astroid_EDK/hdl/elaborate/clock_generator_0_v4_03_a/hdl/vhdl/clock_generator.vhd" line 249: Output port <CLKFX180> of the instance <DCM0_INST> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:/temp/EDA385/env/base_system/Astroid_EDK/hdl/elaborate/clock_generator_0_v4_03_a/hdl/vhdl/clock_generator.vhd" line 249: Output port <PSDONE> of the instance <DCM0_INST> is unconnected or connected to loadless signal.
+WARNING:Xst:653 - Signal <SIG_DCM0_PSEN> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <SIG_DCM0_PSINCDEC> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <SIG_DCM0_PSCLK> is used but never assigned. This sourceless signal will be automatically connected to value GND.
     Summary:
 	no macro.
 Unit <clock_generator> synthesized.
 
-Synthesizing Unit <pll_module>.
-    Related source file is "C:/Xilinx/14.2/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/clock_generator_v4_03_a/hdl/vhdl/pll_module.vhd".
-        C_BANDWIDTH = "OPTIMIZED"
-        C_CLKFBOUT_MULT = 10
-        C_CLKFBOUT_PHASE = 0.0
-        C_CLKIN1_PERIOD = 10.0
-        C_CLKOUT0_DIVIDE = 10
-        C_CLKOUT0_DUTY_CYCLE = 0.5
-        C_CLKOUT0_PHASE = 0.0
-        C_CLKOUT1_DIVIDE = 1
-        C_CLKOUT1_DUTY_CYCLE = 0.5
-        C_CLKOUT1_PHASE = 0.0
-        C_CLKOUT2_DIVIDE = 1
-        C_CLKOUT2_DUTY_CYCLE = 0.5
-        C_CLKOUT2_PHASE = 0.0
-        C_CLKOUT3_DIVIDE = 1
-        C_CLKOUT3_DUTY_CYCLE = 0.5
-        C_CLKOUT3_PHASE = 0.0
-        C_CLKOUT4_DIVIDE = 1
-        C_CLKOUT4_DUTY_CYCLE = 0.5
-        C_CLKOUT4_PHASE = 0.0
-        C_CLKOUT5_DIVIDE = 1
-        C_CLKOUT5_DUTY_CYCLE = 0.5
-        C_CLKOUT5_PHASE = 0.0
-        C_COMPENSATION = "SYSTEM_SYNCHRONOUS"
-        C_DIVCLK_DIVIDE = 1
-        C_REF_JITTER = 0.1
-        C_RESET_ON_LOSS_OF_LOCK = false
-        C_RST_DEASSERT_CLK = "CLKIN1"
-        C_CLKOUT0_DESKEW_ADJUST = "NONE"
-        C_CLKOUT1_DESKEW_ADJUST = "NONE"
-        C_CLKOUT2_DESKEW_ADJUST = "NONE"
-        C_CLKOUT3_DESKEW_ADJUST = "NONE"
-        C_CLKOUT4_DESKEW_ADJUST = "NONE"
-        C_CLKOUT5_DESKEW_ADJUST = "NONE"
-        C_CLKFBOUT_DESKEW_ADJUST = "NONE"
-        C_CLKIN1_BUF = false
-        C_CLKFBOUT_BUF = false
-        C_CLKOUT0_BUF = false
-        C_CLKOUT1_BUF = false
-        C_CLKOUT2_BUF = false
-        C_CLKOUT3_BUF = false
-        C_CLKOUT4_BUF = false
-        C_CLKOUT5_BUF = false
+Synthesizing Unit <dcm_module>.
+    Related source file is "C:/Xilinx/14.2/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/clock_generator_v4_03_a/hdl/vhdl/dcm_module.vhd".
+        C_DFS_FREQUENCY_MODE = "LOW"
+        C_DLL_FREQUENCY_MODE = "LOW"
+        C_DUTY_CYCLE_CORRECTION = true
+        C_CLKIN_DIVIDE_BY_2 = false
+        C_CLK_FEEDBACK = "1X"
+        C_CLKOUT_PHASE_SHIFT = "NONE"
+        C_DSS_MODE = "NONE"
+        C_STARTUP_WAIT = false
+        C_PHASE_SHIFT = 0
+        C_CLKFX_MULTIPLY = 25
+        C_CLKFX_DIVIDE = 18
+        C_CLKDV_DIVIDE = 2.0
+        C_CLKIN_PERIOD = 10.0
+        C_DESKEW_ADJUST = "SYSTEM_SYNCHRONOUS"
+        C_CLKIN_BUF = false
+        C_CLKFB_BUF = false
+        C_CLK0_BUF = false
+        C_CLK90_BUF = false
+        C_CLK180_BUF = false
+        C_CLK270_BUF = false
+        C_CLKDV_BUF = false
+        C_CLK2X_BUF = false
+        C_CLK2X180_BUF = false
+        C_CLKFX_BUF = false
+        C_CLKFX180_BUF = false
         C_EXT_RESET_HIGH = 1
         C_FAMILY = "spartan6"
+    Found 1-bit register for signal <rsti>.
+    Found 3-bit register for signal <Reset_Handler.rst_delay>.
     Summary:
-	no macro.
-Unit <pll_module> synthesized.
+	inferred   4 D-type flip-flop(s).
+Unit <dcm_module> synthesized.
 
 =========================================================================
 HDL Synthesis Report
 
-Found no macro
+Macro Statistics
+# Registers                                            : 2
+ 1-bit register                                        : 1
+ 3-bit register                                        : 1
+
 =========================================================================
 
 =========================================================================
@@ -199,12 +192,16 @@ Found no macro
 =========================================================================
 Advanced HDL Synthesis Report
 
-Found no macro
+Macro Statistics
+# Registers                                            : 4
+ Flip-Flops                                            : 4
+
 =========================================================================
 
 =========================================================================
 *                         Low Level Synthesis                           *
 =========================================================================
+INFO:Xst:1901 - Instance clock_generator_0/DCM0_INST/Using_Virtex.DCM_INST in unit system_clock_generator_0_wrapper of type DCM has been replaced by DCM_SP
 
 Optimizing unit <system_clock_generator_0_wrapper> ...
 
@@ -214,10 +211,17 @@ Found area constraint ratio of 100 (+ 0) on block system_clock_generator_0_wrapp
 
 Final Macro Processing ...
 
+Processing Unit <system_clock_generator_0_wrapper> :
+INFO:Xst:741 - HDL ADVISOR - A 4-bit shift register was found for signal <clock_generator_0/DCM0_INST/rsti> and currently occupies 4 logic cells (2 slices). Removing the set/reset logic would take advantage of SRL32 (and derived) primitives and reduce this to 1 logic cells (1 slices). Evaluate if the set/reset can be removed for this simple shift register. The majority of simple pipeline structures do not need to be set/reset operationally.
+Unit <system_clock_generator_0_wrapper> processed.
+
 =========================================================================
 Final Register Report
 
-Found no macro
+Macro Statistics
+# Registers                                            : 4
+ Flip-Flops                                            : 4
+
 =========================================================================
 
 =========================================================================
@@ -239,13 +243,14 @@ Top Level Output File Name         : system_clock_generator_0_wrapper.ngc
 
 Primitive and Black Box Usage:
 ------------------------------
-# BELS                             : 2
+# BELS                             : 1
 #      GND                         : 1
-#      VCC                         : 1
-# Clock Buffers                    : 2
-#      BUFG                        : 2
-# Others                           : 1
-#      PLL_ADV                     : 1
+# FlipFlops/Latches                : 4
+#      FDP                         : 4
+# Clock Buffers                    : 4
+#      BUFG                        : 4
+# DCMs                             : 1
+#      DCM_SP                      : 1
 
 Device utilization summary:
 ---------------------------
@@ -254,21 +259,21 @@ Selected Device : 6slx16csg324-3
 
 
 Slice Logic Utilization: 
+ Number of Slice Registers:               4  out of  18224     0%  
 
 Slice Logic Distribution: 
- Number of LUT Flip Flop pairs used:      0
-   Number with an unused Flip Flop:       0  out of      0         
-   Number with an unused LUT:             0  out of      0         
-   Number of fully used LUT-FF pairs:     0  out of      0         
-   Number of unique control sets:         0
+ Number of LUT Flip Flop pairs used:      4
+   Number with an unused Flip Flop:       0  out of      4     0%  
+   Number with an unused LUT:             4  out of      4   100%  
+   Number of fully used LUT-FF pairs:     0  out of      4     0%  
+   Number of unique control sets:         1
 
 IO Utilization: 
  Number of IOs:                          25
  Number of bonded IOBs:                   0  out of    232     0%  
 
 Specific Feature Utilization:
- Number of BUFG/BUFGCTRLs:                2  out of     16    12%  
- Number of PLL_ADVs:                      1  out of      2    50%  
+ Number of BUFG/BUFGCTRLs:                4  out of     16    25%  
 
 ---------------------------
 Partition Resource Summary:
@@ -288,7 +293,12 @@ NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
 
 Clock Information:
 ------------------
-No clock signals found in this design
+-----------------------------------+---------------------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)                 | Load  |
+-----------------------------------+---------------------------------------+-------+
+CLKIN                              | NONE(clock_generator_0/DCM0_INST/rsti)| 4     |
+-----------------------------------+---------------------------------------+-------+
+INFO:Xst:2169 - HDL ADVISOR - Some clock signals were not automatically buffered by XST with BUFG/BUFR resources. Please use the buffer_type constraint in order to insert these buffers to the clock signals to help prevent skew problems.
 
 Asynchronous Control Signals Information:
 ----------------------------------------
@@ -298,8 +308,8 @@ Timing Summary:
 ---------------
 Speed Grade: -3
 
-   Minimum period: No path found
-   Minimum input arrival time before clock: No path found
+   Minimum period: 1.128ns (Maximum Frequency: 886.643MHz)
+   Minimum input arrival time before clock: 0.430ns
    Maximum output required time after clock: No path found
    Maximum combinational path delay: No path found
 
@@ -308,21 +318,68 @@ Timing Details:
 All values displayed in nanoseconds (ns)
 
 =========================================================================
+Timing constraint: Default period analysis for Clock 'CLKIN'
+  Clock period: 1.128ns (frequency: 886.643MHz)
+  Total number of paths / destination ports: 3 / 3
+-------------------------------------------------------------------------
+Delay:               1.128ns (Levels of Logic = 0)
+  Source:            clock_generator_0/DCM0_INST/Reset_Handler.rst_delay_2 (FF)
+  Destination:       clock_generator_0/DCM0_INST/rsti (FF)
+  Source Clock:      CLKIN rising
+  Destination Clock: CLKIN rising
+
+  Data Path: clock_generator_0/DCM0_INST/Reset_Handler.rst_delay_2 to clock_generator_0/DCM0_INST/rsti
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDP:C->Q              1   0.447   0.579  clock_generator_0/DCM0_INST/Reset_Handler.rst_delay_2 (clock_generator_0/DCM0_INST/Reset_Handler.rst_delay_2)
+     FDP:D                     0.102          clock_generator_0/DCM0_INST/rsti
+    ----------------------------------------
+    Total                      1.128ns (0.549ns logic, 0.579ns route)
+                                       (48.7% logic, 51.3% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'CLKIN'
+  Total number of paths / destination ports: 5 / 5
+-------------------------------------------------------------------------
+Offset:              0.430ns (Levels of Logic = 0)
+  Source:            RST (PAD)
+  Destination:       clock_generator_0/DCM0_INST/rsti (FF)
+  Destination Clock: CLKIN rising
+
+  Data Path: RST to clock_generator_0/DCM0_INST/rsti
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDP:PRE                   0.430          clock_generator_0/DCM0_INST/Reset_Handler.rst_delay_2
+    ----------------------------------------
+    Total                      0.430ns (0.430ns logic, 0.000ns route)
+                                       (100.0% logic, 0.0% route)
+
+=========================================================================
 
 Cross Clock Domains Report:
 --------------------------
+
+Clock to Setup on destination clock CLKIN
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+CLKIN          |    1.128|         |         |         |
+---------------+---------+---------+---------+---------+
 
 =========================================================================
 
 
 Total REAL time to Xst completion: 4.00 secs
-Total CPU time to Xst completion: 4.39 secs
+Total CPU time to Xst completion: 4.46 secs
  
 --> 
 
-Total memory usage is 267056 kilobytes
+Total memory usage is 267440 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings :   11 (   0 filtered)
-Number of infos    :   12 (   0 filtered)
+Number of warnings :   20 (   0 filtered)
+Number of infos    :   10 (   0 filtered)
 

@@ -9,7 +9,7 @@ Architecture: spartan6
 Device: xc6slx16
 Package: csg324
 SpeedGrade: -3
-UserCmd1: 
+UserCmd1: my_platgen.cmd
 UserCmd1Type: 0
 UserCmd2: 
 UserCmd2Type: 0
@@ -24,6 +24,9 @@ ExternalMemSim: 0
 UcfFile: data/system.ucf
 EnableParTimingError: 1
 ShowLicenseDialog: 1
+LockAddr: axi_lite_slave_0,C_S_AXI_RNG00_BASEADDR
+LockAddr: Push_Buttons_4Bits,C_BASEADDR
+LockAddr: DIP_Switches_8Bits,C_BASEADDR
 Processor: microblaze_0
 ElfImp: 
 ElfSim: 

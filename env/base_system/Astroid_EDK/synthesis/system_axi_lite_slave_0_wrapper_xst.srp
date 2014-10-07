@@ -1002,9 +1002,11 @@ Optimizing FSM <axi_lite_slave_0/mem1/programmer1/FSM_0> on signal <state_reg[1:
  calc_done | 100
 -----------------------
 
+Optimizing unit <system_axi_lite_slave_0_wrapper> ...
+
 Optimizing unit <line_reg_unit> ...
 
-Optimizing unit <system_axi_lite_slave_0_wrapper> ...
+Optimizing unit <axi_lite_slave> ...
 
 Optimizing unit <mem_controller> ...
 
@@ -1019,13 +1021,13 @@ Optimizing unit <line_controller> ...
 Optimizing unit <line_comp_unit> ...
 
 Optimizing unit <pixelrow_bram> ...
-INFO:Xst:3203 - The FF/Latch <axi_lite_slave_0/mem1/ready_reg> in Unit <system_axi_lite_slave_0_wrapper> is the opposite to the following FF/Latch, which will be removed : <axi_lite_slave_0/mem1/prog_enable_reg> 
+INFO:Xst:3203 - The FF/Latch <mem1/ready_reg> in Unit <axi_lite_slave_0> is the opposite to the following FF/Latch, which will be removed : <mem1/prog_enable_reg> 
 
 Mapping all equations...
 Building and optimizing final netlist ...
-Found area constraint ratio of 100 (+ 0) on block system_axi_lite_slave_0_wrapper, actual ratio is 323.
+Found area constraint ratio of 100 (+ 0) on block system_axi_lite_slave_0_wrapper, actual ratio is 161.
 Optimizing block <system_axi_lite_slave_0_wrapper> to meet ratio 100 (+ 0) of 2278 slices :
-WARNING:Xst:2254 - Area constraint could not be met for block <system_axi_lite_slave_0_wrapper>, final ratio is 320.
+WARNING:Xst:2254 - Area constraint could not be met for block <system_axi_lite_slave_0_wrapper>, final ratio is 160.
 FlipFlop axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[1].line_controllerX/vga_counter1/vsync_reg has been replicated 1 time(s)
 FlipFlop axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[2].line_controllerX/vga_counter1/vsync_reg has been replicated 1 time(s)
 FlipFlop axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[3].line_controllerX/vga_counter1/vsync_reg has been replicated 1 time(s)
@@ -1035,614 +1037,614 @@ FlipFlop axi_lite_slave_0/vector1/line_controller0/vga_counter1/vsync_reg has be
 
 Final Macro Processing ...
 
-Processing Unit <system_axi_lite_slave_0_wrapper> :
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/line_controller0/line_reg1/line_reg[31]_color_7>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/line_controller0/line_reg1/line_reg[31]_color_6>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/line_controller0/line_reg1/line_reg[31]_color_5>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/line_controller0/line_reg1/line_reg[31]_color_4>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/line_controller0/line_reg1/line_reg[31]_color_3>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/line_controller0/line_reg1/line_reg[31]_color_2>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/line_controller0/line_reg1/line_reg[31]_color_1>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/line_controller0/line_reg1/line_reg[31]_color_0>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/line_controller0/line_reg1/line_reg[31]_negdx_12>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/line_controller0/line_reg1/line_reg[31]_negdx_11>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/line_controller0/line_reg1/line_reg[31]_negdx_10>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/line_controller0/line_reg1/line_reg[31]_negdx_9>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/line_controller0/line_reg1/line_reg[31]_negdx_8>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/line_controller0/line_reg1/line_reg[31]_negdx_7>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/line_controller0/line_reg1/line_reg[31]_negdx_6>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/line_controller0/line_reg1/line_reg[31]_negdx_5>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/line_controller0/line_reg1/line_reg[31]_negdx_4>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/line_controller0/line_reg1/line_reg[31]_negdx_3>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/line_controller0/line_reg1/line_reg[31]_negdx_2>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/line_controller0/line_reg1/line_reg[31]_negdx_1>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/line_controller0/line_reg1/line_reg[31]_negdx_0>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/line_controller0/line_reg1/line_reg[31]_err_12>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/line_controller0/line_reg1/line_reg[31]_err_11>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/line_controller0/line_reg1/line_reg[31]_err_10>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/line_controller0/line_reg1/line_reg[31]_err_9>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/line_controller0/line_reg1/line_reg[31]_err_8>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/line_controller0/line_reg1/line_reg[31]_err_7>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/line_controller0/line_reg1/line_reg[31]_err_6>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/line_controller0/line_reg1/line_reg[31]_err_5>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/line_controller0/line_reg1/line_reg[31]_err_4>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/line_controller0/line_reg1/line_reg[31]_err_3>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/line_controller0/line_reg1/line_reg[31]_err_2>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/line_controller0/line_reg1/line_reg[31]_err_1>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/line_controller0/line_reg1/line_reg[31]_err_0>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/line_controller0/line_reg1/line_reg[31]_dy_12>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/line_controller0/line_reg1/line_reg[31]_dy_11>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/line_controller0/line_reg1/line_reg[31]_dy_10>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/line_controller0/line_reg1/line_reg[31]_dy_9>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/line_controller0/line_reg1/line_reg[31]_dy_8>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/line_controller0/line_reg1/line_reg[31]_dy_7>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/line_controller0/line_reg1/line_reg[31]_dy_6>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/line_controller0/line_reg1/line_reg[31]_dy_5>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/line_controller0/line_reg1/line_reg[31]_dy_4>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/line_controller0/line_reg1/line_reg[31]_dy_3>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/line_controller0/line_reg1/line_reg[31]_dy_2>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/line_controller0/line_reg1/line_reg[31]_dy_1>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/line_controller0/line_reg1/line_reg[31]_dy_0>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/line_controller0/line_reg1/line_reg[31]_sx>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/line_controller0/line_reg1/line_reg[31]_y1_12>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/line_controller0/line_reg1/line_reg[31]_y1_11>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/line_controller0/line_reg1/line_reg[31]_y1_10>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/line_controller0/line_reg1/line_reg[31]_y1_9>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/line_controller0/line_reg1/line_reg[31]_y1_8>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/line_controller0/line_reg1/line_reg[31]_y1_7>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/line_controller0/line_reg1/line_reg[31]_y1_6>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/line_controller0/line_reg1/line_reg[31]_y1_5>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/line_controller0/line_reg1/line_reg[31]_y1_4>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/line_controller0/line_reg1/line_reg[31]_y1_3>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/line_controller0/line_reg1/line_reg[31]_y1_2>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/line_controller0/line_reg1/line_reg[31]_y1_1>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/line_controller0/line_reg1/line_reg[31]_y1_0>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/line_controller0/line_reg1/line_reg[31]_y0_12>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/line_controller0/line_reg1/line_reg[31]_y0_11>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/line_controller0/line_reg1/line_reg[31]_y0_10>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/line_controller0/line_reg1/line_reg[31]_y0_9>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/line_controller0/line_reg1/line_reg[31]_y0_8>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/line_controller0/line_reg1/line_reg[31]_y0_7>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/line_controller0/line_reg1/line_reg[31]_y0_6>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/line_controller0/line_reg1/line_reg[31]_y0_5>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/line_controller0/line_reg1/line_reg[31]_y0_4>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/line_controller0/line_reg1/line_reg[31]_y0_3>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/line_controller0/line_reg1/line_reg[31]_y0_2>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/line_controller0/line_reg1/line_reg[31]_y0_1>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/line_controller0/line_reg1/line_reg[31]_y0_0>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/line_controller0/line_reg1/line_reg[31]_x0_12>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/line_controller0/line_reg1/line_reg[31]_x0_11>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/line_controller0/line_reg1/line_reg[31]_x0_10>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/line_controller0/line_reg1/line_reg[31]_x0_9>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/line_controller0/line_reg1/line_reg[31]_x0_8>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/line_controller0/line_reg1/line_reg[31]_x0_7>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/line_controller0/line_reg1/line_reg[31]_x0_6>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/line_controller0/line_reg1/line_reg[31]_x0_5>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/line_controller0/line_reg1/line_reg[31]_x0_4>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/line_controller0/line_reg1/line_reg[31]_x0_3>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/line_controller0/line_reg1/line_reg[31]_x0_2>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/line_controller0/line_reg1/line_reg[31]_x0_1>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/line_controller0/line_reg1/line_reg[31]_x0_0>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/line_controller0/line_reg1/line_reg[31]_x1_12>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/line_controller0/line_reg1/line_reg[31]_x1_11>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/line_controller0/line_reg1/line_reg[31]_x1_10>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/line_controller0/line_reg1/line_reg[31]_x1_9>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/line_controller0/line_reg1/line_reg[31]_x1_8>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/line_controller0/line_reg1/line_reg[31]_x1_7>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/line_controller0/line_reg1/line_reg[31]_x1_6>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/line_controller0/line_reg1/line_reg[31]_x1_5>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/line_controller0/line_reg1/line_reg[31]_x1_4>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/line_controller0/line_reg1/line_reg[31]_x1_3>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/line_controller0/line_reg1/line_reg[31]_x1_2>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/line_controller0/line_reg1/line_reg[31]_x1_1>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/line_controller0/line_reg1/line_reg[31]_x1_0>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/line_controller0/line_reg1/line_reg[31]_enable>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[1].line_controllerX/line_reg1/line_reg[31]_color_7>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[1].line_controllerX/line_reg1/line_reg[31]_color_6>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[1].line_controllerX/line_reg1/line_reg[31]_color_5>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[1].line_controllerX/line_reg1/line_reg[31]_color_4>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[1].line_controllerX/line_reg1/line_reg[31]_color_3>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[1].line_controllerX/line_reg1/line_reg[31]_color_2>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[1].line_controllerX/line_reg1/line_reg[31]_color_1>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[1].line_controllerX/line_reg1/line_reg[31]_color_0>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[1].line_controllerX/line_reg1/line_reg[31]_negdx_12>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[1].line_controllerX/line_reg1/line_reg[31]_negdx_11>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[1].line_controllerX/line_reg1/line_reg[31]_negdx_10>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[1].line_controllerX/line_reg1/line_reg[31]_negdx_9>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[1].line_controllerX/line_reg1/line_reg[31]_negdx_8>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[1].line_controllerX/line_reg1/line_reg[31]_negdx_7>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[1].line_controllerX/line_reg1/line_reg[31]_negdx_6>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[1].line_controllerX/line_reg1/line_reg[31]_negdx_5>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[1].line_controllerX/line_reg1/line_reg[31]_negdx_4>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[1].line_controllerX/line_reg1/line_reg[31]_negdx_3>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[1].line_controllerX/line_reg1/line_reg[31]_negdx_2>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[1].line_controllerX/line_reg1/line_reg[31]_negdx_1>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[1].line_controllerX/line_reg1/line_reg[31]_negdx_0>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[1].line_controllerX/line_reg1/line_reg[31]_err_12>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[1].line_controllerX/line_reg1/line_reg[31]_err_11>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[1].line_controllerX/line_reg1/line_reg[31]_err_10>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[1].line_controllerX/line_reg1/line_reg[31]_err_9>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[1].line_controllerX/line_reg1/line_reg[31]_err_8>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[1].line_controllerX/line_reg1/line_reg[31]_err_7>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[1].line_controllerX/line_reg1/line_reg[31]_err_6>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[1].line_controllerX/line_reg1/line_reg[31]_err_5>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[1].line_controllerX/line_reg1/line_reg[31]_err_4>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[1].line_controllerX/line_reg1/line_reg[31]_err_3>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[1].line_controllerX/line_reg1/line_reg[31]_err_2>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[1].line_controllerX/line_reg1/line_reg[31]_err_1>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[1].line_controllerX/line_reg1/line_reg[31]_err_0>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[1].line_controllerX/line_reg1/line_reg[31]_dy_12>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[1].line_controllerX/line_reg1/line_reg[31]_dy_11>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[1].line_controllerX/line_reg1/line_reg[31]_dy_10>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[1].line_controllerX/line_reg1/line_reg[31]_dy_9>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[1].line_controllerX/line_reg1/line_reg[31]_dy_8>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[1].line_controllerX/line_reg1/line_reg[31]_dy_7>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[1].line_controllerX/line_reg1/line_reg[31]_dy_6>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[1].line_controllerX/line_reg1/line_reg[31]_dy_5>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[1].line_controllerX/line_reg1/line_reg[31]_dy_4>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[1].line_controllerX/line_reg1/line_reg[31]_dy_3>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[1].line_controllerX/line_reg1/line_reg[31]_dy_2>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[1].line_controllerX/line_reg1/line_reg[31]_dy_1>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[1].line_controllerX/line_reg1/line_reg[31]_dy_0>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[1].line_controllerX/line_reg1/line_reg[31]_sx>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[1].line_controllerX/line_reg1/line_reg[31]_y1_12>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[1].line_controllerX/line_reg1/line_reg[31]_y1_11>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[1].line_controllerX/line_reg1/line_reg[31]_y1_10>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[1].line_controllerX/line_reg1/line_reg[31]_y1_9>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[1].line_controllerX/line_reg1/line_reg[31]_y1_8>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[1].line_controllerX/line_reg1/line_reg[31]_y1_7>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[1].line_controllerX/line_reg1/line_reg[31]_y1_6>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[1].line_controllerX/line_reg1/line_reg[31]_y1_5>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[1].line_controllerX/line_reg1/line_reg[31]_y1_4>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[1].line_controllerX/line_reg1/line_reg[31]_y1_3>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[1].line_controllerX/line_reg1/line_reg[31]_y1_2>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[1].line_controllerX/line_reg1/line_reg[31]_y1_1>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[1].line_controllerX/line_reg1/line_reg[31]_y1_0>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[1].line_controllerX/line_reg1/line_reg[31]_y0_12>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[1].line_controllerX/line_reg1/line_reg[31]_y0_11>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[1].line_controllerX/line_reg1/line_reg[31]_y0_10>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[1].line_controllerX/line_reg1/line_reg[31]_y0_9>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[1].line_controllerX/line_reg1/line_reg[31]_y0_8>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[1].line_controllerX/line_reg1/line_reg[31]_y0_7>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[1].line_controllerX/line_reg1/line_reg[31]_y0_6>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[1].line_controllerX/line_reg1/line_reg[31]_y0_5>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[1].line_controllerX/line_reg1/line_reg[31]_y0_4>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[1].line_controllerX/line_reg1/line_reg[31]_y0_3>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[1].line_controllerX/line_reg1/line_reg[31]_y0_2>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[1].line_controllerX/line_reg1/line_reg[31]_y0_1>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[1].line_controllerX/line_reg1/line_reg[31]_y0_0>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[1].line_controllerX/line_reg1/line_reg[31]_x0_12>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[1].line_controllerX/line_reg1/line_reg[31]_x0_11>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[1].line_controllerX/line_reg1/line_reg[31]_x0_10>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[1].line_controllerX/line_reg1/line_reg[31]_x0_9>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[1].line_controllerX/line_reg1/line_reg[31]_x0_8>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[1].line_controllerX/line_reg1/line_reg[31]_x0_7>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[1].line_controllerX/line_reg1/line_reg[31]_x0_6>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[1].line_controllerX/line_reg1/line_reg[31]_x0_5>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[1].line_controllerX/line_reg1/line_reg[31]_x0_4>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[1].line_controllerX/line_reg1/line_reg[31]_x0_3>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[1].line_controllerX/line_reg1/line_reg[31]_x0_2>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[1].line_controllerX/line_reg1/line_reg[31]_x0_1>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[1].line_controllerX/line_reg1/line_reg[31]_x0_0>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[1].line_controllerX/line_reg1/line_reg[31]_x1_12>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[1].line_controllerX/line_reg1/line_reg[31]_x1_11>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[1].line_controllerX/line_reg1/line_reg[31]_x1_10>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[1].line_controllerX/line_reg1/line_reg[31]_x1_9>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[1].line_controllerX/line_reg1/line_reg[31]_x1_8>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[1].line_controllerX/line_reg1/line_reg[31]_x1_7>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[1].line_controllerX/line_reg1/line_reg[31]_x1_6>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[1].line_controllerX/line_reg1/line_reg[31]_x1_5>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[1].line_controllerX/line_reg1/line_reg[31]_x1_4>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[1].line_controllerX/line_reg1/line_reg[31]_x1_3>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[1].line_controllerX/line_reg1/line_reg[31]_x1_2>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[1].line_controllerX/line_reg1/line_reg[31]_x1_1>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[1].line_controllerX/line_reg1/line_reg[31]_x1_0>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[1].line_controllerX/line_reg1/line_reg[31]_enable>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[2].line_controllerX/line_reg1/line_reg[31]_color_7>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[2].line_controllerX/line_reg1/line_reg[31]_color_6>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[2].line_controllerX/line_reg1/line_reg[31]_color_5>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[2].line_controllerX/line_reg1/line_reg[31]_color_4>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[2].line_controllerX/line_reg1/line_reg[31]_color_3>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[2].line_controllerX/line_reg1/line_reg[31]_color_2>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[2].line_controllerX/line_reg1/line_reg[31]_color_1>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[2].line_controllerX/line_reg1/line_reg[31]_color_0>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[2].line_controllerX/line_reg1/line_reg[31]_negdx_12>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[2].line_controllerX/line_reg1/line_reg[31]_negdx_11>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[2].line_controllerX/line_reg1/line_reg[31]_negdx_10>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[2].line_controllerX/line_reg1/line_reg[31]_negdx_9>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[2].line_controllerX/line_reg1/line_reg[31]_negdx_8>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[2].line_controllerX/line_reg1/line_reg[31]_negdx_7>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[2].line_controllerX/line_reg1/line_reg[31]_negdx_6>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[2].line_controllerX/line_reg1/line_reg[31]_negdx_5>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[2].line_controllerX/line_reg1/line_reg[31]_negdx_4>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[2].line_controllerX/line_reg1/line_reg[31]_negdx_3>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[2].line_controllerX/line_reg1/line_reg[31]_negdx_2>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[2].line_controllerX/line_reg1/line_reg[31]_negdx_1>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[2].line_controllerX/line_reg1/line_reg[31]_negdx_0>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[2].line_controllerX/line_reg1/line_reg[31]_err_12>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[2].line_controllerX/line_reg1/line_reg[31]_err_11>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[2].line_controllerX/line_reg1/line_reg[31]_err_10>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[2].line_controllerX/line_reg1/line_reg[31]_err_9>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[2].line_controllerX/line_reg1/line_reg[31]_err_8>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[2].line_controllerX/line_reg1/line_reg[31]_err_7>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[2].line_controllerX/line_reg1/line_reg[31]_err_6>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[2].line_controllerX/line_reg1/line_reg[31]_err_5>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[2].line_controllerX/line_reg1/line_reg[31]_err_4>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[2].line_controllerX/line_reg1/line_reg[31]_err_3>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[2].line_controllerX/line_reg1/line_reg[31]_err_2>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[2].line_controllerX/line_reg1/line_reg[31]_err_1>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[2].line_controllerX/line_reg1/line_reg[31]_err_0>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[2].line_controllerX/line_reg1/line_reg[31]_dy_12>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[2].line_controllerX/line_reg1/line_reg[31]_dy_11>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[2].line_controllerX/line_reg1/line_reg[31]_dy_10>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[2].line_controllerX/line_reg1/line_reg[31]_dy_9>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[2].line_controllerX/line_reg1/line_reg[31]_dy_8>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[2].line_controllerX/line_reg1/line_reg[31]_dy_7>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[2].line_controllerX/line_reg1/line_reg[31]_dy_6>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[2].line_controllerX/line_reg1/line_reg[31]_dy_5>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[2].line_controllerX/line_reg1/line_reg[31]_dy_4>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[2].line_controllerX/line_reg1/line_reg[31]_dy_3>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[2].line_controllerX/line_reg1/line_reg[31]_dy_2>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[2].line_controllerX/line_reg1/line_reg[31]_dy_1>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[2].line_controllerX/line_reg1/line_reg[31]_dy_0>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[2].line_controllerX/line_reg1/line_reg[31]_sx>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[2].line_controllerX/line_reg1/line_reg[31]_y1_12>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[2].line_controllerX/line_reg1/line_reg[31]_y1_11>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[2].line_controllerX/line_reg1/line_reg[31]_y1_10>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[2].line_controllerX/line_reg1/line_reg[31]_y1_9>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[2].line_controllerX/line_reg1/line_reg[31]_y1_8>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[2].line_controllerX/line_reg1/line_reg[31]_y1_7>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[2].line_controllerX/line_reg1/line_reg[31]_y1_6>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[2].line_controllerX/line_reg1/line_reg[31]_y1_5>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[2].line_controllerX/line_reg1/line_reg[31]_y1_4>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[2].line_controllerX/line_reg1/line_reg[31]_y1_3>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[2].line_controllerX/line_reg1/line_reg[31]_y1_2>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[2].line_controllerX/line_reg1/line_reg[31]_y1_1>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[2].line_controllerX/line_reg1/line_reg[31]_y1_0>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[2].line_controllerX/line_reg1/line_reg[31]_y0_12>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[2].line_controllerX/line_reg1/line_reg[31]_y0_11>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[2].line_controllerX/line_reg1/line_reg[31]_y0_10>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[2].line_controllerX/line_reg1/line_reg[31]_y0_9>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[2].line_controllerX/line_reg1/line_reg[31]_y0_8>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[2].line_controllerX/line_reg1/line_reg[31]_y0_7>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[2].line_controllerX/line_reg1/line_reg[31]_y0_6>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[2].line_controllerX/line_reg1/line_reg[31]_y0_5>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[2].line_controllerX/line_reg1/line_reg[31]_y0_4>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[2].line_controllerX/line_reg1/line_reg[31]_y0_3>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[2].line_controllerX/line_reg1/line_reg[31]_y0_2>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[2].line_controllerX/line_reg1/line_reg[31]_y0_1>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[2].line_controllerX/line_reg1/line_reg[31]_y0_0>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[2].line_controllerX/line_reg1/line_reg[31]_x0_12>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[2].line_controllerX/line_reg1/line_reg[31]_x0_11>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[2].line_controllerX/line_reg1/line_reg[31]_x0_10>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[2].line_controllerX/line_reg1/line_reg[31]_x0_9>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[2].line_controllerX/line_reg1/line_reg[31]_x0_8>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[2].line_controllerX/line_reg1/line_reg[31]_x0_7>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[2].line_controllerX/line_reg1/line_reg[31]_x0_6>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[2].line_controllerX/line_reg1/line_reg[31]_x0_5>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[2].line_controllerX/line_reg1/line_reg[31]_x0_4>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[2].line_controllerX/line_reg1/line_reg[31]_x0_3>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[2].line_controllerX/line_reg1/line_reg[31]_x0_2>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[2].line_controllerX/line_reg1/line_reg[31]_x0_1>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[2].line_controllerX/line_reg1/line_reg[31]_x0_0>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[2].line_controllerX/line_reg1/line_reg[31]_x1_12>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[2].line_controllerX/line_reg1/line_reg[31]_x1_11>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[2].line_controllerX/line_reg1/line_reg[31]_x1_10>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[2].line_controllerX/line_reg1/line_reg[31]_x1_9>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[2].line_controllerX/line_reg1/line_reg[31]_x1_8>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[2].line_controllerX/line_reg1/line_reg[31]_x1_7>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[2].line_controllerX/line_reg1/line_reg[31]_x1_6>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[2].line_controllerX/line_reg1/line_reg[31]_x1_5>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[2].line_controllerX/line_reg1/line_reg[31]_x1_4>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[2].line_controllerX/line_reg1/line_reg[31]_x1_3>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[2].line_controllerX/line_reg1/line_reg[31]_x1_2>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[2].line_controllerX/line_reg1/line_reg[31]_x1_1>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[2].line_controllerX/line_reg1/line_reg[31]_x1_0>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[2].line_controllerX/line_reg1/line_reg[31]_enable>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[3].line_controllerX/line_reg1/line_reg[31]_color_7>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[3].line_controllerX/line_reg1/line_reg[31]_color_6>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[3].line_controllerX/line_reg1/line_reg[31]_color_5>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[3].line_controllerX/line_reg1/line_reg[31]_color_4>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[3].line_controllerX/line_reg1/line_reg[31]_color_3>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[3].line_controllerX/line_reg1/line_reg[31]_color_2>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[3].line_controllerX/line_reg1/line_reg[31]_color_1>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[3].line_controllerX/line_reg1/line_reg[31]_color_0>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[3].line_controllerX/line_reg1/line_reg[31]_negdx_12>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[3].line_controllerX/line_reg1/line_reg[31]_negdx_11>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[3].line_controllerX/line_reg1/line_reg[31]_negdx_10>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[3].line_controllerX/line_reg1/line_reg[31]_negdx_9>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[3].line_controllerX/line_reg1/line_reg[31]_negdx_8>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[3].line_controllerX/line_reg1/line_reg[31]_negdx_7>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[3].line_controllerX/line_reg1/line_reg[31]_negdx_6>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[3].line_controllerX/line_reg1/line_reg[31]_negdx_5>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[3].line_controllerX/line_reg1/line_reg[31]_negdx_4>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[3].line_controllerX/line_reg1/line_reg[31]_negdx_3>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[3].line_controllerX/line_reg1/line_reg[31]_negdx_2>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[3].line_controllerX/line_reg1/line_reg[31]_negdx_1>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[3].line_controllerX/line_reg1/line_reg[31]_negdx_0>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[3].line_controllerX/line_reg1/line_reg[31]_err_12>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[3].line_controllerX/line_reg1/line_reg[31]_err_11>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[3].line_controllerX/line_reg1/line_reg[31]_err_10>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[3].line_controllerX/line_reg1/line_reg[31]_err_9>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[3].line_controllerX/line_reg1/line_reg[31]_err_8>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[3].line_controllerX/line_reg1/line_reg[31]_err_7>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[3].line_controllerX/line_reg1/line_reg[31]_err_6>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[3].line_controllerX/line_reg1/line_reg[31]_err_5>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[3].line_controllerX/line_reg1/line_reg[31]_err_4>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[3].line_controllerX/line_reg1/line_reg[31]_err_3>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[3].line_controllerX/line_reg1/line_reg[31]_err_2>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[3].line_controllerX/line_reg1/line_reg[31]_err_1>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[3].line_controllerX/line_reg1/line_reg[31]_err_0>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[3].line_controllerX/line_reg1/line_reg[31]_dy_12>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[3].line_controllerX/line_reg1/line_reg[31]_dy_11>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[3].line_controllerX/line_reg1/line_reg[31]_dy_10>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[3].line_controllerX/line_reg1/line_reg[31]_dy_9>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[3].line_controllerX/line_reg1/line_reg[31]_dy_8>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[3].line_controllerX/line_reg1/line_reg[31]_dy_7>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[3].line_controllerX/line_reg1/line_reg[31]_dy_6>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[3].line_controllerX/line_reg1/line_reg[31]_dy_5>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[3].line_controllerX/line_reg1/line_reg[31]_dy_4>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[3].line_controllerX/line_reg1/line_reg[31]_dy_3>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[3].line_controllerX/line_reg1/line_reg[31]_dy_2>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[3].line_controllerX/line_reg1/line_reg[31]_dy_1>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[3].line_controllerX/line_reg1/line_reg[31]_dy_0>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[3].line_controllerX/line_reg1/line_reg[31]_sx>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[3].line_controllerX/line_reg1/line_reg[31]_y1_12>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[3].line_controllerX/line_reg1/line_reg[31]_y1_11>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[3].line_controllerX/line_reg1/line_reg[31]_y1_10>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[3].line_controllerX/line_reg1/line_reg[31]_y1_9>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[3].line_controllerX/line_reg1/line_reg[31]_y1_8>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[3].line_controllerX/line_reg1/line_reg[31]_y1_7>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[3].line_controllerX/line_reg1/line_reg[31]_y1_6>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[3].line_controllerX/line_reg1/line_reg[31]_y1_5>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[3].line_controllerX/line_reg1/line_reg[31]_y1_4>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[3].line_controllerX/line_reg1/line_reg[31]_y1_3>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[3].line_controllerX/line_reg1/line_reg[31]_y1_2>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[3].line_controllerX/line_reg1/line_reg[31]_y1_1>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[3].line_controllerX/line_reg1/line_reg[31]_y1_0>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[3].line_controllerX/line_reg1/line_reg[31]_y0_12>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[3].line_controllerX/line_reg1/line_reg[31]_y0_11>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[3].line_controllerX/line_reg1/line_reg[31]_y0_10>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[3].line_controllerX/line_reg1/line_reg[31]_y0_9>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[3].line_controllerX/line_reg1/line_reg[31]_y0_8>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[3].line_controllerX/line_reg1/line_reg[31]_y0_7>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[3].line_controllerX/line_reg1/line_reg[31]_y0_6>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[3].line_controllerX/line_reg1/line_reg[31]_y0_5>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[3].line_controllerX/line_reg1/line_reg[31]_y0_4>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[3].line_controllerX/line_reg1/line_reg[31]_y0_3>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[3].line_controllerX/line_reg1/line_reg[31]_y0_2>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[3].line_controllerX/line_reg1/line_reg[31]_y0_1>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[3].line_controllerX/line_reg1/line_reg[31]_y0_0>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[3].line_controllerX/line_reg1/line_reg[31]_x0_12>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[3].line_controllerX/line_reg1/line_reg[31]_x0_11>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[3].line_controllerX/line_reg1/line_reg[31]_x0_10>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[3].line_controllerX/line_reg1/line_reg[31]_x0_9>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[3].line_controllerX/line_reg1/line_reg[31]_x0_8>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[3].line_controllerX/line_reg1/line_reg[31]_x0_7>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[3].line_controllerX/line_reg1/line_reg[31]_x0_6>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[3].line_controllerX/line_reg1/line_reg[31]_x0_5>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[3].line_controllerX/line_reg1/line_reg[31]_x0_4>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[3].line_controllerX/line_reg1/line_reg[31]_x0_3>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[3].line_controllerX/line_reg1/line_reg[31]_x0_2>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[3].line_controllerX/line_reg1/line_reg[31]_x0_1>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[3].line_controllerX/line_reg1/line_reg[31]_x0_0>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[3].line_controllerX/line_reg1/line_reg[31]_x1_12>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[3].line_controllerX/line_reg1/line_reg[31]_x1_11>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[3].line_controllerX/line_reg1/line_reg[31]_x1_10>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[3].line_controllerX/line_reg1/line_reg[31]_x1_9>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[3].line_controllerX/line_reg1/line_reg[31]_x1_8>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[3].line_controllerX/line_reg1/line_reg[31]_x1_7>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[3].line_controllerX/line_reg1/line_reg[31]_x1_6>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[3].line_controllerX/line_reg1/line_reg[31]_x1_5>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[3].line_controllerX/line_reg1/line_reg[31]_x1_4>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[3].line_controllerX/line_reg1/line_reg[31]_x1_3>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[3].line_controllerX/line_reg1/line_reg[31]_x1_2>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[3].line_controllerX/line_reg1/line_reg[31]_x1_1>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[3].line_controllerX/line_reg1/line_reg[31]_x1_0>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[3].line_controllerX/line_reg1/line_reg[31]_enable>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[4].line_controllerX/line_reg1/line_reg[31]_color_7>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[4].line_controllerX/line_reg1/line_reg[31]_color_6>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[4].line_controllerX/line_reg1/line_reg[31]_color_5>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[4].line_controllerX/line_reg1/line_reg[31]_color_4>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[4].line_controllerX/line_reg1/line_reg[31]_color_3>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[4].line_controllerX/line_reg1/line_reg[31]_color_2>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[4].line_controllerX/line_reg1/line_reg[31]_color_1>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[4].line_controllerX/line_reg1/line_reg[31]_color_0>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[4].line_controllerX/line_reg1/line_reg[31]_negdx_12>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[4].line_controllerX/line_reg1/line_reg[31]_negdx_11>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[4].line_controllerX/line_reg1/line_reg[31]_negdx_10>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[4].line_controllerX/line_reg1/line_reg[31]_negdx_9>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[4].line_controllerX/line_reg1/line_reg[31]_negdx_8>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[4].line_controllerX/line_reg1/line_reg[31]_negdx_7>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[4].line_controllerX/line_reg1/line_reg[31]_negdx_6>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[4].line_controllerX/line_reg1/line_reg[31]_negdx_5>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[4].line_controllerX/line_reg1/line_reg[31]_negdx_4>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[4].line_controllerX/line_reg1/line_reg[31]_negdx_3>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[4].line_controllerX/line_reg1/line_reg[31]_negdx_2>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[4].line_controllerX/line_reg1/line_reg[31]_negdx_1>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[4].line_controllerX/line_reg1/line_reg[31]_negdx_0>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[4].line_controllerX/line_reg1/line_reg[31]_err_12>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[4].line_controllerX/line_reg1/line_reg[31]_err_11>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[4].line_controllerX/line_reg1/line_reg[31]_err_10>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[4].line_controllerX/line_reg1/line_reg[31]_err_9>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[4].line_controllerX/line_reg1/line_reg[31]_err_8>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[4].line_controllerX/line_reg1/line_reg[31]_err_7>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[4].line_controllerX/line_reg1/line_reg[31]_err_6>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[4].line_controllerX/line_reg1/line_reg[31]_err_5>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[4].line_controllerX/line_reg1/line_reg[31]_err_4>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[4].line_controllerX/line_reg1/line_reg[31]_err_3>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[4].line_controllerX/line_reg1/line_reg[31]_err_2>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[4].line_controllerX/line_reg1/line_reg[31]_err_1>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[4].line_controllerX/line_reg1/line_reg[31]_err_0>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[4].line_controllerX/line_reg1/line_reg[31]_dy_12>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[4].line_controllerX/line_reg1/line_reg[31]_dy_11>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[4].line_controllerX/line_reg1/line_reg[31]_dy_10>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[4].line_controllerX/line_reg1/line_reg[31]_dy_9>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[4].line_controllerX/line_reg1/line_reg[31]_dy_8>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[4].line_controllerX/line_reg1/line_reg[31]_dy_7>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[4].line_controllerX/line_reg1/line_reg[31]_dy_6>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[4].line_controllerX/line_reg1/line_reg[31]_dy_5>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[4].line_controllerX/line_reg1/line_reg[31]_dy_4>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[4].line_controllerX/line_reg1/line_reg[31]_dy_3>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[4].line_controllerX/line_reg1/line_reg[31]_dy_2>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[4].line_controllerX/line_reg1/line_reg[31]_dy_1>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[4].line_controllerX/line_reg1/line_reg[31]_dy_0>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[4].line_controllerX/line_reg1/line_reg[31]_sx>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[4].line_controllerX/line_reg1/line_reg[31]_y1_12>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[4].line_controllerX/line_reg1/line_reg[31]_y1_11>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[4].line_controllerX/line_reg1/line_reg[31]_y1_10>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[4].line_controllerX/line_reg1/line_reg[31]_y1_9>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[4].line_controllerX/line_reg1/line_reg[31]_y1_8>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[4].line_controllerX/line_reg1/line_reg[31]_y1_7>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[4].line_controllerX/line_reg1/line_reg[31]_y1_6>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[4].line_controllerX/line_reg1/line_reg[31]_y1_5>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[4].line_controllerX/line_reg1/line_reg[31]_y1_4>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[4].line_controllerX/line_reg1/line_reg[31]_y1_3>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[4].line_controllerX/line_reg1/line_reg[31]_y1_2>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[4].line_controllerX/line_reg1/line_reg[31]_y1_1>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[4].line_controllerX/line_reg1/line_reg[31]_y1_0>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[4].line_controllerX/line_reg1/line_reg[31]_y0_12>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[4].line_controllerX/line_reg1/line_reg[31]_y0_11>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[4].line_controllerX/line_reg1/line_reg[31]_y0_10>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[4].line_controllerX/line_reg1/line_reg[31]_y0_9>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[4].line_controllerX/line_reg1/line_reg[31]_y0_8>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[4].line_controllerX/line_reg1/line_reg[31]_y0_7>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[4].line_controllerX/line_reg1/line_reg[31]_y0_6>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[4].line_controllerX/line_reg1/line_reg[31]_y0_5>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[4].line_controllerX/line_reg1/line_reg[31]_y0_4>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[4].line_controllerX/line_reg1/line_reg[31]_y0_3>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[4].line_controllerX/line_reg1/line_reg[31]_y0_2>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[4].line_controllerX/line_reg1/line_reg[31]_y0_1>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[4].line_controllerX/line_reg1/line_reg[31]_y0_0>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[4].line_controllerX/line_reg1/line_reg[31]_x0_12>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[4].line_controllerX/line_reg1/line_reg[31]_x0_11>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[4].line_controllerX/line_reg1/line_reg[31]_x0_10>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[4].line_controllerX/line_reg1/line_reg[31]_x0_9>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[4].line_controllerX/line_reg1/line_reg[31]_x0_8>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[4].line_controllerX/line_reg1/line_reg[31]_x0_7>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[4].line_controllerX/line_reg1/line_reg[31]_x0_6>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[4].line_controllerX/line_reg1/line_reg[31]_x0_5>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[4].line_controllerX/line_reg1/line_reg[31]_x0_4>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[4].line_controllerX/line_reg1/line_reg[31]_x0_3>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[4].line_controllerX/line_reg1/line_reg[31]_x0_2>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[4].line_controllerX/line_reg1/line_reg[31]_x0_1>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[4].line_controllerX/line_reg1/line_reg[31]_x0_0>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[4].line_controllerX/line_reg1/line_reg[31]_x1_12>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[4].line_controllerX/line_reg1/line_reg[31]_x1_11>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[4].line_controllerX/line_reg1/line_reg[31]_x1_10>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[4].line_controllerX/line_reg1/line_reg[31]_x1_9>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[4].line_controllerX/line_reg1/line_reg[31]_x1_8>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[4].line_controllerX/line_reg1/line_reg[31]_x1_7>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[4].line_controllerX/line_reg1/line_reg[31]_x1_6>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[4].line_controllerX/line_reg1/line_reg[31]_x1_5>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[4].line_controllerX/line_reg1/line_reg[31]_x1_4>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[4].line_controllerX/line_reg1/line_reg[31]_x1_3>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[4].line_controllerX/line_reg1/line_reg[31]_x1_2>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[4].line_controllerX/line_reg1/line_reg[31]_x1_1>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[4].line_controllerX/line_reg1/line_reg[31]_x1_0>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[4].line_controllerX/line_reg1/line_reg[31]_enable>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[5].line_controllerX/line_reg1/line_reg[31]_color_7>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[5].line_controllerX/line_reg1/line_reg[31]_color_6>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[5].line_controllerX/line_reg1/line_reg[31]_color_5>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[5].line_controllerX/line_reg1/line_reg[31]_color_4>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[5].line_controllerX/line_reg1/line_reg[31]_color_3>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[5].line_controllerX/line_reg1/line_reg[31]_color_2>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[5].line_controllerX/line_reg1/line_reg[31]_color_1>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[5].line_controllerX/line_reg1/line_reg[31]_color_0>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[5].line_controllerX/line_reg1/line_reg[31]_negdx_12>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[5].line_controllerX/line_reg1/line_reg[31]_negdx_11>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[5].line_controllerX/line_reg1/line_reg[31]_negdx_10>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[5].line_controllerX/line_reg1/line_reg[31]_negdx_9>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[5].line_controllerX/line_reg1/line_reg[31]_negdx_8>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[5].line_controllerX/line_reg1/line_reg[31]_negdx_7>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[5].line_controllerX/line_reg1/line_reg[31]_negdx_6>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[5].line_controllerX/line_reg1/line_reg[31]_negdx_5>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[5].line_controllerX/line_reg1/line_reg[31]_negdx_4>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[5].line_controllerX/line_reg1/line_reg[31]_negdx_3>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[5].line_controllerX/line_reg1/line_reg[31]_negdx_2>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[5].line_controllerX/line_reg1/line_reg[31]_negdx_1>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[5].line_controllerX/line_reg1/line_reg[31]_negdx_0>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[5].line_controllerX/line_reg1/line_reg[31]_err_12>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[5].line_controllerX/line_reg1/line_reg[31]_err_11>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[5].line_controllerX/line_reg1/line_reg[31]_err_10>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[5].line_controllerX/line_reg1/line_reg[31]_err_9>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[5].line_controllerX/line_reg1/line_reg[31]_err_8>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[5].line_controllerX/line_reg1/line_reg[31]_err_7>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[5].line_controllerX/line_reg1/line_reg[31]_err_6>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[5].line_controllerX/line_reg1/line_reg[31]_err_5>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[5].line_controllerX/line_reg1/line_reg[31]_err_4>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[5].line_controllerX/line_reg1/line_reg[31]_err_3>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[5].line_controllerX/line_reg1/line_reg[31]_err_2>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[5].line_controllerX/line_reg1/line_reg[31]_err_1>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[5].line_controllerX/line_reg1/line_reg[31]_err_0>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[5].line_controllerX/line_reg1/line_reg[31]_dy_12>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[5].line_controllerX/line_reg1/line_reg[31]_dy_11>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[5].line_controllerX/line_reg1/line_reg[31]_dy_10>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[5].line_controllerX/line_reg1/line_reg[31]_dy_9>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[5].line_controllerX/line_reg1/line_reg[31]_dy_8>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[5].line_controllerX/line_reg1/line_reg[31]_dy_7>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[5].line_controllerX/line_reg1/line_reg[31]_dy_6>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[5].line_controllerX/line_reg1/line_reg[31]_dy_5>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[5].line_controllerX/line_reg1/line_reg[31]_dy_4>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[5].line_controllerX/line_reg1/line_reg[31]_dy_3>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[5].line_controllerX/line_reg1/line_reg[31]_dy_2>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[5].line_controllerX/line_reg1/line_reg[31]_dy_1>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[5].line_controllerX/line_reg1/line_reg[31]_dy_0>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[5].line_controllerX/line_reg1/line_reg[31]_sx>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[5].line_controllerX/line_reg1/line_reg[31]_y1_12>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[5].line_controllerX/line_reg1/line_reg[31]_y1_11>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[5].line_controllerX/line_reg1/line_reg[31]_y1_10>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[5].line_controllerX/line_reg1/line_reg[31]_y1_9>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[5].line_controllerX/line_reg1/line_reg[31]_y1_8>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[5].line_controllerX/line_reg1/line_reg[31]_y1_7>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[5].line_controllerX/line_reg1/line_reg[31]_y1_6>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[5].line_controllerX/line_reg1/line_reg[31]_y1_5>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[5].line_controllerX/line_reg1/line_reg[31]_y1_4>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[5].line_controllerX/line_reg1/line_reg[31]_y1_3>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[5].line_controllerX/line_reg1/line_reg[31]_y1_2>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[5].line_controllerX/line_reg1/line_reg[31]_y1_1>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[5].line_controllerX/line_reg1/line_reg[31]_y1_0>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[5].line_controllerX/line_reg1/line_reg[31]_y0_12>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[5].line_controllerX/line_reg1/line_reg[31]_y0_11>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[5].line_controllerX/line_reg1/line_reg[31]_y0_10>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[5].line_controllerX/line_reg1/line_reg[31]_y0_9>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[5].line_controllerX/line_reg1/line_reg[31]_y0_8>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[5].line_controllerX/line_reg1/line_reg[31]_y0_7>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[5].line_controllerX/line_reg1/line_reg[31]_y0_6>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[5].line_controllerX/line_reg1/line_reg[31]_y0_5>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[5].line_controllerX/line_reg1/line_reg[31]_y0_4>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[5].line_controllerX/line_reg1/line_reg[31]_y0_3>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[5].line_controllerX/line_reg1/line_reg[31]_y0_2>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[5].line_controllerX/line_reg1/line_reg[31]_y0_1>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[5].line_controllerX/line_reg1/line_reg[31]_y0_0>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[5].line_controllerX/line_reg1/line_reg[31]_x0_12>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[5].line_controllerX/line_reg1/line_reg[31]_x0_11>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[5].line_controllerX/line_reg1/line_reg[31]_x0_10>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[5].line_controllerX/line_reg1/line_reg[31]_x0_9>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[5].line_controllerX/line_reg1/line_reg[31]_x0_8>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[5].line_controllerX/line_reg1/line_reg[31]_x0_7>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[5].line_controllerX/line_reg1/line_reg[31]_x0_6>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[5].line_controllerX/line_reg1/line_reg[31]_x0_5>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[5].line_controllerX/line_reg1/line_reg[31]_x0_4>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[5].line_controllerX/line_reg1/line_reg[31]_x0_3>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[5].line_controllerX/line_reg1/line_reg[31]_x0_2>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[5].line_controllerX/line_reg1/line_reg[31]_x0_1>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[5].line_controllerX/line_reg1/line_reg[31]_x0_0>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[5].line_controllerX/line_reg1/line_reg[31]_x1_12>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[5].line_controllerX/line_reg1/line_reg[31]_x1_11>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[5].line_controllerX/line_reg1/line_reg[31]_x1_10>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[5].line_controllerX/line_reg1/line_reg[31]_x1_9>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[5].line_controllerX/line_reg1/line_reg[31]_x1_8>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[5].line_controllerX/line_reg1/line_reg[31]_x1_7>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[5].line_controllerX/line_reg1/line_reg[31]_x1_6>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[5].line_controllerX/line_reg1/line_reg[31]_x1_5>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[5].line_controllerX/line_reg1/line_reg[31]_x1_4>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[5].line_controllerX/line_reg1/line_reg[31]_x1_3>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[5].line_controllerX/line_reg1/line_reg[31]_x1_2>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[5].line_controllerX/line_reg1/line_reg[31]_x1_1>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[5].line_controllerX/line_reg1/line_reg[31]_x1_0>.
-	Found 31-bit shift register for signal <axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[5].line_controllerX/line_reg1/line_reg[31]_enable>.
-Unit <system_axi_lite_slave_0_wrapper> processed.
+Processing Unit <axi_lite_slave_0> :
+	Found 31-bit shift register for signal <vector1/line_controller0/line_reg1/line_reg[31]_color_7>.
+	Found 31-bit shift register for signal <vector1/line_controller0/line_reg1/line_reg[31]_color_6>.
+	Found 31-bit shift register for signal <vector1/line_controller0/line_reg1/line_reg[31]_color_5>.
+	Found 31-bit shift register for signal <vector1/line_controller0/line_reg1/line_reg[31]_color_4>.
+	Found 31-bit shift register for signal <vector1/line_controller0/line_reg1/line_reg[31]_color_3>.
+	Found 31-bit shift register for signal <vector1/line_controller0/line_reg1/line_reg[31]_color_2>.
+	Found 31-bit shift register for signal <vector1/line_controller0/line_reg1/line_reg[31]_color_1>.
+	Found 31-bit shift register for signal <vector1/line_controller0/line_reg1/line_reg[31]_color_0>.
+	Found 31-bit shift register for signal <vector1/line_controller0/line_reg1/line_reg[31]_negdx_12>.
+	Found 31-bit shift register for signal <vector1/line_controller0/line_reg1/line_reg[31]_negdx_11>.
+	Found 31-bit shift register for signal <vector1/line_controller0/line_reg1/line_reg[31]_negdx_10>.
+	Found 31-bit shift register for signal <vector1/line_controller0/line_reg1/line_reg[31]_negdx_9>.
+	Found 31-bit shift register for signal <vector1/line_controller0/line_reg1/line_reg[31]_negdx_8>.
+	Found 31-bit shift register for signal <vector1/line_controller0/line_reg1/line_reg[31]_negdx_7>.
+	Found 31-bit shift register for signal <vector1/line_controller0/line_reg1/line_reg[31]_negdx_6>.
+	Found 31-bit shift register for signal <vector1/line_controller0/line_reg1/line_reg[31]_negdx_5>.
+	Found 31-bit shift register for signal <vector1/line_controller0/line_reg1/line_reg[31]_negdx_4>.
+	Found 31-bit shift register for signal <vector1/line_controller0/line_reg1/line_reg[31]_negdx_3>.
+	Found 31-bit shift register for signal <vector1/line_controller0/line_reg1/line_reg[31]_negdx_2>.
+	Found 31-bit shift register for signal <vector1/line_controller0/line_reg1/line_reg[31]_negdx_1>.
+	Found 31-bit shift register for signal <vector1/line_controller0/line_reg1/line_reg[31]_negdx_0>.
+	Found 31-bit shift register for signal <vector1/line_controller0/line_reg1/line_reg[31]_err_12>.
+	Found 31-bit shift register for signal <vector1/line_controller0/line_reg1/line_reg[31]_err_11>.
+	Found 31-bit shift register for signal <vector1/line_controller0/line_reg1/line_reg[31]_err_10>.
+	Found 31-bit shift register for signal <vector1/line_controller0/line_reg1/line_reg[31]_err_9>.
+	Found 31-bit shift register for signal <vector1/line_controller0/line_reg1/line_reg[31]_err_8>.
+	Found 31-bit shift register for signal <vector1/line_controller0/line_reg1/line_reg[31]_err_7>.
+	Found 31-bit shift register for signal <vector1/line_controller0/line_reg1/line_reg[31]_err_6>.
+	Found 31-bit shift register for signal <vector1/line_controller0/line_reg1/line_reg[31]_err_5>.
+	Found 31-bit shift register for signal <vector1/line_controller0/line_reg1/line_reg[31]_err_4>.
+	Found 31-bit shift register for signal <vector1/line_controller0/line_reg1/line_reg[31]_err_3>.
+	Found 31-bit shift register for signal <vector1/line_controller0/line_reg1/line_reg[31]_err_2>.
+	Found 31-bit shift register for signal <vector1/line_controller0/line_reg1/line_reg[31]_err_1>.
+	Found 31-bit shift register for signal <vector1/line_controller0/line_reg1/line_reg[31]_err_0>.
+	Found 31-bit shift register for signal <vector1/line_controller0/line_reg1/line_reg[31]_dy_12>.
+	Found 31-bit shift register for signal <vector1/line_controller0/line_reg1/line_reg[31]_dy_11>.
+	Found 31-bit shift register for signal <vector1/line_controller0/line_reg1/line_reg[31]_dy_10>.
+	Found 31-bit shift register for signal <vector1/line_controller0/line_reg1/line_reg[31]_dy_9>.
+	Found 31-bit shift register for signal <vector1/line_controller0/line_reg1/line_reg[31]_dy_8>.
+	Found 31-bit shift register for signal <vector1/line_controller0/line_reg1/line_reg[31]_dy_7>.
+	Found 31-bit shift register for signal <vector1/line_controller0/line_reg1/line_reg[31]_dy_6>.
+	Found 31-bit shift register for signal <vector1/line_controller0/line_reg1/line_reg[31]_dy_5>.
+	Found 31-bit shift register for signal <vector1/line_controller0/line_reg1/line_reg[31]_dy_4>.
+	Found 31-bit shift register for signal <vector1/line_controller0/line_reg1/line_reg[31]_dy_3>.
+	Found 31-bit shift register for signal <vector1/line_controller0/line_reg1/line_reg[31]_dy_2>.
+	Found 31-bit shift register for signal <vector1/line_controller0/line_reg1/line_reg[31]_dy_1>.
+	Found 31-bit shift register for signal <vector1/line_controller0/line_reg1/line_reg[31]_dy_0>.
+	Found 31-bit shift register for signal <vector1/line_controller0/line_reg1/line_reg[31]_sx>.
+	Found 31-bit shift register for signal <vector1/line_controller0/line_reg1/line_reg[31]_y1_12>.
+	Found 31-bit shift register for signal <vector1/line_controller0/line_reg1/line_reg[31]_y1_11>.
+	Found 31-bit shift register for signal <vector1/line_controller0/line_reg1/line_reg[31]_y1_10>.
+	Found 31-bit shift register for signal <vector1/line_controller0/line_reg1/line_reg[31]_y1_9>.
+	Found 31-bit shift register for signal <vector1/line_controller0/line_reg1/line_reg[31]_y1_8>.
+	Found 31-bit shift register for signal <vector1/line_controller0/line_reg1/line_reg[31]_y1_7>.
+	Found 31-bit shift register for signal <vector1/line_controller0/line_reg1/line_reg[31]_y1_6>.
+	Found 31-bit shift register for signal <vector1/line_controller0/line_reg1/line_reg[31]_y1_5>.
+	Found 31-bit shift register for signal <vector1/line_controller0/line_reg1/line_reg[31]_y1_4>.
+	Found 31-bit shift register for signal <vector1/line_controller0/line_reg1/line_reg[31]_y1_3>.
+	Found 31-bit shift register for signal <vector1/line_controller0/line_reg1/line_reg[31]_y1_2>.
+	Found 31-bit shift register for signal <vector1/line_controller0/line_reg1/line_reg[31]_y1_1>.
+	Found 31-bit shift register for signal <vector1/line_controller0/line_reg1/line_reg[31]_y1_0>.
+	Found 31-bit shift register for signal <vector1/line_controller0/line_reg1/line_reg[31]_y0_12>.
+	Found 31-bit shift register for signal <vector1/line_controller0/line_reg1/line_reg[31]_y0_11>.
+	Found 31-bit shift register for signal <vector1/line_controller0/line_reg1/line_reg[31]_y0_10>.
+	Found 31-bit shift register for signal <vector1/line_controller0/line_reg1/line_reg[31]_y0_9>.
+	Found 31-bit shift register for signal <vector1/line_controller0/line_reg1/line_reg[31]_y0_8>.
+	Found 31-bit shift register for signal <vector1/line_controller0/line_reg1/line_reg[31]_y0_7>.
+	Found 31-bit shift register for signal <vector1/line_controller0/line_reg1/line_reg[31]_y0_6>.
+	Found 31-bit shift register for signal <vector1/line_controller0/line_reg1/line_reg[31]_y0_5>.
+	Found 31-bit shift register for signal <vector1/line_controller0/line_reg1/line_reg[31]_y0_4>.
+	Found 31-bit shift register for signal <vector1/line_controller0/line_reg1/line_reg[31]_y0_3>.
+	Found 31-bit shift register for signal <vector1/line_controller0/line_reg1/line_reg[31]_y0_2>.
+	Found 31-bit shift register for signal <vector1/line_controller0/line_reg1/line_reg[31]_y0_1>.
+	Found 31-bit shift register for signal <vector1/line_controller0/line_reg1/line_reg[31]_y0_0>.
+	Found 31-bit shift register for signal <vector1/line_controller0/line_reg1/line_reg[31]_x0_12>.
+	Found 31-bit shift register for signal <vector1/line_controller0/line_reg1/line_reg[31]_x0_11>.
+	Found 31-bit shift register for signal <vector1/line_controller0/line_reg1/line_reg[31]_x0_10>.
+	Found 31-bit shift register for signal <vector1/line_controller0/line_reg1/line_reg[31]_x0_9>.
+	Found 31-bit shift register for signal <vector1/line_controller0/line_reg1/line_reg[31]_x0_8>.
+	Found 31-bit shift register for signal <vector1/line_controller0/line_reg1/line_reg[31]_x0_7>.
+	Found 31-bit shift register for signal <vector1/line_controller0/line_reg1/line_reg[31]_x0_6>.
+	Found 31-bit shift register for signal <vector1/line_controller0/line_reg1/line_reg[31]_x0_5>.
+	Found 31-bit shift register for signal <vector1/line_controller0/line_reg1/line_reg[31]_x0_4>.
+	Found 31-bit shift register for signal <vector1/line_controller0/line_reg1/line_reg[31]_x0_3>.
+	Found 31-bit shift register for signal <vector1/line_controller0/line_reg1/line_reg[31]_x0_2>.
+	Found 31-bit shift register for signal <vector1/line_controller0/line_reg1/line_reg[31]_x0_1>.
+	Found 31-bit shift register for signal <vector1/line_controller0/line_reg1/line_reg[31]_x0_0>.
+	Found 31-bit shift register for signal <vector1/line_controller0/line_reg1/line_reg[31]_x1_12>.
+	Found 31-bit shift register for signal <vector1/line_controller0/line_reg1/line_reg[31]_x1_11>.
+	Found 31-bit shift register for signal <vector1/line_controller0/line_reg1/line_reg[31]_x1_10>.
+	Found 31-bit shift register for signal <vector1/line_controller0/line_reg1/line_reg[31]_x1_9>.
+	Found 31-bit shift register for signal <vector1/line_controller0/line_reg1/line_reg[31]_x1_8>.
+	Found 31-bit shift register for signal <vector1/line_controller0/line_reg1/line_reg[31]_x1_7>.
+	Found 31-bit shift register for signal <vector1/line_controller0/line_reg1/line_reg[31]_x1_6>.
+	Found 31-bit shift register for signal <vector1/line_controller0/line_reg1/line_reg[31]_x1_5>.
+	Found 31-bit shift register for signal <vector1/line_controller0/line_reg1/line_reg[31]_x1_4>.
+	Found 31-bit shift register for signal <vector1/line_controller0/line_reg1/line_reg[31]_x1_3>.
+	Found 31-bit shift register for signal <vector1/line_controller0/line_reg1/line_reg[31]_x1_2>.
+	Found 31-bit shift register for signal <vector1/line_controller0/line_reg1/line_reg[31]_x1_1>.
+	Found 31-bit shift register for signal <vector1/line_controller0/line_reg1/line_reg[31]_x1_0>.
+	Found 31-bit shift register for signal <vector1/line_controller0/line_reg1/line_reg[31]_enable>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[1].line_controllerX/line_reg1/line_reg[31]_color_7>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[1].line_controllerX/line_reg1/line_reg[31]_color_6>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[1].line_controllerX/line_reg1/line_reg[31]_color_5>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[1].line_controllerX/line_reg1/line_reg[31]_color_4>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[1].line_controllerX/line_reg1/line_reg[31]_color_3>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[1].line_controllerX/line_reg1/line_reg[31]_color_2>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[1].line_controllerX/line_reg1/line_reg[31]_color_1>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[1].line_controllerX/line_reg1/line_reg[31]_color_0>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[1].line_controllerX/line_reg1/line_reg[31]_negdx_12>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[1].line_controllerX/line_reg1/line_reg[31]_negdx_11>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[1].line_controllerX/line_reg1/line_reg[31]_negdx_10>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[1].line_controllerX/line_reg1/line_reg[31]_negdx_9>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[1].line_controllerX/line_reg1/line_reg[31]_negdx_8>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[1].line_controllerX/line_reg1/line_reg[31]_negdx_7>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[1].line_controllerX/line_reg1/line_reg[31]_negdx_6>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[1].line_controllerX/line_reg1/line_reg[31]_negdx_5>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[1].line_controllerX/line_reg1/line_reg[31]_negdx_4>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[1].line_controllerX/line_reg1/line_reg[31]_negdx_3>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[1].line_controllerX/line_reg1/line_reg[31]_negdx_2>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[1].line_controllerX/line_reg1/line_reg[31]_negdx_1>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[1].line_controllerX/line_reg1/line_reg[31]_negdx_0>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[1].line_controllerX/line_reg1/line_reg[31]_err_12>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[1].line_controllerX/line_reg1/line_reg[31]_err_11>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[1].line_controllerX/line_reg1/line_reg[31]_err_10>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[1].line_controllerX/line_reg1/line_reg[31]_err_9>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[1].line_controllerX/line_reg1/line_reg[31]_err_8>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[1].line_controllerX/line_reg1/line_reg[31]_err_7>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[1].line_controllerX/line_reg1/line_reg[31]_err_6>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[1].line_controllerX/line_reg1/line_reg[31]_err_5>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[1].line_controllerX/line_reg1/line_reg[31]_err_4>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[1].line_controllerX/line_reg1/line_reg[31]_err_3>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[1].line_controllerX/line_reg1/line_reg[31]_err_2>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[1].line_controllerX/line_reg1/line_reg[31]_err_1>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[1].line_controllerX/line_reg1/line_reg[31]_err_0>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[1].line_controllerX/line_reg1/line_reg[31]_dy_12>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[1].line_controllerX/line_reg1/line_reg[31]_dy_11>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[1].line_controllerX/line_reg1/line_reg[31]_dy_10>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[1].line_controllerX/line_reg1/line_reg[31]_dy_9>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[1].line_controllerX/line_reg1/line_reg[31]_dy_8>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[1].line_controllerX/line_reg1/line_reg[31]_dy_7>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[1].line_controllerX/line_reg1/line_reg[31]_dy_6>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[1].line_controllerX/line_reg1/line_reg[31]_dy_5>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[1].line_controllerX/line_reg1/line_reg[31]_dy_4>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[1].line_controllerX/line_reg1/line_reg[31]_dy_3>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[1].line_controllerX/line_reg1/line_reg[31]_dy_2>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[1].line_controllerX/line_reg1/line_reg[31]_dy_1>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[1].line_controllerX/line_reg1/line_reg[31]_dy_0>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[1].line_controllerX/line_reg1/line_reg[31]_sx>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[1].line_controllerX/line_reg1/line_reg[31]_y1_12>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[1].line_controllerX/line_reg1/line_reg[31]_y1_11>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[1].line_controllerX/line_reg1/line_reg[31]_y1_10>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[1].line_controllerX/line_reg1/line_reg[31]_y1_9>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[1].line_controllerX/line_reg1/line_reg[31]_y1_8>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[1].line_controllerX/line_reg1/line_reg[31]_y1_7>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[1].line_controllerX/line_reg1/line_reg[31]_y1_6>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[1].line_controllerX/line_reg1/line_reg[31]_y1_5>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[1].line_controllerX/line_reg1/line_reg[31]_y1_4>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[1].line_controllerX/line_reg1/line_reg[31]_y1_3>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[1].line_controllerX/line_reg1/line_reg[31]_y1_2>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[1].line_controllerX/line_reg1/line_reg[31]_y1_1>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[1].line_controllerX/line_reg1/line_reg[31]_y1_0>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[1].line_controllerX/line_reg1/line_reg[31]_y0_12>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[1].line_controllerX/line_reg1/line_reg[31]_y0_11>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[1].line_controllerX/line_reg1/line_reg[31]_y0_10>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[1].line_controllerX/line_reg1/line_reg[31]_y0_9>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[1].line_controllerX/line_reg1/line_reg[31]_y0_8>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[1].line_controllerX/line_reg1/line_reg[31]_y0_7>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[1].line_controllerX/line_reg1/line_reg[31]_y0_6>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[1].line_controllerX/line_reg1/line_reg[31]_y0_5>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[1].line_controllerX/line_reg1/line_reg[31]_y0_4>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[1].line_controllerX/line_reg1/line_reg[31]_y0_3>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[1].line_controllerX/line_reg1/line_reg[31]_y0_2>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[1].line_controllerX/line_reg1/line_reg[31]_y0_1>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[1].line_controllerX/line_reg1/line_reg[31]_y0_0>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[1].line_controllerX/line_reg1/line_reg[31]_x0_12>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[1].line_controllerX/line_reg1/line_reg[31]_x0_11>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[1].line_controllerX/line_reg1/line_reg[31]_x0_10>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[1].line_controllerX/line_reg1/line_reg[31]_x0_9>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[1].line_controllerX/line_reg1/line_reg[31]_x0_8>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[1].line_controllerX/line_reg1/line_reg[31]_x0_7>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[1].line_controllerX/line_reg1/line_reg[31]_x0_6>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[1].line_controllerX/line_reg1/line_reg[31]_x0_5>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[1].line_controllerX/line_reg1/line_reg[31]_x0_4>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[1].line_controllerX/line_reg1/line_reg[31]_x0_3>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[1].line_controllerX/line_reg1/line_reg[31]_x0_2>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[1].line_controllerX/line_reg1/line_reg[31]_x0_1>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[1].line_controllerX/line_reg1/line_reg[31]_x0_0>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[1].line_controllerX/line_reg1/line_reg[31]_x1_12>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[1].line_controllerX/line_reg1/line_reg[31]_x1_11>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[1].line_controllerX/line_reg1/line_reg[31]_x1_10>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[1].line_controllerX/line_reg1/line_reg[31]_x1_9>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[1].line_controllerX/line_reg1/line_reg[31]_x1_8>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[1].line_controllerX/line_reg1/line_reg[31]_x1_7>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[1].line_controllerX/line_reg1/line_reg[31]_x1_6>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[1].line_controllerX/line_reg1/line_reg[31]_x1_5>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[1].line_controllerX/line_reg1/line_reg[31]_x1_4>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[1].line_controllerX/line_reg1/line_reg[31]_x1_3>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[1].line_controllerX/line_reg1/line_reg[31]_x1_2>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[1].line_controllerX/line_reg1/line_reg[31]_x1_1>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[1].line_controllerX/line_reg1/line_reg[31]_x1_0>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[1].line_controllerX/line_reg1/line_reg[31]_enable>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[2].line_controllerX/line_reg1/line_reg[31]_color_7>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[2].line_controllerX/line_reg1/line_reg[31]_color_6>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[2].line_controllerX/line_reg1/line_reg[31]_color_5>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[2].line_controllerX/line_reg1/line_reg[31]_color_4>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[2].line_controllerX/line_reg1/line_reg[31]_color_3>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[2].line_controllerX/line_reg1/line_reg[31]_color_2>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[2].line_controllerX/line_reg1/line_reg[31]_color_1>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[2].line_controllerX/line_reg1/line_reg[31]_color_0>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[2].line_controllerX/line_reg1/line_reg[31]_negdx_12>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[2].line_controllerX/line_reg1/line_reg[31]_negdx_11>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[2].line_controllerX/line_reg1/line_reg[31]_negdx_10>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[2].line_controllerX/line_reg1/line_reg[31]_negdx_9>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[2].line_controllerX/line_reg1/line_reg[31]_negdx_8>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[2].line_controllerX/line_reg1/line_reg[31]_negdx_7>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[2].line_controllerX/line_reg1/line_reg[31]_negdx_6>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[2].line_controllerX/line_reg1/line_reg[31]_negdx_5>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[2].line_controllerX/line_reg1/line_reg[31]_negdx_4>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[2].line_controllerX/line_reg1/line_reg[31]_negdx_3>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[2].line_controllerX/line_reg1/line_reg[31]_negdx_2>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[2].line_controllerX/line_reg1/line_reg[31]_negdx_1>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[2].line_controllerX/line_reg1/line_reg[31]_negdx_0>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[2].line_controllerX/line_reg1/line_reg[31]_err_12>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[2].line_controllerX/line_reg1/line_reg[31]_err_11>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[2].line_controllerX/line_reg1/line_reg[31]_err_10>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[2].line_controllerX/line_reg1/line_reg[31]_err_9>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[2].line_controllerX/line_reg1/line_reg[31]_err_8>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[2].line_controllerX/line_reg1/line_reg[31]_err_7>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[2].line_controllerX/line_reg1/line_reg[31]_err_6>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[2].line_controllerX/line_reg1/line_reg[31]_err_5>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[2].line_controllerX/line_reg1/line_reg[31]_err_4>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[2].line_controllerX/line_reg1/line_reg[31]_err_3>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[2].line_controllerX/line_reg1/line_reg[31]_err_2>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[2].line_controllerX/line_reg1/line_reg[31]_err_1>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[2].line_controllerX/line_reg1/line_reg[31]_err_0>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[2].line_controllerX/line_reg1/line_reg[31]_dy_12>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[2].line_controllerX/line_reg1/line_reg[31]_dy_11>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[2].line_controllerX/line_reg1/line_reg[31]_dy_10>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[2].line_controllerX/line_reg1/line_reg[31]_dy_9>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[2].line_controllerX/line_reg1/line_reg[31]_dy_8>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[2].line_controllerX/line_reg1/line_reg[31]_dy_7>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[2].line_controllerX/line_reg1/line_reg[31]_dy_6>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[2].line_controllerX/line_reg1/line_reg[31]_dy_5>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[2].line_controllerX/line_reg1/line_reg[31]_dy_4>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[2].line_controllerX/line_reg1/line_reg[31]_dy_3>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[2].line_controllerX/line_reg1/line_reg[31]_dy_2>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[2].line_controllerX/line_reg1/line_reg[31]_dy_1>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[2].line_controllerX/line_reg1/line_reg[31]_dy_0>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[2].line_controllerX/line_reg1/line_reg[31]_sx>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[2].line_controllerX/line_reg1/line_reg[31]_y1_12>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[2].line_controllerX/line_reg1/line_reg[31]_y1_11>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[2].line_controllerX/line_reg1/line_reg[31]_y1_10>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[2].line_controllerX/line_reg1/line_reg[31]_y1_9>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[2].line_controllerX/line_reg1/line_reg[31]_y1_8>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[2].line_controllerX/line_reg1/line_reg[31]_y1_7>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[2].line_controllerX/line_reg1/line_reg[31]_y1_6>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[2].line_controllerX/line_reg1/line_reg[31]_y1_5>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[2].line_controllerX/line_reg1/line_reg[31]_y1_4>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[2].line_controllerX/line_reg1/line_reg[31]_y1_3>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[2].line_controllerX/line_reg1/line_reg[31]_y1_2>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[2].line_controllerX/line_reg1/line_reg[31]_y1_1>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[2].line_controllerX/line_reg1/line_reg[31]_y1_0>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[2].line_controllerX/line_reg1/line_reg[31]_y0_12>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[2].line_controllerX/line_reg1/line_reg[31]_y0_11>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[2].line_controllerX/line_reg1/line_reg[31]_y0_10>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[2].line_controllerX/line_reg1/line_reg[31]_y0_9>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[2].line_controllerX/line_reg1/line_reg[31]_y0_8>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[2].line_controllerX/line_reg1/line_reg[31]_y0_7>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[2].line_controllerX/line_reg1/line_reg[31]_y0_6>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[2].line_controllerX/line_reg1/line_reg[31]_y0_5>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[2].line_controllerX/line_reg1/line_reg[31]_y0_4>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[2].line_controllerX/line_reg1/line_reg[31]_y0_3>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[2].line_controllerX/line_reg1/line_reg[31]_y0_2>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[2].line_controllerX/line_reg1/line_reg[31]_y0_1>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[2].line_controllerX/line_reg1/line_reg[31]_y0_0>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[2].line_controllerX/line_reg1/line_reg[31]_x0_12>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[2].line_controllerX/line_reg1/line_reg[31]_x0_11>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[2].line_controllerX/line_reg1/line_reg[31]_x0_10>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[2].line_controllerX/line_reg1/line_reg[31]_x0_9>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[2].line_controllerX/line_reg1/line_reg[31]_x0_8>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[2].line_controllerX/line_reg1/line_reg[31]_x0_7>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[2].line_controllerX/line_reg1/line_reg[31]_x0_6>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[2].line_controllerX/line_reg1/line_reg[31]_x0_5>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[2].line_controllerX/line_reg1/line_reg[31]_x0_4>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[2].line_controllerX/line_reg1/line_reg[31]_x0_3>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[2].line_controllerX/line_reg1/line_reg[31]_x0_2>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[2].line_controllerX/line_reg1/line_reg[31]_x0_1>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[2].line_controllerX/line_reg1/line_reg[31]_x0_0>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[2].line_controllerX/line_reg1/line_reg[31]_x1_12>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[2].line_controllerX/line_reg1/line_reg[31]_x1_11>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[2].line_controllerX/line_reg1/line_reg[31]_x1_10>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[2].line_controllerX/line_reg1/line_reg[31]_x1_9>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[2].line_controllerX/line_reg1/line_reg[31]_x1_8>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[2].line_controllerX/line_reg1/line_reg[31]_x1_7>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[2].line_controllerX/line_reg1/line_reg[31]_x1_6>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[2].line_controllerX/line_reg1/line_reg[31]_x1_5>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[2].line_controllerX/line_reg1/line_reg[31]_x1_4>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[2].line_controllerX/line_reg1/line_reg[31]_x1_3>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[2].line_controllerX/line_reg1/line_reg[31]_x1_2>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[2].line_controllerX/line_reg1/line_reg[31]_x1_1>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[2].line_controllerX/line_reg1/line_reg[31]_x1_0>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[2].line_controllerX/line_reg1/line_reg[31]_enable>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[3].line_controllerX/line_reg1/line_reg[31]_color_7>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[3].line_controllerX/line_reg1/line_reg[31]_color_6>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[3].line_controllerX/line_reg1/line_reg[31]_color_5>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[3].line_controllerX/line_reg1/line_reg[31]_color_4>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[3].line_controllerX/line_reg1/line_reg[31]_color_3>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[3].line_controllerX/line_reg1/line_reg[31]_color_2>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[3].line_controllerX/line_reg1/line_reg[31]_color_1>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[3].line_controllerX/line_reg1/line_reg[31]_color_0>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[3].line_controllerX/line_reg1/line_reg[31]_negdx_12>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[3].line_controllerX/line_reg1/line_reg[31]_negdx_11>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[3].line_controllerX/line_reg1/line_reg[31]_negdx_10>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[3].line_controllerX/line_reg1/line_reg[31]_negdx_9>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[3].line_controllerX/line_reg1/line_reg[31]_negdx_8>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[3].line_controllerX/line_reg1/line_reg[31]_negdx_7>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[3].line_controllerX/line_reg1/line_reg[31]_negdx_6>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[3].line_controllerX/line_reg1/line_reg[31]_negdx_5>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[3].line_controllerX/line_reg1/line_reg[31]_negdx_4>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[3].line_controllerX/line_reg1/line_reg[31]_negdx_3>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[3].line_controllerX/line_reg1/line_reg[31]_negdx_2>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[3].line_controllerX/line_reg1/line_reg[31]_negdx_1>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[3].line_controllerX/line_reg1/line_reg[31]_negdx_0>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[3].line_controllerX/line_reg1/line_reg[31]_err_12>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[3].line_controllerX/line_reg1/line_reg[31]_err_11>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[3].line_controllerX/line_reg1/line_reg[31]_err_10>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[3].line_controllerX/line_reg1/line_reg[31]_err_9>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[3].line_controllerX/line_reg1/line_reg[31]_err_8>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[3].line_controllerX/line_reg1/line_reg[31]_err_7>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[3].line_controllerX/line_reg1/line_reg[31]_err_6>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[3].line_controllerX/line_reg1/line_reg[31]_err_5>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[3].line_controllerX/line_reg1/line_reg[31]_err_4>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[3].line_controllerX/line_reg1/line_reg[31]_err_3>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[3].line_controllerX/line_reg1/line_reg[31]_err_2>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[3].line_controllerX/line_reg1/line_reg[31]_err_1>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[3].line_controllerX/line_reg1/line_reg[31]_err_0>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[3].line_controllerX/line_reg1/line_reg[31]_dy_12>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[3].line_controllerX/line_reg1/line_reg[31]_dy_11>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[3].line_controllerX/line_reg1/line_reg[31]_dy_10>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[3].line_controllerX/line_reg1/line_reg[31]_dy_9>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[3].line_controllerX/line_reg1/line_reg[31]_dy_8>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[3].line_controllerX/line_reg1/line_reg[31]_dy_7>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[3].line_controllerX/line_reg1/line_reg[31]_dy_6>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[3].line_controllerX/line_reg1/line_reg[31]_dy_5>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[3].line_controllerX/line_reg1/line_reg[31]_dy_4>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[3].line_controllerX/line_reg1/line_reg[31]_dy_3>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[3].line_controllerX/line_reg1/line_reg[31]_dy_2>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[3].line_controllerX/line_reg1/line_reg[31]_dy_1>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[3].line_controllerX/line_reg1/line_reg[31]_dy_0>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[3].line_controllerX/line_reg1/line_reg[31]_sx>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[3].line_controllerX/line_reg1/line_reg[31]_y1_12>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[3].line_controllerX/line_reg1/line_reg[31]_y1_11>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[3].line_controllerX/line_reg1/line_reg[31]_y1_10>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[3].line_controllerX/line_reg1/line_reg[31]_y1_9>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[3].line_controllerX/line_reg1/line_reg[31]_y1_8>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[3].line_controllerX/line_reg1/line_reg[31]_y1_7>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[3].line_controllerX/line_reg1/line_reg[31]_y1_6>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[3].line_controllerX/line_reg1/line_reg[31]_y1_5>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[3].line_controllerX/line_reg1/line_reg[31]_y1_4>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[3].line_controllerX/line_reg1/line_reg[31]_y1_3>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[3].line_controllerX/line_reg1/line_reg[31]_y1_2>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[3].line_controllerX/line_reg1/line_reg[31]_y1_1>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[3].line_controllerX/line_reg1/line_reg[31]_y1_0>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[3].line_controllerX/line_reg1/line_reg[31]_y0_12>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[3].line_controllerX/line_reg1/line_reg[31]_y0_11>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[3].line_controllerX/line_reg1/line_reg[31]_y0_10>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[3].line_controllerX/line_reg1/line_reg[31]_y0_9>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[3].line_controllerX/line_reg1/line_reg[31]_y0_8>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[3].line_controllerX/line_reg1/line_reg[31]_y0_7>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[3].line_controllerX/line_reg1/line_reg[31]_y0_6>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[3].line_controllerX/line_reg1/line_reg[31]_y0_5>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[3].line_controllerX/line_reg1/line_reg[31]_y0_4>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[3].line_controllerX/line_reg1/line_reg[31]_y0_3>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[3].line_controllerX/line_reg1/line_reg[31]_y0_2>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[3].line_controllerX/line_reg1/line_reg[31]_y0_1>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[3].line_controllerX/line_reg1/line_reg[31]_y0_0>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[3].line_controllerX/line_reg1/line_reg[31]_x0_12>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[3].line_controllerX/line_reg1/line_reg[31]_x0_11>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[3].line_controllerX/line_reg1/line_reg[31]_x0_10>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[3].line_controllerX/line_reg1/line_reg[31]_x0_9>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[3].line_controllerX/line_reg1/line_reg[31]_x0_8>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[3].line_controllerX/line_reg1/line_reg[31]_x0_7>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[3].line_controllerX/line_reg1/line_reg[31]_x0_6>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[3].line_controllerX/line_reg1/line_reg[31]_x0_5>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[3].line_controllerX/line_reg1/line_reg[31]_x0_4>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[3].line_controllerX/line_reg1/line_reg[31]_x0_3>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[3].line_controllerX/line_reg1/line_reg[31]_x0_2>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[3].line_controllerX/line_reg1/line_reg[31]_x0_1>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[3].line_controllerX/line_reg1/line_reg[31]_x0_0>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[3].line_controllerX/line_reg1/line_reg[31]_x1_12>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[3].line_controllerX/line_reg1/line_reg[31]_x1_11>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[3].line_controllerX/line_reg1/line_reg[31]_x1_10>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[3].line_controllerX/line_reg1/line_reg[31]_x1_9>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[3].line_controllerX/line_reg1/line_reg[31]_x1_8>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[3].line_controllerX/line_reg1/line_reg[31]_x1_7>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[3].line_controllerX/line_reg1/line_reg[31]_x1_6>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[3].line_controllerX/line_reg1/line_reg[31]_x1_5>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[3].line_controllerX/line_reg1/line_reg[31]_x1_4>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[3].line_controllerX/line_reg1/line_reg[31]_x1_3>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[3].line_controllerX/line_reg1/line_reg[31]_x1_2>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[3].line_controllerX/line_reg1/line_reg[31]_x1_1>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[3].line_controllerX/line_reg1/line_reg[31]_x1_0>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[3].line_controllerX/line_reg1/line_reg[31]_enable>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[4].line_controllerX/line_reg1/line_reg[31]_color_7>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[4].line_controllerX/line_reg1/line_reg[31]_color_6>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[4].line_controllerX/line_reg1/line_reg[31]_color_5>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[4].line_controllerX/line_reg1/line_reg[31]_color_4>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[4].line_controllerX/line_reg1/line_reg[31]_color_3>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[4].line_controllerX/line_reg1/line_reg[31]_color_2>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[4].line_controllerX/line_reg1/line_reg[31]_color_1>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[4].line_controllerX/line_reg1/line_reg[31]_color_0>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[4].line_controllerX/line_reg1/line_reg[31]_negdx_12>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[4].line_controllerX/line_reg1/line_reg[31]_negdx_11>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[4].line_controllerX/line_reg1/line_reg[31]_negdx_10>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[4].line_controllerX/line_reg1/line_reg[31]_negdx_9>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[4].line_controllerX/line_reg1/line_reg[31]_negdx_8>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[4].line_controllerX/line_reg1/line_reg[31]_negdx_7>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[4].line_controllerX/line_reg1/line_reg[31]_negdx_6>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[4].line_controllerX/line_reg1/line_reg[31]_negdx_5>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[4].line_controllerX/line_reg1/line_reg[31]_negdx_4>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[4].line_controllerX/line_reg1/line_reg[31]_negdx_3>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[4].line_controllerX/line_reg1/line_reg[31]_negdx_2>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[4].line_controllerX/line_reg1/line_reg[31]_negdx_1>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[4].line_controllerX/line_reg1/line_reg[31]_negdx_0>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[4].line_controllerX/line_reg1/line_reg[31]_err_12>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[4].line_controllerX/line_reg1/line_reg[31]_err_11>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[4].line_controllerX/line_reg1/line_reg[31]_err_10>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[4].line_controllerX/line_reg1/line_reg[31]_err_9>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[4].line_controllerX/line_reg1/line_reg[31]_err_8>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[4].line_controllerX/line_reg1/line_reg[31]_err_7>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[4].line_controllerX/line_reg1/line_reg[31]_err_6>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[4].line_controllerX/line_reg1/line_reg[31]_err_5>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[4].line_controllerX/line_reg1/line_reg[31]_err_4>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[4].line_controllerX/line_reg1/line_reg[31]_err_3>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[4].line_controllerX/line_reg1/line_reg[31]_err_2>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[4].line_controllerX/line_reg1/line_reg[31]_err_1>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[4].line_controllerX/line_reg1/line_reg[31]_err_0>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[4].line_controllerX/line_reg1/line_reg[31]_dy_12>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[4].line_controllerX/line_reg1/line_reg[31]_dy_11>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[4].line_controllerX/line_reg1/line_reg[31]_dy_10>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[4].line_controllerX/line_reg1/line_reg[31]_dy_9>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[4].line_controllerX/line_reg1/line_reg[31]_dy_8>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[4].line_controllerX/line_reg1/line_reg[31]_dy_7>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[4].line_controllerX/line_reg1/line_reg[31]_dy_6>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[4].line_controllerX/line_reg1/line_reg[31]_dy_5>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[4].line_controllerX/line_reg1/line_reg[31]_dy_4>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[4].line_controllerX/line_reg1/line_reg[31]_dy_3>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[4].line_controllerX/line_reg1/line_reg[31]_dy_2>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[4].line_controllerX/line_reg1/line_reg[31]_dy_1>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[4].line_controllerX/line_reg1/line_reg[31]_dy_0>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[4].line_controllerX/line_reg1/line_reg[31]_sx>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[4].line_controllerX/line_reg1/line_reg[31]_y1_12>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[4].line_controllerX/line_reg1/line_reg[31]_y1_11>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[4].line_controllerX/line_reg1/line_reg[31]_y1_10>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[4].line_controllerX/line_reg1/line_reg[31]_y1_9>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[4].line_controllerX/line_reg1/line_reg[31]_y1_8>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[4].line_controllerX/line_reg1/line_reg[31]_y1_7>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[4].line_controllerX/line_reg1/line_reg[31]_y1_6>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[4].line_controllerX/line_reg1/line_reg[31]_y1_5>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[4].line_controllerX/line_reg1/line_reg[31]_y1_4>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[4].line_controllerX/line_reg1/line_reg[31]_y1_3>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[4].line_controllerX/line_reg1/line_reg[31]_y1_2>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[4].line_controllerX/line_reg1/line_reg[31]_y1_1>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[4].line_controllerX/line_reg1/line_reg[31]_y1_0>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[4].line_controllerX/line_reg1/line_reg[31]_y0_12>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[4].line_controllerX/line_reg1/line_reg[31]_y0_11>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[4].line_controllerX/line_reg1/line_reg[31]_y0_10>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[4].line_controllerX/line_reg1/line_reg[31]_y0_9>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[4].line_controllerX/line_reg1/line_reg[31]_y0_8>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[4].line_controllerX/line_reg1/line_reg[31]_y0_7>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[4].line_controllerX/line_reg1/line_reg[31]_y0_6>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[4].line_controllerX/line_reg1/line_reg[31]_y0_5>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[4].line_controllerX/line_reg1/line_reg[31]_y0_4>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[4].line_controllerX/line_reg1/line_reg[31]_y0_3>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[4].line_controllerX/line_reg1/line_reg[31]_y0_2>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[4].line_controllerX/line_reg1/line_reg[31]_y0_1>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[4].line_controllerX/line_reg1/line_reg[31]_y0_0>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[4].line_controllerX/line_reg1/line_reg[31]_x0_12>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[4].line_controllerX/line_reg1/line_reg[31]_x0_11>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[4].line_controllerX/line_reg1/line_reg[31]_x0_10>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[4].line_controllerX/line_reg1/line_reg[31]_x0_9>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[4].line_controllerX/line_reg1/line_reg[31]_x0_8>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[4].line_controllerX/line_reg1/line_reg[31]_x0_7>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[4].line_controllerX/line_reg1/line_reg[31]_x0_6>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[4].line_controllerX/line_reg1/line_reg[31]_x0_5>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[4].line_controllerX/line_reg1/line_reg[31]_x0_4>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[4].line_controllerX/line_reg1/line_reg[31]_x0_3>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[4].line_controllerX/line_reg1/line_reg[31]_x0_2>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[4].line_controllerX/line_reg1/line_reg[31]_x0_1>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[4].line_controllerX/line_reg1/line_reg[31]_x0_0>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[4].line_controllerX/line_reg1/line_reg[31]_x1_12>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[4].line_controllerX/line_reg1/line_reg[31]_x1_11>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[4].line_controllerX/line_reg1/line_reg[31]_x1_10>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[4].line_controllerX/line_reg1/line_reg[31]_x1_9>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[4].line_controllerX/line_reg1/line_reg[31]_x1_8>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[4].line_controllerX/line_reg1/line_reg[31]_x1_7>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[4].line_controllerX/line_reg1/line_reg[31]_x1_6>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[4].line_controllerX/line_reg1/line_reg[31]_x1_5>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[4].line_controllerX/line_reg1/line_reg[31]_x1_4>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[4].line_controllerX/line_reg1/line_reg[31]_x1_3>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[4].line_controllerX/line_reg1/line_reg[31]_x1_2>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[4].line_controllerX/line_reg1/line_reg[31]_x1_1>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[4].line_controllerX/line_reg1/line_reg[31]_x1_0>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[4].line_controllerX/line_reg1/line_reg[31]_enable>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[5].line_controllerX/line_reg1/line_reg[31]_color_7>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[5].line_controllerX/line_reg1/line_reg[31]_color_6>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[5].line_controllerX/line_reg1/line_reg[31]_color_5>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[5].line_controllerX/line_reg1/line_reg[31]_color_4>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[5].line_controllerX/line_reg1/line_reg[31]_color_3>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[5].line_controllerX/line_reg1/line_reg[31]_color_2>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[5].line_controllerX/line_reg1/line_reg[31]_color_1>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[5].line_controllerX/line_reg1/line_reg[31]_color_0>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[5].line_controllerX/line_reg1/line_reg[31]_negdx_12>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[5].line_controllerX/line_reg1/line_reg[31]_negdx_11>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[5].line_controllerX/line_reg1/line_reg[31]_negdx_10>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[5].line_controllerX/line_reg1/line_reg[31]_negdx_9>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[5].line_controllerX/line_reg1/line_reg[31]_negdx_8>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[5].line_controllerX/line_reg1/line_reg[31]_negdx_7>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[5].line_controllerX/line_reg1/line_reg[31]_negdx_6>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[5].line_controllerX/line_reg1/line_reg[31]_negdx_5>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[5].line_controllerX/line_reg1/line_reg[31]_negdx_4>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[5].line_controllerX/line_reg1/line_reg[31]_negdx_3>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[5].line_controllerX/line_reg1/line_reg[31]_negdx_2>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[5].line_controllerX/line_reg1/line_reg[31]_negdx_1>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[5].line_controllerX/line_reg1/line_reg[31]_negdx_0>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[5].line_controllerX/line_reg1/line_reg[31]_err_12>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[5].line_controllerX/line_reg1/line_reg[31]_err_11>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[5].line_controllerX/line_reg1/line_reg[31]_err_10>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[5].line_controllerX/line_reg1/line_reg[31]_err_9>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[5].line_controllerX/line_reg1/line_reg[31]_err_8>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[5].line_controllerX/line_reg1/line_reg[31]_err_7>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[5].line_controllerX/line_reg1/line_reg[31]_err_6>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[5].line_controllerX/line_reg1/line_reg[31]_err_5>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[5].line_controllerX/line_reg1/line_reg[31]_err_4>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[5].line_controllerX/line_reg1/line_reg[31]_err_3>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[5].line_controllerX/line_reg1/line_reg[31]_err_2>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[5].line_controllerX/line_reg1/line_reg[31]_err_1>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[5].line_controllerX/line_reg1/line_reg[31]_err_0>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[5].line_controllerX/line_reg1/line_reg[31]_dy_12>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[5].line_controllerX/line_reg1/line_reg[31]_dy_11>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[5].line_controllerX/line_reg1/line_reg[31]_dy_10>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[5].line_controllerX/line_reg1/line_reg[31]_dy_9>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[5].line_controllerX/line_reg1/line_reg[31]_dy_8>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[5].line_controllerX/line_reg1/line_reg[31]_dy_7>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[5].line_controllerX/line_reg1/line_reg[31]_dy_6>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[5].line_controllerX/line_reg1/line_reg[31]_dy_5>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[5].line_controllerX/line_reg1/line_reg[31]_dy_4>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[5].line_controllerX/line_reg1/line_reg[31]_dy_3>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[5].line_controllerX/line_reg1/line_reg[31]_dy_2>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[5].line_controllerX/line_reg1/line_reg[31]_dy_1>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[5].line_controllerX/line_reg1/line_reg[31]_dy_0>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[5].line_controllerX/line_reg1/line_reg[31]_sx>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[5].line_controllerX/line_reg1/line_reg[31]_y1_12>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[5].line_controllerX/line_reg1/line_reg[31]_y1_11>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[5].line_controllerX/line_reg1/line_reg[31]_y1_10>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[5].line_controllerX/line_reg1/line_reg[31]_y1_9>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[5].line_controllerX/line_reg1/line_reg[31]_y1_8>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[5].line_controllerX/line_reg1/line_reg[31]_y1_7>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[5].line_controllerX/line_reg1/line_reg[31]_y1_6>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[5].line_controllerX/line_reg1/line_reg[31]_y1_5>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[5].line_controllerX/line_reg1/line_reg[31]_y1_4>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[5].line_controllerX/line_reg1/line_reg[31]_y1_3>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[5].line_controllerX/line_reg1/line_reg[31]_y1_2>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[5].line_controllerX/line_reg1/line_reg[31]_y1_1>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[5].line_controllerX/line_reg1/line_reg[31]_y1_0>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[5].line_controllerX/line_reg1/line_reg[31]_y0_12>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[5].line_controllerX/line_reg1/line_reg[31]_y0_11>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[5].line_controllerX/line_reg1/line_reg[31]_y0_10>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[5].line_controllerX/line_reg1/line_reg[31]_y0_9>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[5].line_controllerX/line_reg1/line_reg[31]_y0_8>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[5].line_controllerX/line_reg1/line_reg[31]_y0_7>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[5].line_controllerX/line_reg1/line_reg[31]_y0_6>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[5].line_controllerX/line_reg1/line_reg[31]_y0_5>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[5].line_controllerX/line_reg1/line_reg[31]_y0_4>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[5].line_controllerX/line_reg1/line_reg[31]_y0_3>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[5].line_controllerX/line_reg1/line_reg[31]_y0_2>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[5].line_controllerX/line_reg1/line_reg[31]_y0_1>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[5].line_controllerX/line_reg1/line_reg[31]_y0_0>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[5].line_controllerX/line_reg1/line_reg[31]_x0_12>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[5].line_controllerX/line_reg1/line_reg[31]_x0_11>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[5].line_controllerX/line_reg1/line_reg[31]_x0_10>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[5].line_controllerX/line_reg1/line_reg[31]_x0_9>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[5].line_controllerX/line_reg1/line_reg[31]_x0_8>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[5].line_controllerX/line_reg1/line_reg[31]_x0_7>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[5].line_controllerX/line_reg1/line_reg[31]_x0_6>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[5].line_controllerX/line_reg1/line_reg[31]_x0_5>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[5].line_controllerX/line_reg1/line_reg[31]_x0_4>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[5].line_controllerX/line_reg1/line_reg[31]_x0_3>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[5].line_controllerX/line_reg1/line_reg[31]_x0_2>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[5].line_controllerX/line_reg1/line_reg[31]_x0_1>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[5].line_controllerX/line_reg1/line_reg[31]_x0_0>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[5].line_controllerX/line_reg1/line_reg[31]_x1_12>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[5].line_controllerX/line_reg1/line_reg[31]_x1_11>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[5].line_controllerX/line_reg1/line_reg[31]_x1_10>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[5].line_controllerX/line_reg1/line_reg[31]_x1_9>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[5].line_controllerX/line_reg1/line_reg[31]_x1_8>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[5].line_controllerX/line_reg1/line_reg[31]_x1_7>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[5].line_controllerX/line_reg1/line_reg[31]_x1_6>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[5].line_controllerX/line_reg1/line_reg[31]_x1_5>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[5].line_controllerX/line_reg1/line_reg[31]_x1_4>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[5].line_controllerX/line_reg1/line_reg[31]_x1_3>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[5].line_controllerX/line_reg1/line_reg[31]_x1_2>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[5].line_controllerX/line_reg1/line_reg[31]_x1_1>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[5].line_controllerX/line_reg1/line_reg[31]_x1_0>.
+	Found 31-bit shift register for signal <vector1/GEN_LINE_CONTROLLERS[5].line_controllerX/line_reg1/line_reg[31]_enable>.
+Unit <axi_lite_slave_0> processed.
 
 =========================================================================
 Final Register Report
@@ -1674,24 +1676,24 @@ Top Level Output File Name         : system_axi_lite_slave_0_wrapper.ngc
 
 Primitive and Black Box Usage:
 ------------------------------
-# BELS                             : 4245
+# BELS                             : 4249
 #      GND                         : 1
 #      INV                         : 67
 #      LUT1                        : 334
-#      LUT2                        : 461
-#      LUT3                        : 497
-#      LUT4                        : 726
-#      LUT5                        : 43
-#      LUT6                        : 632
+#      LUT2                        : 475
+#      LUT3                        : 498
+#      LUT4                        : 712
+#      LUT5                        : 45
+#      LUT6                        : 633
 #      MUXCY                       : 835
 #      VCC                         : 1
 #      XORCY                       : 648
 # FlipFlops/Latches                : 1659
-#      FDC                         : 92
-#      FDCE                        : 186
+#      FDC                         : 68
+#      FDCE                        : 204
 #      FDE                         : 1212
-#      FDP                         : 97
-#      FDPE                        : 72
+#      FDP                         : 121
+#      FDPE                        : 54
 # RAMS                             : 6
 #      RAMB16BWER                  : 6
 # Shift Registers                  : 606
@@ -1705,16 +1707,16 @@ Selected Device : 6slx16csg324-3
 
 Slice Logic Utilization: 
  Number of Slice Registers:            1659  out of  18224     9%  
- Number of Slice LUTs:                 3366  out of   9112    36%  
-    Number used as Logic:              2760  out of   9112    30%  
+ Number of Slice LUTs:                 3370  out of   9112    36%  
+    Number used as Logic:              2764  out of   9112    30%  
     Number used as Memory:              606  out of   2176    27%  
        Number used as SRL:              606
 
 Slice Logic Distribution: 
- Number of LUT Flip Flop pairs used:   3475
-   Number with an unused Flip Flop:    1816  out of   3475    52%  
-   Number with an unused LUT:           109  out of   3475     3%  
-   Number of fully used LUT-FF pairs:  1550  out of   3475    44%  
+ Number of LUT Flip Flop pairs used:   4102
+   Number with an unused Flip Flop:    2443  out of   4102    59%  
+   Number with an unused LUT:           732  out of   4102    17%  
+   Number of fully used LUT-FF pairs:   927  out of   4102    22%  
    Number of unique control sets:        21
 
 IO Utilization: 
@@ -1760,7 +1762,7 @@ Speed Grade: -3
 
    Minimum period: 5.849ns (Maximum Frequency: 170.977MHz)
    Minimum input arrival time before clock: 2.721ns
-   Maximum output required time after clock: 4.059ns
+   Maximum output required time after clock: 4.876ns
    Maximum combinational path delay: No path found
 
 Timing Details:
@@ -1782,18 +1784,18 @@ Delay:               5.849ns (Levels of Logic = 10)
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDE:C->Q              8   0.447   1.031  axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[4].line_controllerX/line_reg1/line_reg[31]_y0_0 (axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[4].line_controllerX/line_reg1/line_reg[31]_y0_0)
-     LUT4:I1->O            1   0.205   0.000  axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[4].line_controllerX/line_comp1/Mcompar_YPLUSONE[12]_INPUT_y0[12]_LessThan_2_o_lut<0> (axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[4].line_controllerX/line_comp1/Mcompar_YPLUSONE[12]_INPUT_y0[12]_LessThan_2_o_lut<0>)
-     MUXCY:S->O            1   0.172   0.000  axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[4].line_controllerX/line_comp1/Mcompar_YPLUSONE[12]_INPUT_y0[12]_LessThan_2_o_cy<0> (axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[4].line_controllerX/line_comp1/Mcompar_YPLUSONE[12]_INPUT_y0[12]_LessThan_2_o_cy<0>)
-     MUXCY:CI->O           1   0.019   0.000  axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[4].line_controllerX/line_comp1/Mcompar_YPLUSONE[12]_INPUT_y0[12]_LessThan_2_o_cy<1> (axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[4].line_controllerX/line_comp1/Mcompar_YPLUSONE[12]_INPUT_y0[12]_LessThan_2_o_cy<1>)
-     MUXCY:CI->O           1   0.019   0.000  axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[4].line_controllerX/line_comp1/Mcompar_YPLUSONE[12]_INPUT_y0[12]_LessThan_2_o_cy<2> (axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[4].line_controllerX/line_comp1/Mcompar_YPLUSONE[12]_INPUT_y0[12]_LessThan_2_o_cy<2>)
-     MUXCY:CI->O           1   0.019   0.000  axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[4].line_controllerX/line_comp1/Mcompar_YPLUSONE[12]_INPUT_y0[12]_LessThan_2_o_cy<3> (axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[4].line_controllerX/line_comp1/Mcompar_YPLUSONE[12]_INPUT_y0[12]_LessThan_2_o_cy<3>)
-     MUXCY:CI->O           1   0.019   0.000  axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[4].line_controllerX/line_comp1/Mcompar_YPLUSONE[12]_INPUT_y0[12]_LessThan_2_o_cy<4> (axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[4].line_controllerX/line_comp1/Mcompar_YPLUSONE[12]_INPUT_y0[12]_LessThan_2_o_cy<4>)
-     MUXCY:CI->O           1   0.019   0.000  axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[4].line_controllerX/line_comp1/Mcompar_YPLUSONE[12]_INPUT_y0[12]_LessThan_2_o_cy<5> (axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[4].line_controllerX/line_comp1/Mcompar_YPLUSONE[12]_INPUT_y0[12]_LessThan_2_o_cy<5>)
-     MUXCY:CI->O          54   0.213   1.678  axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[4].line_controllerX/line_comp1/Mcompar_YPLUSONE[12]_INPUT_y0[12]_LessThan_2_o_cy<6> (axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[4].line_controllerX/line_comp1/Mcompar_YPLUSONE[12]_INPUT_y0[12]_LessThan_2_o_cy<6>)
-     LUT5:I3->O            2   0.203   0.617  axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[4].line_controllerX/line_comp1/Mmux_LINE_OUT11 (axi_lite_slave_0/vector1/line_lineouts<4>)
-     LUT6:I5->O            4   0.205   0.683  axi_lite_slave_0/vector1/GEN_PIXELROW_BRAM[2].bramX/Mmux_bram_wea11 (axi_lite_slave_0/vector1/GEN_PIXELROW_BRAM[2].bramX/bram_wea)
-     RAMB16BWER:WEA3           0.300          axi_lite_slave_0/vector1/GEN_PIXELROW_BRAM[2].bramX/BRAM_TDP_MACRO_inst/ramb_st.ramb18_dp_st.ram18_st
+     FDE:C->Q              8   0.447   1.031  vector1/GEN_LINE_CONTROLLERS[4].line_controllerX/line_reg1/line_reg[31]_y0_0 (vector1/GEN_LINE_CONTROLLERS[4].line_controllerX/line_reg1/line_reg[31]_y0_0)
+     LUT4:I1->O            1   0.205   0.000  vector1/GEN_LINE_CONTROLLERS[4].line_controllerX/line_comp1/Mcompar_YPLUSONE[12]_INPUT_y0[12]_LessThan_2_o_lut<0> (vector1/GEN_LINE_CONTROLLERS[4].line_controllerX/line_comp1/Mcompar_YPLUSONE[12]_INPUT_y0[12]_LessThan_2_o_lut<0>)
+     MUXCY:S->O            1   0.172   0.000  vector1/GEN_LINE_CONTROLLERS[4].line_controllerX/line_comp1/Mcompar_YPLUSONE[12]_INPUT_y0[12]_LessThan_2_o_cy<0> (vector1/GEN_LINE_CONTROLLERS[4].line_controllerX/line_comp1/Mcompar_YPLUSONE[12]_INPUT_y0[12]_LessThan_2_o_cy<0>)
+     MUXCY:CI->O           1   0.019   0.000  vector1/GEN_LINE_CONTROLLERS[4].line_controllerX/line_comp1/Mcompar_YPLUSONE[12]_INPUT_y0[12]_LessThan_2_o_cy<1> (vector1/GEN_LINE_CONTROLLERS[4].line_controllerX/line_comp1/Mcompar_YPLUSONE[12]_INPUT_y0[12]_LessThan_2_o_cy<1>)
+     MUXCY:CI->O           1   0.019   0.000  vector1/GEN_LINE_CONTROLLERS[4].line_controllerX/line_comp1/Mcompar_YPLUSONE[12]_INPUT_y0[12]_LessThan_2_o_cy<2> (vector1/GEN_LINE_CONTROLLERS[4].line_controllerX/line_comp1/Mcompar_YPLUSONE[12]_INPUT_y0[12]_LessThan_2_o_cy<2>)
+     MUXCY:CI->O           1   0.019   0.000  vector1/GEN_LINE_CONTROLLERS[4].line_controllerX/line_comp1/Mcompar_YPLUSONE[12]_INPUT_y0[12]_LessThan_2_o_cy<3> (vector1/GEN_LINE_CONTROLLERS[4].line_controllerX/line_comp1/Mcompar_YPLUSONE[12]_INPUT_y0[12]_LessThan_2_o_cy<3>)
+     MUXCY:CI->O           1   0.019   0.000  vector1/GEN_LINE_CONTROLLERS[4].line_controllerX/line_comp1/Mcompar_YPLUSONE[12]_INPUT_y0[12]_LessThan_2_o_cy<4> (vector1/GEN_LINE_CONTROLLERS[4].line_controllerX/line_comp1/Mcompar_YPLUSONE[12]_INPUT_y0[12]_LessThan_2_o_cy<4>)
+     MUXCY:CI->O           1   0.019   0.000  vector1/GEN_LINE_CONTROLLERS[4].line_controllerX/line_comp1/Mcompar_YPLUSONE[12]_INPUT_y0[12]_LessThan_2_o_cy<5> (vector1/GEN_LINE_CONTROLLERS[4].line_controllerX/line_comp1/Mcompar_YPLUSONE[12]_INPUT_y0[12]_LessThan_2_o_cy<5>)
+     MUXCY:CI->O          54   0.213   1.678  vector1/GEN_LINE_CONTROLLERS[4].line_controllerX/line_comp1/Mcompar_YPLUSONE[12]_INPUT_y0[12]_LessThan_2_o_cy<6> (vector1/GEN_LINE_CONTROLLERS[4].line_controllerX/line_comp1/Mcompar_YPLUSONE[12]_INPUT_y0[12]_LessThan_2_o_cy<6>)
+     LUT5:I3->O            2   0.203   0.617  vector1/GEN_LINE_CONTROLLERS[4].line_controllerX/line_comp1/Mmux_LINE_OUT11 (vector1/line_lineouts<4>)
+     LUT6:I5->O            4   0.205   0.683  vector1/GEN_PIXELROW_BRAM[2].bramX/Mmux_bram_wea11 (vector1/GEN_PIXELROW_BRAM[2].bramX/bram_wea)
+     RAMB16BWER:WEA3           0.300          vector1/GEN_PIXELROW_BRAM[2].bramX/BRAM_TDP_MACRO_inst/ramb_st.ramb18_dp_st.ram18_st
     ----------------------------------------
     Total                      5.849ns (1.840ns logic, 4.009ns route)
                                        (31.5% logic, 68.5% route)
@@ -1802,7 +1804,7 @@ Delay:               5.849ns (Levels of Logic = 10)
 Timing constraint: Default OFFSET IN BEFORE for Clock 'ACLK'
   Total number of paths / destination ports: 585 / 583
 -------------------------------------------------------------------------
-Offset:              2.721ns (Levels of Logic = 1)
+Offset:              2.721ns (Levels of Logic = 2)
   Source:            ARESETN (PAD)
   Destination:       axi_lite_slave_0/mem1/output_reg_color_7 (FF)
   Destination Clock: ACLK rising
@@ -1811,32 +1813,35 @@ Offset:              2.721ns (Levels of Logic = 1)
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     INV:I->O            459   0.206   2.085  axi_lite_slave_0/mem1/ARESETN_inv1_INV_0 (axi_lite_slave_0/mem1/ARESETN_inv)
-     FDCE:CLR                  0.430          axi_lite_slave_0/mem1/state_reg
+     begin scope: 'axi_lite_slave_0:ARESETN'
+     INV:I->O            459   0.206   2.085  mem1/ARESETN_inv1_INV_0 (mem1/ARESETN_inv)
+     FDCE:CLR                  0.430          mem1/state_reg
     ----------------------------------------
     Total                      2.721ns (0.636ns logic, 2.085ns route)
                                        (23.4% logic, 76.6% route)
 
 =========================================================================
 Timing constraint: Default OFFSET OUT AFTER for Clock 'ACLK'
-  Total number of paths / destination ports: 1059 / 45
+  Total number of paths / destination ports: 1126 / 45
 -------------------------------------------------------------------------
-Offset:              4.059ns (Levels of Logic = 3)
-  Source:            axi_lite_slave_0/vga1/x_reg_12 (FF)
+Offset:              4.876ns (Levels of Logic = 5)
+  Source:            axi_lite_slave_0/vga1/y_reg_6 (FF)
   Destination:       VGA_RED<2> (PAD)
   Source Clock:      ACLK rising
 
-  Data Path: axi_lite_slave_0/vga1/x_reg_12 to VGA_RED<2>
+  Data Path: axi_lite_slave_0/vga1/y_reg_6 to VGA_RED<2>
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDC:C->Q             17   0.447   1.372  axi_lite_slave_0/vga1/x_reg_12 (axi_lite_slave_0/vga1/x_reg_12)
-     LUT5:I0->O            1   0.203   0.580  axi_lite_slave_0/vga1/VGA_HSYNC_SW0 (N2)
-     LUT6:I5->O            8   0.205   1.050  axi_lite_slave_0/vga1/VGA_HSYNC (VGA_HSYNC)
-     LUT5:I1->O            0   0.203   0.000  axi_lite_slave_0/Mmux_VGA_RED34 (VGA_RED<2>)
+     FDCE:C->Q             5   0.447   1.079  vga1/y_reg_6 (vga1/y_reg_6)
+     LUT6:I0->O            1   0.203   0.808  vga1/VGA_VSYNC1 (vga1/VGA_VSYNC)
+     LUT3:I0->O            1   0.205   0.580  vga1/VGA_VSYNC4_SW0 (N328)
+     LUT6:I5->O            8   0.205   1.147  vga1/VGA_VSYNC4 (VGA_VSYNC)
+     LUT5:I0->O            0   0.203   0.000  Mmux_VGA_BLUE24 (VGA_BLUE<1>)
+     end scope: 'axi_lite_slave_0:VGA_BLUE<1>'
     ----------------------------------------
-    Total                      4.059ns (1.058ns logic, 3.001ns route)
-                                       (26.1% logic, 73.9% route)
+    Total                      4.876ns (1.263ns logic, 3.613ns route)
+                                       (25.9% logic, 74.1% route)
 
 =========================================================================
 
@@ -1854,8 +1859,8 @@ ACLK           |    5.849|         |         |         |
 =========================================================================
 
 
-Total REAL time to Xst completion: 31.00 secs
-Total CPU time to Xst completion: 30.63 secs
+Total REAL time to Xst completion: 36.00 secs
+Total CPU time to Xst completion: 36.42 secs
  
 --> 
 
