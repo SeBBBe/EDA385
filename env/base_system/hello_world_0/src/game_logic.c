@@ -1,12 +1,17 @@
 #include <stdio.h>
 
+#include "memmgr.h"
+
+#define malloc(X) memmgr_alloc(X)
+#define free(X) memmgr_free(X)
+
 #include "vga.h"
 #include "input.h"
 #include "graphics.h"
 #include "game_objects.h"
 
 static const float rotate_amount = 0.07;
-static const float ship_accel = 10.0;
+static const float ship_accel = 0.02;
 static const float bullet_speed = 10;
 int shoot_limit = 0;
 
@@ -20,29 +25,35 @@ typedef struct bullet
 
 void game_over()
 {
-	vga_clear();
 	offset(6, graphic_game_over, vga_get_width()/2 - 150, vga_get_height()/2 - 150);
-	vga_addpoly(6, graphic_game_over);
-	vga_sync();
-	while(1);
+
+	while(1)
+	{
+		vga_clear();
+		vga_addpoly(6, graphic_game_over);
+		vga_sync();
+	}
 }
 
 void win()
 {
-	vga_clear();
 	offset(4, graphic_vict, vga_get_width()/2 - 150, vga_get_height()/2 - 150);
-	vga_addpoly(4, graphic_vict);
-	vga_sync();
-	while(1);
+
+	while(1)
+	{
+		vga_clear();
+		vga_addpoly(4, graphic_vict);
+		vga_sync();
+	}
 }
 
-int game_main(int argc, char *argv[])
+void game_main()
 {
   keymap_t keys;
   vga_init();
   
   go_initialize();
-  srand(time(NULL));
+  srand(1337);
   
   game_object_t* ship_o = go_getempty();
   ship_o->enabled = 1;
@@ -69,7 +80,7 @@ int game_main(int argc, char *argv[])
     {
 		if (shoot_limit == 0)
 		{
-			shoot_limit = 25;
+			shoot_limit = 5;
 			game_object_t* bullet_o = go_getempty();
 		  bullet_o->location.x = ship_o->location.x;
 		  bullet_o->location.y = ship_o->location.y;

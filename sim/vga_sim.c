@@ -9,6 +9,15 @@
 #define SIM_HEIGHT 960
 #define SIM_MAX_POLY 64
 
+void game_main();
+
+int main(int argc, char *argv[])
+{
+	game_main();
+	
+	return 0;
+}
+
 struct sim_poly
 {
   int num_points;

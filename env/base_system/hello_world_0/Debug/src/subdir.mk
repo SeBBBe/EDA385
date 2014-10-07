@@ -6,6 +6,7 @@
 C_SRCS += \
 ../src/game_logic.c \
 ../src/helloworld.c \
+../src/memmgr.c \
 ../src/platform.c \
 ../src/vga.c 
 
@@ -15,12 +16,14 @@ LD_SRCS += \
 OBJS += \
 ./src/game_logic.o \
 ./src/helloworld.o \
+./src/memmgr.o \
 ./src/platform.o \
 ./src/vga.o 
 
 C_DEPS += \
 ./src/game_logic.d \
 ./src/helloworld.d \
+./src/memmgr.d \
 ./src/platform.d \
 ./src/vga.d 
 

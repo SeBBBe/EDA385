@@ -1,4 +1,3 @@
-#include <time.h>
 #include <stdlib.h>
 
 typedef struct game_object {
@@ -21,7 +20,7 @@ typedef struct game_object {
 static const short MAX_OBJECTS = 64;
 static const short OFFSCREEN_TOL = 100; //number of pixels outside screen before object is reset
 
-short go_currentstate = 0;
+short go_currentstate;
 
 static const short STATE_NORMAL = 0;
 static const short STATE_DEAD = 1;
@@ -29,6 +28,9 @@ static const short STATE_VICT = 2;
 
 game_object_t* objects;
 short currentpos = 0;
+
+void go_createasteroidxy(int n, float x, float y);
+int go_exists(int identifier);
 
 void go_resetobject(int i)
 {
@@ -51,7 +53,16 @@ void go_resetobject(int i)
 
 void go_initialize()
 {
-	objects = calloc(MAX_OBJECTS * sizeof(game_object_t), 1);
+	int i;
+
+	objects = malloc(MAX_OBJECTS * sizeof(game_object_t));
+
+	for(i = 0; i < MAX_OBJECTS; i++)
+	{
+		go_resetobject(i);
+	}
+
+	go_currentstate = 0;
 
 	xil_printf("objects = %x\r\n", objects);
 }
@@ -78,6 +89,7 @@ void go_hashit(int hit1, int hit2)
 				go_createasteroidxy(3, objects[hit2].location.x, objects[hit2].location.y);
 			}
 			objects[hit2].enabled = 0;
+			free(objects[hit2].poly);
 			objects[hit1].enabled = 0;
 			if (!go_exists(OI_AST1) && !go_exists(OI_AST2) && !go_exists(OI_AST3) && !go_exists(OI_AST4))
 			{
@@ -98,6 +110,7 @@ void go_hitdetection()
 		int j;
 		for (j = 0; j < MAX_OBJECTS; j++)
 		{
+			if (objects[i].identifier == OI_SHIP && objects[i].identifier == OI_BULLET) continue;
 			if (!objects[j].enabled || i == j) continue;
 			int realx1, realx2, realy1, realy2;
 			int hitbox = objects[j].hitbox_size;

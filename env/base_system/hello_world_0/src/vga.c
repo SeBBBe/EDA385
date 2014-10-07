@@ -80,8 +80,8 @@ void vga_sync()
   {
     if(i < line_index)
 	{
-	  p0 = lines[i].p0.x | (lines[i].p0.y << 16);
-	  p1 = lines[i].p1.x | (lines[i].p1.y << 16);
+	  p0 = (lines[i].p0.x & 0xFFFF) | (lines[i].p0.y << 16);
+	  p1 = (lines[i].p1.x & 0xFFFF) | (lines[i].p1.y << 16);
 	}
 	else
 	{

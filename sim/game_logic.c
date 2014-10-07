@@ -36,7 +36,7 @@ void win()
 	while(1);
 }
 
-int main(int argc, char *argv[])
+void game_main()
 {
   keymap_t keys;
   vga_init();

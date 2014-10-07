@@ -3,23 +3,16 @@
 
 #include "xuartlite_l.h"
 #include "xparameters.h"
+#include "memmgr.h"
 #include "vga.h"
 
-void print(char *str);
-
 extern int volatile *vga;
-
-vgapoint_t aship[4] =
-{
-  { 320, 230 },
-  { 310, 250 },
-  { 320, 245 },
-  { 330, 250 },
-};
 
 int main()
 {
     init_platform();
+
+    memmgr_init();
 
     XTmrCtr timer;
     XTmrCtr_Initialize(&timer, 0);
@@ -45,7 +38,7 @@ int main()
 
     xil_printf("main loop\n\r");
 
-    game_main(0, 0);
+    game_main();
 
     cleanup_platform();
 
