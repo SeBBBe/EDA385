@@ -35,7 +35,16 @@ package types is
 		record
 			rdata : color_t;
 		end record;
+	type vgaiface_t is
+		record
+			hsync : std_logic;
+			vsync : std_logic;
+			red : std_logic_vector(2 downto 0);
+			green : std_logic_vector(2 downto 0);
+			blue : std_logic_vector(1 downto 0);
+		end record;
 	constant EMPTY_LINE_REG : linereg_t := ('0', (others => '0'), (others => '0'), (others => '0'), (others => '0'), '0', (others => '0'), (others => '0'), (others => '0'), (others => '0'));
+	constant EMPTY_VGAIFACE : vgaiface_t := ('0', '0', (others => '0'), (others => '0'), (others => '0'));
 	
 	-- SIM
 	-- Horizontal timing constants
@@ -67,17 +76,17 @@ package types is
 	
 	-- 1920x1080
 	-- Horizontal timing constants
-	constant H_FRONTPORCH:   integer := 29;
-	constant H_SYNC:         integer := 100;
-	constant H_BACKPORCH:    integer := 29;
+	constant H_FRONTPORCH:   integer := 120;
+	constant H_SYNC:         integer := 208;
+	constant H_BACKPORCH:    integer := 328;
 	constant H_PIXEL:        integer := 1920;
-	constant H_PERIOD:       integer := 2078;
+	constant H_PERIOD:       integer := 2576;
 	-- Vertical timing constants
-	constant V_FRONTPORCH:   integer := 5;
-	constant V_SYNC:         integer := 22;
-	constant V_BACKPORCH:    integer := 5;
+	constant V_FRONTPORCH:   integer := 1;
+	constant V_SYNC:         integer := 3;
+	constant V_BACKPORCH:    integer := 34;
 	constant V_PIXEL:        integer := 1080;
-	constant V_PERIOD:       integer := 1112;
+	constant V_PERIOD:       integer := 1118;
 	
 	-- Horizontal timing positions
 	constant H_FRONTPORCH_START:   integer := 0;                                   --   0

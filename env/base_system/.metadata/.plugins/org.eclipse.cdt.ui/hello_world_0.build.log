@@ -5,7 +5,6 @@ make all
 Building file: ../src/vga.c
 Invoking: MicroBlaze gcc compiler
 mb-gcc -Wall -Os -ffast-math -c -fmessage-length=0 -Wl,--no-relax -I../../standalone_bsp_0/microblaze_0/include -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.40.a -mno-xl-soft-mul -mhard-float -MMD -MP -MF"src/vga.d" -MT"src/vga.d" -o"src/vga.o" "../src/vga.c"
-../src/vga.c:13:21: warning: initialization makes pointer from integer without a cast [enabled by default]
 Finished building: ../src/vga.c
 ' '
 Building target: hello_world_0.elf
@@ -16,7 +15,7 @@ Finished building target: hello_world_0.elf
 Invoking: MicroBlaze Print Size
 mb-size hello_world_0.elf  |tee "hello_world_0.elf.size"
    text	   data	    bss	    dec	    hex	filename
-  25950	   2364	  11928	  40242	   9d32	hello_world_0.elf
+  26142	   2388	  12312	  40842	   9f8a	hello_world_0.elf
 Finished building: hello_world_0.elf.size
 ' '
 Invoking: Xilinx ELF Check

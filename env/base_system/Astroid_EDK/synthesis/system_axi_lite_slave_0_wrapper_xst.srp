@@ -201,9 +201,16 @@ Synthesizing Unit <axi_lite_slave>.
     Related source file is "C:/temp/EDA385/env/base_system/Astroid_EDK/pcores/axi_lite_slave_v1_00_a/hdl/vhdl/axi_lite_slave.vhd".
         C_S_AXI_ADDR_WIDTH = 32
         C_S_AXI_DATA_WIDTH = 32
-INFO:Xst:3210 - "C:/temp/EDA385/env/base_system/Astroid_EDK/pcores/axi_lite_slave_v1_00_a/hdl/vhdl/axi_lite_slave.vhd" line 81: Output port <HSYNC> of the instance <vga1> is unconnected or connected to loadless signal.
+    Found 1-bit register for signal <vga_sync_reg_vsync>.
+    Found 1-bit register for signal <vga_sync_delay_hsync>.
+    Found 1-bit register for signal <vga_sync_delay_vsync>.
+    Found 3-bit register for signal <vga_color_reg_red>.
+    Found 3-bit register for signal <vga_color_reg_green>.
+    Found 2-bit register for signal <vga_color_reg_blue>.
+    Found 1-bit register for signal <overscan_reg>.
+    Found 1-bit register for signal <vga_sync_reg_hsync>.
     Summary:
-	inferred   3 Multiplexer(s).
+	inferred  13 D-type flip-flop(s).
 Unit <axi_lite_slave> synthesized.
 
 Synthesizing Unit <vga_controller>.
@@ -218,29 +225,36 @@ Synthesizing Unit <vga_controller>.
     Found 13-bit comparator greater for signal <GND_11_o_y_reg[12]_LessThan_13_o> created at line 70
     Found 13-bit comparator lessequal for signal <n0021> created at line 72
     Found 13-bit comparator greater for signal <GND_11_o_x_reg[12]_LessThan_15_o> created at line 72
-    Found 13-bit comparator lessequal for signal <n0026> created at line 74
-    Found 13-bit comparator greater for signal <GND_11_o_y_reg[12]_LessThan_17_o> created at line 74
+    Found 13-bit comparator lessequal for signal <n0024> created at line 72
+    Found 13-bit comparator greater for signal <GND_11_o_y_reg[12]_LessThan_17_o> created at line 72
+    Found 13-bit comparator lessequal for signal <n0031> created at line 74
     Summary:
 	inferred   2 Adder/Subtractor(s).
 	inferred  26 D-type flip-flop(s).
-	inferred   8 Comparator(s).
+	inferred   9 Comparator(s).
 	inferred   3 Multiplexer(s).
 Unit <vga_controller> synthesized.
 
 Synthesizing Unit <vector_controller>.
     Related source file is "C:/temp/EDA385/env/base_system/Astroid_EDK/pcores/axi_lite_slave_v1_00_a/hdl/vhdl/vector_controller.vhd".
-INFO:Xst:3210 - "C:/temp/EDA385/env/base_system/Astroid_EDK/pcores/axi_lite_slave_v1_00_a/hdl/vhdl/vector_controller.vhd" line 71: Output port <OUTPUT_x0> of the instance <GEN_LINE_CONTROLLERS[5].line_controllerX> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "C:/temp/EDA385/env/base_system/Astroid_EDK/pcores/axi_lite_slave_v1_00_a/hdl/vhdl/vector_controller.vhd" line 71: Output port <OUTPUT_y0> of the instance <GEN_LINE_CONTROLLERS[5].line_controllerX> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "C:/temp/EDA385/env/base_system/Astroid_EDK/pcores/axi_lite_slave_v1_00_a/hdl/vhdl/vector_controller.vhd" line 71: Output port <OUTPUT_x1> of the instance <GEN_LINE_CONTROLLERS[5].line_controllerX> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "C:/temp/EDA385/env/base_system/Astroid_EDK/pcores/axi_lite_slave_v1_00_a/hdl/vhdl/vector_controller.vhd" line 71: Output port <OUTPUT_y1> of the instance <GEN_LINE_CONTROLLERS[5].line_controllerX> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "C:/temp/EDA385/env/base_system/Astroid_EDK/pcores/axi_lite_slave_v1_00_a/hdl/vhdl/vector_controller.vhd" line 71: Output port <OUTPUT_err> of the instance <GEN_LINE_CONTROLLERS[5].line_controllerX> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "C:/temp/EDA385/env/base_system/Astroid_EDK/pcores/axi_lite_slave_v1_00_a/hdl/vhdl/vector_controller.vhd" line 71: Output port <OUTPUT_negdx> of the instance <GEN_LINE_CONTROLLERS[5].line_controllerX> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "C:/temp/EDA385/env/base_system/Astroid_EDK/pcores/axi_lite_slave_v1_00_a/hdl/vhdl/vector_controller.vhd" line 71: Output port <OUTPUT_dy> of the instance <GEN_LINE_CONTROLLERS[5].line_controllerX> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "C:/temp/EDA385/env/base_system/Astroid_EDK/pcores/axi_lite_slave_v1_00_a/hdl/vhdl/vector_controller.vhd" line 71: Output port <OUTPUT_color> of the instance <GEN_LINE_CONTROLLERS[5].line_controllerX> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "C:/temp/EDA385/env/base_system/Astroid_EDK/pcores/axi_lite_slave_v1_00_a/hdl/vhdl/vector_controller.vhd" line 71: Output port <OUTPUT_enable> of the instance <GEN_LINE_CONTROLLERS[5].line_controllerX> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "C:/temp/EDA385/env/base_system/Astroid_EDK/pcores/axi_lite_slave_v1_00_a/hdl/vhdl/vector_controller.vhd" line 71: Output port <OUTPUT_sx> of the instance <GEN_LINE_CONTROLLERS[5].line_controllerX> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:/temp/EDA385/env/base_system/Astroid_EDK/pcores/axi_lite_slave_v1_00_a/hdl/vhdl/vector_controller.vhd" line 72: Output port <OUTPUT_x0> of the instance <GEN_LINE_CONTROLLERS[5].line_controllerX> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:/temp/EDA385/env/base_system/Astroid_EDK/pcores/axi_lite_slave_v1_00_a/hdl/vhdl/vector_controller.vhd" line 72: Output port <OUTPUT_y0> of the instance <GEN_LINE_CONTROLLERS[5].line_controllerX> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:/temp/EDA385/env/base_system/Astroid_EDK/pcores/axi_lite_slave_v1_00_a/hdl/vhdl/vector_controller.vhd" line 72: Output port <OUTPUT_x1> of the instance <GEN_LINE_CONTROLLERS[5].line_controllerX> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:/temp/EDA385/env/base_system/Astroid_EDK/pcores/axi_lite_slave_v1_00_a/hdl/vhdl/vector_controller.vhd" line 72: Output port <OUTPUT_y1> of the instance <GEN_LINE_CONTROLLERS[5].line_controllerX> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:/temp/EDA385/env/base_system/Astroid_EDK/pcores/axi_lite_slave_v1_00_a/hdl/vhdl/vector_controller.vhd" line 72: Output port <OUTPUT_err> of the instance <GEN_LINE_CONTROLLERS[5].line_controllerX> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:/temp/EDA385/env/base_system/Astroid_EDK/pcores/axi_lite_slave_v1_00_a/hdl/vhdl/vector_controller.vhd" line 72: Output port <OUTPUT_negdx> of the instance <GEN_LINE_CONTROLLERS[5].line_controllerX> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:/temp/EDA385/env/base_system/Astroid_EDK/pcores/axi_lite_slave_v1_00_a/hdl/vhdl/vector_controller.vhd" line 72: Output port <OUTPUT_dy> of the instance <GEN_LINE_CONTROLLERS[5].line_controllerX> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:/temp/EDA385/env/base_system/Astroid_EDK/pcores/axi_lite_slave_v1_00_a/hdl/vhdl/vector_controller.vhd" line 72: Output port <OUTPUT_color> of the instance <GEN_LINE_CONTROLLERS[5].line_controllerX> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:/temp/EDA385/env/base_system/Astroid_EDK/pcores/axi_lite_slave_v1_00_a/hdl/vhdl/vector_controller.vhd" line 72: Output port <OUTPUT_enable> of the instance <GEN_LINE_CONTROLLERS[5].line_controllerX> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:/temp/EDA385/env/base_system/Astroid_EDK/pcores/axi_lite_slave_v1_00_a/hdl/vhdl/vector_controller.vhd" line 72: Output port <OUTPUT_sx> of the instance <GEN_LINE_CONTROLLERS[5].line_controllerX> is unconnected or connected to loadless signal.
+    Found 8-bit register for signal <bram_pixel_outs_reg<1>>.
+    Found 8-bit register for signal <bram_pixel_outs_reg<2>>.
+    Found 8-bit register for signal <bram_pixel_outs_reg<3>>.
+    Found 8-bit register for signal <bram_pixel_outs_reg<4>>.
+    Found 8-bit register for signal <bram_pixel_outs_reg<5>>.
+    Found 8-bit register for signal <bram_pixel_outs_reg<0>>.
     Summary:
-	no macro.
+	inferred  48 D-type flip-flop(s).
 Unit <vector_controller> synthesized.
 
 Synthesizing Unit <line_controller>.
@@ -884,19 +898,19 @@ Macro Statistics
  13-bit addsub                                         : 6
  13-bit subtractor                                     : 15
  14-bit subtractor                                     : 1
-# Registers                                            : 1990
- 1-bit register                                        : 412
+# Registers                                            : 2004
+ 1-bit register                                        : 417
  13-bit register                                       : 1384
- 8-bit register                                        : 194
-# Comparators                                          : 47
+ 2-bit register                                        : 1
+ 3-bit register                                        : 2
+ 8-bit register                                        : 200
+# Comparators                                          : 48
  13-bit comparator equal                               : 18
  13-bit comparator greater                             : 25
- 13-bit comparator lessequal                           : 4
-# Multiplexers                                         : 263
+ 13-bit comparator lessequal                           : 5
+# Multiplexers                                         : 260
  1-bit 2-to-1 multiplexer                              : 81
  13-bit 2-to-1 multiplexer                             : 154
- 2-bit 2-to-1 multiplexer                              : 1
- 3-bit 2-to-1 multiplexer                              : 2
  8-bit 2-to-1 multiplexer                              : 25
 # FSMs                                                 : 1
 
@@ -929,17 +943,15 @@ Macro Statistics
  13-bit subtractor                                     : 16
 # Counters                                             : 26
  13-bit up counter                                     : 26
-# Registers                                            : 19618
- Flip-Flops                                            : 19618
-# Comparators                                          : 47
+# Registers                                            : 19679
+ Flip-Flops                                            : 19679
+# Comparators                                          : 48
  13-bit comparator equal                               : 18
  13-bit comparator greater                             : 25
- 13-bit comparator lessequal                           : 4
-# Multiplexers                                         : 236
+ 13-bit comparator lessequal                           : 5
+# Multiplexers                                         : 233
  1-bit 2-to-1 multiplexer                              : 80
  13-bit 2-to-1 multiplexer                             : 128
- 2-bit 2-to-1 multiplexer                              : 1
- 3-bit 2-to-1 multiplexer                              : 2
  8-bit 2-to-1 multiplexer                              : 25
 # FSMs                                                 : 1
 
@@ -1025,7 +1037,7 @@ INFO:Xst:3203 - The FF/Latch <mem1/ready_reg> in Unit <axi_lite_slave_0> is the 
 
 Mapping all equations...
 Building and optimizing final netlist ...
-Found area constraint ratio of 100 (+ 0) on block system_axi_lite_slave_0_wrapper, actual ratio is 161.
+Found area constraint ratio of 100 (+ 0) on block system_axi_lite_slave_0_wrapper, actual ratio is 162.
 Optimizing block <system_axi_lite_slave_0_wrapper> to meet ratio 100 (+ 0) of 2278 slices :
 WARNING:Xst:2254 - Area constraint could not be met for block <system_axi_lite_slave_0_wrapper>, final ratio is 160.
 FlipFlop axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[1].line_controllerX/vga_counter1/vsync_reg has been replicated 1 time(s)
@@ -1650,8 +1662,8 @@ Unit <axi_lite_slave_0> processed.
 Final Register Report
 
 Macro Statistics
-# Registers                                            : 1053
- Flip-Flops                                            : 1053
+# Registers                                            : 1114
+ Flip-Flops                                            : 1114
 # Shift Registers                                      : 606
  31-bit shift register                                 : 606
 
@@ -1676,24 +1688,25 @@ Top Level Output File Name         : system_axi_lite_slave_0_wrapper.ngc
 
 Primitive and Black Box Usage:
 ------------------------------
-# BELS                             : 4249
+# BELS                             : 4275
 #      GND                         : 1
 #      INV                         : 67
 #      LUT1                        : 334
-#      LUT2                        : 475
-#      LUT3                        : 498
-#      LUT4                        : 712
-#      LUT5                        : 45
-#      LUT6                        : 633
+#      LUT2                        : 462
+#      LUT3                        : 547
+#      LUT4                        : 723
+#      LUT5                        : 33
+#      LUT6                        : 624
 #      MUXCY                       : 835
 #      VCC                         : 1
 #      XORCY                       : 648
-# FlipFlops/Latches                : 1659
-#      FDC                         : 68
-#      FDCE                        : 204
+# FlipFlops/Latches                : 1720
+#      FDC                         : 80
+#      FDCE                        : 192
 #      FDE                         : 1212
-#      FDP                         : 121
-#      FDPE                        : 54
+#      FDP                         : 109
+#      FDPE                        : 66
+#      FDR                         : 61
 # RAMS                             : 6
 #      RAMB16BWER                  : 6
 # Shift Registers                  : 606
@@ -1706,18 +1719,18 @@ Selected Device : 6slx16csg324-3
 
 
 Slice Logic Utilization: 
- Number of Slice Registers:            1659  out of  18224     9%  
- Number of Slice LUTs:                 3370  out of   9112    36%  
-    Number used as Logic:              2764  out of   9112    30%  
+ Number of Slice Registers:            1720  out of  18224     9%  
+ Number of Slice LUTs:                 3396  out of   9112    37%  
+    Number used as Logic:              2790  out of   9112    30%  
     Number used as Memory:              606  out of   2176    27%  
        Number used as SRL:              606
 
 Slice Logic Distribution: 
- Number of LUT Flip Flop pairs used:   4102
-   Number with an unused Flip Flop:    2443  out of   4102    59%  
-   Number with an unused LUT:           732  out of   4102    17%  
-   Number of fully used LUT-FF pairs:   927  out of   4102    22%  
-   Number of unique control sets:        21
+ Number of LUT Flip Flop pairs used:   4130
+   Number with an unused Flip Flop:    2410  out of   4130    58%  
+   Number with an unused LUT:           734  out of   4130    17%  
+   Number of fully used LUT-FF pairs:   986  out of   4130    23%  
+   Number of unique control sets:        23
 
 IO Utilization: 
  Number of IOs:                         164
@@ -1745,11 +1758,11 @@ NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
 
 Clock Information:
 ------------------
------------------------------------+-----------------------------------------------+-------+
-Clock Signal                       | Clock buffer(FF name)                         | Load  |
------------------------------------+-----------------------------------------------+-------+
-ACLK                               | NONE(axi_lite_slave_0/mem1/output_reg_color_7)| 2271  |
------------------------------------+-----------------------------------------------+-------+
+-----------------------------------+--------------------------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)                      | Load  |
+-----------------------------------+--------------------------------------------+-------+
+ACLK                               | NONE(axi_lite_slave_0/vga_sync_delay_vsync)| 2332  |
+-----------------------------------+--------------------------------------------+-------+
 INFO:Xst:2169 - HDL ADVISOR - Some clock signals were not automatically buffered by XST with BUFG/BUFR resources. Please use the buffer_type constraint in order to insert these buffers to the clock signals to help prevent skew problems.
 
 Asynchronous Control Signals Information:
@@ -1761,8 +1774,8 @@ Timing Summary:
 Speed Grade: -3
 
    Minimum period: 5.849ns (Maximum Frequency: 170.977MHz)
-   Minimum input arrival time before clock: 2.721ns
-   Maximum output required time after clock: 4.876ns
+   Minimum input arrival time before clock: 2.726ns
+   Maximum output required time after clock: 3.640ns
    Maximum combinational path delay: No path found
 
 Timing Details:
@@ -1772,7 +1785,7 @@ All values displayed in nanoseconds (ns)
 =========================================================================
 Timing constraint: Default period analysis for Clock 'ACLK'
   Clock period: 5.849ns (frequency: 170.977MHz)
-  Total number of paths / destination ports: 170147 / 3959
+  Total number of paths / destination ports: 170414 / 4028
 -------------------------------------------------------------------------
 Delay:               5.849ns (Levels of Logic = 10)
   Source:            axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[4].line_controllerX/line_reg1/line_reg[31]_y0_0 (FF)
@@ -1802,46 +1815,45 @@ Delay:               5.849ns (Levels of Logic = 10)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'ACLK'
-  Total number of paths / destination ports: 585 / 583
+  Total number of paths / destination ports: 646 / 644
 -------------------------------------------------------------------------
-Offset:              2.721ns (Levels of Logic = 2)
+Offset:              2.726ns (Levels of Logic = 2)
   Source:            ARESETN (PAD)
-  Destination:       axi_lite_slave_0/mem1/output_reg_color_7 (FF)
+  Destination:       axi_lite_slave_0/vga_sync_delay_vsync (FF)
   Destination Clock: ACLK rising
 
-  Data Path: ARESETN to axi_lite_slave_0/mem1/output_reg_color_7
+  Data Path: ARESETN to axi_lite_slave_0/vga_sync_delay_vsync
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
      begin scope: 'axi_lite_slave_0:ARESETN'
-     INV:I->O            459   0.206   2.085  mem1/ARESETN_inv1_INV_0 (mem1/ARESETN_inv)
-     FDCE:CLR                  0.430          mem1/state_reg
+     INV:I->O            512   0.206   2.090  ARESETN_inv1_INV_0 (ARESETN_inv)
+     FDR:R                     0.430          vga_sync_delay_vsync
     ----------------------------------------
-    Total                      2.721ns (0.636ns logic, 2.085ns route)
-                                       (23.4% logic, 76.6% route)
+    Total                      2.726ns (0.636ns logic, 2.090ns route)
+                                       (23.3% logic, 76.7% route)
 
 =========================================================================
 Timing constraint: Default OFFSET OUT AFTER for Clock 'ACLK'
-  Total number of paths / destination ports: 1126 / 45
+  Total number of paths / destination ports: 878 / 45
 -------------------------------------------------------------------------
-Offset:              4.876ns (Levels of Logic = 5)
+Offset:              3.640ns (Levels of Logic = 4)
   Source:            axi_lite_slave_0/vga1/y_reg_6 (FF)
-  Destination:       VGA_RED<2> (PAD)
+  Destination:       S_AXI_RDATA<31> (PAD)
   Source Clock:      ACLK rising
 
-  Data Path: axi_lite_slave_0/vga1/y_reg_6 to VGA_RED<2>
+  Data Path: axi_lite_slave_0/vga1/y_reg_6 to S_AXI_RDATA<31>
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDCE:C->Q             5   0.447   1.079  vga1/y_reg_6 (vga1/y_reg_6)
-     LUT6:I0->O            1   0.203   0.808  vga1/VGA_VSYNC1 (vga1/VGA_VSYNC)
-     LUT3:I0->O            1   0.205   0.580  vga1/VGA_VSYNC4_SW0 (N328)
-     LUT6:I5->O            8   0.205   1.147  vga1/VGA_VSYNC4 (VGA_VSYNC)
-     LUT5:I0->O            0   0.203   0.000  Mmux_VGA_BLUE24 (VGA_BLUE<1>)
-     end scope: 'axi_lite_slave_0:VGA_BLUE<1>'
+     FDCE:C->Q             7   0.447   1.138  vga1/y_reg_6 (vga1/y_reg_6)
+     LUT6:I0->O            1   0.203   0.827  vga1/OVERSCAN21 (vga1/OVERSCAN21)
+     LUT6:I2->O            2   0.203   0.617  vga1/OVERSCAN23 (vga1/OVERSCAN2)
+     LUT6:I5->O            0   0.205   0.000  vga1/ENABLE (S_AXI_RDATA<0>)
+     end scope: 'axi_lite_slave_0:S_AXI_RDATA<0>'
     ----------------------------------------
-    Total                      4.876ns (1.263ns logic, 3.613ns route)
-                                       (25.9% logic, 74.1% route)
+    Total                      3.640ns (1.058ns logic, 2.582ns route)
+                                       (29.1% logic, 70.9% route)
 
 =========================================================================
 
@@ -1859,8 +1871,8 @@ ACLK           |    5.849|         |         |         |
 =========================================================================
 
 
-Total REAL time to Xst completion: 36.00 secs
-Total CPU time to Xst completion: 36.42 secs
+Total REAL time to Xst completion: 37.00 secs
+Total CPU time to Xst completion: 37.71 secs
  
 --> 
 
@@ -1868,5 +1880,5 @@ Total memory usage is 393072 kilobytes
 
 Number of errors   :    0 (   0 filtered)
 Number of warnings :  111 (   0 filtered)
-Number of infos    :   17 (   0 filtered)
+Number of infos    :   16 (   0 filtered)
 

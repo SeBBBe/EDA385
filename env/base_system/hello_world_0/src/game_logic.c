@@ -54,7 +54,7 @@ void game_main()
   vga_init();
   
   go_initialize();
-  srand(1339);
+  srand(*dip & 0xFC);
   
   game_object_t* ship_o = go_getempty();
   ship_o->enabled = 1;

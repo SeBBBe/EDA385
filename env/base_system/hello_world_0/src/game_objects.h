@@ -29,6 +29,8 @@ static const short STATE_VICT = 2;
 game_object_t* objects;
 short currentpos = 0;
 
+extern int volatile *dip;
+
 void go_createasteroidxy(int n, float x, float y);
 int go_exists(int identifier);
 
@@ -73,7 +75,7 @@ void go_hashit(int hit1, int hit2)
 	if (!objects[hit1].enabled) return;
 	if (!objects[hit2].enabled) return;
 	if (objects[hit2].identifier >= OI_AST1 && objects[hit2].identifier <= OI_AST4){
-		if (objects[hit1].identifier == OI_SHIP){
+		if (objects[hit1].identifier == OI_SHIP && !(*dip & 2)/* DIP1 = god mode */){
 			go_currentstate = STATE_DEAD;
 		}
 		if (objects[hit1].identifier == OI_BULLET){

@@ -44,7 +44,8 @@ signal line_linexs : per_controller_vgapos_t;
 signal bram_ins : per_bram_bramiface_in_t;
 signal bram_outs : per_bram_bramiface_out_t;
 
-signal bram_pixel_outs : per_controller_color_t;
+signal bram_pixel_outs_reg : per_controller_color_t;
+signal bram_pixel_outs_next : per_controller_color_t;
 
 ------------------------------------------------------------------------------
 begin
@@ -107,7 +108,7 @@ for I in 0 to LINE_COMP_UNITS-1 generate
 		
 		NEWLINE => NEWLINE,
 		
-		PIXEL_OUT => bram_pixel_outs(I),
+		PIXEL_OUT => bram_pixel_outs_next(I),
 		
 		WR_X => line_linexs(I),
 		WR_EN => line_lineouts(I),
@@ -120,13 +121,24 @@ for I in 0 to LINE_COMP_UNITS-1 generate
 	);
 end generate GEN_PIXELROW_BRAM;
 
-process(bram_pixel_outs)
+process(CLK, RST)
+begin
+	if rising_edge(CLK) then
+		if RST = '0' then
+			bram_pixel_outs_reg <= (others => (others => '0'));
+		else
+			bram_pixel_outs_reg <= bram_pixel_outs_next;
+		end if;
+	end if;
+end process;
+
+process(bram_pixel_outs_reg)
 variable tmp_pixel_out : color_t;
 begin
 	tmp_pixel_out := (others => '0');
 	
 	for I in 0 to LINE_COMP_UNITS-1 loop
-		tmp_pixel_out := bram_pixel_outs(I) or tmp_pixel_out;
+		tmp_pixel_out := bram_pixel_outs_reg(I) or tmp_pixel_out;
 	end loop;
 	
 	PIXEL_OUT <= tmp_pixel_out;

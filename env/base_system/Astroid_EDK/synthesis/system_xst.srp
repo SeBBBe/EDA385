@@ -1080,7 +1080,7 @@ Optimizing unit <system> ...
 
 Mapping all equations...
 Building and optimizing final netlist ...
-Found area constraint ratio of 100 (+ 0) on block system, actual ratio is 42.
+Found area constraint ratio of 100 (+ 0) on block system, actual ratio is 43.
 INFO:Xst:2260 - The FF/Latch <Push_Buttons_4Bits/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/cs_out_i_0> in Unit <Push_Buttons_4Bits> is equivalent to the following FF/Latch : <Push_Buttons_4Bits/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/cs_out_i_0_1> 
 INFO:Xst:2260 - The FF/Latch <DIP_Switches_8Bits/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/cs_out_i_0> in Unit <DIP_Switches_8Bits> is equivalent to the following FF/Latch : <DIP_Switches_8Bits/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/cs_out_i_0_1> 
 INFO:Xst:2260 - The FF/Latch <RS232_Uart_1/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/Bus_RNW_reg> in Unit <RS232_Uart_1> is equivalent to the following FF/Latch : <RS232_Uart_1/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/Bus_RNW_reg_1> 
@@ -1121,12 +1121,12 @@ INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gaxi_full_lite.gwrite_ch.gwr
 INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gaxi_full_lite.gread_ch.grdch2.axi_rdch/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.rfwft/empty_fwft_i> in Unit <axi4lite_0/mi_converter_bank/gen_conv_slot[4].clock_conv_inst/gen_async_readwrite.asyncfifo_rw> is equivalent to the following 2 FFs/Latches : <U0/xst_fifo_generator/gaxi_full_lite.gread_ch.grdch2.axi_rdch/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.rfwft/empty_fwft_fb> <U0/xst_fifo_generator/gaxi_full_lite.gread_ch.grdch2.axi_rdch/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.rfwft/empty_fwft_i_1> 
 INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gaxi_full_lite.gwrite_ch.gwdch2.axi_wdch/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg_2> in Unit <axi4lite_0/mi_converter_bank/gen_conv_slot[4].clock_conv_inst/gen_async_readwrite.asyncfifo_rw> is equivalent to the following 2 FFs/Latches : <U0/xst_fifo_generator/gaxi_full_lite.gwrite_ch.gwdch2.axi_wdch/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg_1> <U0/xst_fifo_generator/gaxi_full_lite.gwrite_ch.gwdch2.axi_wdch/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg_0> 
 INFO:Xst:2260 - The FF/Latch <microblaze_0/MicroBlaze_Core_I/Area.Decode_I/ex_Valid> in Unit <microblaze_0> is equivalent to the following FF/Latch : <microblaze_0/MicroBlaze_Core_I/Area.Decode_I/ex_Valid_1> 
-INFO:Xst:2260 - The FF/Latch <vector1/GEN_LINE_CONTROLLERS[4].line_controllerX/vga_counter1/vsync_reg> in Unit <axi_lite_slave_0> is equivalent to the following FF/Latch : <vector1/GEN_LINE_CONTROLLERS[4].line_controllerX/vga_counter1/vsync_reg_1> 
-INFO:Xst:2260 - The FF/Latch <vector1/GEN_LINE_CONTROLLERS[3].line_controllerX/vga_counter1/vsync_reg> in Unit <axi_lite_slave_0> is equivalent to the following FF/Latch : <vector1/GEN_LINE_CONTROLLERS[3].line_controllerX/vga_counter1/vsync_reg_1> 
 INFO:Xst:2260 - The FF/Latch <vector1/GEN_LINE_CONTROLLERS[2].line_controllerX/vga_counter1/vsync_reg> in Unit <axi_lite_slave_0> is equivalent to the following FF/Latch : <vector1/GEN_LINE_CONTROLLERS[2].line_controllerX/vga_counter1/vsync_reg_1> 
-INFO:Xst:2260 - The FF/Latch <vector1/GEN_LINE_CONTROLLERS[1].line_controllerX/vga_counter1/vsync_reg> in Unit <axi_lite_slave_0> is equivalent to the following FF/Latch : <vector1/GEN_LINE_CONTROLLERS[1].line_controllerX/vga_counter1/vsync_reg_1> 
-INFO:Xst:2260 - The FF/Latch <vector1/line_controller0/vga_counter1/vsync_reg> in Unit <axi_lite_slave_0> is equivalent to the following FF/Latch : <vector1/line_controller0/vga_counter1/vsync_reg_1> 
 INFO:Xst:2260 - The FF/Latch <vector1/GEN_LINE_CONTROLLERS[5].line_controllerX/vga_counter1/vsync_reg> in Unit <axi_lite_slave_0> is equivalent to the following FF/Latch : <vector1/GEN_LINE_CONTROLLERS[5].line_controllerX/vga_counter1/vsync_reg_1> 
+INFO:Xst:2260 - The FF/Latch <vector1/GEN_LINE_CONTROLLERS[3].line_controllerX/vga_counter1/vsync_reg> in Unit <axi_lite_slave_0> is equivalent to the following FF/Latch : <vector1/GEN_LINE_CONTROLLERS[3].line_controllerX/vga_counter1/vsync_reg_1> 
+INFO:Xst:2260 - The FF/Latch <vector1/GEN_LINE_CONTROLLERS[1].line_controllerX/vga_counter1/vsync_reg> in Unit <axi_lite_slave_0> is equivalent to the following FF/Latch : <vector1/GEN_LINE_CONTROLLERS[1].line_controllerX/vga_counter1/vsync_reg_1> 
+INFO:Xst:2260 - The FF/Latch <vector1/GEN_LINE_CONTROLLERS[4].line_controllerX/vga_counter1/vsync_reg> in Unit <axi_lite_slave_0> is equivalent to the following FF/Latch : <vector1/GEN_LINE_CONTROLLERS[4].line_controllerX/vga_counter1/vsync_reg_1> 
+INFO:Xst:2260 - The FF/Latch <vector1/line_controller0/vga_counter1/vsync_reg> in Unit <axi_lite_slave_0> is equivalent to the following FF/Latch : <vector1/line_controller0/vga_counter1/vsync_reg_1> 
 INFO:Xst:2260 - The FF/Latch <axi_timer_0/TC_CORE_I/TIMER_CONTROL_I/TCSR1_GENERATE[21].TCSR1_FF_I> in Unit <axi_timer_0> is equivalent to the following FF/Latch : <axi_timer_0/TC_CORE_I/TIMER_CONTROL_I/TCSR0_GENERATE[21].TCSR0_FF_I> 
 INFO:Xst:2260 - The FF/Latch <axi_timer_0/AXI4_LITE_I/I_SLAVE_ATTACHMENT/I_DECODER/Bus_RNW_reg> in Unit <axi_timer_0> is equivalent to the following FF/Latch : <axi_timer_0/AXI4_LITE_I/I_SLAVE_ATTACHMENT/I_DECODER/Bus_RNW_reg_1> 
 INFO:Xst:2260 - The FF/Latch <axi_gpio_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/cs_out_i_0> in Unit <axi_gpio_0> is equivalent to the following FF/Latch : <axi_gpio_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/cs_out_i_0_1> 
@@ -1206,16 +1206,16 @@ INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gaxi_full_lite.gwrite_ch.gwr
 INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gaxi_full_lite.gread_ch.grdch2.axi_rdch/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.rfwft/empty_fwft_i> in Unit <axi4lite_0/mi_converter_bank/gen_conv_slot[4].clock_conv_inst/gen_async_readwrite.asyncfifo_rw> is equivalent to the following 2 FFs/Latches : <U0/xst_fifo_generator/gaxi_full_lite.gread_ch.grdch2.axi_rdch/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.rfwft/empty_fwft_fb> <U0/xst_fifo_generator/gaxi_full_lite.gread_ch.grdch2.axi_rdch/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.rfwft/empty_fwft_i_1> 
 INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gaxi_full_lite.gwrite_ch.gwdch2.axi_wdch/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg_2> in Unit <axi4lite_0/mi_converter_bank/gen_conv_slot[4].clock_conv_inst/gen_async_readwrite.asyncfifo_rw> is equivalent to the following 2 FFs/Latches : <U0/xst_fifo_generator/gaxi_full_lite.gwrite_ch.gwdch2.axi_wdch/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg_1> <U0/xst_fifo_generator/gaxi_full_lite.gwrite_ch.gwdch2.axi_wdch/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg_0> 
 INFO:Xst:2260 - The FF/Latch <microblaze_0/MicroBlaze_Core_I/Area.Decode_I/ex_Valid> in Unit <microblaze_0> is equivalent to the following FF/Latch : <microblaze_0/MicroBlaze_Core_I/Area.Decode_I/ex_Valid_1> 
-INFO:Xst:2260 - The FF/Latch <vector1/GEN_LINE_CONTROLLERS[1].line_controllerX/vga_counter1/vsync_reg> in Unit <axi_lite_slave_0> is equivalent to the following FF/Latch : <vector1/GEN_LINE_CONTROLLERS[1].line_controllerX/vga_counter1/vsync_reg_1> 
-INFO:Xst:2260 - The FF/Latch <vector1/GEN_LINE_CONTROLLERS[2].line_controllerX/vga_counter1/vsync_reg> in Unit <axi_lite_slave_0> is equivalent to the following FF/Latch : <vector1/GEN_LINE_CONTROLLERS[2].line_controllerX/vga_counter1/vsync_reg_1> 
 INFO:Xst:2260 - The FF/Latch <vector1/line_controller0/vga_counter1/vsync_reg> in Unit <axi_lite_slave_0> is equivalent to the following FF/Latch : <vector1/line_controller0/vga_counter1/vsync_reg_1> 
 INFO:Xst:2260 - The FF/Latch <vector1/GEN_LINE_CONTROLLERS[5].line_controllerX/vga_counter1/vsync_reg> in Unit <axi_lite_slave_0> is equivalent to the following FF/Latch : <vector1/GEN_LINE_CONTROLLERS[5].line_controllerX/vga_counter1/vsync_reg_1> 
+INFO:Xst:2260 - The FF/Latch <vector1/GEN_LINE_CONTROLLERS[1].line_controllerX/vga_counter1/vsync_reg> in Unit <axi_lite_slave_0> is equivalent to the following FF/Latch : <vector1/GEN_LINE_CONTROLLERS[1].line_controllerX/vga_counter1/vsync_reg_1> 
+INFO:Xst:2260 - The FF/Latch <vector1/GEN_LINE_CONTROLLERS[2].line_controllerX/vga_counter1/vsync_reg> in Unit <axi_lite_slave_0> is equivalent to the following FF/Latch : <vector1/GEN_LINE_CONTROLLERS[2].line_controllerX/vga_counter1/vsync_reg_1> 
 INFO:Xst:2260 - The FF/Latch <vector1/GEN_LINE_CONTROLLERS[3].line_controllerX/vga_counter1/vsync_reg> in Unit <axi_lite_slave_0> is equivalent to the following FF/Latch : <vector1/GEN_LINE_CONTROLLERS[3].line_controllerX/vga_counter1/vsync_reg_1> 
 INFO:Xst:2260 - The FF/Latch <vector1/GEN_LINE_CONTROLLERS[4].line_controllerX/vga_counter1/vsync_reg> in Unit <axi_lite_slave_0> is equivalent to the following FF/Latch : <vector1/GEN_LINE_CONTROLLERS[4].line_controllerX/vga_counter1/vsync_reg_1> 
-INFO:Xst:2260 - The FF/Latch <vector1/GEN_LINE_CONTROLLERS[1].line_controllerX/vga_counter1/vsync_reg> in Unit <axi_lite_slave_0> is equivalent to the following FF/Latch : <vector1/GEN_LINE_CONTROLLERS[1].line_controllerX/vga_counter1/vsync_reg_1> 
-INFO:Xst:2260 - The FF/Latch <vector1/GEN_LINE_CONTROLLERS[2].line_controllerX/vga_counter1/vsync_reg> in Unit <axi_lite_slave_0> is equivalent to the following FF/Latch : <vector1/GEN_LINE_CONTROLLERS[2].line_controllerX/vga_counter1/vsync_reg_1> 
 INFO:Xst:2260 - The FF/Latch <vector1/line_controller0/vga_counter1/vsync_reg> in Unit <axi_lite_slave_0> is equivalent to the following FF/Latch : <vector1/line_controller0/vga_counter1/vsync_reg_1> 
 INFO:Xst:2260 - The FF/Latch <vector1/GEN_LINE_CONTROLLERS[5].line_controllerX/vga_counter1/vsync_reg> in Unit <axi_lite_slave_0> is equivalent to the following FF/Latch : <vector1/GEN_LINE_CONTROLLERS[5].line_controllerX/vga_counter1/vsync_reg_1> 
+INFO:Xst:2260 - The FF/Latch <vector1/GEN_LINE_CONTROLLERS[1].line_controllerX/vga_counter1/vsync_reg> in Unit <axi_lite_slave_0> is equivalent to the following FF/Latch : <vector1/GEN_LINE_CONTROLLERS[1].line_controllerX/vga_counter1/vsync_reg_1> 
+INFO:Xst:2260 - The FF/Latch <vector1/GEN_LINE_CONTROLLERS[2].line_controllerX/vga_counter1/vsync_reg> in Unit <axi_lite_slave_0> is equivalent to the following FF/Latch : <vector1/GEN_LINE_CONTROLLERS[2].line_controllerX/vga_counter1/vsync_reg_1> 
 INFO:Xst:2260 - The FF/Latch <vector1/GEN_LINE_CONTROLLERS[3].line_controllerX/vga_counter1/vsync_reg> in Unit <axi_lite_slave_0> is equivalent to the following FF/Latch : <vector1/GEN_LINE_CONTROLLERS[3].line_controllerX/vga_counter1/vsync_reg_1> 
 INFO:Xst:2260 - The FF/Latch <vector1/GEN_LINE_CONTROLLERS[4].line_controllerX/vga_counter1/vsync_reg> in Unit <axi_lite_slave_0> is equivalent to the following FF/Latch : <vector1/GEN_LINE_CONTROLLERS[4].line_controllerX/vga_counter1/vsync_reg_1> 
 INFO:Xst:2260 - The FF/Latch <axi_timer_0/TC_CORE_I/TIMER_CONTROL_I/TCSR1_GENERATE[21].TCSR1_FF_I> in Unit <axi_timer_0> is equivalent to the following FF/Latch : <axi_timer_0/TC_CORE_I/TIMER_CONTROL_I/TCSR0_GENERATE[21].TCSR0_FF_I> 
@@ -1249,15 +1249,15 @@ Top Level Output File Name         : system.ngc
 
 Primitive and Black Box Usage:
 ------------------------------
-# BELS                             : 8981
+# BELS                             : 9007
 #      GND                         : 21
 #      INV                         : 163
 #      LUT1                        : 361
-#      LUT2                        : 815
-#      LUT3                        : 1083
-#      LUT4                        : 1451
-#      LUT5                        : 762
-#      LUT6                        : 1799
+#      LUT2                        : 802
+#      LUT3                        : 1132
+#      LUT4                        : 1462
+#      LUT5                        : 750
+#      LUT6                        : 1790
 #      LUT6_2                      : 132
 #      MULT_AND                    : 13
 #      MUXCY                       : 1063
@@ -1266,16 +1266,16 @@ Primitive and Black Box Usage:
 #      MUXF7                       : 80
 #      VCC                         : 12
 #      XORCY                       : 932
-# FlipFlops/Latches                : 5389
+# FlipFlops/Latches                : 5450
 #      FD                          : 554
-#      FDC                         : 387
+#      FDC                         : 399
 #      FDC_1                       : 5
-#      FDCE                        : 317
+#      FDCE                        : 305
 #      FDE                         : 2346
 #      FDE_1                       : 8
-#      FDP                         : 219
-#      FDPE                        : 62
-#      FDR                         : 850
+#      FDP                         : 207
+#      FDPE                        : 74
+#      FDR                         : 911
 #      FDRE                        : 559
 #      FDRE_1                      : 1
 #      FDS                         : 25
@@ -1309,19 +1309,19 @@ Selected Device : 6slx16csg324-3
 
 
 Slice Logic Utilization: 
- Number of Slice Registers:            5389  out of  18224    29%  
- Number of Slice LUTs:                 7622  out of   9112    83%  
-    Number used as Logic:              6566  out of   9112    72%  
+ Number of Slice Registers:            5450  out of  18224    29%  
+ Number of Slice LUTs:                 7648  out of   9112    83%  
+    Number used as Logic:              6592  out of   9112    72%  
     Number used as Memory:             1056  out of   2176    48%  
        Number used as RAM:              278
        Number used as SRL:              778
 
 Slice Logic Distribution: 
- Number of LUT Flip Flop pairs used:  10191
-   Number with an unused Flip Flop:    4802  out of  10191    47%  
-   Number with an unused LUT:          2569  out of  10191    25%  
-   Number of fully used LUT-FF pairs:  2820  out of  10191    27%  
-   Number of unique control sets:       262
+ Number of LUT Flip Flop pairs used:  10273
+   Number with an unused Flip Flop:    4823  out of  10273    46%  
+   Number with an unused LUT:          2625  out of  10273    25%  
+   Number of fully used LUT-FF pairs:  2825  out of  10273    27%  
+   Number of unique control sets:       264
 
 IO Utilization: 
  Number of IOs:                          34
@@ -1355,7 +1355,7 @@ Clock Information:
 Clock Signal                        | Clock buffer(FF name)                                                                                            | Load  |
 ------------------------------------+------------------------------------------------------------------------------------------------------------------+-------+
 GCLK                                | DCM_SP:CLK0                                                                                                      | 2892  |
-GCLK                                | DCM_SP:CLKFX                                                                                                     | 3168  |
+GCLK                                | DCM_SP:CLKFX                                                                                                     | 3229  |
 debug_module_0/debug_module_0/drck_i| BUFG                                                                                                             | 209   |
 debug_module_0/Ext_JTAG_UPDATE      | NONE(microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Implement_Debug_Logic.Master_Core.Debug_Area/command_reg_0)| 43    |
 ------------------------------------+------------------------------------------------------------------------------------------------------------------+-------+
@@ -1369,7 +1369,7 @@ Timing Summary:
 ---------------
 Speed Grade: -3
 
-   Minimum period: 23.184ns (Maximum Frequency: 43.133MHz)
+   Minimum period: 23.493ns (Maximum Frequency: 42.565MHz)
    Minimum input arrival time before clock: 7.268ns
    Maximum output required time after clock: 9.618ns
    Maximum combinational path delay: No path found
@@ -1380,14 +1380,14 @@ All values displayed in nanoseconds (ns)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'GCLK'
-  Clock period: 23.184ns (frequency: 43.133MHz)
-  Total number of paths / destination ports: 538937 / 14570
+  Clock period: 23.493ns (frequency: 42.565MHz)
+  Total number of paths / destination ports: 539649 / 14692
 -------------------------------------------------------------------------
 Delay:               3.709ns (Levels of Logic = 3)
   Source:            axi4lite_0/axi4lite_0/mi_converter_bank/gen_conv_slot[4].clock_conv_inst/s_async_conv_reset (FF)
   Destination:       axi4lite_0/axi4lite_0/mi_converter_bank/gen_conv_slot[4].clock_conv_inst/gen_async_readwrite.asyncfifo_rw/U0/xst_fifo_generator/gaxi_full_lite.gread_ch.grdch2.axi_rdch/grf.rf/rstblk/RST_FULL_GEN (FF)
   Source Clock:      GCLK rising
-  Destination Clock: GCLK rising 1.4X
+  Destination Clock: GCLK rising 1.7X
 
   Data Path: axi4lite_0/axi4lite_0/mi_converter_bank/gen_conv_slot[4].clock_conv_inst/s_async_conv_reset to axi4lite_0/axi4lite_0/mi_converter_bank/gen_conv_slot[4].clock_conv_inst/gen_async_readwrite.asyncfifo_rw/U0/xst_fifo_generator/gaxi_full_lite.gread_ch.grdch2.axi_rdch/grf.rf/rstblk/RST_FULL_GEN
                                 Gate     Net
@@ -1539,28 +1539,23 @@ Offset:              7.268ns (Levels of Logic = 6)
 
 =========================================================================
 Timing constraint: Default OFFSET OUT AFTER for Clock 'GCLK'
-  Total number of paths / destination ports: 459 / 19
+  Total number of paths / destination ports: 19 / 19
 -------------------------------------------------------------------------
-Offset:              8.053ns (Levels of Logic = 6)
-  Source:            axi_lite_slave_0/axi_lite_slave_0/vga1/y_reg_6 (FF)
-  Destination:       VGA_RED<2> (PAD)
-  Source Clock:      GCLK rising 1.4X
+Offset:              3.634ns (Levels of Logic = 2)
+  Source:            axi_gpio_0/axi_gpio_0/gpio_core_1/gpio_Data_Out_0 (FF)
+  Destination:       JA<7> (PAD)
+  Source Clock:      GCLK rising
 
-  Data Path: axi_lite_slave_0/axi_lite_slave_0/vga1/y_reg_6 to VGA_RED<2>
+  Data Path: axi_gpio_0/axi_gpio_0/gpio_core_1/gpio_Data_Out_0 to JA<7>
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDCE:C->Q             5   0.447   1.079  vga1/y_reg_6 (vga1/y_reg<6>)
-     LUT6:I0->O            1   0.203   0.808  vga1/VGA_VSYNC1 (vga1/VGA_VSYNC)
-     LUT3:I0->O            1   0.205   0.580  vga1/VGA_VSYNC4_SW0 (N328)
-     LUT6:I5->O            9   0.205   1.174  vga1/VGA_VSYNC4 (VGA_VSYNC)
-     LUT5:I0->O            1   0.203   0.579  Mmux_VGA_BLUE24 (VGA_BLUE<1>)
-     end scope: 'axi_lite_slave_0/axi_lite_slave_0:VGA_BLUE<1>'
-     end scope: 'axi_lite_slave_0:VGA_BLUE<0>'
-     OBUF:I->O                 2.571          VGA_BLUE_0_OBUF (VGA_BLUE<0>)
+     FDRE:C->Q             2   0.447   0.616  axi_gpio_0/gpio_core_1/gpio_Data_Out_0 (GPIO_IO_O<7>)
+     end scope: 'axi_gpio_0:GPIO_IO_O<7>'
+     OBUF:I->O                 2.571          JA_7_OBUF (JA<7>)
     ----------------------------------------
-    Total                      8.053ns (3.834ns logic, 4.219ns route)
-                                       (47.6% logic, 52.4% route)
+    Total                      3.634ns (3.018ns logic, 0.616ns route)
+                                       (83.0% logic, 17.0% route)
 
 =========================================================================
 Timing constraint: Default OFFSET OUT AFTER for Clock 'debug_module_0/Ext_JTAG_UPDATE'
@@ -1659,7 +1654,7 @@ debug_module_0/debug_module_0/drck_i|    2.427|    3.477|    3.249|         |
 
 
 Total REAL time to Xst completion: 23.00 secs
-Total CPU time to Xst completion: 22.91 secs
+Total CPU time to Xst completion: 23.13 secs
  
 --> 
 

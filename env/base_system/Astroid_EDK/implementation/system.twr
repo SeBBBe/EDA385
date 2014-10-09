@@ -49,7 +49,7 @@ For more information, see From:To (Multicycle) Analysis in the Timing Closure Us
 
  67 paths analyzed, 67 endpoints analyzed, 0 failing endpoints
  0 timing errors detected. (0 setup errors, 0 hold errors)
- Maximum delay is   3.138ns.
+ Maximum delay is   3.133ns.
 --------------------------------------------------------------------------------
 
 ================================================================================
@@ -79,12 +79,12 @@ For more information, see Period Analysis in the Timing Closure User Guide (UG61
 ================================================================================
 Timing constraint: TS_clock_generator_0_clock_generator_0_SIG_DCM0_CLKFX = 
 PERIOD TIMEGRP         "clock_generator_0_clock_generator_0_SIG_DCM0_CLKFX" 
-TS_sys_clk_pin *         1.38888889 HIGH 50%;
+TS_sys_clk_pin *         1.72727273 HIGH 50%;
 For more information, see Period Analysis in the Timing Closure User Guide (UG612).
 
- 175424 paths analyzed, 8971 endpoints analyzed, 0 failing endpoints
+ 176136 paths analyzed, 9227 endpoints analyzed, 0 failing endpoints
  0 timing errors detected. (0 setup errors, 0 hold errors, 0 component switching limit errors)
- Minimum period is   6.879ns.
+ Minimum period is   5.752ns.
 --------------------------------------------------------------------------------
 
 ================================================================================
@@ -95,7 +95,7 @@ For more information, see Period Analysis in the Timing Closure User Guide (UG61
 
  250928 paths analyzed, 12211 endpoints analyzed, 0 failing endpoints
  0 timing errors detected. (0 setup errors, 0 hold errors, 0 component switching limit errors)
- Minimum period is   9.926ns.
+ Minimum period is   9.970ns.
 --------------------------------------------------------------------------------
 
 
@@ -106,10 +106,10 @@ Derived Constraints for TS_sys_clk_pin
 |           Constraint          | Requirement |-------------+-------------|-------------+-------------|-------------+-------------|
 |                               |             |   Direct    | Derivative  |   Direct    | Derivative  |   Direct    | Derivative  |
 +-------------------------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+
-|TS_sys_clk_pin                 |     10.000ns|      5.340ns|      9.926ns|            0|            0|            3|       426352|
-| TS_clock_generator_0_clock_gen|      7.200ns|      6.879ns|          N/A|            0|            0|       175424|            0|
+|TS_sys_clk_pin                 |     10.000ns|      5.340ns|      9.970ns|            0|            0|            3|       427064|
+| TS_clock_generator_0_clock_gen|      5.789ns|      5.752ns|          N/A|            0|            0|       176136|            0|
 | erator_0_SIG_DCM0_CLKFX       |             |             |             |             |             |             |             |
-| TS_clock_generator_0_clock_gen|     10.000ns|      9.926ns|          N/A|            0|            0|       250928|            0|
+| TS_clock_generator_0_clock_gen|     10.000ns|      9.970ns|          N/A|            0|            0|       250928|            0|
 | erator_0_SIG_DCM0_CLK0        |             |             |             |             |             |             |             |
 +-------------------------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+
 
@@ -125,7 +125,7 @@ Clock to Setup on destination clock GCLK
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-GCLK           |    9.926|         |         |         |
+GCLK           |    9.970|         |         |         |
 ---------------+---------+---------+---------+---------+
 
 
@@ -134,21 +134,21 @@ Timing summary:
 
 Timing errors: 0  Score: 0  (Setup/Max: 0, Hold: 0)
 
-Constraints cover 426451 paths, 0 nets, and 27560 connections
+Constraints cover 427163 paths, 0 nets, and 27886 connections
 
 Design statistics:
-   Minimum period:   9.926ns   (Maximum frequency: 100.746MHz)
-   Maximum path delay from/to any node:   3.138ns
+   Minimum period:   9.970ns   (Maximum frequency: 100.301MHz)
+   Maximum path delay from/to any node:   3.133ns
 
 
-Analysis completed Tue Oct 07 20:28:02 2014 
+Analysis completed Thu Oct 09 18:47:08 2014 
 --------------------------------------------------------------------------------
 
 Trace Settings:
 -------------------------
 Trace Settings 
 
-Peak Memory Usage: 354 MB
+Peak Memory Usage: 355 MB
 
 
 

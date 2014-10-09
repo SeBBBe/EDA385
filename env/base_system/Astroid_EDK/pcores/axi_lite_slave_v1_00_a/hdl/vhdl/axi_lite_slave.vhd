@@ -56,17 +56,17 @@ entity axi_lite_slave is
 	-- VGA interface
 	 VGA_HSYNC	: out std_logic;
     VGA_VSYNC	: out std_logic;
-    VGA_RED	    : out std_logic_vector(0 to 2);
-    VGA_GREEN	: out std_logic_vector(0 to 2);
-    VGA_BLUE	: out std_logic_vector(0 to 1)
+    VGA_RED	   : out std_logic_vector(2 downto 0);
+    VGA_GREEN	: out std_logic_vector(2 downto 0);
+    VGA_BLUE	: out std_logic_vector(1 downto 0)
     );
 
 end axi_lite_slave;
 
 architecture implementation of axi_lite_slave is
 
-signal real_hsync, real_vsync : std_logic;
 signal hsync, vsync : std_logic;
+signal overscan, vga_enable : std_logic;
 signal output : color_t;
 
 signal mem_output : linereg_t;
@@ -76,6 +76,16 @@ signal vector_enable : std_logic;
 
 signal newline : std_logic;
 
+signal vga_sync_reg : vgaiface_t;
+signal vga_sync_delay : vgaiface_t;
+signal vga_sync_next : vgaiface_t;
+
+signal vga_color_reg : vgaiface_t;
+signal vga_color_next : vgaiface_t;
+
+signal overscan_reg : std_logic;
+signal overscan_next : std_logic;
+
 begin
 
 vga1 : entity work.vga_controller
@@ -83,11 +93,11 @@ vga1 : entity work.vga_controller
 	(
 		CLK => ACLK,
 		RST => ARESETN,
-		HSYNC => hsync,
-		VSYNC => vsync,
+		OVERSCAN => overscan_next,
+		ENABLE => vga_enable,
 		NEWLINE => newline,
-		VGA_HSYNC => real_hsync,
-		VGA_VSYNC => real_vsync
+		HSYNC => hsync,
+		VSYNC => vsync
 	);
 	
 vector1 : entity work.vector_controller
@@ -131,16 +141,49 @@ mem1 : entity work.mem_controller
 		S_AXI_RVALID => S_AXI_RVALID,
 		S_AXI_RREADY => S_AXI_RREADY,
 		
-		VSYNC => vsync,
+		VSYNC => vga_enable,
 		OUTPUT => mem_output,
 		TRIGGER => mem_trigger
 	);
 
-VGA_RED <= std_logic_vector(output(2 downto 0)) when real_hsync = '1' and real_vsync = '1' else "000";
-VGA_GREEN <= std_logic_vector(output(5 downto 3)) when real_hsync = '1' and real_vsync = '1' else "000";
-VGA_BLUE <= std_logic_vector(output(7 downto 6)) when real_hsync = '1' and real_vsync = '1' else "00";
+process(ACLK, ARESETN)
+begin
+	if rising_edge(ACLK) then
+		if ARESETN = '0' then
+			vga_sync_reg <= EMPTY_VGAIFACE;
+			vga_sync_delay <= EMPTY_VGAIFACE;
+			vga_color_reg <= EMPTY_VGAIFACE;
+			overscan_reg <= '0';
+		else
+			vga_sync_reg <= vga_sync_delay;
+			vga_sync_delay <= vga_sync_next;
+			vga_color_reg <= vga_color_next;
+			overscan_reg <= overscan_next;
+		end if;
+	end if;
+end process;
 
-VGA_HSYNC <= not real_hsync;
-VGA_VSYNC <= real_vsync;
+-- sync signal is delayed by 1 cycle here, color signal is delayed by 1 cycle in vector controller
+process(overscan_reg, output, hsync, vsync)
+begin
+	vga_sync_next.hsync <= hsync; -- negative sync polarity
+	vga_sync_next.vsync <= not vsync; -- positive sync polarity
+	
+	if overscan_reg = '0' then
+		vga_color_next.red <= std_logic_vector(output(2 downto 0));
+		vga_color_next.green <= std_logic_vector(output(5 downto 3));
+		vga_color_next.blue <= std_logic_vector(output(7 downto 6));
+	else
+		vga_color_next.red <= "000";
+		vga_color_next.green <= "000";
+		vga_color_next.blue <= "00";
+	end if;
+end process;
+
+VGA_RED <= vga_color_reg.red;
+VGA_GREEN <= vga_color_reg.green;
+VGA_BLUE <= vga_color_reg.blue;
+VGA_HSYNC <= vga_sync_reg.hsync;
+VGA_VSYNC <= vga_sync_reg.vsync;
 
 end implementation;

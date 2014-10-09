@@ -150,8 +150,8 @@ Synthesizing Unit <dcm_module>.
         C_DSS_MODE = "NONE"
         C_STARTUP_WAIT = false
         C_PHASE_SHIFT = 0
-        C_CLKFX_MULTIPLY = 25
-        C_CLKFX_DIVIDE = 18
+        C_CLKFX_MULTIPLY = 19
+        C_CLKFX_DIVIDE = 11
         C_CLKDV_DIVIDE = 2.0
         C_CLKIN_PERIOD = 10.0
         C_DESKEW_ADJUST = "SYSTEM_SYNCHRONOUS"
@@ -372,8 +372,8 @@ CLKIN          |    1.128|         |         |         |
 =========================================================================
 
 
-Total REAL time to Xst completion: 4.00 secs
-Total CPU time to Xst completion: 4.46 secs
+Total REAL time to Xst completion: 5.00 secs
+Total CPU time to Xst completion: 4.48 secs
  
 --> 
 

@@ -1,5 +1,5 @@
 //! **************************************************************************
-// Written by: Map P.28xd on Tue Oct 07 20:27:01 2014
+// Written by: Map P.28xd on Thu Oct 09 18:46:05 2014
 //! **************************************************************************
 
 SCHEMATIC START;
@@ -9604,20 +9604,103 @@ TIMEGRP clock_generator_0_clock_generator_0_SIG_DCM0_CLKFX = BEL
         "axi_lite_slave_0/axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[5].line_controllerX/vga_counter1/yplusone_reg_11"
         BEL
         "axi_lite_slave_0/axi_lite_slave_0/vector1/GEN_LINE_CONTROLLERS[5].line_controllerX/vga_counter1/yplusone_reg_12"
-        BEL "axi_lite_slave_0/axi_lite_slave_0/vga1/y_reg_0" BEL
-        "axi_lite_slave_0/axi_lite_slave_0/vga1/y_reg_1" BEL
-        "axi_lite_slave_0/axi_lite_slave_0/vga1/y_reg_2" BEL
-        "axi_lite_slave_0/axi_lite_slave_0/vga1/y_reg_3" BEL
-        "axi_lite_slave_0/axi_lite_slave_0/vga1/y_reg_4" BEL
-        "axi_lite_slave_0/axi_lite_slave_0/vga1/y_reg_5" BEL
-        "axi_lite_slave_0/axi_lite_slave_0/vga1/y_reg_6" BEL
-        "axi_lite_slave_0/axi_lite_slave_0/vga1/y_reg_7" BEL
-        "axi_lite_slave_0/axi_lite_slave_0/vga1/y_reg_8" BEL
-        "axi_lite_slave_0/axi_lite_slave_0/vga1/y_reg_9" BEL
-        "axi_lite_slave_0/axi_lite_slave_0/vga1/y_reg_10" BEL
-        "axi_lite_slave_0/axi_lite_slave_0/vga1/y_reg_11" BEL
-        "axi_lite_slave_0/axi_lite_slave_0/vga1/y_reg_12" BEL
-        "axi_lite_slave_0/axi_lite_slave_0/vga1/x_reg_0" BEL
+        BEL
+        "axi_lite_slave_0/axi_lite_slave_0/vector1/bram_pixel_outs_reg_1_0"
+        BEL
+        "axi_lite_slave_0/axi_lite_slave_0/vector1/bram_pixel_outs_reg_1_1"
+        BEL
+        "axi_lite_slave_0/axi_lite_slave_0/vector1/bram_pixel_outs_reg_1_2"
+        BEL
+        "axi_lite_slave_0/axi_lite_slave_0/vector1/bram_pixel_outs_reg_1_3"
+        BEL
+        "axi_lite_slave_0/axi_lite_slave_0/vector1/bram_pixel_outs_reg_1_4"
+        BEL
+        "axi_lite_slave_0/axi_lite_slave_0/vector1/bram_pixel_outs_reg_1_5"
+        BEL
+        "axi_lite_slave_0/axi_lite_slave_0/vector1/bram_pixel_outs_reg_1_6"
+        BEL
+        "axi_lite_slave_0/axi_lite_slave_0/vector1/bram_pixel_outs_reg_1_7"
+        BEL
+        "axi_lite_slave_0/axi_lite_slave_0/vector1/bram_pixel_outs_reg_3_0"
+        BEL
+        "axi_lite_slave_0/axi_lite_slave_0/vector1/bram_pixel_outs_reg_3_1"
+        BEL
+        "axi_lite_slave_0/axi_lite_slave_0/vector1/bram_pixel_outs_reg_3_2"
+        BEL
+        "axi_lite_slave_0/axi_lite_slave_0/vector1/bram_pixel_outs_reg_3_3"
+        BEL
+        "axi_lite_slave_0/axi_lite_slave_0/vector1/bram_pixel_outs_reg_3_4"
+        BEL
+        "axi_lite_slave_0/axi_lite_slave_0/vector1/bram_pixel_outs_reg_3_5"
+        BEL
+        "axi_lite_slave_0/axi_lite_slave_0/vector1/bram_pixel_outs_reg_3_6"
+        BEL
+        "axi_lite_slave_0/axi_lite_slave_0/vector1/bram_pixel_outs_reg_3_7"
+        BEL
+        "axi_lite_slave_0/axi_lite_slave_0/vector1/bram_pixel_outs_reg_0_0"
+        BEL
+        "axi_lite_slave_0/axi_lite_slave_0/vector1/bram_pixel_outs_reg_0_1"
+        BEL
+        "axi_lite_slave_0/axi_lite_slave_0/vector1/bram_pixel_outs_reg_0_2"
+        BEL
+        "axi_lite_slave_0/axi_lite_slave_0/vector1/bram_pixel_outs_reg_0_3"
+        BEL
+        "axi_lite_slave_0/axi_lite_slave_0/vector1/bram_pixel_outs_reg_0_4"
+        BEL
+        "axi_lite_slave_0/axi_lite_slave_0/vector1/bram_pixel_outs_reg_0_5"
+        BEL
+        "axi_lite_slave_0/axi_lite_slave_0/vector1/bram_pixel_outs_reg_0_6"
+        BEL
+        "axi_lite_slave_0/axi_lite_slave_0/vector1/bram_pixel_outs_reg_0_7"
+        BEL
+        "axi_lite_slave_0/axi_lite_slave_0/vector1/bram_pixel_outs_reg_2_0"
+        BEL
+        "axi_lite_slave_0/axi_lite_slave_0/vector1/bram_pixel_outs_reg_2_1"
+        BEL
+        "axi_lite_slave_0/axi_lite_slave_0/vector1/bram_pixel_outs_reg_2_2"
+        BEL
+        "axi_lite_slave_0/axi_lite_slave_0/vector1/bram_pixel_outs_reg_2_3"
+        BEL
+        "axi_lite_slave_0/axi_lite_slave_0/vector1/bram_pixel_outs_reg_2_4"
+        BEL
+        "axi_lite_slave_0/axi_lite_slave_0/vector1/bram_pixel_outs_reg_2_5"
+        BEL
+        "axi_lite_slave_0/axi_lite_slave_0/vector1/bram_pixel_outs_reg_2_6"
+        BEL
+        "axi_lite_slave_0/axi_lite_slave_0/vector1/bram_pixel_outs_reg_2_7"
+        BEL
+        "axi_lite_slave_0/axi_lite_slave_0/vector1/bram_pixel_outs_reg_5_0"
+        BEL
+        "axi_lite_slave_0/axi_lite_slave_0/vector1/bram_pixel_outs_reg_5_1"
+        BEL
+        "axi_lite_slave_0/axi_lite_slave_0/vector1/bram_pixel_outs_reg_5_2"
+        BEL
+        "axi_lite_slave_0/axi_lite_slave_0/vector1/bram_pixel_outs_reg_5_3"
+        BEL
+        "axi_lite_slave_0/axi_lite_slave_0/vector1/bram_pixel_outs_reg_5_4"
+        BEL
+        "axi_lite_slave_0/axi_lite_slave_0/vector1/bram_pixel_outs_reg_5_5"
+        BEL
+        "axi_lite_slave_0/axi_lite_slave_0/vector1/bram_pixel_outs_reg_5_6"
+        BEL
+        "axi_lite_slave_0/axi_lite_slave_0/vector1/bram_pixel_outs_reg_5_7"
+        BEL
+        "axi_lite_slave_0/axi_lite_slave_0/vector1/bram_pixel_outs_reg_4_0"
+        BEL
+        "axi_lite_slave_0/axi_lite_slave_0/vector1/bram_pixel_outs_reg_4_1"
+        BEL
+        "axi_lite_slave_0/axi_lite_slave_0/vector1/bram_pixel_outs_reg_4_2"
+        BEL
+        "axi_lite_slave_0/axi_lite_slave_0/vector1/bram_pixel_outs_reg_4_3"
+        BEL
+        "axi_lite_slave_0/axi_lite_slave_0/vector1/bram_pixel_outs_reg_4_4"
+        BEL
+        "axi_lite_slave_0/axi_lite_slave_0/vector1/bram_pixel_outs_reg_4_5"
+        BEL
+        "axi_lite_slave_0/axi_lite_slave_0/vector1/bram_pixel_outs_reg_4_6"
+        BEL
+        "axi_lite_slave_0/axi_lite_slave_0/vector1/bram_pixel_outs_reg_4_7"
+        BEL "axi_lite_slave_0/axi_lite_slave_0/vga1/x_reg_0" BEL
         "axi_lite_slave_0/axi_lite_slave_0/vga1/x_reg_1" BEL
         "axi_lite_slave_0/axi_lite_slave_0/vga1/x_reg_2" BEL
         "axi_lite_slave_0/axi_lite_slave_0/vga1/x_reg_3" BEL
@@ -9630,6 +9713,19 @@ TIMEGRP clock_generator_0_clock_generator_0_SIG_DCM0_CLKFX = BEL
         "axi_lite_slave_0/axi_lite_slave_0/vga1/x_reg_10" BEL
         "axi_lite_slave_0/axi_lite_slave_0/vga1/x_reg_11" BEL
         "axi_lite_slave_0/axi_lite_slave_0/vga1/x_reg_12" BEL
+        "axi_lite_slave_0/axi_lite_slave_0/vga1/y_reg_0" BEL
+        "axi_lite_slave_0/axi_lite_slave_0/vga1/y_reg_1" BEL
+        "axi_lite_slave_0/axi_lite_slave_0/vga1/y_reg_2" BEL
+        "axi_lite_slave_0/axi_lite_slave_0/vga1/y_reg_3" BEL
+        "axi_lite_slave_0/axi_lite_slave_0/vga1/y_reg_4" BEL
+        "axi_lite_slave_0/axi_lite_slave_0/vga1/y_reg_5" BEL
+        "axi_lite_slave_0/axi_lite_slave_0/vga1/y_reg_6" BEL
+        "axi_lite_slave_0/axi_lite_slave_0/vga1/y_reg_7" BEL
+        "axi_lite_slave_0/axi_lite_slave_0/vga1/y_reg_8" BEL
+        "axi_lite_slave_0/axi_lite_slave_0/vga1/y_reg_9" BEL
+        "axi_lite_slave_0/axi_lite_slave_0/vga1/y_reg_10" BEL
+        "axi_lite_slave_0/axi_lite_slave_0/vga1/y_reg_11" BEL
+        "axi_lite_slave_0/axi_lite_slave_0/vga1/y_reg_12" BEL
         "axi_lite_slave_0/axi_lite_slave_0/mem1/programmer1/target_reg_x0_0"
         BEL
         "axi_lite_slave_0/axi_lite_slave_0/mem1/programmer1/target_reg_x0_1"
@@ -9895,6 +9991,19 @@ TIMEGRP clock_generator_0_clock_generator_0_SIG_DCM0_CLKFX = BEL
         "axi_lite_slave_0/axi_lite_slave_0/mem1/output_reg_color_5" BEL
         "axi_lite_slave_0/axi_lite_slave_0/mem1/output_reg_color_6" BEL
         "axi_lite_slave_0/axi_lite_slave_0/mem1/output_reg_color_7" BEL
+        "axi_lite_slave_0/axi_lite_slave_0/vga_color_reg_blue_1" BEL
+        "axi_lite_slave_0/axi_lite_slave_0/vga_color_reg_blue_0" BEL
+        "axi_lite_slave_0/axi_lite_slave_0/vga_color_reg_green_2" BEL
+        "axi_lite_slave_0/axi_lite_slave_0/vga_color_reg_green_1" BEL
+        "axi_lite_slave_0/axi_lite_slave_0/vga_color_reg_green_0" BEL
+        "axi_lite_slave_0/axi_lite_slave_0/vga_color_reg_red_2" BEL
+        "axi_lite_slave_0/axi_lite_slave_0/vga_color_reg_red_1" BEL
+        "axi_lite_slave_0/axi_lite_slave_0/vga_color_reg_red_0" BEL
+        "axi_lite_slave_0/axi_lite_slave_0/vga_sync_reg_hsync" BEL
+        "axi_lite_slave_0/axi_lite_slave_0/overscan_reg" BEL
+        "axi_lite_slave_0/axi_lite_slave_0/vga_sync_delay_hsync" BEL
+        "axi_lite_slave_0/axi_lite_slave_0/vga_sync_reg_vsync" BEL
+        "axi_lite_slave_0/axi_lite_slave_0/vga_sync_delay_vsync" BEL
         "axi4lite_0/axi4lite_0/mi_converter_bank/gen_conv_slot[4].clock_conv_inst/gen_async_readwrite.asyncfifo_rw/U0/xst_fifo_generator/gaxi_full_lite.gread_ch.grdch2.axi_rdch/grf.rf/gntv_or_sync_fifo.mem/gdm.dm/Mram_RAM1_RAMA"
         BEL
         "axi4lite_0/axi4lite_0/mi_converter_bank/gen_conv_slot[4].clock_conv_inst/gen_async_readwrite.asyncfifo_rw/U0/xst_fifo_generator/gaxi_full_lite.gread_ch.grdch2.axi_rdch/grf.rf/gntv_or_sync_fifo.mem/gdm.dm/Mram_RAM1_RAMB_D1"
@@ -10314,7 +10423,7 @@ PATH "TS_TIG_microblaze_0_ilmb_POR_FF_I_path" TIG;
 TS_sys_clk_pin = PERIOD TIMEGRP "sys_clk_pin" 100 MHz HIGH 50%;
 TS_clock_generator_0_clock_generator_0_SIG_DCM0_CLKFX = PERIOD TIMEGRP
         "clock_generator_0_clock_generator_0_SIG_DCM0_CLKFX" TS_sys_clk_pin *
-        1.38888889 HIGH 50%;
+        1.72727273 HIGH 50%;
 TS_clock_generator_0_clock_generator_0_SIG_DCM0_CLK0 = PERIOD TIMEGRP
         "clock_generator_0_clock_generator_0_SIG_DCM0_CLK0" TS_sys_clk_pin
         HIGH 50%;

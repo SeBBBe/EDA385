@@ -15,12 +15,12 @@ entity vga_controller is
   port
   (
     CLK       : in std_logic; -- clock
-    RST	      : in std_logic; -- reset, active low
-    HSYNC     : out std_logic;
-	 VSYNC     : out std_logic;
+    RST	     : in std_logic; -- reset, active low
+    OVERSCAN  : out std_logic;
+	 ENABLE    : out std_logic;
 	 NEWLINE   : out std_logic;
-	 VGA_HSYNC : out std_logic;
-	 VGA_VSYNC : out std_logic
+	 HSYNC     : out std_logic;
+	 VSYNC     : out std_logic
   );
 end entity vga_controller;
 
@@ -66,11 +66,11 @@ begin
 	end if;
 end process;
 
-VGA_HSYNC <= '0' when (x_reg >= H_SYNC_START and x_reg < H_BACKPORCH_START) else '1';
-VGA_VSYNC <= '0' when (y_reg >= V_SYNC_START and y_reg < V_BACKPORCH_START) else '1';
+HSYNC <= '0' when (x_reg >= H_SYNC_START and x_reg < H_BACKPORCH_START) else '1';
+VSYNC <= '0' when (y_reg >= V_SYNC_START and y_reg < V_BACKPORCH_START) else '1';
 
-HSYNC <= '0' when (x_reg >= H_PIXEL_START and x_reg < H_PIXEL_END) else '1';
+OVERSCAN <= '0' when (x_reg >= H_PIXEL_START and x_reg < H_PIXEL_END) and (y_reg >= V_PIXEL_START and y_reg < V_PIXEL_END) else '1';
 -- line controllers need to start one line before pixel output starts
-VSYNC <= '0' when (y_reg >= V_PIXEL_START-1 and y_reg < V_PIXEL_END) else '1';
+ENABLE <= '0' when (y_reg >= V_PIXEL_START-1 and y_reg < V_PIXEL_END) else '1';
 
 end architecture imp;
