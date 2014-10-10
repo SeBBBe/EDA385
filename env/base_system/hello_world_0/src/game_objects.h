@@ -31,6 +31,7 @@ short currentpos = 0;
 
 extern int volatile *dip;
 
+void go_createpowerupn(int n, float x, float y);
 void go_createasteroidxy(int n, float x, float y);
 int go_exists(int identifier);
 
@@ -74,6 +75,11 @@ void go_hashit(int hit1, int hit2)
 {
 	if (!objects[hit1].enabled) return;
 	if (!objects[hit2].enabled) return;
+	// Ship take powerup
+	if (objects[hit1].identifier == OI_SHIP && objects[hit2].identifier == OI_PUP1){
+		objects[hit2].enabled = 0;
+		bullet_speed = 100;
+	}
 	if (objects[hit2].identifier >= OI_AST1 && objects[hit2].identifier <= OI_AST4){
 		if (objects[hit1].identifier == OI_SHIP && !(*dip & 2)/* DIP1 = god mode */){
 			go_currentstate = STATE_DEAD;
@@ -113,7 +119,6 @@ void go_hitdetection()
 		int j;
 		for (j = 0; j < MAX_OBJECTS; j++)
 		{
-			if (objects[i].identifier == OI_SHIP && objects[i].identifier == OI_BULLET) continue;
 			if (!objects[j].enabled || i == j) continue;
 			int realx1, realx2, realy1, realy2;
 			int hitbox = objects[j].hitbox_size;
@@ -186,6 +191,7 @@ void go_draw()
 				case 4:	vga_addpoly_color(objects[i].poly_points, newpoly, stonecolor[2]); break; //ast2
 				case 5:	vga_addpoly_color(objects[i].poly_points, newpoly, stonecolor[1]); break; //ast3
  				case 6: vga_addpoly_color(objects[i].poly_points, newpoly, stonecolor[0]); break; //ast4
+ 				default: vga_addpoly_color(objects[i].poly_points, newpoly, stonecolor[0]); break; //default
 			}
 
 			memmgr_free(newpoly);
@@ -233,6 +239,23 @@ float rand_FloatRange(float a, float b)
 void go_createasteroid(int n)
 {
 	go_createasteroidxy(n, (float)(rand() % vga_get_width()), (float)(rand() % vga_get_height()));
+}
+
+void go_createpowerupn(int n, float x, float y)
+{
+	short center = 25;
+	short hitbox = 30;
+
+	game_object_t* pup_o = go_getempty();
+	pup_o->identifier = OI_PUP1;
+	pup_o->enabled = 1;
+	pup_o->poly_points = 4;
+	pup_o->poly = powerup_1;
+	pup_o->location.x = x;
+	pup_o->location.y = y;
+	pup_o->center_point.x = center;
+	pup_o->center_point.y = center;
+	pup_o->hitbox_size = hitbox;
 }
 
 void go_createasteroidxy(int n, float x, float y)

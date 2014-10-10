@@ -4,16 +4,16 @@
 
 #include "vga.h"
 #include "input.h"
-#include "graphics.h"
-#include "game_objects.h"
 
 static const float rotate_amount = 0.07;
 static const float ship_accel = 0.2;
 static const float ship_fric = 0.02;
-static const float bullet_speed = 10;
+static float bullet_speed = 10;
 int shoot_limit = 0;
 int shoot_buffer = 0;
 
+#include "graphics.h"
+#include "game_objects.h"
 typedef struct bullet
 {
   f_vgapoint_t p1;
@@ -67,9 +67,10 @@ void game_main()
   ship_o->identifier = OI_SHIP;
   
    int i;
-  for (i = 0; i < 5; i++){
+  for (i = 0; i < 2; i++){
 	go_createasteroid(1);
-	}
+  }
+  go_createpowerupn(1,600,350);
   
   while(1)
   {
