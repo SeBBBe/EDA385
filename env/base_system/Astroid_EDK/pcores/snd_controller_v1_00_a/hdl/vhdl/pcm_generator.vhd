@@ -139,6 +139,7 @@ begin
 
 	if TRIGGER = '1' then
 		count_next <= (others => '0');
+		period_next <= (others => '0');
 		command_next <= INPUT;
 		pcm_next <= (others => '0');
 		pdm_trigger <= '1';
