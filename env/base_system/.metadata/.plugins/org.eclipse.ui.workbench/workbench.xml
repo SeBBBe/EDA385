@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<workbench progressCount="21" version="2.0">
+<workbench progressCount="17" version="2.0">
 <workbenchAdvisor/>
 <window height="948" maximized="true" width="1495" x="200" y="200">
 <fastViewData fastViewLocation="1024"/>
@@ -45,13 +45,9 @@
 </folder>
 </info>
 </editorArea>
-<editor id="org.eclipse.cdt.ui.editor.CEditor" name="helloworld.c" partName="helloworld.c" path="C:/temp/EDA385/env/base_system/hello_world_0/src/helloworld.c" title="helloworld.c" tooltip="hello_world_0/src/helloworld.c" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/hello_world_0/src/helloworld.c"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="342" selectionTopPixel="0"/>
-</editor>
-<editor id="org.eclipse.cdt.ui.editor.CEditor" name="game_objects.h" partName="game_objects.h" path="C:/temp/EDA385/env/base_system/hello_world_0/src/game_objects.h" title="game_objects.h" tooltip="hello_world_0/src/game_objects.h" workbook="DefaultEditorWorkbook">
+<editor activePart="true" focus="true" id="org.eclipse.cdt.ui.editor.CEditor" name="game_objects.h" partName="game_objects.h" path="C:/temp/EDA385/env/base_system/hello_world_0/src/game_objects.h" title="game_objects.h" tooltip="hello_world_0/src/game_objects.h" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/hello_world_0/src/game_objects.h"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="1583" selectionTopPixel="974"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="1583" selectionTopPixel="2606"/>
 </editor>
 <editor id="org.eclipse.cdt.ui.editor.CEditor" name="memmgr.c" partName="memmgr.c" path="C:/temp/EDA385/env/base_system/hello_world_0/src/memmgr.c" title="memmgr.c" tooltip="hello_world_0/src/memmgr.c" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/hello_world_0/src/memmgr.c"/>
@@ -63,19 +59,23 @@
 </editor>
 <editor id="org.eclipse.cdt.ui.editor.CEditor" name="graphics.h" partName="graphics.h" path="C:/temp/EDA385/env/base_system/hello_world_0/src/graphics.h" title="graphics.h" tooltip="hello_world_0/src/graphics.h" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/hello_world_0/src/graphics.h"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="3844" selectionTopPixel="1452"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="3844" selectionTopPixel="1248"/>
 </editor>
 <editor id="org.eclipse.cdt.ui.editor.CEditor" name="game_logic.c" partName="game_logic.c" path="C:/temp/EDA385/env/base_system/hello_world_0/src/game_logic.c" title="game_logic.c" tooltip="hello_world_0/src/game_logic.c" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/hello_world_0/src/game_logic.c"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="1312" selectionTopPixel="1020"/>
-</editor>
-<editor activePart="true" focus="true" id="org.eclipse.cdt.ui.editor.CEditor" name="vga.c" partName="vga.c" path="C:/temp/EDA385/env/base_system/hello_world_0/src/vga.c" title="vga.c" tooltip="hello_world_0/src/vga.c" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/hello_world_0/src/vga.c"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="60" selectionTopPixel="0"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="891" selectionTopPixel="1265"/>
 </editor>
 <editor id="org.eclipse.cdt.ui.editor.CEditor" name="vga.h" partName="vga.h" path="C:/temp/EDA385/env/base_system/hello_world_0/src/vga.h" title="vga.h" tooltip="hello_world_0/src/vga.h" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/hello_world_0/src/vga.h"/>
 <editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="154" selectionTopPixel="0"/>
+</editor>
+<editor id="org.eclipse.cdt.ui.editor.CEditor" name="helloworld.c" partName="helloworld.c" path="C:/temp/EDA385/env/base_system/hello_world_0/src/helloworld.c" title="helloworld.c" tooltip="hello_world_0/src/helloworld.c" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/hello_world_0/src/helloworld.c"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="0" selectionTopPixel="0"/>
+</editor>
+<editor id="org.eclipse.cdt.ui.editor.CEditor" name="vga.c" partName="vga.c" path="C:/temp/EDA385/env/base_system/hello_world_0/src/vga.c" title="vga.c" tooltip="hello_world_0/src/vga.c" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/hello_world_0/src/vga.c"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="1119" selectionTopPixel="663"/>
 </editor>
 </editors>
 <views>
@@ -111,8 +111,7 @@
 </view>
 <view id="org.eclipse.ui.views.ProblemView" partName="Problems">
 <viewState PRIMARY_SORT_FIELD="org.eclipse.ui.ide.severityAndDescriptionField" categoryGroup="org.eclipse.ui.ide.severity" markerContentGenerator="org.eclipse.ui.ide.problemsGenerator" partName="Problems">
-<expanded>
-<category IMemento.internal.id="Errors"/>
+<expanded>&#x0A;<category IMemento.internal.id="Errors"/>
 </expanded>
 <columnWidths org.eclipse.ui.ide.locationField="0" org.eclipse.ui.ide.markerType="0" org.eclipse.ui.ide.pathField="0" org.eclipse.ui.ide.resourceField="0" org.eclipse.ui.ide.severityAndDescriptionField="0"/>
 <visible IMemento.internal.id="org.eclipse.ui.ide.severityAndDescriptionField"/>
@@ -255,10 +254,6 @@
 <navigationHistory>
 <editors>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/hello_world_0/src/vga.c"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.xilinx.sdk.hw.ui.HwSpecXMLEditor" path="/Astroid_EDK_hw_platform/system.xml"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/hello_world_0/src/helloworld.c"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/hello_world_0/src/vga.c"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/hello_world_0/src/game_logic.c"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/hello_world_0/src/graphics.h"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/hello_world_0/src/game_logic.c"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/hello_world_0/src/game_objects.h"/>
@@ -266,152 +261,156 @@
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/hello_world_0/src/graphics.h"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/hello_world_0/src/memmgr.h"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/hello_world_0/src/vga.h"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/hello_world_0/src/helloworld.c"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.xilinx.sdk.hw.ui.HwSpecXMLEditor" path="/Astroid_EDK_hw_platform/system.xml"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/hello_world_0/src/game_objects.h"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/hello_world_0/src/helloworld.c"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/hello_world_0/src/game_logic.c"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/hello_world_0/src/graphics.h"/>
 </editors>
-<item historyLabel="system.xml" index="1"/>
-<item historyLabel="vga.c" index="0"/>
-<item historyLabel="helloworld.c" index="2">
-<position info="not_deleted" x="342" y="0"/>
-</item>
-<item historyLabel="vga.c" index="3">
-<position info="not_deleted" x="177" y="0"/>
-</item>
-<item historyLabel="game_logic.c" index="4">
-<position info="not_deleted" x="0" y="0"/>
-</item>
-<item historyLabel="graphics.h" index="5">
-<position info="not_deleted" x="3939" y="0"/>
-</item>
-<item historyLabel="helloworld.c" index="2">
-<position info="not_deleted" x="342" y="0"/>
-</item>
-<item historyLabel="vga.c" index="3">
-<position info="not_deleted" x="332" y="0"/>
-</item>
-<item historyLabel="game_logic.c" index="4">
-<position info="not_deleted" x="0" y="0"/>
-</item>
-<item historyLabel="vga.c" index="3">
-<position info="not_deleted" x="332" y="0"/>
-</item>
-<item historyLabel="vga.c" index="3">
+<item historyLabel="vga.c" index="0">
 <position info="not_deleted" x="245" y="0"/>
 </item>
-<item historyLabel="vga.c" index="3">
+<item historyLabel="vga.c" index="0">
 <position info="not_deleted" x="1492" y="0"/>
+</item>
+<item historyLabel="graphics.h" index="1">
+<position info="not_deleted" x="202" y="0"/>
+</item>
+<item historyLabel="vga.c" index="0">
+<position info="not_deleted" x="1492" y="0"/>
+</item>
+<item historyLabel="vga.c" index="0">
+<position info="not_deleted" x="1599" y="0"/>
+</item>
+<item historyLabel="game_logic.c" index="2">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="game_objects.h" index="3">
+<position info="not_deleted" x="670" y="0"/>
+</item>
+<item historyLabel="vga.c" index="0">
+<position info="not_deleted" x="1498" y="0"/>
+</item>
+<item historyLabel="game_objects.h" index="3">
+<position info="not_deleted" x="682" y="0"/>
+</item>
+<item historyLabel="vga.c" index="0">
+<position info="not_deleted" x="1498" y="0"/>
+</item>
+<item historyLabel="game_objects.h" index="3">
+<position info="not_deleted" x="682" y="0"/>
+</item>
+<item historyLabel="helloworld.c" index="4">
+<position info="not_deleted" x="342" y="0"/>
+</item>
+<item historyLabel="game_objects.h" index="3">
+<position info="not_deleted" x="661" y="0"/>
+</item>
+<item historyLabel="game_objects.h" index="3">
+<position info="not_deleted" x="1481" y="0"/>
+</item>
+<item historyLabel="game_logic.c" index="2">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="vga.c" index="0">
+<position info="not_deleted" x="260" y="0"/>
+</item>
+<item historyLabel="game_logic.c" index="2">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="vga.c" index="0">
+<position info="not_deleted" x="1327" y="0"/>
+</item>
+<item historyLabel="game_logic.c" index="2">
+<position info="not_deleted" x="0" y="0"/>
 </item>
 <item historyLabel="graphics.h" index="5">
 <position info="not_deleted" x="202" y="0"/>
 </item>
-<item historyLabel="vga.c" index="3">
-<position info="not_deleted" x="1492" y="0"/>
-</item>
-<item historyLabel="vga.c" index="3">
-<position info="not_deleted" x="1599" y="0"/>
-</item>
-<item historyLabel="game_logic.c" index="6">
-<position info="not_deleted" x="0" y="0"/>
-</item>
-<item historyLabel="game_objects.h" index="7">
-<position info="not_deleted" x="670" y="0"/>
-</item>
-<item historyLabel="vga.c" index="3">
-<position info="not_deleted" x="1498" y="0"/>
-</item>
-<item historyLabel="game_objects.h" index="7">
-<position info="not_deleted" x="682" y="0"/>
-</item>
-<item historyLabel="vga.c" index="3">
-<position info="not_deleted" x="1498" y="0"/>
-</item>
-<item historyLabel="game_objects.h" index="7">
-<position info="not_deleted" x="682" y="0"/>
-</item>
-<item historyLabel="helloworld.c" index="8">
-<position info="not_deleted" x="342" y="0"/>
-</item>
-<item historyLabel="game_objects.h" index="7">
-<position info="not_deleted" x="661" y="0"/>
-</item>
-<item historyLabel="game_objects.h" index="7">
-<position info="not_deleted" x="1481" y="0"/>
-</item>
-<item historyLabel="game_logic.c" index="6">
-<position info="not_deleted" x="0" y="0"/>
-</item>
-<item historyLabel="vga.c" index="3">
-<position info="not_deleted" x="260" y="0"/>
-</item>
-<item historyLabel="game_logic.c" index="6">
-<position info="not_deleted" x="0" y="0"/>
-</item>
-<item historyLabel="vga.c" index="3">
-<position info="not_deleted" x="1327" y="0"/>
-</item>
-<item historyLabel="game_logic.c" index="6">
-<position info="not_deleted" x="0" y="0"/>
-</item>
-<item historyLabel="graphics.h" index="9">
-<position info="not_deleted" x="202" y="0"/>
-</item>
-<item historyLabel="memmgr.h" index="10">
+<item historyLabel="memmgr.h" index="6">
 <position info="not_deleted" x="2552" y="0"/>
 </item>
-<item historyLabel="game_logic.c" index="6">
+<item historyLabel="game_logic.c" index="2">
 <position info="not_deleted" x="891" y="0"/>
 </item>
-<item historyLabel="game_objects.h" index="7">
+<item historyLabel="game_objects.h" index="3">
 <position info="not_deleted" x="1481" y="0"/>
 </item>
-<item historyLabel="game_logic.c" index="6">
+<item historyLabel="game_logic.c" index="2">
 <position info="not_deleted" x="891" y="0"/>
 </item>
-<item historyLabel="graphics.h" index="9">
+<item historyLabel="graphics.h" index="5">
 <position info="not_deleted" x="202" y="0"/>
 </item>
-<item historyLabel="game_objects.h" index="7">
+<item historyLabel="game_objects.h" index="3">
 <position info="not_deleted" x="295" y="0"/>
 </item>
-<item historyLabel="vga.h" index="11">
+<item historyLabel="vga.h" index="7">
 <position info="not_deleted" x="154" y="0"/>
 </item>
-<item historyLabel="vga.c" index="3">
+<item historyLabel="vga.c" index="0">
 <position info="not_deleted" x="260" y="0"/>
 </item>
-<item historyLabel="vga.h" index="11">
+<item historyLabel="vga.h" index="7">
 <position info="not_deleted" x="154" y="0"/>
 </item>
-<item historyLabel="game_objects.h" index="7">
+<item historyLabel="game_objects.h" index="3">
 <position info="not_deleted" x="295" y="0"/>
 </item>
-<item historyLabel="game_objects.h" index="7">
+<item historyLabel="game_objects.h" index="3">
 <position/>
 </item>
-<item historyLabel="game_objects.h" index="7">
+<item historyLabel="game_objects.h" index="3">
 <position info="not_deleted" x="4807" y="0"/>
 </item>
-<item historyLabel="game_logic.c" index="6">
+<item historyLabel="game_logic.c" index="2">
 <position info="not_deleted" x="1312" y="0"/>
 </item>
-<item historyLabel="graphics.h" index="9">
+<item historyLabel="graphics.h" index="5">
 <position info="not_deleted" x="3844" y="0"/>
 </item>
-<item historyLabel="memmgr.h" index="10">
+<item historyLabel="memmgr.h" index="6">
 <position info="not_deleted" x="2552" y="0"/>
 </item>
-<item historyLabel="game_objects.h" index="7">
+<item historyLabel="game_objects.h" index="3">
 <position info="not_deleted" x="335" y="0"/>
 </item>
-<item historyLabel="vga.c" index="3">
+<item historyLabel="vga.c" index="0">
 <position info="not_deleted" x="554" y="0"/>
 </item>
-<item historyLabel="game_logic.c" index="6">
+<item historyLabel="game_logic.c" index="2">
 <position info="not_deleted" x="1312" y="0"/>
 </item>
-<item historyLabel="game_objects.h" index="7">
+<item historyLabel="game_objects.h" index="3">
 <position info="not_deleted" x="1583" y="0"/>
 </item>
-<item active="true" historyLabel="vga.c" index="3">
+<item historyLabel="vga.c" index="0">
 <position info="not_deleted" x="554" y="0"/>
+</item>
+<item historyLabel="helloworld.c" index="8"/>
+<item historyLabel="system.xml" index="9"/>
+<item historyLabel="helloworld.c" index="8"/>
+<item historyLabel="game_objects.h" index="10">
+<position info="not_deleted" x="1583" y="0"/>
+</item>
+<item historyLabel="helloworld.c" index="11">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="game_logic.c" index="12">
+<position info="not_deleted" x="1305" y="0"/>
+</item>
+<item historyLabel="graphics.h" index="13">
+<position info="not_deleted" x="3844" y="0"/>
+</item>
+<item historyLabel="vga.c" index="0">
+<position info="not_deleted" x="1119" y="0"/>
+</item>
+<item historyLabel="game_logic.c" index="12">
+<position info="not_deleted" x="891" y="0"/>
+</item>
+<item active="true" historyLabel="game_objects.h" index="10">
+<position info="not_deleted" x="1583" y="0"/>
 </item>
 </navigationHistory>
 <input factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/" type="8"/>
@@ -430,14 +429,17 @@
 </trimLayout>
 </window>
 <mruList>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="vga.h" tooltip="hello_world_0/src/vga.h">
-<persistable path="/hello_world_0/src/vga.h"/>
-</file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="vga.c" tooltip="hello_world_0/src/vga.c">
 <persistable path="/hello_world_0/src/vga.c"/>
 </file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="helloworld.c" tooltip="hello_world_0/src/helloworld.c">
+<persistable path="/hello_world_0/src/helloworld.c"/>
+</file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.xilinx.sdk.hw.ui.HwSpecXMLEditor" name="system.xml" tooltip="Astroid_EDK_hw_platform/system.xml">
 <persistable path="/Astroid_EDK_hw_platform/system.xml"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="vga.h" tooltip="hello_world_0/src/vga.h">
+<persistable path="/hello_world_0/src/vga.h"/>
 </file>
 <file factoryID="org.eclipse.cdt.ui.ExternalEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="stdlib.h" tooltip="C:\Xilinx\14.2\ISE_DS\EDK\gnu\microblaze\nt64\microblaze-xilinx-elf\include\stdlib.h">
 <persistable path="C:\Xilinx\14.2\ISE_DS\EDK\gnu\microblaze\nt64\microblaze-xilinx-elf\include\stdlib.h" project="hello_world_0"/>
@@ -459,9 +461,6 @@
 </file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="game_objects.h" tooltip="hello_world_0/src/game_objects.h">
 <persistable path="/hello_world_0/src/game_objects.h"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="helloworld.c" tooltip="hello_world_0/src/helloworld.c">
-<persistable path="/hello_world_0/src/helloworld.c"/>
 </file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.binaryEditor" name="xtmrctr_stats.o" tooltip="hello_world_0/Release/src/tmrctr_v2_04_a/src/xtmrctr_stats.o">
 <persistable path="/hello_world_0/Release/src/tmrctr_v2_04_a/src/xtmrctr_stats.o"/>

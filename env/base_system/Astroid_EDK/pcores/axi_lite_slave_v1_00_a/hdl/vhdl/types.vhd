@@ -74,19 +74,19 @@ package types is
 	--constant V_PIXEL:        integer := 960;
 	--constant V_PERIOD:       integer := 994;
 	
-	-- 1920x1080
+	-- 1920x1200
 	-- Horizontal timing constants
-	constant H_FRONTPORCH:   integer := 120;
-	constant H_SYNC:         integer := 208;
-	constant H_BACKPORCH:    integer := 328;
+	constant H_FRONTPORCH:   integer := 48;
+	constant H_SYNC:         integer := 32;
+	constant H_BACKPORCH:    integer := 80;
 	constant H_PIXEL:        integer := 1920;
-	constant H_PERIOD:       integer := 2576;
+	constant H_PERIOD:       integer := 2080;
 	-- Vertical timing constants
-	constant V_FRONTPORCH:   integer := 1;
-	constant V_SYNC:         integer := 3;
-	constant V_BACKPORCH:    integer := 34;
-	constant V_PIXEL:        integer := 1080;
-	constant V_PERIOD:       integer := 1118;
+	constant V_FRONTPORCH:   integer := 3;
+	constant V_SYNC:         integer := 6;
+	constant V_BACKPORCH:    integer := 26;
+	constant V_PIXEL:        integer := 1200;
+	constant V_PERIOD:       integer := 1235;
 	
 	-- Horizontal timing positions
 	constant H_FRONTPORCH_START:   integer := 0;                                   --   0

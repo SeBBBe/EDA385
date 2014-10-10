@@ -78,7 +78,7 @@ void go_hashit(int hit1, int hit2)
 		if (objects[hit1].identifier == OI_SHIP && !(*dip & 2)/* DIP1 = god mode */){
 			go_currentstate = STATE_DEAD;
 		}
-		if (objects[hit1].identifier == OI_BULLET){
+		if (objects[hit1].identifier == OI_BULLET || (objects[hit1].identifier == OI_SHIP && (*dip & 2))){
 			if (objects[hit2].identifier == OI_AST1)
 			{
 				go_createasteroidxy(2, objects[hit2].location.x, objects[hit2].location.y);
@@ -93,7 +93,7 @@ void go_hashit(int hit1, int hit2)
 			}
 			objects[hit2].enabled = 0;
 			memmgr_free(objects[hit2].poly);
-			objects[hit1].enabled = 0;
+			if(objects[hit1].identifier != OI_SHIP) objects[hit1].enabled = 0;
 			if (!go_exists(OI_AST1) && !go_exists(OI_AST2) && !go_exists(OI_AST3) && !go_exists(OI_AST4))
 			{
 				go_currentstate = STATE_VICT;
@@ -160,15 +160,34 @@ void go_tick()
 void go_draw()
 {
 	int i;
+	static color_t stonecolor[4] = {0b11111111, // vit
+									0b11110110, // gråare
+									0b10100100, // grå2
+									0b01010010, // grå3
+	};
+
+
 	for (i = 0; i < MAX_OBJECTS; i++)
 	{
 		if (objects[i].enabled)
 		{
+
 			if (objects[i].angle > 6.28) objects[i].angle = 0;
 			if (objects[i].angle < 0) objects[i].angle = 6.28;
 			vgapoint_t* newpoly = rotate(objects[i].poly_points, objects[i].poly, objects[i].angle, objects[i].center_point.x, objects[i].center_point.y);
 			offset(objects[i].poly_points, newpoly, objects[i].location.x, objects[i].location.y);
-			vga_addpoly(objects[i].poly_points, newpoly);
+
+			//Add poly with color
+			switch(objects[i].identifier)
+			{
+				case 1: vga_addpoly_color(objects[i].poly_points, newpoly, (*dip & 2) ? 0b11000111 : 0b00111000);    break; //ship
+				case 2: vga_addpoly_color(objects[i].poly_points, newpoly, (*dip & 2) ? 0b00111000 : 0b11000111);   break; //bullet
+				case 3: vga_addpoly_color(objects[i].poly_points, newpoly, stonecolor[3]); break; //ast1
+				case 4:	vga_addpoly_color(objects[i].poly_points, newpoly, stonecolor[2]); break; //ast2
+				case 5:	vga_addpoly_color(objects[i].poly_points, newpoly, stonecolor[1]); break; //ast3
+ 				case 6: vga_addpoly_color(objects[i].poly_points, newpoly, stonecolor[0]); break; //ast4
+			}
+
 			memmgr_free(newpoly);
 			
 			int realx = objects[i].location.x + objects[i].center_point.x;

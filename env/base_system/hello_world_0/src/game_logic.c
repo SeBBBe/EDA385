@@ -30,7 +30,7 @@ void game_over()
 	while(1)
 	{
 		vga_clear();
-		vga_addpoly(6, poly);
+		vga_addpoly_color(6, poly, 0b00000111);
 		vga_sync();
 	}
 }
@@ -43,7 +43,7 @@ void win()
 	while(1)
 	{
 		vga_clear();
-		vga_addpoly(4, poly);
+		vga_addpoly_color(4, poly, 0b00111000);
 		vga_sync();
 	}
 }
@@ -54,7 +54,7 @@ void game_main()
   vga_init();
   
   go_initialize();
-  srand(*dip & 0xFC);
+  srand(1339);
   
   game_object_t* ship_o = go_getempty();
   ship_o->enabled = 1;
@@ -86,8 +86,8 @@ void game_main()
 			game_object_t* bullet_o = go_getempty();
 		  bullet_o->location.x = ship_o->location.x;
 		  bullet_o->location.y = ship_o->location.y;
-		  bullet_o->xvel = bullet_speed * cosine(ship_o->angle + 4.71);
-		  bullet_o->yvel = bullet_speed * sine(ship_o->angle + 4.71);
+		  bullet_o->xvel = (ship_o->xvel) + bullet_speed * cosine(ship_o->angle + 4.71);
+		  bullet_o->yvel = (ship_o->yvel) + bullet_speed * sine(ship_o->angle + 4.71);
 		  bullet_o->center_point.x = 320;
           bullet_o->center_point.y = 240;
 		  bullet_o->angle = ship_o->angle;
@@ -113,7 +113,7 @@ void game_main()
 		//TODO: lookup table
 		ship_o->xvel += ship_accel * cosine(ship_o->angle + 4.71);
 		ship_o->yvel += ship_accel * sine(ship_o->angle + 4.71);
-    }  
+    }
 
     ship_o->xvel += ship_fric * -ship_o->xvel;
     ship_o->yvel += ship_fric * -ship_o->yvel;

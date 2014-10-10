@@ -166,8 +166,8 @@ end process;
 -- sync signal is delayed by 1 cycle here, color signal is delayed by 1 cycle in vector controller
 process(overscan_reg, output, hsync, vsync)
 begin
-	vga_sync_next.hsync <= hsync; -- negative sync polarity
-	vga_sync_next.vsync <= not vsync; -- positive sync polarity
+	vga_sync_next.hsync <= not hsync; -- positive sync polarity
+	vga_sync_next.vsync <= vsync; -- negative sync polarity
 	
 	if overscan_reg = '0' then
 		vga_color_next.red <= std_logic_vector(output(2 downto 0));

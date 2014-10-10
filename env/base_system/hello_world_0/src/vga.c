@@ -4,7 +4,7 @@
 #include "input.h"
 
 #define VGA_WIDTH 1920
-#define VGA_HEIGHT 1080
+#define VGA_HEIGHT 1200
 #define VGA_MAX_LINES 192
 
 int volatile *btn = (int *)0x40000000;
@@ -62,7 +62,7 @@ int vga_addpoly_color(int num_points, vgapoint_t *points, color_t color)
 	lines[line_index].p1.x = x1;
 	lines[line_index].p1.y = y1;
 	
-	lines[line_index].color = color;
+	lines[line_index].color = (*dip & 4) ? ((x0 * 256) / VGA_WIDTH) : color;
 
 	line_index++;
   }
