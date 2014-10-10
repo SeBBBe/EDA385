@@ -9,8 +9,8 @@ use ieee.std_logic_1164.all;
 use ieee.std_logic_misc.all;
 use ieee.std_logic_unsigned.all;
 
-library snd_controller; --USER-- library name
-use snd_controller.all; --USER-- use statement
+library snd_controller_v1_00_a; --USER-- library name
+use snd_controller_v1_00_a.all; --USER-- use statement
 
 use work.types.all;
 

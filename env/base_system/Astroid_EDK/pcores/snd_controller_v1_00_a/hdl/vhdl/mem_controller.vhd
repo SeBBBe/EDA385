@@ -2,6 +2,9 @@ library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 use ieee.numeric_std.all;
 
+library snd_controller_v1_00_a; --USER-- library name
+use snd_controller_v1_00_a.all; --USER-- use statement
+
 use work.types.all;
 
 entity mem_controller is
