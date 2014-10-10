@@ -39,6 +39,8 @@
 
   <RENDERIMG RASNAME="C:\temp\EDA385\env\base_system\Astroid_EDK\SDK\SDK_Export\hw\imgs\axi_gpio_0.jpg" SVGNAME="C:\temp\EDA385\env\base_system\Astroid_EDK\SDK\SDK_Export\hw\imgs\axi_gpio_0.svg" TMPSVGFN="C:\temp\EDA385\env\base_system\Astroid_EDK\__xps\.dswkshop\axi_gpio_0.svg"/>
 
+  <RENDERIMG RASNAME="C:\temp\EDA385\env\base_system\Astroid_EDK\SDK\SDK_Export\hw\imgs\snd_controller_0.jpg" SVGNAME="C:\temp\EDA385\env\base_system\Astroid_EDK\SDK\SDK_Export\hw\imgs\snd_controller_0.svg" TMPSVGFN="C:\temp\EDA385\env\base_system\Astroid_EDK\__xps\.dswkshop\snd_controller_0.svg"/>
+
   <RENDERIMG RASNAME="C:\temp\EDA385\env\base_system\Astroid_EDK\SDK\SDK_Export\hw\imgs\system_blkd.jpg" SVGNAME="C:\temp\EDA385\env\base_system\Astroid_EDK\SDK\SDK_Export\hw\imgs\system_blkd.svg" TMPSVGFN="C:\temp\EDA385\env\base_system\Astroid_EDK\__xps\.dswkshop\system_blkd.svg"/>
 
 </RENDERBATCH>

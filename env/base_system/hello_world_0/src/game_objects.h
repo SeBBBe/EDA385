@@ -70,6 +70,17 @@ void go_initialize()
 	xil_printf("objects = %x\r\n", objects);
 }
 
+sample_t kaboom[] = {
+		{500, 2, 0},
+		{400, 2, 0},
+		{300, 2, 0},
+		{400, 2, 0},
+		{500, 2, 0},
+		{400, 2, 0},
+		{300, 2, 0},
+		{200, 2, 0},
+};
+
 //Called when a hit was detected between object hit1 and hit2
 void go_hashit(int hit1, int hit2)
 {
@@ -97,6 +108,8 @@ void go_hashit(int hit1, int hit2)
 				go_createasteroidxy(3, objects[hit2].location.x, objects[hit2].location.y);
 				go_createasteroidxy(3, objects[hit2].location.x, objects[hit2].location.y);
 			}
+
+			snd_play(kaboom, sizeof(kaboom) / sizeof(*kaboom));
 			objects[hit2].enabled = 0;
 			memmgr_free(objects[hit2].poly);
 			if(objects[hit1].identifier != OI_SHIP) objects[hit1].enabled = 0;
@@ -273,7 +286,7 @@ void go_createasteroidxy(int n, float x, float y)
 	{
 		polypointer = asteroid_r1;
 		randdev = 120;
-		hitbox = 70;
+		hitbox = 75;
 		center = 80;
 		speed = 1.8;
 		ast_o->identifier = OI_AST1;
@@ -282,7 +295,7 @@ void go_createasteroidxy(int n, float x, float y)
 	{
 		polypointer = asteroid_r2;
 		randdev = 60;
-		hitbox = 30;
+		hitbox = 35;
 		center = 40;
 		speed = 6.0;
 		ast_o->identifier = OI_AST2;
@@ -291,7 +304,7 @@ void go_createasteroidxy(int n, float x, float y)
 	{
 		polypointer = asteroid_r3;
 		randdev = 30;
-		hitbox = 15;
+		hitbox = 20;
 		center = 20;
 		speed = 10.0;
 		ast_o->identifier = OI_AST3;

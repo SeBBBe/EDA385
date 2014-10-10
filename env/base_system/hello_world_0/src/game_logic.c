@@ -4,6 +4,7 @@
 
 #include "vga.h"
 #include "input.h"
+#include "snd.h"
 
 static const float rotate_amount = 0.07;
 static const float ship_accel = 0.2;
@@ -14,6 +15,7 @@ int shoot_buffer = 0;
 
 #include "graphics.h"
 #include "game_objects.h"
+
 typedef struct bullet
 {
   f_vgapoint_t p1;
@@ -22,40 +24,159 @@ typedef struct bullet
   float yvel;
 } bullet_t;
 
+sample_t gameover[] = {
+		{168, 100, 0},
+		{200, 100, 0},
+		{300, 100, 0},
+		{400, 100, 0},
+		{500, 100, 0},
+		{600, 100, 0},
+		{700, 100, 0},
+		{800, 100, 0},
+};
+
 void game_over()
 {
 	vgapoint_t *poly = copy_poly(6, graphic_game_over);
 	offset(6, poly, vga_get_width()/2 - 150, vga_get_height()/2 - 150);
 
+	snd_play(gameover, sizeof(gameover) / sizeof(*gameover));
+
 	while(1)
 	{
 		vga_clear();
+		snd_update();
 		vga_addpoly_color(6, poly, 0b00000111);
 		vga_sync();
 	}
 }
+
+sample_t winsnd[] = {
+		{168, 20, 0},
+		{150, 20, 0},
+		{134, 20, 0},
+		{126, 20, 0},
+		{113, 20, 0},
+		{100, 20, 0},
+		{89, 20, 0},
+		{84, 20, 0},
+		{89, 20, 0},
+		{100, 20, 0},
+		{113, 20, 0},
+		{126, 20, 0},
+		{134, 20, 0},
+		{150, 20, 0},
+		{168, 20, 0},
+		{168, 20, 0},
+		{150, 20, 0},
+		{134, 20, 0},
+		{126, 20, 0},
+		{113, 20, 0},
+		{100, 20, 0},
+		{89, 20, 0},
+		{84, 20, 0},
+		{89, 20, 0},
+		{100, 20, 0},
+		{113, 20, 0},
+		{126, 20, 0},
+		{134, 20, 0},
+		{150, 20, 0},
+		{168, 20, 0},
+		{168, 20, 0},
+		{150, 20, 0},
+		{134, 20, 0},
+		{126, 20, 0},
+		{113, 20, 0},
+		{100, 20, 0},
+		{89, 20, 0},
+		{84, 20, 0},
+		{89, 20, 0},
+		{100, 20, 0},
+		{113, 20, 0},
+		{126, 20, 0},
+		{134, 20, 0},
+		{150, 20, 0},
+		{168, 20, 0},
+		{168, 20, 0},
+		{150, 20, 0},
+		{168, 20, 0},
+		{168, 20, 0},
+		{20000, 4, 0},
+		{89, 20, 0},
+		{84, 20, 0},
+		{89, 20, 0},
+		{84, 20, 0},
+		{89, 20, 0},
+		{84, 20, 0},
+		{89, 20, 0},
+		{84, 20, 0},
+		{89, 20, 0},
+		{84, 20, 0},
+		{89, 20, 0},
+		{20000, 4, 0},
+		{89, 20, 0},
+		{84, 20, 0},
+		{89, 20, 0},
+		{84, 20, 0},
+		{89, 20, 0},
+		{84, 20, 0},
+		{89, 20, 0},
+		{84, 20, 0},
+		{89, 20, 0},
+		{84, 20, 0},
+		{89, 20, 0},
+		{20000, 2, 0},
+		{89, 20, 0},
+		{84, 20, 0},
+		{89, 20, 0},
+		{84, 20, 0},
+		{89, 20, 0},
+		{84, 20, 0},
+		{89, 20, 0},
+		{84, 20, 0},
+		{89, 20, 0},
+		{84, 20, 0},
+		{89, 20, 0},
+};
 
 void win()
 {
 	vgapoint_t *poly = copy_poly(4, graphic_vict);
 	offset(4, poly, vga_get_width()/2 - 150, vga_get_height()/2 - 150);
 
+	snd_play(winsnd, sizeof(winsnd) / sizeof(*winsnd));
+
 	while(1)
 	{
 		vga_clear();
+		snd_update();
 		vga_addpoly_color(4, poly, 0b00111000);
 		vga_sync();
 	}
 }
 
+sample_t shoot[] = {
+		{168, 2, 0},
+		{150, 2, 0},
+		{134, 2, 0},
+		{126, 2, 0},
+		{113, 2, 0},
+		{100, 2, 0},
+		{89, 2, 0},
+		{84, 2, 0},
+};
+
 void game_main()
 {
   keymap_t keys;
   vga_init();
+  snd_init();
   
   go_initialize();
   srand(1339);
   
+  bullet_speed = 10;
+
   game_object_t* ship_o = go_getempty();
   ship_o->enabled = 1;
   ship_o->poly_points = 4;
@@ -67,16 +188,18 @@ void game_main()
   ship_o->identifier = OI_SHIP;
   
    int i;
-  for (i = 0; i < 2; i++){
+  for (i = 0; i < 1; i++){
 	go_createasteroid(1);
   }
   go_createpowerupn(1,600,350);
-  
+
   while(1)
   {
 	go_tick();
     vga_sync();
-    
+
+    snd_update();
+
     keys = input_get_keys();
     if(keys & KEY_SHOOT)
     {
@@ -97,6 +220,8 @@ void game_main()
 		  bullet_o->poly_points = 2;
 		  bullet_o->nowrap = 1;
 		  bullet_o->identifier = OI_BULLET;
+
+		  snd_play(shoot, sizeof(shoot) / sizeof(*shoot));
 		}
     }
     if(keys & KEY_LEFT)
@@ -127,7 +252,7 @@ void game_main()
     
     if (shoot_limit > 0) shoot_limit--;
     if (go_currentstate == STATE_DEAD) game_over();
-    if (go_currentstate == STATE_VICT) win();
+    if (go_currentstate == STATE_VICT || (*dip & 8)) win();
     
     vga_clear();
     go_draw();
