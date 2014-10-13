@@ -52,6 +52,11 @@
 #define XPAR_AXI_LITE_SLAVE_0_S_AXI_RNG00_HIGHADDR 0x7F80FFFF
 
 
+/* Definitions for peripheral SND_CONTROLLER_0 */
+#define XPAR_SND_CONTROLLER_0_S_AXI_RNG00_BASEADDR 0x7F400000
+#define XPAR_SND_CONTROLLER_0_S_AXI_RNG00_HIGHADDR 0x7F40FFFF
+
+
 /******************************************************************/
 
 /* Definitions for driver TMRCTR */

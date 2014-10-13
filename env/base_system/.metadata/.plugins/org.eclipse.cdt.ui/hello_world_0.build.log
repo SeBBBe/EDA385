@@ -11,7 +11,7 @@ In file included from ../src/game_logic.c:7:0:
 ../src/snd.h: At top level:
 ../src/snd.h:66:6: warning: conflicting types for 'snd_play' [enabled by default]
 ../src/snd.h:41:2: note: previous implicit declaration of 'snd_play' was here
-In file included from ../src/game_logic.c:16:0:
+In file included from ../src/game_logic.c:17:0:
 ../src/graphics.h: In function 'copy_poly':
 ../src/graphics.h:139:2: warning: implicit declaration of function 'memcpy' [-Wimplicit-function-declaration]
 ../src/graphics.h:139:2: warning: incompatible implicit declaration of built-in function 'memcpy' [enabled by default]
@@ -25,7 +25,7 @@ Finished building target: hello_world_0.elf
 Invoking: MicroBlaze Print Size
 mb-size hello_world_0.elf  |tee "hello_world_0.elf.size"
    text	   data	    bss	    dec	    hex	filename
-  27230	   3816	  12320	  43366	   a966	hello_world_0.elf
+  27550	   3816	  12320	  43686	   aaa6	hello_world_0.elf
 Finished building: hello_world_0.elf.size
 ' '
 Invoking: Xilinx ELF Check

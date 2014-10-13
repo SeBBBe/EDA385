@@ -89,7 +89,7 @@ void go_hashit(int hit1, int hit2)
 	// Ship take powerup
 	if (objects[hit1].identifier == OI_SHIP && objects[hit2].identifier == OI_PUP1){
 		objects[hit2].enabled = 0;
-		bullet_speed = 100;
+		pup1 = 1;
 	}
 	if (objects[hit2].identifier >= OI_AST1 && objects[hit2].identifier <= OI_AST4){
 		if (objects[hit1].identifier == OI_SHIP && !(*dip & 2)/* DIP1 = god mode */){
@@ -178,10 +178,11 @@ void go_tick()
 void go_draw()
 {
 	int i;
-	static color_t stonecolor[4] = {0b11111111, // vit
+	static color_t stonecolor[5] = {0b11111111, // vit
 									0b11110110, // gråare
 									0b10100100, // grå2
 									0b01010010, // grå3
+									0b00011000	// mörkgrön
 	};
 
 
@@ -204,6 +205,7 @@ void go_draw()
 				case 4:	vga_addpoly_color(objects[i].poly_points, newpoly, stonecolor[2]); break; //ast2
 				case 5:	vga_addpoly_color(objects[i].poly_points, newpoly, stonecolor[1]); break; //ast3
  				case 6: vga_addpoly_color(objects[i].poly_points, newpoly, stonecolor[0]); break; //ast4
+ 				case 7: vga_addpoly_color(objects[i].poly_points, newpoly, stonecolor[4]); break; //pup1
  				default: vga_addpoly_color(objects[i].poly_points, newpoly, stonecolor[0]); break; //default
 			}
 
@@ -266,6 +268,9 @@ void go_createpowerupn(int n, float x, float y)
 	pup_o->poly = powerup_1;
 	pup_o->location.x = x;
 	pup_o->location.y = y;
+	pup_o->xvel = 0.5;
+	pup_o->yvel = 0.5;
+	pup_o->anglespeed = 0.03;
 	pup_o->center_point.x = center;
 	pup_o->center_point.y = center;
 	pup_o->hitbox_size = hitbox;

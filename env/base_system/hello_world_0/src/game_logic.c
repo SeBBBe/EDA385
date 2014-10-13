@@ -9,9 +9,10 @@
 static const float rotate_amount = 0.07;
 static const float ship_accel = 0.2;
 static const float ship_fric = 0.02;
-static float bullet_speed = 10;
+static float bullet_speed = 16;
 int shoot_limit = 0;
 int shoot_buffer = 0;
+short pup1 = 0; // powerup1 = bullet
 
 #include "graphics.h"
 #include "game_objects.h"
@@ -165,7 +166,14 @@ sample_t shoot[] = {
 		{89, 2, 0},
 		{84, 2, 0},
 };
-
+/*TODO BY JAW
+*	Make astroids more difficult to kill -> add hp for objects, check if hp = 0, remove obj.
+*	Add powerups for bullet2. (CHECK)
+*	Change graphic for bullet2
+*	Add a way to spawn Powerups.
+*	Change Win song? Add bgm?
+*	Add end game with mothership spawning bullets towards ship and spawning astroids.
+*/
 void game_main()
 {
   keymap_t keys;
@@ -188,10 +196,10 @@ void game_main()
   ship_o->identifier = OI_SHIP;
   
    int i;
-  for (i = 0; i < 1; i++){
+  for (i = 0; i < 6; i++){
 	go_createasteroid(1);
   }
-  go_createpowerupn(1,600,350);
+  go_createpowerupn(1,600,650);
 
   while(1)
   {
@@ -201,20 +209,40 @@ void game_main()
     snd_update();
 
     keys = input_get_keys();
+    float bullet2angle = 0.0;
     if(keys & KEY_SHOOT)
     {
 		if (shoot_limit == 0)
 		{
+			if(pup1){ // if powerup1 is active
+			game_object_t* bullet2_o = go_getempty();
+			bullet2angle = 0.1;
+		  bullet2_o->location.x = ship_o->location.x;
+		  bullet2_o->location.y = ship_o->location.y;
+		  bullet2_o->xvel = (ship_o->xvel) + bullet_speed * cosine(ship_o->angle-bullet2angle + 4.71);
+		  bullet2_o->yvel = (ship_o->yvel) + bullet_speed * sine(ship_o->angle-bullet2angle + 4.71);
+		  bullet2_o->center_point.x = 320;
+		  bullet2_o->center_point.y = 240;
+		  bullet2_o->angle = ship_o->angle-bullet2angle;
+		  bullet2_o->enabled = 1;
+		  bullet2_o->poly = bullet_p;
+		  bullet2_o->poly_points = 2;
+		  bullet2_o->nowrap = 1;
+		  bullet2_o->identifier = OI_BULLET;
+		  }else{
+			  bullet2angle = 0;
+		  }
+
 			shoot_limit = 15;
 			if (shoot_buffer == 0) shoot_limit = 60;
 			game_object_t* bullet_o = go_getempty();
 		  bullet_o->location.x = ship_o->location.x;
 		  bullet_o->location.y = ship_o->location.y;
-		  bullet_o->xvel = (ship_o->xvel) + bullet_speed * cosine(ship_o->angle + 4.71);
-		  bullet_o->yvel = (ship_o->yvel) + bullet_speed * sine(ship_o->angle + 4.71);
+		  bullet_o->xvel = (ship_o->xvel) + bullet_speed * cosine(ship_o->angle+bullet2angle + 4.71);
+		  bullet_o->yvel = (ship_o->yvel) + bullet_speed * sine(ship_o->angle+bullet2angle + 4.71);
 		  bullet_o->center_point.x = 320;
           bullet_o->center_point.y = 240;
-		  bullet_o->angle = ship_o->angle;
+		  bullet_o->angle = ship_o->angle+bullet2angle;
 		  bullet_o->enabled = 1;
 		  bullet_o->poly = bullet_p;
 		  bullet_o->poly_points = 2;

@@ -5,7 +5,7 @@
     The structure and the elements are likely to change over the next few releases.
     This means code written to parse this file will need to be revisited each subsequent release.-->
 
-  <application stringID="par" timeStamp="Fri Oct 10 16:15:37 2014">
+  <application stringID="par" timeStamp="Mon Oct 13 19:15:55 2014">
     <section stringID="User_Env">
       <table stringID="User_EnvVar">
         <column stringID="variable"/>
@@ -47,7 +47,7 @@
         <item stringID="User_EnvOsname" value="Microsoft Windows 7 , 64-bit"/>
         <item stringID="User_EnvOsrelease" value="Service Pack 1  (build 7601)"/>
       </item>
-      <item stringID="User_EnvHost" value="NEPTUNUS-2"/>
+      <item stringID="User_EnvHost" value="NEPTUNUS-1"/>
       <table stringID="User_EnvCpu">
         <column stringID="arch"/>
         <column stringID="speed"/>
@@ -65,11 +65,11 @@
     </task>
     <task stringID="PAR_PAR">
       <section stringID="PAR_DESIGN_SUMMARY">
-        <item stringID="PAR_REAL_TIME_COMPLETION_ROUTER" value="40 secs "/>
+        <item stringID="PAR_REAL_TIME_COMPLETION_ROUTER" value="41 secs "/>
         <item stringID="PAR_CPU_TIME_COMPLETION_ROUTER" value="39 secs "/>
         <item dataType="int" stringID="PAR_UNROUTES" value="0"/>
         <item dataType="float" stringID="PAR_TIMING_SCORE" value="0.000000"/>
-        <item stringID="PAR_REAL_TIME_COMPLETION_PAR" value="44 secs "/>
+        <item stringID="PAR_REAL_TIME_COMPLETION_PAR" value="43 secs "/>
         <item stringID="PAR_CPU_TIME_COMPLETION_PAR" value="41 secs "/>
       </section>
     </task>
@@ -2447,7 +2447,7 @@
     </task>
   </application>
 
-  <application stringID="Par" timeStamp="Fri Oct 10 16:15:37 2014">
+  <application stringID="Par" timeStamp="Mon Oct 13 19:15:55 2014">
     <section stringID="User_Env">
       <table stringID="User_EnvVar">
         <column stringID="variable"/>
@@ -2489,7 +2489,7 @@
         <item stringID="User_EnvOsname" value="Microsoft Windows 7 , 64-bit"/>
         <item stringID="User_EnvOsrelease" value="Service Pack 1  (build 7601)"/>
       </item>
-      <item stringID="User_EnvHost" value="NEPTUNUS-2"/>
+      <item stringID="User_EnvHost" value="NEPTUNUS-1"/>
       <table stringID="User_EnvCpu">
         <column stringID="arch"/>
         <column stringID="speed"/>
