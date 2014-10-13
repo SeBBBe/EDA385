@@ -1,15 +1,15 @@
 LIBRARY ieee;
 USE ieee.std_logic_1164.ALL;
 
-library snd_controller; --USER-- library name
-use snd_controller.all;
+library snd_mixer_v1_00_a; --USER-- library name
+use snd_mixer_v1_00_a.all;
 
 use work.types.all;
 
-ENTITY snd_tb IS 
-END snd_tb;
+ENTITY mix_tb IS 
+END mix_tb;
 
-ARCHITECTURE behavior OF snd_tb IS
+ARCHITECTURE behavior OF mix_tb IS
 
 	signal S_AXI_AWADDR : std_logic_vector(32-1 downto 0);
 	signal S_AXI_WDATA  : std_logic_vector(32-1 downto 0);
@@ -34,6 +34,8 @@ ARCHITECTURE behavior OF snd_tb IS
 	signal S_AXI_BRESP  : std_logic_vector(2-1 downto 0);
 	signal S_AXI_RRESP  : std_logic_vector(2-1 downto 0);
 	
+	signal INPUT1 : std_logic_vector(7 downto 0);
+	signal INPUT2 : std_logic_vector(7 downto 0);
 	signal JA : std_logic_vector(7 downto 0);
 
 	signal rst : std_logic := '1';
@@ -43,7 +45,7 @@ ARCHITECTURE behavior OF snd_tb IS
 
 BEGIN
 
-   uut: entity work.snd_controller
+   uut: entity work.snd_mixer
 		PORT MAP
 		(
 			ACLK => clk,
@@ -67,8 +69,13 @@ BEGIN
 			S_AXI_ARPROT => S_AXI_ARPROT,
 			S_AXI_BRESP => S_AXI_BRESP,
 			S_AXI_RRESP => S_AXI_RRESP,
+			INPUT1 => INPUT1,
+			INPUT2 => INPUT2,
 			JA => JA
 		);
+
+	INPUT1 <= (others => '1');
+	INPUT2 <= (others => '0');
 
    -- Clock process definitions( clock with 50% duty cycle is generated here.
    clk_process :process
@@ -89,8 +96,8 @@ BEGIN
 	
 	test_process : process
 	begin
-		wait until S_AXI_RDATA(0) = '1' and S_AXI_WREADY = '1';
-		S_AXI_WDATA <= SQR_WAVE & "000000000100000" & "000000000010000";
+		wait until S_AXI_WREADY = '1';
+		S_AXI_WDATA <= "0000000000000000" & "00000011" & "00000111";
 		S_AXI_WVALID <= '1';
 		wait until S_AXI_BVALID = '1';
 		S_AXI_WVALID <= '0';

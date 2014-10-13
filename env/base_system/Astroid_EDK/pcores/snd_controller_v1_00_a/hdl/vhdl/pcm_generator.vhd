@@ -26,15 +26,6 @@ use snd_controller_v1_00_a.all; --USER-- use statement
 
 use work.types.all;
 
--- Uncomment the following library declaration if using
--- arithmetic functions with Signed or Unsigned values
---use IEEE.NUMERIC_STD.ALL;
-
--- Uncomment the following library declaration if instantiating
--- any Xilinx primitives in this code.
---library UNISIM;
---use UNISIM.VComponents.all;
-
 entity pcm_generator is
 	port (
 		CLK : in std_logic;
@@ -68,6 +59,13 @@ signal done_next : std_logic;
 signal pdm_trigger : std_logic;
 signal pdm_done : std_logic;
 
+signal divider_n : pcm_t;
+signal divider_clr : std_logic;
+
+signal divider_ready : std_logic;
+
+signal saw_constant : pcm_t;
+
 begin
 
 	pdm1: entity work.pdm_generator
@@ -81,6 +79,21 @@ begin
 			
 			OUTPUT => OUTPUT
 		);
+	
+	divider1: entity work.divider
+		port map(
+			CLK => CLK,
+			RST => RST,
+			
+			N => divider_n,
+			D => command_reg.period,
+			CLR => divider_clr,
+			
+			Q => saw_constant,
+			READY => divider_ready
+		);
+
+divider_n <= PCM_MAX;
 
 DONE <= done_reg;
 
@@ -103,7 +116,7 @@ begin
 	end if;
 end process;
 
-process(INPUT, TRIGGER, pdm_done, count_reg, period_reg, command_reg, pcm_reg, done_reg)
+process(INPUT, TRIGGER, pdm_done, count_reg, period_reg, command_reg, pcm_reg, done_reg, saw_constant)
 begin
 	count_next <= count_reg;
 	period_next <= period_reg;
@@ -111,21 +124,49 @@ begin
 	pcm_next <= pcm_reg;
 	pdm_trigger <= '0';
 	done_next <= done_reg;
+	divider_clr <= '0';
 	
 	if pdm_done = '1' then
 		period_next <= period_reg + 1;
+		count_next <= count_reg + 1;
 		
-		if period_reg < command_reg.period / 2 then
-			pcm_next <= PCM_MIN;
-		else
-			pcm_next <= PCM_MAX;
-		end if;
+		case command_reg.waveform is
+			-- square wave, MIN half period then MAX
+			when SQR_WAVE =>
+				if period_reg < command_reg.period / 2 then
+					pcm_next <= PCM_MIN;
+				else
+					pcm_next <= PCM_MAX;
+				end if;
+			
+			-- sawtooth wave, increase up to MAX over period
+			when SAW_WAVE =>
+				pcm_next <= pcm_reg + saw_constant;
+			
+			-- triange wave, increase up to MAX over half period then decrease to MIN
+			when TRI_WAVE =>
+				if period_reg < command_reg.period / 2 then
+					if pcm_reg + (saw_constant sll 1) > pcm_reg then -- overflow guard
+						pcm_next <= pcm_reg + (saw_constant sll 1);
+					end if;
+				else
+					if pcm_reg - (saw_constant sll 1) < pcm_reg then -- underflow guard
+						pcm_next <= pcm_reg - (saw_constant sll 1);
+					end if;
+				end if;
+			
+			-- noise, random numbers seeded from period
+			when NSE_WAVE =>
+				pcm_next <= pcm_reg xor (pcm_reg rol 4) + command_reg.period;
+			
+			when others =>
+				pcm_next <= PCM_MIN;
+		end case;
 		
 		pdm_trigger <= '1';
 		
 		if period_reg = command_reg.period then
 			period_next <= (others => '0');
-			count_next <= count_reg + 1;
 		end if;
 		
 		if count_reg = command_reg.duration then
@@ -144,6 +185,7 @@ begin
 		pcm_next <= (others => '0');
 		pdm_trigger <= '1';
 		done_next <= '0';
+		divider_clr <= '1';
 	end if;
 end process;
 
