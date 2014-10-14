@@ -122,10 +122,10 @@ WARNING:Xst:647 - Input <INPUT_waveform> is never used. This port will be preser
     Found 1-bit register for signal <done_reg>.
     Found 15-bit register for signal <pcm_reg>.
     Found 15-bit adder for signal <period_reg[14]_GND_11_o_add_12_OUT> created at line 1241.
-    Found 15-bit adder for signal <count_reg[14]_GND_11_o_add_16_OUT> created at line 1241.
-    Found 15-bit comparator lessequal for signal <period_reg[14]_GND_11_o_LessThan_14_o> created at line 118
-    Found 15-bit comparator equal for signal <period_reg[14]_command_reg_period[14]_equal_16_o> created at line 126
-    Found 15-bit comparator equal for signal <count_reg[14]_command_reg_duration[14]_equal_20_o> created at line 131
+    Found 15-bit adder for signal <count_reg[14]_GND_11_o_add_13_OUT> created at line 1241.
+    Found 15-bit comparator lessequal for signal <period_reg[14]_GND_11_o_LessThan_15_o> created at line 119
+    Found 15-bit comparator equal for signal <period_reg[14]_command_reg_period[14]_equal_17_o> created at line 127
+    Found 15-bit comparator equal for signal <count_reg[14]_command_reg_duration[14]_equal_19_o> created at line 131
     Summary:
 	inferred   2 Adder/Subtractor(s).
 	inferred  76 D-type flip-flop(s).
@@ -366,15 +366,15 @@ Top Level Output File Name         : system_snd_controller_0_wrapper.ngc
 
 Primitive and Black Box Usage:
 ------------------------------
-# BELS                             : 278
+# BELS                             : 284
 #      GND                         : 1
 #      INV                         : 5
 #      LUT1                        : 14
 #      LUT2                        : 38
-#      LUT3                        : 2
-#      LUT4                        : 37
-#      LUT5                        : 19
-#      LUT6                        : 45
+#      LUT3                        : 18
+#      LUT4                        : 22
+#      LUT5                        : 22
+#      LUT6                        : 47
 #      MUXCY                       : 71
 #      VCC                         : 1
 #      XORCY                       : 45
@@ -392,15 +392,15 @@ Selected Device : 6slx16csg324-3
 
 Slice Logic Utilization: 
  Number of Slice Registers:             111  out of  18224     0%  
- Number of Slice LUTs:                  160  out of   9112     1%  
-    Number used as Logic:               160  out of   9112     1%  
+ Number of Slice LUTs:                  166  out of   9112     1%  
+    Number used as Logic:               166  out of   9112     1%  
 
 Slice Logic Distribution: 
- Number of LUT Flip Flop pairs used:    189
-   Number with an unused Flip Flop:      78  out of    189    41%  
-   Number with an unused LUT:            29  out of    189    15%  
-   Number of fully used LUT-FF pairs:    82  out of    189    43%  
-   Number of unique control sets:         4
+ Number of LUT Flip Flop pairs used:    195
+   Number with an unused Flip Flop:      84  out of    195    43%  
+   Number with an unused LUT:            29  out of    195    14%  
+   Number of fully used LUT-FF pairs:    82  out of    195    42%  
+   Number of unique control sets:         5
 
 IO Utilization: 
  Number of IOs:                         162
@@ -441,8 +441,8 @@ Timing Summary:
 ---------------
 Speed Grade: -3
 
-   Minimum period: 5.568ns (Maximum Frequency: 179.585MHz)
-   Minimum input arrival time before clock: 1.941ns
+   Minimum period: 4.747ns (Maximum Frequency: 210.640MHz)
+   Minimum input arrival time before clock: 2.001ns
    Maximum output required time after clock: 2.992ns
    Maximum combinational path delay: No path found
 
@@ -452,66 +452,52 @@ All values displayed in nanoseconds (ns)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'ACLK'
-  Clock period: 5.568ns (frequency: 179.585MHz)
-  Total number of paths / destination ports: 12234 / 171
+  Clock period: 4.747ns (frequency: 210.640MHz)
+  Total number of paths / destination ports: 11335 / 171
 -------------------------------------------------------------------------
-Delay:               5.568ns (Levels of Logic = 23)
-  Source:            snd_controller_0/pcm1/count_reg_2 (FF)
-  Destination:       snd_controller_0/pcm1/count_reg_14 (FF)
+Delay:               4.747ns (Levels of Logic = 9)
+  Source:            snd_controller_0/pcm1/command_reg_duration_2 (FF)
+  Destination:       snd_controller_0/pcm1/count_reg_0 (FF)
   Source Clock:      ACLK rising
   Destination Clock: ACLK rising
 
-  Data Path: snd_controller_0/pcm1/count_reg_2 to snd_controller_0/pcm1/count_reg_14
+  Data Path: snd_controller_0/pcm1/command_reg_duration_2 to snd_controller_0/pcm1/count_reg_0
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDRE:C->Q             3   0.447   0.995  snd_controller_0/pcm1/count_reg_2 (snd_controller_0/pcm1/count_reg_2)
-     LUT6:I1->O            1   0.203   0.000  snd_controller_0/pcm1/Mcompar_count_reg[14]_command_reg_duration[14]_equal_20_o_lut<0> (snd_controller_0/pcm1/Mcompar_count_reg[14]_command_reg_duration[14]_equal_20_o_lut<0>)
-     MUXCY:S->O            1   0.172   0.000  snd_controller_0/pcm1/Mcompar_count_reg[14]_command_reg_duration[14]_equal_20_o_cy<0> (snd_controller_0/pcm1/Mcompar_count_reg[14]_command_reg_duration[14]_equal_20_o_cy<0>)
-     MUXCY:CI->O           1   0.019   0.000  snd_controller_0/pcm1/Mcompar_count_reg[14]_command_reg_duration[14]_equal_20_o_cy<1> (snd_controller_0/pcm1/Mcompar_count_reg[14]_command_reg_duration[14]_equal_20_o_cy<1>)
-     MUXCY:CI->O           1   0.019   0.000  snd_controller_0/pcm1/Mcompar_count_reg[14]_command_reg_duration[14]_equal_20_o_cy<2> (snd_controller_0/pcm1/Mcompar_count_reg[14]_command_reg_duration[14]_equal_20_o_cy<2>)
-     MUXCY:CI->O           1   0.019   0.000  snd_controller_0/pcm1/Mcompar_count_reg[14]_command_reg_duration[14]_equal_20_o_cy<3> (snd_controller_0/pcm1/Mcompar_count_reg[14]_command_reg_duration[14]_equal_20_o_cy<3>)
-     MUXCY:CI->O          79   0.019   1.739  snd_controller_0/pcm1/Mcompar_count_reg[14]_command_reg_duration[14]_equal_20_o_cy<4> (snd_controller_0/pcm1/count_reg[14]_command_reg_duration[14]_equal_20_o)
+     FD:C->Q               2   0.447   0.981  snd_controller_0/pcm1/command_reg_duration_2 (snd_controller_0/pcm1/command_reg_duration_2)
+     LUT6:I0->O            1   0.203   0.000  snd_controller_0/pcm1/Mcompar_count_reg[14]_command_reg_duration[14]_equal_19_o_lut<0> (snd_controller_0/pcm1/Mcompar_count_reg[14]_command_reg_duration[14]_equal_19_o_lut<0>)
+     MUXCY:S->O            1   0.172   0.000  snd_controller_0/pcm1/Mcompar_count_reg[14]_command_reg_duration[14]_equal_19_o_cy<0> (snd_controller_0/pcm1/Mcompar_count_reg[14]_command_reg_duration[14]_equal_19_o_cy<0>)
+     MUXCY:CI->O           1   0.019   0.000  snd_controller_0/pcm1/Mcompar_count_reg[14]_command_reg_duration[14]_equal_19_o_cy<1> (snd_controller_0/pcm1/Mcompar_count_reg[14]_command_reg_duration[14]_equal_19_o_cy<1>)
+     MUXCY:CI->O           1   0.019   0.000  snd_controller_0/pcm1/Mcompar_count_reg[14]_command_reg_duration[14]_equal_19_o_cy<2> (snd_controller_0/pcm1/Mcompar_count_reg[14]_command_reg_duration[14]_equal_19_o_cy<2>)
+     MUXCY:CI->O           1   0.019   0.000  snd_controller_0/pcm1/Mcompar_count_reg[14]_command_reg_duration[14]_equal_19_o_cy<3> (snd_controller_0/pcm1/Mcompar_count_reg[14]_command_reg_duration[14]_equal_19_o_cy<3>)
+     MUXCY:CI->O          64   0.019   1.640  snd_controller_0/pcm1/Mcompar_count_reg[14]_command_reg_duration[14]_equal_19_o_cy<4> (snd_controller_0/pcm1/count_reg[14]_command_reg_duration[14]_equal_19_o)
      LUT2:I1->O            1   0.205   0.000  snd_controller_0/pcm1/Mcount_count_reg_lut<0> (snd_controller_0/pcm1/Mcount_count_reg_lut<0>)
-     MUXCY:S->O            1   0.172   0.000  snd_controller_0/pcm1/Mcount_count_reg_cy<0> (snd_controller_0/pcm1/Mcount_count_reg_cy<0>)
-     MUXCY:CI->O           1   0.019   0.000  snd_controller_0/pcm1/Mcount_count_reg_cy<1> (snd_controller_0/pcm1/Mcount_count_reg_cy<1>)
-     MUXCY:CI->O           1   0.019   0.000  snd_controller_0/pcm1/Mcount_count_reg_cy<2> (snd_controller_0/pcm1/Mcount_count_reg_cy<2>)
-     MUXCY:CI->O           1   0.019   0.000  snd_controller_0/pcm1/Mcount_count_reg_cy<3> (snd_controller_0/pcm1/Mcount_count_reg_cy<3>)
-     MUXCY:CI->O           1   0.019   0.000  snd_controller_0/pcm1/Mcount_count_reg_cy<4> (snd_controller_0/pcm1/Mcount_count_reg_cy<4>)
-     MUXCY:CI->O           1   0.019   0.000  snd_controller_0/pcm1/Mcount_count_reg_cy<5> (snd_controller_0/pcm1/Mcount_count_reg_cy<5>)
-     MUXCY:CI->O           1   0.019   0.000  snd_controller_0/pcm1/Mcount_count_reg_cy<6> (snd_controller_0/pcm1/Mcount_count_reg_cy<6>)
-     MUXCY:CI->O           1   0.019   0.000  snd_controller_0/pcm1/Mcount_count_reg_cy<7> (snd_controller_0/pcm1/Mcount_count_reg_cy<7>)
-     MUXCY:CI->O           1   0.019   0.000  snd_controller_0/pcm1/Mcount_count_reg_cy<8> (snd_controller_0/pcm1/Mcount_count_reg_cy<8>)
-     MUXCY:CI->O           1   0.019   0.000  snd_controller_0/pcm1/Mcount_count_reg_cy<9> (snd_controller_0/pcm1/Mcount_count_reg_cy<9>)
-     MUXCY:CI->O           1   0.019   0.000  snd_controller_0/pcm1/Mcount_count_reg_cy<10> (snd_controller_0/pcm1/Mcount_count_reg_cy<10>)
-     MUXCY:CI->O           1   0.019   0.000  snd_controller_0/pcm1/Mcount_count_reg_cy<11> (snd_controller_0/pcm1/Mcount_count_reg_cy<11>)
-     MUXCY:CI->O           1   0.019   0.000  snd_controller_0/pcm1/Mcount_count_reg_cy<12> (snd_controller_0/pcm1/Mcount_count_reg_cy<12>)
-     MUXCY:CI->O           0   0.019   0.000  snd_controller_0/pcm1/Mcount_count_reg_cy<13> (snd_controller_0/pcm1/Mcount_count_reg_cy<13>)
-     XORCY:CI->O           1   0.180   0.827  snd_controller_0/pcm1/Mcount_count_reg_xor<14> (snd_controller_0/pcm1/Mcount_count_reg14)
-     LUT4:I0->O            1   0.203   0.000  snd_controller_0/pcm1/count_reg_14_dpot (snd_controller_0/pcm1/count_reg_14_dpot)
-     FDRE:D                    0.102          snd_controller_0/pcm1/count_reg_14
+     XORCY:LI->O           1   0.136   0.580  snd_controller_0/pcm1/Mcount_count_reg_xor<0> (snd_controller_0/pcm1/Mcount_count_reg)
+     LUT3:I2->O            1   0.205   0.000  snd_controller_0/pcm1/count_reg_0_dpot (snd_controller_0/pcm1/count_reg_0_dpot)
+     FDRE:D                    0.102          snd_controller_0/pcm1/count_reg_0
     ----------------------------------------
-    Total                      5.568ns (2.007ns logic, 3.561ns route)
-                                       (36.0% logic, 64.0% route)
+    Total                      4.747ns (1.546ns logic, 3.201ns route)
+                                       (32.6% logic, 67.4% route)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'ACLK'
   Total number of paths / destination ports: 177 / 174
 -------------------------------------------------------------------------
-Offset:              1.941ns (Levels of Logic = 1)
+Offset:              2.001ns (Levels of Logic = 1)
   Source:            ARESETN (PAD)
-  Destination:       snd_controller_0/mem1/output_reg_period_14 (FF)
+  Destination:       snd_controller_0/pcm1/period_reg_14 (FF)
   Destination Clock: ACLK rising
 
-  Data Path: ARESETN to snd_controller_0/mem1/output_reg_period_14
+  Data Path: ARESETN to snd_controller_0/pcm1/period_reg_14
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     INV:I->O             33   0.206   1.305  snd_controller_0/mem1/ARESETN_inv1_INV_0 (snd_controller_0/mem1/ARESETN_inv)
-     FDCE:CLR                  0.430          snd_controller_0/mem1/output_reg_period_0
+     LUT2:I0->O           30   0.203   1.263  snd_controller_0/pcm1/Mcount_count_reg_val1 (snd_controller_0/pcm1/Mcount_count_reg_val)
+     FDRE:R                    0.430          snd_controller_0/pcm1/count_reg_0
     ----------------------------------------
-    Total                      1.941ns (0.636ns logic, 1.305ns route)
-                                       (32.8% logic, 67.2% route)
+    Total                      2.001ns (0.738ns logic, 1.263ns route)
+                                       (36.9% logic, 63.1% route)
 
 =========================================================================
 Timing constraint: Default OFFSET OUT AFTER for Clock 'ACLK'
@@ -550,18 +536,18 @@ Clock to Setup on destination clock ACLK
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-ACLK           |    5.568|         |         |         |
+ACLK           |    4.747|         |         |         |
 ---------------+---------+---------+---------+---------+
 
 =========================================================================
 
 
-Total REAL time to Xst completion: 5.00 secs
-Total CPU time to Xst completion: 5.46 secs
+Total REAL time to Xst completion: 6.00 secs
+Total CPU time to Xst completion: 5.59 secs
  
 --> 
 
-Total memory usage is 271728 kilobytes
+Total memory usage is 272176 kilobytes
 
 Number of errors   :    0 (   0 filtered)
 Number of warnings :   20 (   0 filtered)

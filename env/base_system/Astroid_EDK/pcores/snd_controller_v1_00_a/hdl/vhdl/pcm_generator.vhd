@@ -114,6 +114,7 @@ begin
 	
 	if pdm_done = '1' then
 		period_next <= period_reg + 1;
+		count_next <= count_reg + 1;
 		
 		if period_reg < command_reg.period / 2 then
 			pcm_next <= PCM_MIN;
@@ -125,7 +126,6 @@ begin
 		
 		if period_reg = command_reg.period then
 			period_next <= (others => '0');
-			count_next <= count_reg + 1;
 		end if;
 		
 		if count_reg = command_reg.duration then

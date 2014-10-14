@@ -1259,15 +1259,15 @@ Top Level Output File Name         : system.ngc
 
 Primitive and Black Box Usage:
 ------------------------------
-# BELS                             : 9830
+# BELS                             : 9842
 #      GND                         : 24
 #      INV                         : 178
 #      LUT1                        : 389
 #      LUT2                        : 909
-#      LUT3                        : 1141
-#      LUT4                        : 1580
-#      LUT5                        : 778
-#      LUT6                        : 2010
+#      LUT3                        : 1173
+#      LUT4                        : 1550
+#      LUT5                        : 784
+#      LUT6                        : 2014
 #      LUT6_2                      : 132
 #      MULT_AND                    : 13
 #      MUXCY                       : 1217
@@ -1321,18 +1321,18 @@ Selected Device : 6slx16csg324-3
 
 Slice Logic Utilization: 
  Number of Slice Registers:            5755  out of  18224    31%  
- Number of Slice LUTs:                 8173  out of   9112    89%  
-    Number used as Logic:              7117  out of   9112    78%  
+ Number of Slice LUTs:                 8185  out of   9112    89%  
+    Number used as Logic:              7129  out of   9112    78%  
     Number used as Memory:             1056  out of   2176    48%  
        Number used as RAM:              278
        Number used as SRL:              778
 
 Slice Logic Distribution: 
- Number of LUT Flip Flop pairs used:  10908
-   Number with an unused Flip Flop:    5153  out of  10908    47%  
-   Number with an unused LUT:          2735  out of  10908    25%  
-   Number of fully used LUT-FF pairs:  3020  out of  10908    27%  
-   Number of unique control sets:       282
+ Number of LUT Flip Flop pairs used:  10920
+   Number with an unused Flip Flop:    5165  out of  10920    47%  
+   Number with an unused LUT:          2735  out of  10920    25%  
+   Number of fully used LUT-FF pairs:  3020  out of  10920    27%  
+   Number of unique control sets:       284
 
 IO Utilization: 
  Number of IOs:                          34
@@ -1392,7 +1392,7 @@ All values displayed in nanoseconds (ns)
 =========================================================================
 Timing constraint: Default period analysis for Clock 'GCLK'
   Clock period: 76.229ns (frequency: 13.118MHz)
-  Total number of paths / destination ports: 569491 / 15306
+  Total number of paths / destination ports: 567693 / 15306
 -------------------------------------------------------------------------
 Delay:               3.811ns (Levels of Logic = 3)
   Source:            axi4lite_0/axi4lite_0/mi_converter_bank/gen_conv_slot[5].clock_conv_inst/m_async_conv_reset (FF)
@@ -1665,8 +1665,8 @@ debug_module_0/debug_module_0/drck_i|    2.427|    3.477|    3.249|         |
 =========================================================================
 
 
-Total REAL time to Xst completion: 24.00 secs
-Total CPU time to Xst completion: 23.64 secs
+Total REAL time to Xst completion: 25.00 secs
+Total CPU time to Xst completion: 24.35 secs
  
 --> 
 

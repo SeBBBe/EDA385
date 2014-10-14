@@ -1828,6 +1828,7 @@ Moving files to output directory...
 Finished moving files to output directory
 Successfully generated unit 'system_axi4lite_0_wrapper_fifo_generator_v9_1'.
 
+End of process call...
 
 =========================================================================
 *                       Advanced HDL Synthesis                          *
@@ -3605,8 +3606,8 @@ axi4lite_0/si_converter_bank/gen_conv_slot[0].clock_conv_inst/S_AXI_ACLK|    1.9
 =========================================================================
 
 
-Total REAL time to Xst completion: 114.00 secs
-Total CPU time to Xst completion: 114.81 secs
+Total REAL time to Xst completion: 123.00 secs
+Total CPU time to Xst completion: 122.89 secs
  
 --> 
 

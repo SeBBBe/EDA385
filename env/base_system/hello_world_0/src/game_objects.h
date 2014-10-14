@@ -11,6 +11,7 @@ typedef struct game_object {
 	float scaleaccel;
 	float angle;
 	float anglespeed;
+	short hp;
 	short enabled;
 	short poly_points;
 	short nowrap;
@@ -56,6 +57,7 @@ void go_resetobject(int i)
 		objects[i].hitbox_size = 0;
 		objects[i].scale = 0;
 		objects[i].scaleaccel = 0;
+		objects[i].hp = 0;
 }
 
 void go_initialize()
@@ -77,6 +79,7 @@ void go_initialize()
 //Called when a hit was detected between object hit1 and hit2
 void go_hashit(int hit1, int hit2)
 {
+
 	if (!objects[hit1].enabled) return;
 	if (!objects[hit2].enabled) return;
 	// Ship take powerup
@@ -90,27 +93,37 @@ void go_hashit(int hit1, int hit2)
 			go_currentstate = STATE_DEAD;
 		}
 		if (objects[hit1].identifier == OI_BULLET || (objects[hit1].identifier == OI_SHIP && (*dip & 2))){
-			if (objects[hit2].identifier == OI_AST1)
-			{
-				go_createasteroidxy(2, objects[hit2].location.x, objects[hit2].location.y);
-				go_createasteroidxy(2, objects[hit2].location.x, objects[hit2].location.y);
-				go_createasteroidxy(2, objects[hit2].location.x, objects[hit2].location.y);
-			}
-			else if (objects[hit2].identifier == OI_AST2)
-			{
-				go_createasteroidxy(3, objects[hit2].location.x, objects[hit2].location.y);
-				go_createasteroidxy(3, objects[hit2].location.x, objects[hit2].location.y);
-				go_createasteroidxy(3, objects[hit2].location.x, objects[hit2].location.y);
+			objects[hit2].hp--;
+			if(objects[hit2].hp == 0){
+				if (objects[hit2].identifier == OI_AST1)
+				{
+					go_createasteroidxy(2, objects[hit2].location.x, objects[hit2].location.y);
+					go_createasteroidxy(2, objects[hit2].location.x, objects[hit2].location.y);
+					go_createasteroidxy(2, objects[hit2].location.x, objects[hit2].location.y);
+
+				}
+				else if (objects[hit2].identifier == OI_AST2)
+				{
+					go_createasteroidxy(3, objects[hit2].location.x, objects[hit2].location.y);
+					go_createasteroidxy(3, objects[hit2].location.x, objects[hit2].location.y);
+					go_createasteroidxy(3, objects[hit2].location.x, objects[hit2].location.y);
+				}
+
+				SND_PLAY(kaboom);
+				if( (rand() % 100) < 5  && pup_has_already_spawned == 0){
+					go_createpowerupn(1, objects[hit2].location.x, objects[hit2].location.y);
+					pup_has_already_spawned = 1;
+				}
+				objects[hit2].enabled = 0;
+				memmgr_free(objects[hit2].poly);
 			}
 
-			SND_PLAY(kaboom);
-			objects[hit2].enabled = 0;
-			memmgr_free(objects[hit2].poly);
 			if(objects[hit1].identifier != OI_SHIP) objects[hit1].enabled = 0;
 			if (!go_exists(OI_AST1) && !go_exists(OI_AST2) && !go_exists(OI_AST3) && !go_exists(OI_AST4))
 			{
 				go_currentstate = STATE_VICT;
 			}
+
 		}
 	}
 }
@@ -287,6 +300,7 @@ void go_createasteroidxy(int n, float x, float y)
 	int randdev;
 	int center;
 	int hitbox;
+	short hp;
 	float speed;
 	if (n == 1)
 	{
@@ -295,6 +309,7 @@ void go_createasteroidxy(int n, float x, float y)
 		hitbox = 75;
 		center = 80;
 		speed = 1.8;
+		hp = 3;
 		ast_o->identifier = OI_AST1;
 	}
 	if (n == 2)
@@ -304,6 +319,7 @@ void go_createasteroidxy(int n, float x, float y)
 		hitbox = 35;
 		center = 40;
 		speed = 6.0;
+		hp = 2;
 		ast_o->identifier = OI_AST2;
 	}
 	if (n == 3)
@@ -313,6 +329,7 @@ void go_createasteroidxy(int n, float x, float y)
 		hitbox = 20;
 		center = 20;
 		speed = 10.0;
+		hp = 1;
 		ast_o->identifier = OI_AST3;
 	}
 	
@@ -332,4 +349,5 @@ void go_createasteroidxy(int n, float x, float y)
 	ast_o->center_point.x = center;
 	ast_o->center_point.y = center;
 	ast_o->hitbox_size = hitbox;
+	ast_o->hp = hp;
 }

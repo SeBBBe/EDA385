@@ -13,6 +13,7 @@ static float bullet_speed = 16;
 int shoot_limit = 0;
 int shoot_buffer = 0;
 short pup1 = 0; // powerup1 = bullet
+short pup_has_already_spawned = 0;
 
 #include "graphics.h"
 #include "game_objects.h"
@@ -60,11 +61,9 @@ void win()
 
 
 /*TODO BY JAW
-*   BUG: THE STARZ OBJECT SOMETIMES SHOWES UP!
-*	Make astroids more difficult to kill -> add hp for objects, check if hp = 0, remove obj.
-*
-*	Change graphic for bullet2
+*   BOUGG: THE STARZ OBJECT SOMETIMES SHOWES UP!
 *	Add a way to spawn Powerups.
+*	Add range for bullets
 *	Change Win song? Add bgm?
 *	Add end game with mothership spawning bullets towards ship and spawning astroids.
 *
@@ -81,6 +80,7 @@ void game_main()
   srand(1339);
   
   bullet_speed = 10;
+  pup_has_already_spawned = 0;
 
   if(!(*dip & 16))
   {
@@ -103,7 +103,7 @@ void game_main()
 			vga_sync();
 			vga_clear();
 			  }
-		MUS_PLAY(intro);
+		MUS_PLAY(zeldasecret);
 		  for (i = 0; i < 60 * 5; i++)
 		  {
 			go_tick();

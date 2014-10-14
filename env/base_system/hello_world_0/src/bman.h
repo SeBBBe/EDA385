@@ -1,8 +1,3 @@
-#define G2s 425
-#define G2 450
-#define A2s 378
-#define F2 505
-#define A1 802
 
 #define BMAN_PULSE1_00 \
 {G2, HALF, SQR_WAVE}, \
@@ -21,9 +16,9 @@
 {G4, EIGHT, SQR_WAVE}, \
 {C4s, QUART, SQR_WAVE}
 
-sample_t bubbleman = {
+sample_t bubbleman[] = {
 
 BMAN_PULSE1_00,
 BMAN_PULSE1_00
 
-}
+};
