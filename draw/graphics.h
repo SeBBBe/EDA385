@@ -6,6 +6,7 @@ static const short OI_AST1 = 3;
 static const short OI_AST2 = 4;
 static const short OI_AST3 = 5;
 static const short OI_AST4 = 6;
+static const short OI_LOGO = 7;
 
 vgapoint_t ship[4] = 
 {
@@ -116,5 +117,19 @@ void offset(int n, vgapoint_t *poly, int x, int y)
 	{
 		poly[i].x += x;
 		poly[i].y += y;
+	}
+}
+
+void scale(int n, vgapoint_t *poly, float factor, float cx, float cy)
+{
+	int i;
+	for (i = 0; i < n; i++)
+	{
+		poly[i].x -= cx;
+		poly[i].y -= cy;
+		poly[i].x *= factor;
+		poly[i].y *= factor;
+		poly[i].x += cx;
+		poly[i].y += cy;
 	}
 }

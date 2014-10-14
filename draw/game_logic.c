@@ -64,14 +64,16 @@ void game_main()
 	
 	  game_object_t* fuck = go_getempty();
   	fuck->enabled = 1;
+  	fuck->identifier = OI_LOGO;
 	fuck->poly_points = 51;
 	fuck->poly = calloc(fuck->poly_points * sizeof(short) * 2, 1);
   	fuck->poly = wtf;
-  	fuck->anglespeed = 0.01;
+  	fuck->anglespeed = 0.03;
   	fuck->center_point.x = vga_get_width()/2 + 75;
+  	fuck->angle = 3.14;
   fuck->center_point.y = vga_get_height()/2;
-  	//fuck->location.x = -200.0;
-  	//fuck->location.y = 200;
+  fuck->scale = 0.01;
+  fuck->scaleaccel = 0.006;
 	
 /*vgapoint_t logo[4] = 
 {

@@ -15,6 +15,8 @@ typedef struct game_object {
 	short nowrap;
 	short identifier;
 	short hitbox_size;
+	float scaleaccel;
+	float scale;
 	vgapoint_t* poly;
 } game_object_t;
 
@@ -47,6 +49,8 @@ void go_resetobject(int i)
 		objects[i].nowrap = 0;
 		objects[i].identifier = 0;
 		objects[i].hitbox_size = 0;
+		objects[i].scaleaccel = 0;
+		objects[i].scale = 0;
 }
 
 void go_initialize()
@@ -134,11 +138,13 @@ void go_tick()
 	int i;
 	for (i = 0; i < MAX_OBJECTS; i++)
 	{
+		if (objects[i].identifier == OI_LOGO && objects[i].angle > 6.1) return;
 		objects[i].location.x += objects[i].xvel;
 		objects[i].location.y += objects[i].yvel;
 		objects[i].xvel += objects[i].xaccel;
 		objects[i].yvel += objects[i].yaccel;
 		objects[i].angle += objects[i].anglespeed;
+		objects[i].scale += objects[i].scaleaccel;
 	}
 	go_hitdetection();
 }
@@ -153,6 +159,7 @@ void go_draw()
 			if (objects[i].angle > 6.28) objects[i].angle = 0;
 			if (objects[i].angle < 0) objects[i].angle = 6.28;
 			vgapoint_t* newpoly = rotate(objects[i].poly_points, objects[i].poly, objects[i].angle, objects[i].center_point.x, objects[i].center_point.y);
+			if (objects[i].scale != 0) scale(objects[i].poly_points, newpoly, objects[i].scale, objects[i].center_point.x, objects[i].center_point.y);
 			offset(objects[i].poly_points, newpoly, objects[i].location.x, objects[i].location.y);
 			vga_addpoly(objects[i].poly_points, newpoly);
 			free(newpoly);
