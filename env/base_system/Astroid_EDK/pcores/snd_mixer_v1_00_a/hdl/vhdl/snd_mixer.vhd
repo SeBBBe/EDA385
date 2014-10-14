@@ -68,6 +68,7 @@ signal mem_output : mixcfg_t;
 signal mem_trigger : std_logic;
 
 signal count_reg, count_next : volume_t;
+signal ja_reg, ja_next : std_logic_vector(7 downto 0);
 
 begin
 
@@ -105,13 +106,17 @@ mem1 : entity work.mem_controller
 		TRIGGER => mem_trigger
 	);
 
+JA <= ja_reg;
+
 process(ACLK, ARESETN)
 begin
 	if rising_edge(ACLK) then
 		if ARESETN = '0' then
 			count_reg <= 0;
+			ja_reg <= (others => '0');
 		else
 			count_reg <= count_next;
+			ja_reg <= ja_next;
 		end if;
 	end if;
 end process;
@@ -119,10 +124,10 @@ end process;
 process(INPUT1, INPUT2, count_reg, mem_trigger, mem_output)
 begin
 	count_next <= count_reg + 1;
-	JA <= INPUT2;
+	ja_next <= INPUT2;
 
 	if count_reg < mem_output.vol1 then
-		JA <= INPUT1;
+		ja_next <= INPUT1;
 	elsif count_reg = mem_output.vol1 + mem_output.vol2 - 1 then
 		count_next <= 0;
 	end if;

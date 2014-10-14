@@ -1,0 +1,393 @@
+Release 14.2 - xst P.28xd (nt64)
+Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
+--> Parameter TMPDIR set to C:\temp\EDA385\env\base_system\Astroid_EDK\synthesis\xst_temp_dir\
+
+
+Total REAL time to Xst completion: 1.00 secs
+Total CPU time to Xst completion: 0.08 secs
+ 
+--> 
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Parsing
+  3) HDL Elaboration
+  4) HDL Synthesis
+       4.1) HDL Synthesis Report
+  5) Advanced HDL Synthesis
+       5.1) Advanced HDL Synthesis Report
+  6) Low Level Synthesis
+  7) Partition Report
+  8) Design Summary
+       8.1) Primitive and Black Box Usage
+       8.2) Device utilization summary
+       8.3) Partition Resource Summary
+       8.4) Timing Report
+            8.4.1) Clock Information
+            8.4.2) Asynchronous Control Signals Information
+            8.4.3) Timing Summary
+            8.4.4) Timing Details
+            8.4.5) Cross Clock Domains Report
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input Format                       : MIXED
+Input File Name                    : "system_snd_mixer_0_wrapper_xst.prj"
+Verilog Include Directory          : {"C:\temp\EDA385\env\base_system\Astroid_EDK\pcores\" "C:\Xilinx\BSP\Nexys3_AXI_BSB_Support\lib\Digilent\pcores\" "C:\Xilinx\14.2\ISE_DS\EDK\hw\XilinxBFMinterface\pcores\" "C:\Xilinx\14.2\ISE_DS\EDK\hw\XilinxProcessorIPLib\pcores\" }
+
+---- Target Parameters
+Target Device                      : xc6slx16csg324-3
+Output File Name                   : "../implementation/system_snd_mixer_0_wrapper.ngc"
+
+---- Source Options
+Top Module Name                    : system_snd_mixer_0_wrapper
+
+---- Target Options
+Add IO Buffers                     : NO
+
+---- General Options
+Optimization Goal                  : speed
+Netlist Hierarchy                  : as_optimized
+Optimization Effort                : 1
+Hierarchy Separator                : /
+
+---- Other Options
+Cores Search Directories           : {../implementation}
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Parsing                                  *
+=========================================================================
+Parsing VHDL file "C:/temp/EDA385/env/base_system/Astroid_EDK/pcores/snd_mixer_v1_00_a/hdl/vhdl/types.vhd" into library snd_mixer_v1_00_a
+Parsing package <types>.
+Parsing VHDL file "C:/temp/EDA385/env/base_system/Astroid_EDK/pcores/snd_mixer_v1_00_a/hdl/vhdl/mem_controller.vhd" into library snd_mixer_v1_00_a
+Parsing entity <mem_controller>.
+Parsing architecture <Behavioral> of entity <mem_controller>.
+Parsing VHDL file "C:/temp/EDA385/env/base_system/Astroid_EDK/pcores/snd_mixer_v1_00_a/hdl/vhdl/snd_mixer.vhd" into library snd_mixer_v1_00_a
+Parsing entity <snd_mixer>.
+Parsing architecture <implementation> of entity <snd_mixer>.
+Parsing VHDL file "C:\temp\EDA385\env\base_system\Astroid_EDK\hdl\system_snd_mixer_0_wrapper.vhd" into library work
+Parsing entity <system_snd_mixer_0_wrapper>.
+Parsing architecture <STRUCTURE> of entity <system_snd_mixer_0_wrapper>.
+
+=========================================================================
+*                            HDL Elaboration                            *
+=========================================================================
+
+Elaborating entity <system_snd_mixer_0_wrapper> (architecture <STRUCTURE>) from library <work>.
+
+Elaborating entity <snd_mixer> (architecture <implementation>) with generics from library <snd_mixer_v1_00_a>.
+
+Elaborating entity <mem_controller> (architecture <Behavioral>) with generics from library <snd_mixer_v1_00_a>.
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Synthesizing Unit <system_snd_mixer_0_wrapper>.
+    Related source file is "C:\temp\EDA385\env\base_system\Astroid_EDK\hdl\system_snd_mixer_0_wrapper.vhd".
+    Summary:
+	no macro.
+Unit <system_snd_mixer_0_wrapper> synthesized.
+
+Synthesizing Unit <snd_mixer>.
+    Related source file is "C:/temp/EDA385/env/base_system/Astroid_EDK/pcores/snd_mixer_v1_00_a/hdl/vhdl/snd_mixer.vhd".
+        C_S_AXI_ADDR_WIDTH = 32
+        C_S_AXI_DATA_WIDTH = 32
+    Found 8-bit register for signal <ja_reg>.
+    Found 8-bit register for signal <count_reg>.
+    Found 10-bit subtractor for signal <GND_10_o_GND_10_o_sub_9_OUT> created at line 131.
+    Found 8-bit adder for signal <count_reg[7]_GND_10_o_add_5_OUT> created at line 126.
+    Found 9-bit adder for signal <n0046[8:0]> created at line 131.
+    Found 8-bit comparator greater for signal <count_reg[7]_mem_output_vol1[7]_LessThan_7_o> created at line 129
+    Found 10-bit comparator equal for signal <GND_10_o_GND_10_o_equal_10_o> created at line 131
+    Summary:
+	inferred   3 Adder/Subtractor(s).
+	inferred  16 D-type flip-flop(s).
+	inferred   2 Comparator(s).
+	inferred   3 Multiplexer(s).
+Unit <snd_mixer> synthesized.
+
+Synthesizing Unit <mem_controller>.
+    Related source file is "C:/temp/EDA385/env/base_system/Astroid_EDK/pcores/snd_mixer_v1_00_a/hdl/vhdl/mem_controller.vhd".
+        C_S_AXI_ADDR_WIDTH = 32
+        C_S_AXI_DATA_WIDTH = 32
+WARNING:Xst:647 - Input <S_AXI_AWADDR> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <S_AXI_AWPROT> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <S_AXI_WDATA<31:16>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <S_AXI_WSTRB> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <S_AXI_ARADDR> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <S_AXI_ARPROT> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <S_AXI_AWVALID> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+    Found 1-bit register for signal <write_reg>.
+    Found 1-bit register for signal <rvalid_reg>.
+    Found 1-bit register for signal <trigger_reg>.
+    Found 8-bit register for signal <output_reg_vol2>.
+    Found 8-bit register for signal <output_reg_vol1>.
+    Summary:
+	inferred  19 D-type flip-flop(s).
+Unit <mem_controller> synthesized.
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# Adders/Subtractors                                   : 3
+ 10-bit subtractor                                     : 1
+ 8-bit adder                                           : 1
+ 9-bit adder                                           : 1
+# Registers                                            : 7
+ 1-bit register                                        : 3
+ 8-bit register                                        : 4
+# Comparators                                          : 2
+ 10-bit comparator equal                               : 1
+ 8-bit comparator greater                              : 1
+# Multiplexers                                         : 3
+ 8-bit 2-to-1 multiplexer                              : 3
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# Adders/Subtractors                                   : 3
+ 10-bit subtractor                                     : 1
+ 8-bit adder                                           : 1
+ 9-bit adder                                           : 1
+# Registers                                            : 35
+ Flip-Flops                                            : 35
+# Comparators                                          : 2
+ 10-bit comparator equal                               : 1
+ 8-bit comparator greater                              : 1
+# Multiplexers                                         : 3
+ 8-bit 2-to-1 multiplexer                              : 3
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+
+Optimizing unit <system_snd_mixer_0_wrapper> ...
+
+Optimizing unit <snd_mixer> ...
+
+Optimizing unit <mem_controller> ...
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 0) on block system_snd_mixer_0_wrapper, actual ratio is 0.
+
+Final Macro Processing ...
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 35
+ Flip-Flops                                            : 35
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Design Summary                             *
+=========================================================================
+
+Top Level Output File Name         : system_snd_mixer_0_wrapper.ngc
+
+Primitive and Black Box Usage:
+------------------------------
+# BELS                             : 88
+#      GND                         : 1
+#      INV                         : 2
+#      LUT2                        : 8
+#      LUT3                        : 4
+#      LUT4                        : 10
+#      LUT5                        : 5
+#      LUT6                        : 54
+#      MUXF7                       : 3
+#      VCC                         : 1
+# FlipFlops/Latches                : 35
+#      FDC                         : 3
+#      FDCE                        : 14
+#      FDPE                        : 2
+#      FDR                         : 16
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 6slx16csg324-3 
+
+
+Slice Logic Utilization: 
+ Number of Slice Registers:              35  out of  18224     0%  
+ Number of Slice LUTs:                   83  out of   9112     0%  
+    Number used as Logic:                83  out of   9112     0%  
+
+Slice Logic Distribution: 
+ Number of LUT Flip Flop pairs used:     97
+   Number with an unused Flip Flop:      62  out of     97    63%  
+   Number with an unused LUT:            14  out of     97    14%  
+   Number of fully used LUT-FF pairs:    21  out of     97    21%  
+   Number of unique control sets:         4
+
+IO Utilization: 
+ Number of IOs:                         178
+ Number of bonded IOBs:                   0  out of    232     0%  
+
+Specific Feature Utilization:
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+Timing Report
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+-----------------------------------+---------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)     | Load  |
+-----------------------------------+---------------------------+-------+
+ACLK                               | NONE(snd_mixer_0/ja_reg_7)| 35    |
+-----------------------------------+---------------------------+-------+
+INFO:Xst:2169 - HDL ADVISOR - Some clock signals were not automatically buffered by XST with BUFG/BUFR resources. Please use the buffer_type constraint in order to insert these buffers to the clock signals to help prevent skew problems.
+
+Asynchronous Control Signals Information:
+----------------------------------------
+No asynchronous control signals found in this design
+
+Timing Summary:
+---------------
+Speed Grade: -3
+
+   Minimum period: 5.630ns (Maximum Frequency: 177.607MHz)
+   Minimum input arrival time before clock: 1.856ns
+   Maximum output required time after clock: 1.303ns
+   Maximum combinational path delay: No path found
+
+Timing Details:
+---------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'ACLK'
+  Clock period: 5.630ns (frequency: 177.607MHz)
+  Total number of paths / destination ports: 1789 / 43
+-------------------------------------------------------------------------
+Delay:               5.630ns (Levels of Logic = 5)
+  Source:            snd_mixer_0/count_reg_4 (FF)
+  Destination:       snd_mixer_0/count_reg_7 (FF)
+  Source Clock:      ACLK rising
+  Destination Clock: ACLK rising
+
+  Data Path: snd_mixer_0/count_reg_4 to snd_mixer_0/count_reg_7
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDR:C->Q             12   0.447   1.253  snd_mixer_0/count_reg_4 (snd_mixer_0/count_reg_4)
+     LUT6:I1->O            1   0.203   0.580  snd_mixer_0/count_reg[7]_mem_output_vol1[7]_LessThan_7_o22 (snd_mixer_0/count_reg[7]_mem_output_vol1[7]_LessThan_7_o21)
+     LUT6:I5->O            9   0.205   0.830  snd_mixer_0/count_reg[7]_mem_output_vol1[7]_LessThan_7_o24 (snd_mixer_0/count_reg[7]_mem_output_vol1[7]_LessThan_7_o23)
+     LUT4:I3->O            3   0.205   0.651  snd_mixer_0/count_reg[7]_mem_output_vol1[7]_LessThan_7_o25 (snd_mixer_0/count_reg[7]_mem_output_vol1[7]_LessThan_7_o)
+     LUT6:I5->O            6   0.205   0.745  snd_mixer_0/Mmux_count_reg[7]_count_reg[7]_mux_12_OUT114 (snd_mixer_0/Mmux_count_reg[7]_count_reg[7]_mux_12_OUT114)
+     LUT6:I5->O            1   0.205   0.000  snd_mixer_0/Mmux_count_reg[7]_count_reg[7]_mux_12_OUT51 (snd_mixer_0/count_reg[7]_count_reg[7]_mux_12_OUT<4>)
+     FDR:D                     0.102          snd_mixer_0/count_reg_4
+    ----------------------------------------
+    Total                      5.630ns (1.572ns logic, 4.058ns route)
+                                       (27.9% logic, 72.1% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'ACLK'
+  Total number of paths / destination ports: 88 / 78
+-------------------------------------------------------------------------
+Offset:              1.856ns (Levels of Logic = 1)
+  Source:            ARESETN (PAD)
+  Destination:       snd_mixer_0/ja_reg_7 (FF)
+  Destination Clock: ACLK rising
+
+  Data Path: ARESETN to snd_mixer_0/ja_reg_7
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     INV:I->O             27   0.206   1.220  snd_mixer_0/ARESETN_inv1_INV_0 (snd_mixer_0/ARESETN_inv)
+     FDR:R                     0.430          snd_mixer_0/ja_reg_0
+    ----------------------------------------
+    Total                      1.856ns (0.636ns logic, 1.220ns route)
+                                       (34.3% logic, 65.7% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'ACLK'
+  Total number of paths / destination ports: 11 / 11
+-------------------------------------------------------------------------
+Offset:              1.303ns (Levels of Logic = 1)
+  Source:            snd_mixer_0/mem1/write_reg (FF)
+  Destination:       S_AXI_WREADY (PAD)
+  Source Clock:      ACLK rising
+
+  Data Path: snd_mixer_0/mem1/write_reg to S_AXI_WREADY
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDC:C->Q              3   0.447   0.650  snd_mixer_0/mem1/write_reg (snd_mixer_0/mem1/write_reg)
+     INV:I->O              0   0.206   0.000  snd_mixer_0/mem1/S_AXI_WREADY1_INV_0 (S_AXI_WREADY)
+    ----------------------------------------
+    Total                      1.303ns (0.653ns logic, 0.650ns route)
+                                       (50.1% logic, 49.9% route)
+
+=========================================================================
+
+Cross Clock Domains Report:
+--------------------------
+
+Clock to Setup on destination clock ACLK
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+ACLK           |    5.630|         |         |         |
+---------------+---------+---------+---------+---------+
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 6.00 secs
+Total CPU time to Xst completion: 5.91 secs
+ 
+--> 
+
+Total memory usage is 268528 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :    7 (   0 filtered)
+Number of infos    :    1 (   0 filtered)
+

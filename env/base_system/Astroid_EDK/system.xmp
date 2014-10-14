@@ -28,6 +28,8 @@ LockAddr: axi_lite_slave_0,C_S_AXI_RNG00_BASEADDR
 LockAddr: Push_Buttons_4Bits,C_BASEADDR
 LockAddr: DIP_Switches_8Bits,C_BASEADDR
 LockAddr: snd_controller_0,C_S_AXI_RNG00_BASEADDR
+LockAddr: snd_controller_1,C_S_AXI_RNG00_BASEADDR
+LockAddr: snd_mixer_0,C_S_AXI_RNG00_BASEADDR
 Processor: microblaze_0
 ElfImp: 
 ElfSim: 

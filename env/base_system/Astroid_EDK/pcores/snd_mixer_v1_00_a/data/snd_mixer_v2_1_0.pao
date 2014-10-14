@@ -45,6 +45,6 @@
 ##
 ###############################################################################
 
-lib snd_controller_v1_00_a snd_mixer
-lib snd_controller_v1_00_a types
-lib snd_controller_v1_00_a mem_controller
+lib snd_mixer_v1_00_a snd_mixer
+lib snd_mixer_v1_00_a types
+lib snd_mixer_v1_00_a mem_controller

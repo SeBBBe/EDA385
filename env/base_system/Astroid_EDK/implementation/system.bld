@@ -54,14 +54,20 @@ Loading design module
 "C:/temp/EDA385/env/base_system/Astroid_EDK/implementation/system_debug_module_0
 _wrapper.ngc"...
 Loading design module
+"C:/temp/EDA385/env/base_system/Astroid_EDK/implementation/system_snd_mixer_0_wr
+apper.ngc"...
+Loading design module
+"C:/temp/EDA385/env/base_system/Astroid_EDK/implementation/system_snd_controller
+_1_wrapper.ngc"...
+Loading design module
+"C:/temp/EDA385/env/base_system/Astroid_EDK/implementation/system_snd_controller
+_0_wrapper.ngc"...
+Loading design module
 "C:/temp/EDA385/env/base_system/Astroid_EDK/implementation/system_axi_timer_0_wr
 apper.ngc"...
 Loading design module
 "C:/temp/EDA385/env/base_system/Astroid_EDK/implementation/system_axi_gpio_0_wra
 pper.ngc"...
-Loading design module
-"C:/temp/EDA385/env/base_system/Astroid_EDK/implementation/system_snd_controller
-_0_wrapper.ngc"...
 Loading design module
 "C:/temp/EDA385/env/base_system/Astroid_EDK/implementation/system_microblaze_0_b
 ram_block_wrapper.ngc"...
@@ -114,16 +120,16 @@ Resolving constraint associations...
 Checking Constraint Associations...
 WARNING:ConstraintSystem:135 - Constraint <INST
    /system/EXPANDED/system/axi4lite_0/axi4lite_0\/mi_converter_bank\/gen_conv_sl
-   ot[4].clock_conv_inst\/s_axi_aresetn_resync<2>_inv1_INV_0 TNM =
+   ot[5].clock_conv_inst\/s_axi_aresetn_resync<2>_inv1_INV_0 TNM =
    FFS:axi4lite_0_reset_resync>: No instances of type FFS were found under block
-   "axi4lite_0/axi4lite_0/mi_converter_bank/gen_conv_slot[4].clock_conv_inst/s_a
+   "axi4lite_0/axi4lite_0/mi_converter_bank/gen_conv_slot[5].clock_conv_inst/s_a
    xi_aresetn_resync<2>_inv1_INV_0" (type=INV).
 
 WARNING:ConstraintSystem:135 - Constraint <INST
    /system/EXPANDED/system/axi4lite_0/axi4lite_0\/mi_converter_bank\/gen_conv_sl
-   ot[4].clock_conv_inst\/m_axi_aresetn_resync<2>_inv1_INV_0 TNM =
+   ot[5].clock_conv_inst\/m_axi_aresetn_resync<2>_inv1_INV_0 TNM =
    FFS:axi4lite_0_reset_resync>: No instances of type FFS were found under block
-   "axi4lite_0/axi4lite_0/mi_converter_bank/gen_conv_slot[4].clock_conv_inst/m_a
+   "axi4lite_0/axi4lite_0/mi_converter_bank/gen_conv_slot[5].clock_conv_inst/m_a
    xi_aresetn_resync<2>_inv1_INV_0" (type=INV).
 
 WARNING:ConstraintSystem:135 - Constraint <INST
@@ -172,9 +178,9 @@ INFO:NgdBuild:1222 - Setting CLKIN_PERIOD attribute associated with DCM instance
    the period specification (<TIMESPEC TS_sys_clk_pin = PERIOD sys_clk_pin
    100000 kHz;> [system.ucf(76)]).
 Checking expanded design ...
-WARNING:NgdBuild:452 - logical net 'axi4lite_0/axi4lite_0/mf_mc_ruser<4>' has no
+WARNING:NgdBuild:452 - logical net 'axi4lite_0/axi4lite_0/mf_mc_ruser<5>' has no
    driver
-WARNING:NgdBuild:452 - logical net 'axi4lite_0/axi4lite_0/mf_mc_buser<4>' has no
+WARNING:NgdBuild:452 - logical net 'axi4lite_0/axi4lite_0/mf_mc_buser<5>' has no
    driver
 
 Partition Implementation Status
@@ -188,10 +194,10 @@ NGDBUILD Design Results Summary:
   Number of errors:     0
   Number of warnings:  11
 
-Total memory usage is 265880 kilobytes
+Total memory usage is 267992 kilobytes
 
 Writing NGD file "system.ngd" ...
 Total REAL time to NGDBUILD completion: 1 min  0 sec
-Total CPU time to NGDBUILD completion:  1 min  0 sec
+Total CPU time to NGDBUILD completion:   59 sec
 
 Writing NGDBUILD log file "system.bld"...

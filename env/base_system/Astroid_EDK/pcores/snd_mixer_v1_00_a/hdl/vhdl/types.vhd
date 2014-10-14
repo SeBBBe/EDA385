@@ -14,5 +14,5 @@ package types is
 			vol2 : volume_t;
 		end record;
 	
-	constant EMPTY_MIXCFG : mixcfg_t := (0, 0);
+	constant DEFAULT_MIXCFG : mixcfg_t := (1, 1);
 end package;

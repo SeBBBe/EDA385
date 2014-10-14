@@ -2,14 +2,12 @@
 Checking platform configuration ...
 IPNAME: lmb_v10, INSTANCE: microblaze_0_ilmb - 1 master(s) : 2 slave(s) 
 IPNAME: lmb_v10, INSTANCE: microblaze_0_dlmb - 1 master(s) : 2 slave(s) 
-IPNAME: axi_interconnect, INSTANCE: axi4lite_0 - 1 master(s) : 8 slave(s) 
+IPNAME: axi_interconnect, INSTANCE: axi4lite_0 - 1 master(s) : 10 slave(s) 
 
 Checking port drivers...
 WARNING:EDK:4181 - PORT: Peripheral_Reset, CONNECTOR:
    proc_sys_reset_0_Peripheral_Reset - floating connection -
-   C:\temp\EDA385\env\base_system\Astroid_EDK\system.mhs line 37 
-WARNING:EDK:4181 - PORT: GPIO_IO_O, CONNECTOR: axi_gpio_0_GPIO_IO_O - floating
-   connection - C:\temp\EDA385\env\base_system\Astroid_EDK\system.mhs line 246 
+   C:\temp\EDA385\env\base_system\Astroid_EDK\system.mhs line 69 
 
 Performing Clock DRCs...
 

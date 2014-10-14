@@ -49,7 +49,7 @@ For more information, see From:To (Multicycle) Analysis in the Timing Closure Us
 
  67 paths analyzed, 67 endpoints analyzed, 0 failing endpoints
  0 timing errors detected. (0 setup errors, 0 hold errors)
- Maximum delay is   2.611ns.
+ Maximum delay is   2.578ns.
 --------------------------------------------------------------------------------
 
 ================================================================================
@@ -73,7 +73,7 @@ For more information, see Period Analysis in the Timing Closure User Guide (UG61
 
  3 paths analyzed, 3 endpoints analyzed, 0 failing endpoints
  0 timing errors detected. (0 setup errors, 0 hold errors, 0 component switching limit errors)
- Minimum period is   5.484ns.
+ Minimum period is   5.340ns.
 --------------------------------------------------------------------------------
 
 ================================================================================
@@ -82,9 +82,9 @@ PERIOD TIMEGRP         "clock_generator_0_clock_generator_0_SIG_DCM0_CLKFX"
 TS_sys_clk_pin *         1.53846154 HIGH 50%;
 For more information, see Period Analysis in the Timing Closure User Guide (UG612).
 
- 175886 paths analyzed, 9201 endpoints analyzed, 0 failing endpoints
+ 175886 paths analyzed, 9199 endpoints analyzed, 0 failing endpoints
  0 timing errors detected. (0 setup errors, 0 hold errors, 0 component switching limit errors)
- Minimum period is   6.375ns.
+ Minimum period is   6.444ns.
 --------------------------------------------------------------------------------
 
 ================================================================================
@@ -93,9 +93,9 @@ PERIOD TIMEGRP         "clock_generator_0_clock_generator_0_SIG_DCM0_CLK0"
 TS_sys_clk_pin         HIGH 50%;
 For more information, see Period Analysis in the Timing Closure User Guide (UG612).
 
- 262670 paths analyzed, 12883 endpoints analyzed, 0 failing endpoints
+ 280863 paths analyzed, 13730 endpoints analyzed, 0 failing endpoints
  0 timing errors detected. (0 setup errors, 0 hold errors, 0 component switching limit errors)
- Minimum period is   9.928ns.
+ Minimum period is   9.887ns.
 --------------------------------------------------------------------------------
 
 
@@ -106,10 +106,10 @@ Derived Constraints for TS_sys_clk_pin
 |           Constraint          | Requirement |-------------+-------------|-------------+-------------|-------------+-------------|
 |                               |             |   Direct    | Derivative  |   Direct    | Derivative  |   Direct    | Derivative  |
 +-------------------------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+
-|TS_sys_clk_pin                 |     10.000ns|      5.484ns|      9.928ns|            0|            0|            3|       438556|
-| TS_clock_generator_0_clock_gen|      6.500ns|      6.375ns|          N/A|            0|            0|       175886|            0|
+|TS_sys_clk_pin                 |     10.000ns|      5.340ns|      9.914ns|            0|            0|            3|       456749|
+| TS_clock_generator_0_clock_gen|      6.500ns|      6.444ns|          N/A|            0|            0|       175886|            0|
 | erator_0_SIG_DCM0_CLKFX       |             |             |             |             |             |             |             |
-| TS_clock_generator_0_clock_gen|     10.000ns|      9.928ns|          N/A|            0|            0|       262670|            0|
+| TS_clock_generator_0_clock_gen|     10.000ns|      9.887ns|          N/A|            0|            0|       280863|            0|
 | erator_0_SIG_DCM0_CLK0        |             |             |             |             |             |             |             |
 +-------------------------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+
 
@@ -125,7 +125,7 @@ Clock to Setup on destination clock GCLK
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-GCLK           |    9.928|         |         |         |
+GCLK           |    9.887|         |         |         |
 ---------------+---------+---------+---------+---------+
 
 
@@ -134,21 +134,21 @@ Timing summary:
 
 Timing errors: 0  Score: 0  (Setup/Max: 0, Hold: 0)
 
-Constraints cover 438655 paths, 0 nets, and 28627 connections
+Constraints cover 456848 paths, 0 nets, and 30201 connections
 
 Design statistics:
-   Minimum period:   9.928ns   (Maximum frequency: 100.725MHz)
-   Maximum path delay from/to any node:   2.611ns
+   Minimum period:   9.887ns   (Maximum frequency: 101.143MHz)
+   Maximum path delay from/to any node:   2.578ns
 
 
-Analysis completed Mon Oct 13 19:16:49 2014 
+Analysis completed Tue Oct 14 11:12:52 2014 
 --------------------------------------------------------------------------------
 
 Trace Settings:
 -------------------------
 Trace Settings 
 
-Peak Memory Usage: 357 MB
+Peak Memory Usage: 363 MB
 
 
 

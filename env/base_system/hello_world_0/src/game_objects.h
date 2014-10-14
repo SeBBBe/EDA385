@@ -7,6 +7,8 @@ typedef struct game_object {
 	float yvel;
 	float xaccel;
 	float yaccel;
+	float scale;
+	float scaleaccel;
 	float angle;
 	float anglespeed;
 	short enabled;
@@ -52,6 +54,8 @@ void go_resetobject(int i)
 		objects[i].nowrap = 0;
 		objects[i].identifier = 0;
 		objects[i].hitbox_size = 0;
+		objects[i].scale = 0;
+		objects[i].scaleaccel = 0;
 }
 
 void go_initialize()
@@ -70,17 +74,6 @@ void go_initialize()
 	xil_printf("objects = %x\r\n", objects);
 }
 
-sample_t kaboom[] = {
-		{500, 2, 0},
-		{400, 2, 0},
-		{300, 2, 0},
-		{400, 2, 0},
-		{500, 2, 0},
-		{400, 2, 0},
-		{300, 2, 0},
-		{200, 2, 0},
-};
-
 //Called when a hit was detected between object hit1 and hit2
 void go_hashit(int hit1, int hit2)
 {
@@ -90,6 +83,7 @@ void go_hashit(int hit1, int hit2)
 	if (objects[hit1].identifier == OI_SHIP && objects[hit2].identifier == OI_PUP1){
 		objects[hit2].enabled = 0;
 		pup1 = 1;
+		SND_PLAY(pup1snd);
 	}
 	if (objects[hit2].identifier >= OI_AST1 && objects[hit2].identifier <= OI_AST4){
 		if (objects[hit1].identifier == OI_SHIP && !(*dip & 2)/* DIP1 = god mode */){
@@ -109,7 +103,7 @@ void go_hashit(int hit1, int hit2)
 				go_createasteroidxy(3, objects[hit2].location.x, objects[hit2].location.y);
 			}
 
-			snd_play(kaboom, sizeof(kaboom) / sizeof(*kaboom));
+			SND_PLAY(kaboom);
 			objects[hit2].enabled = 0;
 			memmgr_free(objects[hit2].poly);
 			if(objects[hit1].identifier != OI_SHIP) objects[hit1].enabled = 0;
@@ -166,11 +160,16 @@ void go_tick()
 	int i;
 	for (i = 0; i < MAX_OBJECTS; i++)
 	{
-		objects[i].location.x += objects[i].xvel;
-		objects[i].location.y += objects[i].yvel;
-		objects[i].xvel += objects[i].xaccel;
-		objects[i].yvel += objects[i].yaccel;
-		objects[i].angle += objects[i].anglespeed;
+		if(objects[i].enabled)
+		{
+			if (objects[i].identifier == OI_LOGO && objects[i].angle > 6.1) continue;
+			objects[i].location.x += objects[i].xvel;
+			objects[i].location.y += objects[i].yvel;
+			objects[i].xvel += objects[i].xaccel;
+			objects[i].yvel += objects[i].yaccel;
+			objects[i].angle += objects[i].anglespeed;
+			objects[i].scale += objects[i].scaleaccel;
+		}
 	}
 	go_hitdetection();
 }
@@ -194,6 +193,7 @@ void go_draw()
 			if (objects[i].angle > 6.28) objects[i].angle = 0;
 			if (objects[i].angle < 0) objects[i].angle = 6.28;
 			vgapoint_t* newpoly = rotate(objects[i].poly_points, objects[i].poly, objects[i].angle, objects[i].center_point.x, objects[i].center_point.y);
+			if (objects[i].scale != 0) scale(objects[i].poly_points, newpoly, objects[i].scale, objects[i].center_point.x, objects[i].center_point.y);
 			offset(objects[i].poly_points, newpoly, objects[i].location.x, objects[i].location.y);
 
 			//Add poly with color
@@ -206,6 +206,7 @@ void go_draw()
 				case 5:	vga_addpoly_color(objects[i].poly_points, newpoly, stonecolor[1]); break; //ast3
  				case 6: vga_addpoly_color(objects[i].poly_points, newpoly, stonecolor[0]); break; //ast4
  				case 7: vga_addpoly_color(objects[i].poly_points, newpoly, stonecolor[4]); break; //pup1
+ 				case 0: vga_addpoly_color2(objects[i].poly_points, newpoly, stonecolor[4], 1); break; //logo
  				default: vga_addpoly_color(objects[i].poly_points, newpoly, stonecolor[0]); break; //default
 			}
 

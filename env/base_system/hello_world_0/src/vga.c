@@ -32,6 +32,11 @@ int vga_addpoly(int num_points, vgapoint_t *points)
 
 int vga_addpoly_color(int num_points, vgapoint_t *points, color_t color)
 {
+	return vga_addpoly_color2(num_points, points, color, 0);
+}
+
+int vga_addpoly_color2(int num_points, vgapoint_t *points, color_t color, int rainbow)
+{
   int i;
   
   if(line_index + num_points >= VGA_MAX_LINES) return 0;
@@ -62,7 +67,7 @@ int vga_addpoly_color(int num_points, vgapoint_t *points, color_t color)
 	lines[line_index].p1.x = x1;
 	lines[line_index].p1.y = y1;
 	
-	lines[line_index].color = (*dip & 4) ? ((x0 * 256) / VGA_WIDTH) : color;
+	lines[line_index].color = ((*dip & 4) || rainbow) ? ((x0 * 256) / VGA_WIDTH) : color;
 
 	line_index++;
   }

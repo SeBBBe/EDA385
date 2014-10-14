@@ -7,14 +7,15 @@ Invoking: MicroBlaze gcc compiler
 mb-gcc -Wall -Os -ffast-math -c -fmessage-length=0 -Wl,--no-relax -I../../standalone_bsp_0/microblaze_0/include -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.40.a -mno-xl-soft-mul -mhard-float -MMD -MP -MF"src/game_logic.d" -MT"src/game_logic.d" -o"src/game_logic.o" "../src/game_logic.c"
 In file included from ../src/game_logic.c:7:0:
 ../src/snd.h: In function 'snd_init':
-../src/snd.h:41:2: warning: implicit declaration of function 'snd_play' [-Wimplicit-function-declaration]
+../src/snd.h:271:2: warning: implicit declaration of function 'mus_play' [-Wimplicit-function-declaration]
+In file included from ../src/game_logic.c:7:0:
 ../src/snd.h: At top level:
-../src/snd.h:66:6: warning: conflicting types for 'snd_play' [enabled by default]
-../src/snd.h:41:2: note: previous implicit declaration of 'snd_play' was here
+../src/snd.h:317:6: warning: conflicting types for 'mus_play' [enabled by default]
+../src/snd.h:271:2: note: previous implicit declaration of 'mus_play' was here
 In file included from ../src/game_logic.c:17:0:
 ../src/graphics.h: In function 'copy_poly':
-../src/graphics.h:139:2: warning: implicit declaration of function 'memcpy' [-Wimplicit-function-declaration]
-../src/graphics.h:139:2: warning: incompatible implicit declaration of built-in function 'memcpy' [enabled by default]
+../src/graphics.h:143:2: warning: implicit declaration of function 'memcpy' [-Wimplicit-function-declaration]
+../src/graphics.h:143:2: warning: incompatible implicit declaration of built-in function 'memcpy' [enabled by default]
 Finished building: ../src/game_logic.c
 ' '
 Building target: hello_world_0.elf
@@ -25,7 +26,7 @@ Finished building target: hello_world_0.elf
 Invoking: MicroBlaze Print Size
 mb-size hello_world_0.elf  |tee "hello_world_0.elf.size"
    text	   data	    bss	    dec	    hex	filename
-  27550	   3816	  12320	  43686	   aaa6	hello_world_0.elf
+  28470	   4592	  12336	  45398	   b156	hello_world_0.elf
 Finished building: hello_world_0.elf.size
 ' '
 Invoking: Xilinx ELF Check

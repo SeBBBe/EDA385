@@ -6,7 +6,7 @@ use ieee.numeric_std.all;
 library snd_controller; --USER-- library names
 
 package types is
-	constant FREQUENCY : integer := 100000000;
+	constant FREQUENCY : integer := 100000000;--
 	constant SAMPLE_RATE : integer := 44100;
 	constant PDM_CYCLES : integer := FREQUENCY / SAMPLE_RATE;
 	

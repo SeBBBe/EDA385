@@ -84,7 +84,7 @@ OUTPUT <= output_reg;
 process(ACLK, ARESETN)
 begin
 	if (ARESETN = '0') then
-		output_reg <= EMPTY_MIXCFG;
+		output_reg <= DEFAULT_MIXCFG;
 		write_reg <= '0';
 		rvalid_reg <= '0';
 		trigger_reg <= '0';

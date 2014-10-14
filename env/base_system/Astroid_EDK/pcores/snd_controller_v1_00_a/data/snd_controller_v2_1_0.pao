@@ -50,4 +50,3 @@ lib snd_controller_v1_00_a types
 lib snd_controller_v1_00_a mem_controller
 lib snd_controller_v1_00_a pdm_generator
 lib snd_controller_v1_00_a pcm_generator
-lib snd_controller_v1_00_a divider

@@ -1,4 +1,4 @@
-
+static const short OI_LOGO = 0;
 static const short OI_SHIP = 1;
 static const short OI_BULLET = 2;
 static const short OI_AST1 = 3;
@@ -6,6 +6,7 @@ static const short OI_AST2 = 4;
 static const short OI_AST3 = 5;
 static const short OI_AST4 = 6;
 static const short OI_PUP1 = 7;
+
 
 vgapoint_t ship[4] = 
 {
@@ -81,8 +82,11 @@ vgapoint_t powerup_1[4] =
   { 0, 0 },
   { 50, 0 },
   { 50, 50 },
-  { 0, 50 },
+  { 0, 0 },
 };
+
+vgapoint_t logo[51] = {{310,535},{200,300},{100,530},{195,465},{305,525},{435,385},{340,385},{340,460},{445,460},{445,535},{325,535},{490,385},{605,385},{555,385},{555,530},{665,385},{770,385},{665,385},{665,445},{780,445},{660,445},{660,530},{790,530},{835,385},{835,530},{835,380},{910,410},{835,440},{920,520},{960,390},{1045,390},{1045,530},{970,530},{970,395},{1085,395},{1155,395},{1120,395},{1120,525},{1075,525},{1160,525},{1200,390},{1200,530},{1260,465},{1205,385},{1285,385},{1375,385},{1280,385},{1280,455},{1355,455},{1355,535},{1275,535}};
+
 
 //Temporary God mode
 
@@ -140,3 +144,18 @@ vgapoint_t *copy_poly(int n, vgapoint_t *poly)
 
 	return newpoly;
 }
+
+void scale(int n, vgapoint_t *poly, float factor, float cx, float cy)
+{
+	int i;
+	for (i = 0; i < n; i++)
+	{
+		poly[i].x -= cx;
+		poly[i].y -= cy;
+		poly[i].x *= factor;
+		poly[i].y *= factor;
+		poly[i].x += cx;
+		poly[i].y += cy;
+	}
+}
+
