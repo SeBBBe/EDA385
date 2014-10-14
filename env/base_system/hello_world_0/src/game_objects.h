@@ -14,7 +14,6 @@ typedef struct game_object {
 	short hp;
 	short enabled;
 	short poly_points;
-	short nowrap;
 	short identifier;
 	short hitbox_size;
 	vgapoint_t* poly;
@@ -52,7 +51,6 @@ void go_resetobject(int i)
 		objects[i].anglespeed = 0;
 		objects[i].poly_points = 0;
 		objects[i].enabled = 0;
-		objects[i].nowrap = 0;
 		objects[i].identifier = 0;
 		objects[i].hitbox_size = 0;
 		objects[i].scale = 0;
@@ -100,7 +98,6 @@ void go_hashit(int hit1, int hit2)
 					go_createasteroidxy(2, objects[hit2].location.x, objects[hit2].location.y);
 					go_createasteroidxy(2, objects[hit2].location.x, objects[hit2].location.y);
 					go_createasteroidxy(2, objects[hit2].location.x, objects[hit2].location.y);
-
 				}
 				else if (objects[hit2].identifier == OI_AST2)
 				{
@@ -109,13 +106,13 @@ void go_hashit(int hit1, int hit2)
 					go_createasteroidxy(3, objects[hit2].location.x, objects[hit2].location.y);
 				}
 
+				objects[hit2].enabled = 0;
+				memmgr_free(objects[hit2].poly);
 				SND_PLAY(kaboom);
 				if( (rand() % 100) < 5  && pup_has_already_spawned == 0){
 					go_createpowerupn(1, objects[hit2].location.x, objects[hit2].location.y);
 					pup_has_already_spawned = 1;
 				}
-				objects[hit2].enabled = 0;
-				memmgr_free(objects[hit2].poly);
 			}
 
 			if(objects[hit1].identifier != OI_SHIP) objects[hit1].enabled = 0;
@@ -151,6 +148,7 @@ void go_hitdetection()
 				if (realy1 > (realy2 - hitbox) && realy1 < (realy2 + hitbox))
 				{
 					go_hashit(i, j);
+					break;
 				}
 			}
 		}
@@ -182,6 +180,11 @@ void go_tick()
 			objects[i].yvel += objects[i].yaccel;
 			objects[i].angle += objects[i].anglespeed;
 			objects[i].scale += objects[i].scaleaccel;
+
+			if(objects[i].identifier == OI_BULLET)
+			{
+				if(!objects[i].hp--) objects[i].enabled = 0;
+			}
 		}
 	}
 	go_hitdetection();
@@ -194,7 +197,7 @@ void go_draw()
 									0b11110110, // gråare
 									0b10100100, // grå2
 									0b01010010, // grå3
-									0b00011000	// mörkgrön
+									0b00000101	// djävulsröd
 	};
 
 
@@ -203,8 +206,8 @@ void go_draw()
 		if (objects[i].enabled)
 		{
 
-			if (objects[i].angle > 6.28) objects[i].angle = 0;
-			if (objects[i].angle < 0) objects[i].angle = 6.28;
+			if (objects[i].angle > 6.28) objects[i].angle -= 6.28;
+			if (objects[i].angle < 0) objects[i].angle += 6.28;
 			vgapoint_t* newpoly = rotate(objects[i].poly_points, objects[i].poly, objects[i].angle, objects[i].center_point.x, objects[i].center_point.y);
 			if (objects[i].scale != 0) scale(objects[i].poly_points, newpoly, objects[i].scale, objects[i].center_point.x, objects[i].center_point.y);
 			offset(objects[i].poly_points, newpoly, objects[i].location.x, objects[i].location.y);
@@ -219,7 +222,7 @@ void go_draw()
 				case 5:	vga_addpoly_color(objects[i].poly_points, newpoly, stonecolor[1]); break; //ast3
  				case 6: vga_addpoly_color(objects[i].poly_points, newpoly, stonecolor[0]); break; //ast4
  				case 7: vga_addpoly_color(objects[i].poly_points, newpoly, stonecolor[4]); break; //pup1
- 				case 0: vga_addpoly_color2(objects[i].poly_points, newpoly, stonecolor[4], 1); break; //logo
+ 				case 8: vga_addpoly_color2(objects[i].poly_points, newpoly, stonecolor[4], 1); break; //logo
  				default: vga_addpoly_color(objects[i].poly_points, newpoly, stonecolor[0]); break; //default
 			}
 
@@ -228,19 +231,15 @@ void go_draw()
 			int realx = objects[i].location.x + objects[i].center_point.x;
 			int realy = objects[i].location.y + objects[i].center_point.y;
 			if (realx < -OFFSCREEN_TOL){
-				if (objects[i].nowrap) objects[i].enabled = 0;
 				objects[i].location.x = vga_get_width()+OFFSCREEN_TOL-objects[i].center_point.x;
 			}
 			if (realx > vga_get_width()+OFFSCREEN_TOL){
-				if (objects[i].nowrap) objects[i].enabled = 0;
 				objects[i].location.x = -OFFSCREEN_TOL -objects[i].center_point.x;;
 			}
 			if (realy < -OFFSCREEN_TOL){
-				if (objects[i].nowrap) objects[i].enabled = 0;
 				objects[i].location.y = vga_get_height()+OFFSCREEN_TOL-objects[i].center_point.y;
 			}
 			if (realy > vga_get_height()+OFFSCREEN_TOL){
-				if (objects[i].nowrap) objects[i].enabled = 0;
 				objects[i].location.y = -OFFSCREEN_TOL -objects[i].center_point.y;
 			}
 		}
@@ -272,13 +271,13 @@ void go_createasteroid(int n)
 
 void go_createpowerupn(int n, float x, float y)
 {
-	short center = 25;
+	short center = 20;
 	short hitbox = 30;
 
 	game_object_t* pup_o = go_getempty();
 	pup_o->identifier = OI_PUP1;
 	pup_o->enabled = 1;
-	pup_o->poly_points = 4;
+	pup_o->poly_points = 5;
 	pup_o->poly = powerup_1;
 	pup_o->location.x = x;
 	pup_o->location.y = y;
@@ -350,4 +349,34 @@ void go_createasteroidxy(int n, float x, float y)
 	ast_o->center_point.y = center;
 	ast_o->hitbox_size = hitbox;
 	ast_o->hp = hp;
+}
+
+void go_createbullet(game_object_t *source, float angle)
+{
+	game_object_t* bullet_o = go_getempty();
+	bullet_o->location.x = source->location.x;
+	bullet_o->location.y = source->location.y;
+	bullet_o->xvel = (source->xvel) + bullet_speed * cosine(source->angle+angle + 4.71);
+	bullet_o->yvel = (source->yvel) + bullet_speed * sine(source->angle+angle + 4.71);
+	bullet_o->center_point.x = 320;
+	bullet_o->center_point.y = 240;
+	bullet_o->angle = source->angle+angle;
+	bullet_o->enabled = 1;
+	bullet_o->poly = bullet_p;
+	bullet_o->poly_points = 2;
+	bullet_o->hp = 90;
+	bullet_o->identifier = OI_BULLET;
+}
+
+void go_debug()
+{
+	int i;
+
+	for (i = 0; i < MAX_OBJECTS; i++)
+	{
+		if (objects[i].enabled)
+		{
+			xil_printf("object %d: ID %d, HP %d, poly_points %d, poly %x\r\n", i, objects[i].identifier, objects[i].hp, objects[i].poly_points, objects[i].poly);
+		}
+	}
 }

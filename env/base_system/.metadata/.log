@@ -2239,3 +2239,15 @@ org.eclipse.core.runtime.AssertionFailedException: unknown saveable: org.eclipse
 
 !ENTRY org.eclipse.cdt.core 1 0 2014-10-14 13:28:05.927
 !MESSAGE Indexed 'hello_world_0' (14 sources, 47 headers) in 1,30 sec: 1 961 declarations; 3 994 references; 3 unresolved inclusions; 0 syntax errors; 1 unresolved names (0,02 %)
+!SESSION 2014-10-14 15:13:45.549 -----------------------------------------------
+eclipse.buildId=Release 14.2 Build SDK_P.28xd
+java.version=1.6.0_21
+java.vendor=Sun Microsystems Inc.
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=sv_SE
+Command-line arguments:  -os win32 -ws win32 -arch x86_64
+
+!ENTRY org.eclipse.cdt.core 1 0 2014-10-14 15:13:57.548
+!MESSAGE Indexed 'hello_world_0' (14 sources, 48 headers) in 0,94 sec: 1 966 declarations; 4 324 references; 3 unresolved inclusions; 0 syntax errors; 1 unresolved names (0,02 %)
+
+!ENTRY org.eclipse.cdt.core 1 0 2014-10-14 15:13:58.422
+!MESSAGE Indexed 'standalone_bsp_0' (50 sources, 43 headers) in 0,85 sec: 1 153 declarations; 6 049 references; 21 unresolved inclusions; 0 syntax errors; 107 unresolved names (1,46 %)

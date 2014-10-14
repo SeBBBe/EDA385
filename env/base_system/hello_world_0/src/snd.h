@@ -23,7 +23,7 @@ int volatile *mix = (int *)0x7FC10000;
 #define MUS_PLAY(X) mus_play(X, sizeof(X) / sizeof(*X))
 
 #define SAMPLE_RATE 44100
-#define BPM 40
+#define BPM 160
 #define WHOLE (SAMPLE_RATE * 60) / BPM
 #define HALF WHOLE/2
 #define QUART HALF/2
@@ -168,13 +168,13 @@ sample_t winsnd[] = {
 };
 
 sample_t zeldasecret[] = {
-		{G4, EIGHT, SQR_WAVE},
-		{F4s, EIGHT, SQR_WAVE},
-		{D4s, EIGHT, SQR_WAVE},
-		{A3, EIGHT, SQR_WAVE},
-		{G3s, EIGHT, SQR_WAVE},
-		{E4, EIGHT, SQR_WAVE},
-		{G4s, EIGHT, SQR_WAVE},
+		{G4, HALF, SQR_WAVE},
+		{F4s, HALF, SQR_WAVE},
+		{D4s, HALF, SQR_WAVE},
+		{A3, HALF, SQR_WAVE},
+		{G3s, HALF, SQR_WAVE},
+		{E4, HALF, SQR_WAVE},
+		{G4s, HALF, SQR_WAVE},
 		{C5, WHOLE, SQR_WAVE},
 };
 
@@ -187,6 +187,8 @@ int snd_loopctr;
 sample_t *mus_current_loop;
 int mus_looplen;
 int mus_loopctr;
+
+void mus_play(sample_t *loop, int len);
 
 void snd_init()
 {

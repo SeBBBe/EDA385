@@ -4,7 +4,7 @@ Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.08 secs
+Total CPU time to Xst completion: 0.10 secs
  
 --> 
 TABLE OF CONTENTS
@@ -1666,7 +1666,7 @@ debug_module_0/debug_module_0/drck_i|    2.427|    3.477|    3.249|         |
 
 
 Total REAL time to Xst completion: 25.00 secs
-Total CPU time to Xst completion: 24.35 secs
+Total CPU time to Xst completion: 24.97 secs
  
 --> 
 
