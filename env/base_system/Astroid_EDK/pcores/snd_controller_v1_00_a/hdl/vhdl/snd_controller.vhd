@@ -54,7 +54,7 @@ entity snd_controller is
     S_AXI_RREADY : in  std_logic;
 	
 	-- mixer interface
-    OUTPUT	   : out pcm_t
+    OUTPUT	   : out std_logic_vector(12-1 downto 0)
     );
 
 end snd_controller;
@@ -70,6 +70,8 @@ signal fifo_empty : std_logic;
 signal fifo_rd : std_logic;
 signal fifo_output : command_t;
 signal fifo_full : std_logic;
+
+signal pcm_out : pcm_t;
 
 begin
 
@@ -97,7 +99,7 @@ pcm1 : entity work.pcm_generator
 		RD => fifo_rd,
 		INPUT => fifo_output,
 		
-		OUTPUT => OUTPUT
+		OUTPUT => pcm_out
 	);
 
 mem1 : entity work.mem_controller
@@ -134,5 +136,7 @@ mem1 : entity work.mem_controller
 		OUTPUT => mem_output,
 		TRIGGER => mem_trigger
 	);
+
+OUTPUT <= pcm_out;
 
 end implementation;

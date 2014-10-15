@@ -52,8 +52,8 @@ entity snd_mixer is
     S_AXI_RVALID : out std_logic;
     S_AXI_RREADY : in  std_logic;
 	 
-	 INPUT1	   : in pcm_t;
-	 INPUT2	   : in pcm_t;
+	 INPUT1	   : in std_logic_vector(12-1 downto 0);
+	 INPUT2	   : in std_logic_vector(12-1 downto 0);
 	
 	-- AMP interface
     JA	   : out std_logic_vector(7 downto 0)
@@ -137,7 +137,7 @@ end process;
 
 process(INPUT1, INPUT2, mem_output)
 begin
-	pcm_next <= (INPUT1 srl to_integer(mem_output.vol1)) + (INPUT2 srl to_integer(mem_output.vol2));
+	pcm_next <= (unsigned(INPUT1) srl to_integer(mem_output.vol1)) + (unsigned(INPUT2) srl to_integer(mem_output.vol2));
 end process;
 
 end implementation;
