@@ -6,7 +6,9 @@ use ieee.numeric_std.all;
 library snd_mixer_v1_00_a; --USER-- library names
 
 package types is
-	subtype volume_t is integer range 0 to 255;
+	subtype volume_t is unsigned(16-1 downto 0);
+	
+	subtype pcm_t is unsigned(12-1 downto 0);
 	
 	type mixcfg_t is
 		record
@@ -14,5 +16,5 @@ package types is
 			vol2 : volume_t;
 		end record;
 	
-	constant DEFAULT_MIXCFG : mixcfg_t := (1, 1);
+	constant DEFAULT_MIXCFG : mixcfg_t := ((others => '0'), (others => '0'));
 end package;

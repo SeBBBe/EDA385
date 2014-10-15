@@ -34,7 +34,7 @@ ARCHITECTURE behavior OF snd_tb IS
 	signal S_AXI_BRESP  : std_logic_vector(2-1 downto 0);
 	signal S_AXI_RRESP  : std_logic_vector(2-1 downto 0);
 	
-	signal JA : std_logic_vector(7 downto 0);
+	signal OUTPUT : pcm_t;
 
 	signal rst : std_logic := '1';
 
@@ -67,7 +67,7 @@ BEGIN
 			S_AXI_ARPROT => S_AXI_ARPROT,
 			S_AXI_BRESP => S_AXI_BRESP,
 			S_AXI_RRESP => S_AXI_RRESP,
-			JA => JA
+			OUTPUT => OUTPUT
 		);
 
    -- Clock process definitions( clock with 50% duty cycle is generated here.

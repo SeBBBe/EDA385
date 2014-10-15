@@ -44,7 +44,7 @@ entity pcm_generator is
 		RD : out std_logic;
 		INPUT : in command_t;
 		
-		OUTPUT : out std_logic
+		OUTPUT : out pcm_t
 	);
 end pcm_generator;
 
@@ -67,15 +67,7 @@ signal command_next : command_t;
 
 begin
 
-	pdm1: entity work.pdm_generator
-		port map(
-			CLK => CLK,
-			RST => RST,
-			
-			PCM => pcm_reg,
-			
-			OUTPUT => OUTPUT
-		);
+OUTPUT <= pcm_reg;
 
 process(CLK, RST)
 begin
@@ -97,7 +89,7 @@ begin
 end process;
 
 process(INPUT, EMPTY, cyclecount_reg, samplecount_reg, period_reg, command_reg, pcm_reg)
-variable done : boolean;
+variable xormask : pcm_t;
 begin
 	cyclecount_next <= cyclecount_reg + 1;
 	samplecount_next <= samplecount_reg;
@@ -127,18 +119,8 @@ begin
 			elsif command_reg.waveform = TRI_WAVE then
 				pcm_next <= pcm_reg + command_reg.period(12-1 downto 0);
 			else
-				pcm_next(0) <= pcm_reg(11) xor command_reg.period(0);
-				pcm_next(1) <= pcm_reg(0);
-				pcm_next(2) <= pcm_reg(1) xor pcm_reg(11);
-				pcm_next(3) <= pcm_reg(2) xor pcm_reg(7);
-				pcm_next(4) <= pcm_reg(3);
-				pcm_next(5) <= pcm_reg(4) xor pcm_reg(2);
-				pcm_next(6) <= pcm_reg(5) xor pcm_reg(5);
-				pcm_next(7) <= pcm_reg(6) xor pcm_reg(4);
-				pcm_next(8) <= pcm_reg(7) xor pcm_reg(8);
-				pcm_next(9) <= pcm_reg(8) xor pcm_reg(1);
-				pcm_next(10) <= pcm_reg(9) xor pcm_reg(0);
-				pcm_next(11) <= pcm_reg(10);
+				xormask := (others => pcm_reg(11));
+				pcm_next <= (pcm_reg rol 1) xor (xormask and command_reg.period(12-1 downto 0));
 			end if;
 		else
 			pcm_next <= PCM_MIN;

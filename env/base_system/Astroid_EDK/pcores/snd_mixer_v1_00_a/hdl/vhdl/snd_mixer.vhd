@@ -6,8 +6,7 @@
 
 library ieee;
 use ieee.std_logic_1164.all;
-use ieee.std_logic_misc.all;
-use ieee.std_logic_unsigned.all;
+use ieee.numeric_std.all;
 
 library snd_mixer_v1_00_a; --USER-- library name
 use snd_mixer_v1_00_a.all; --USER-- use statement
@@ -53,8 +52,8 @@ entity snd_mixer is
     S_AXI_RVALID : out std_logic;
     S_AXI_RREADY : in  std_logic;
 	 
-	 INPUT1	   : in std_logic_vector(7 downto 0);
-	 INPUT2	   : in std_logic_vector(7 downto 0);
+	 INPUT1	   : in pcm_t;
+	 INPUT2	   : in pcm_t;
 	
 	-- AMP interface
     JA	   : out std_logic_vector(7 downto 0)
@@ -67,8 +66,11 @@ architecture implementation of snd_mixer is
 signal mem_output : mixcfg_t;
 signal mem_trigger : std_logic;
 
-signal count_reg, count_next : volume_t;
 signal ja_reg, ja_next : std_logic_vector(7 downto 0);
+
+signal pcm_reg, pcm_next : pcm_t;
+
+signal pdm_out : std_logic;
 
 begin
 
@@ -106,35 +108,36 @@ mem1 : entity work.mem_controller
 		TRIGGER => mem_trigger
 	);
 
+pdm1 : entity work.pdm_generator
+	port map
+	(
+		CLK => ACLK,
+		RST => ARESETN,
+		
+		PCM => pcm_reg,
+		OUTPUT => pdm_out
+	);
+
 JA <= ja_reg;
+
+ja_next <= (others => pdm_out);
 
 process(ACLK, ARESETN)
 begin
 	if rising_edge(ACLK) then
 		if ARESETN = '0' then
-			count_reg <= 0;
 			ja_reg <= (others => '0');
+			pcm_reg <= (others => '0');
 		else
-			count_reg <= count_next;
 			ja_reg <= ja_next;
+			pcm_reg <= pcm_next;
 		end if;
 	end if;
 end process;
 
-process(INPUT1, INPUT2, count_reg, mem_trigger, mem_output)
+process(INPUT1, INPUT2, mem_output)
 begin
-	count_next <= count_reg + 1;
-	ja_next <= INPUT2;
-
-	if count_reg < mem_output.vol1 then
-		ja_next <= INPUT1;
-	elsif count_reg = mem_output.vol1 + mem_output.vol2 - 1 then
-		count_next <= 0;
-	end if;
-	
-	if mem_trigger = '1' then
-		count_next <= 0;
-	end if;
+	pcm_next <= (INPUT1 srl to_integer(mem_output.vol1)) + (INPUT2 srl to_integer(mem_output.vol2));
 end process;
 
 end implementation;

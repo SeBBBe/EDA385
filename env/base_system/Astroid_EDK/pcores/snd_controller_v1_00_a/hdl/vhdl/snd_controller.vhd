@@ -53,8 +53,8 @@ entity snd_controller is
     S_AXI_RVALID : out std_logic;
     S_AXI_RREADY : in  std_logic;
 	
-	-- AMP interface
-    JA	   : out std_logic_vector(7 downto 0)
+	-- mixer interface
+    OUTPUT	   : out pcm_t
     );
 
 end snd_controller;
@@ -65,7 +65,6 @@ signal mem_trigger : std_logic;
 signal mem_output : command_t;
 
 signal snd_done : std_logic;
-signal snd_output : std_logic;
 
 signal fifo_empty : std_logic;
 signal fifo_rd : std_logic;
@@ -98,7 +97,7 @@ pcm1 : entity work.pcm_generator
 		RD => fifo_rd,
 		INPUT => fifo_output,
 		
-		OUTPUT => snd_output
+		OUTPUT => OUTPUT
 	);
 
 mem1 : entity work.mem_controller
@@ -135,7 +134,5 @@ mem1 : entity work.mem_controller
 		OUTPUT => mem_output,
 		TRIGGER => mem_trigger
 	);
-
-JA <= (others => snd_output);
 
 end implementation;

@@ -115,8 +115,8 @@ begin
 	if S_AXI_WVALID = '1' and write_reg = '0' then
 		write_next <= '1';
 		
-		output_next.vol1 <= to_integer(unsigned(S_AXI_WDATA(8-1 downto 0)));
-		output_next.vol2 <= to_integer(unsigned(S_AXI_WDATA(16-1 downto 8)));
+		output_next.vol1 <= unsigned(S_AXI_WDATA(16-1 downto 0));
+		output_next.vol2 <= unsigned(S_AXI_WDATA(32-1 downto 16));
 		
 		trigger_next <= '1';
 	end if;

@@ -34,8 +34,8 @@ ARCHITECTURE behavior OF mix_tb IS
 	signal S_AXI_BRESP  : std_logic_vector(2-1 downto 0);
 	signal S_AXI_RRESP  : std_logic_vector(2-1 downto 0);
 	
-	signal INPUT1 : std_logic_vector(7 downto 0);
-	signal INPUT2 : std_logic_vector(7 downto 0);
+	signal INPUT1 : pcm_t;
+	signal INPUT2 : pcm_t;
 	signal JA : std_logic_vector(7 downto 0);
 
 	signal rst : std_logic := '1';
@@ -75,7 +75,7 @@ BEGIN
 		);
 
 	INPUT1 <= (others => '1');
-	INPUT2 <= (others => '0');
+	INPUT2 <= (others => '1');
 
    -- Clock process definitions( clock with 50% duty cycle is generated here.
    clk_process :process
@@ -97,7 +97,7 @@ BEGIN
 	test_process : process
 	begin
 		wait until S_AXI_WREADY = '1';
-		S_AXI_WDATA <= "0000000000000000" & "00000011" & "00000111";
+		S_AXI_WDATA <= "0000000000000000" & "00000001" & "00000001";
 		S_AXI_WVALID <= '1';
 		wait until S_AXI_BVALID = '1';
 		S_AXI_WVALID <= '0';
