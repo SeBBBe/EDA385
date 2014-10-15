@@ -1,11 +1,11 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <report-views version="2.0" >
  <header>
-  <DateModified>2014-09-12T10:45:01</DateModified>
+  <DateModified>2014-10-15T11:13:37</DateModified>
   <ModuleName>user_logic</ModuleName>
   <SummaryTimeStamp>Unknown</SummaryTimeStamp>
-  <SavedFilePath>H:/Windows/Desktop/edan15/Astroid Project Navigator 64bit/Astroid/iseconfig/user_logic.xreport</SavedFilePath>
-  <ImplementationReportsDirectory>H:/Windows/Desktop/edan15/Astroid Project Navigator 64bit/Astroid</ImplementationReportsDirectory>
+  <SavedFilePath>C:/temp/ast/EDA385/env/base_system/Astroid Project Navigator 64bit/Astroid/iseconfig/user_logic.xreport</SavedFilePath>
+  <ImplementationReportsDirectory>C:/temp/ast/EDA385/env/base_system/Astroid Project Navigator 64bit/Astroid\</ImplementationReportsDirectory>
   <DateInitialized>2014-09-12T10:45:00</DateInitialized>
   <EnableMessageFiltering>false</EnableMessageFiltering>
  </header>

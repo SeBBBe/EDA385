@@ -1,1 +1,2 @@
 xst -intstyle ise -ifn "H:/Windows/Desktop/edan15/Astroid Project Navigator 64bit/Astroid/user_logic.xst" -ofn "H:/Windows/Desktop/edan15/Astroid Project Navigator 64bit/Astroid/user_logic.syr" 
+xst -intstyle ise -ifn "C:/temp/ast/EDA385/env/base_system/Astroid Project Navigator 64bit/Astroid/user_logic.xst" -ofn "C:/temp/ast/EDA385/env/base_system/Astroid Project Navigator 64bit/Astroid/user_logic.syr" 

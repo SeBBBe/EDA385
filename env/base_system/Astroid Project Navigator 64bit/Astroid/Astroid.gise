@@ -31,6 +31,7 @@
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST_STX" xil_pn:name="user_logic.stx"/>
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST_REPORT" xil_pn:name="user_logic.syr"/>
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST" xil_pn:name="user_logic.xst"/>
+    <file xil_pn:fileType="FILE_HTML" xil_pn:name="user_logic_envsettings.html"/>
     <file xil_pn:fileType="FILE_HTML" xil_pn:name="user_logic_summary.html"/>
     <file xil_pn:fileType="FILE_XRPT" xil_pn:name="user_logic_xst.xrpt"/>
     <file xil_pn:fileType="FILE_FITTER_REPORT" xil_pn:name="webtalk_pn.xml"/>
@@ -40,6 +41,7 @@
   <transforms xmlns="http://www.xilinx.com/XMLSchema">
     <transform xil_pn:end_ts="1410511583" xil_pn:name="TRAN_copyInitialToXSTAbstractSynthesis" xil_pn:start_ts="1410511583">
       <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
     </transform>
     <transform xil_pn:end_ts="1410511583" xil_pn:name="TRAN_schematicsToHdl" xil_pn:prop_ck="-3406979397436337002" xil_pn:start_ts="1410511583">
       <status xil_pn:value="SuccessfullyRun"/>
@@ -65,7 +67,7 @@
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1410511601" xil_pn:in_ck="-1394874533002262211" xil_pn:name="TRANEXT_xstsynthesize_spartan6" xil_pn:prop_ck="-4877188441785281730" xil_pn:start_ts="1410511583">
+    <transform xil_pn:end_ts="1413364366" xil_pn:in_ck="-1394874533002262211" xil_pn:name="TRANEXT_xstsynthesize_spartan6" xil_pn:prop_ck="-4877188441785281730" xil_pn:start_ts="1413364356">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="WarningsGenerated"/>
       <status xil_pn:value="ReadyToRun"/>

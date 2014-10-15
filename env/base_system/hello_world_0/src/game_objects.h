@@ -113,6 +113,8 @@ void go_hashit(int hit1, int hit2)
 					go_createpowerupn(1, objects[hit2].location.x, objects[hit2].location.y);
 					pup_has_already_spawned = 1;
 				}
+			}else{
+				SND_PLAY(kaboom_short);
 			}
 
 			if(objects[hit1].identifier != OI_SHIP) objects[hit1].enabled = 0;
