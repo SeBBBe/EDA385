@@ -4,7 +4,7 @@ Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.08 secs
+Total CPU time to Xst completion: 0.09 secs
  
 --> 
 TABLE OF CONTENTS
@@ -64,6 +64,9 @@ Cores Search Directories           : {../implementation}
 =========================================================================
 Parsing VHDL file "C:/temp/EDA385/env/base_system/Astroid_EDK/pcores/snd_controller_v1_00_a/hdl/vhdl/types.vhd" into library snd_controller_v1_00_a
 Parsing package <types>.
+Parsing VHDL file "C:/temp/EDA385/env/base_system/Astroid_EDK/pcores/snd_controller_v1_00_a/hdl/vhdl/command_stack.vhd" into library snd_controller_v1_00_a
+Parsing entity <command_stack>.
+Parsing architecture <Behavioral> of entity <command_stack>.
 Parsing VHDL file "C:/temp/EDA385/env/base_system/Astroid_EDK/pcores/snd_controller_v1_00_a/hdl/vhdl/pdm_generator.vhd" into library snd_controller_v1_00_a
 Parsing entity <pdm_generator>.
 Parsing architecture <Behavioral> of entity <pdm_generator>.
@@ -87,6 +90,8 @@ Parsing architecture <STRUCTURE> of entity <system_snd_controller_0_wrapper>.
 Elaborating entity <system_snd_controller_0_wrapper> (architecture <STRUCTURE>) from library <work>.
 
 Elaborating entity <snd_controller> (architecture <implementation>) with generics from library <snd_controller_v1_00_a>.
+
+Elaborating entity <command_stack> (architecture <Behavioral>) from library <snd_controller_v1_00_a>.
 
 Elaborating entity <pcm_generator> (architecture <Behavioral>) from library <snd_controller_v1_00_a>.
 
@@ -112,77 +117,110 @@ Synthesizing Unit <snd_controller>.
 	no macro.
 Unit <snd_controller> synthesized.
 
+Synthesizing Unit <command_stack>.
+    Related source file is "C:/temp/EDA385/env/base_system/Astroid_EDK/pcores/snd_controller_v1_00_a/hdl/vhdl/command_stack.vhd".
+    Found 4-bit register for signal <writeptr>.
+    Found 15-bit register for signal <memory[0]_period>.
+    Found 15-bit register for signal <memory[0]_duration>.
+    Found 2-bit register for signal <memory[0]_waveform>.
+    Found 15-bit register for signal <memory[1]_period>.
+    Found 15-bit register for signal <memory[1]_duration>.
+    Found 2-bit register for signal <memory[1]_waveform>.
+    Found 15-bit register for signal <memory[2]_period>.
+    Found 15-bit register for signal <memory[2]_duration>.
+    Found 2-bit register for signal <memory[2]_waveform>.
+    Found 15-bit register for signal <memory[3]_period>.
+    Found 15-bit register for signal <memory[3]_duration>.
+    Found 2-bit register for signal <memory[3]_waveform>.
+    Found 15-bit register for signal <memory[4]_period>.
+    Found 15-bit register for signal <memory[4]_duration>.
+    Found 2-bit register for signal <memory[4]_waveform>.
+    Found 15-bit register for signal <memory[5]_period>.
+    Found 15-bit register for signal <memory[5]_duration>.
+    Found 2-bit register for signal <memory[5]_waveform>.
+    Found 15-bit register for signal <memory[6]_period>.
+    Found 15-bit register for signal <memory[6]_duration>.
+    Found 2-bit register for signal <memory[6]_waveform>.
+    Found 15-bit register for signal <memory[7]_period>.
+    Found 15-bit register for signal <memory[7]_duration>.
+    Found 2-bit register for signal <memory[7]_waveform>.
+    Found 15-bit register for signal <memory[8]_period>.
+    Found 15-bit register for signal <memory[8]_duration>.
+    Found 2-bit register for signal <memory[8]_waveform>.
+    Found 15-bit register for signal <memory[9]_period>.
+    Found 15-bit register for signal <memory[9]_duration>.
+    Found 2-bit register for signal <memory[9]_waveform>.
+    Found 15-bit register for signal <memory[10]_period>.
+    Found 15-bit register for signal <memory[10]_duration>.
+    Found 2-bit register for signal <memory[10]_waveform>.
+    Found 15-bit register for signal <memory[11]_period>.
+    Found 15-bit register for signal <memory[11]_duration>.
+    Found 2-bit register for signal <memory[11]_waveform>.
+    Found 15-bit register for signal <memory[12]_period>.
+    Found 15-bit register for signal <memory[12]_duration>.
+    Found 2-bit register for signal <memory[12]_waveform>.
+    Found 15-bit register for signal <memory[13]_period>.
+    Found 15-bit register for signal <memory[13]_duration>.
+    Found 2-bit register for signal <memory[13]_waveform>.
+    Found 15-bit register for signal <memory[14]_period>.
+    Found 15-bit register for signal <memory[14]_duration>.
+    Found 2-bit register for signal <memory[14]_waveform>.
+    Found 15-bit register for signal <memory[15]_period>.
+    Found 15-bit register for signal <memory[15]_duration>.
+    Found 2-bit register for signal <memory[15]_waveform>.
+    Found 1-bit register for signal <FULL>.
+    Found 1-bit register for signal <EMPTY>.
+    Found 4-bit register for signal <readptr>.
+    Found 4-bit adder for signal <readptr[3]_GND_11_o_add_3_OUT> created at line 49.
+    Found 4-bit adder for signal <writeptr[3]_GND_11_o_add_54_OUT> created at line 54.
+    Found 4-bit subtractor for signal <GND_11_o_GND_11_o_sub_105_OUT<3:0>> created at line 57.
+    Found 15-bit 16-to-1 multiplexer for signal <OUTPUT_period> created at line 33.
+    Found 15-bit 16-to-1 multiplexer for signal <OUTPUT_duration> created at line 33.
+    Found 2-bit 16-to-1 multiplexer for signal <OUTPUT_waveform> created at line 33.
+    Found 4-bit comparator equal for signal <writeptr[3]_GND_11_o_equal_106_o> created at line 57
+    Found 4-bit comparator equal for signal <writeptr[3]_readptr[3]_equal_107_o> created at line 63
+    Summary:
+	inferred   3 Adder/Subtractor(s).
+	inferred 522 D-type flip-flop(s).
+	inferred   2 Comparator(s).
+	inferred   5 Multiplexer(s).
+Unit <command_stack> synthesized.
+
 Synthesizing Unit <pcm_generator>.
     Related source file is "C:/temp/EDA385/env/base_system/Astroid_EDK/pcores/snd_controller_v1_00_a/hdl/vhdl/pcm_generator.vhd".
-WARNING:Xst:647 - Input <INPUT_waveform> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
     Found 15-bit register for signal <period_reg>.
-    Found 15-bit register for signal <count_reg>.
+    Found 12-bit register for signal <cyclecount_reg>.
+    Found 15-bit register for signal <samplecount_reg>.
     Found 15-bit register for signal <command_reg_period>.
     Found 15-bit register for signal <command_reg_duration>.
-    Found 1-bit register for signal <done_reg>.
-    Found 15-bit register for signal <pcm_reg>.
-    Found 15-bit adder for signal <period_reg[14]_GND_11_o_add_12_OUT> created at line 1241.
-    Found 15-bit adder for signal <count_reg[14]_GND_11_o_add_13_OUT> created at line 1241.
-    Found 15-bit comparator lessequal for signal <period_reg[14]_GND_11_o_LessThan_15_o> created at line 119
-    Found 15-bit comparator equal for signal <period_reg[14]_command_reg_period[14]_equal_17_o> created at line 127
-    Found 15-bit comparator equal for signal <count_reg[14]_command_reg_duration[14]_equal_19_o> created at line 131
+    Found 2-bit register for signal <command_reg_waveform>.
+    Found 12-bit register for signal <pcm_reg>.
+    Found 12-bit adder for signal <cyclecount_next> created at line 1241.
+    Found 15-bit adder for signal <period_reg[14]_GND_12_o_add_18_OUT> created at line 1241.
+    Found 15-bit adder for signal <samplecount_reg[14]_GND_12_o_add_21_OUT> created at line 1241.
+    Found 12-bit adder for signal <pcm_reg[11]_command_reg_period[11]_add_28_OUT> created at line 128.
+    Found 15-bit subtractor for signal <GND_12_o_GND_12_o_sub_17_OUT<14:0>> created at line 1308.
+    Found 12-bit 4-to-1 multiplexer for signal <pcm_reg[10]_PWR_14_o_mux_31_OUT> created at line 119.
+    Found 15-bit comparator equal for signal <period_reg[14]_GND_12_o_equal_18_o> created at line 110
+    Found 15-bit comparator lessequal for signal <samplecount_reg[14]_command_reg_duration[14]_LessThan_21_o> created at line 116
+    Found 15-bit comparator greater for signal <period_reg[14]_GND_12_o_LessThan_24_o> created at line 120
     Summary:
-	inferred   2 Adder/Subtractor(s).
-	inferred  76 D-type flip-flop(s).
+	inferred   5 Adder/Subtractor(s).
+	inferred  86 D-type flip-flop(s).
 	inferred   3 Comparator(s).
-	inferred   6 Multiplexer(s).
+	inferred   2 Multiplexer(s).
 Unit <pcm_generator> synthesized.
 
 Synthesizing Unit <pdm_generator>.
     Related source file is "C:/temp/EDA385/env/base_system/Astroid_EDK/pcores/snd_controller_v1_00_a/hdl/vhdl/pdm_generator.vhd".
-    Found 15-bit register for signal <count_reg>.
-    Found 15-bit register for signal <pw_reg>.
-    Found 15-bit adder for signal <count_reg[14]_GND_12_o_add_4_OUT> created at line 1241.
-    Found 15-bit comparator greater for signal <OUTPUT> created at line 78
+    Found 12-bit register for signal <count_reg>.
+    Found 12-bit adder for signal <count_next> created at line 1241.
+    Found 12-bit comparator greater for signal <OUTPUT> created at line 70
     Summary:
 	inferred   1 Adder/Subtractor(s).
-	inferred  30 D-type flip-flop(s).
+	inferred  12 D-type flip-flop(s).
 	inferred   1 Comparator(s).
 Unit <pdm_generator> synthesized.
-
-Synthesizing Unit <div_15u_15u>.
-    Related source file is "".
-    Found 30-bit adder for signal <GND_13_o_b[14]_add_1_OUT> created at line 0.
-    Found 29-bit adder for signal <GND_13_o_b[14]_add_3_OUT> created at line 0.
-    Found 28-bit adder for signal <GND_13_o_b[14]_add_5_OUT> created at line 0.
-    Found 27-bit adder for signal <GND_13_o_b[14]_add_7_OUT> created at line 0.
-    Found 26-bit adder for signal <GND_13_o_b[14]_add_9_OUT> created at line 0.
-    Found 25-bit adder for signal <GND_13_o_b[14]_add_11_OUT> created at line 0.
-    Found 24-bit adder for signal <GND_13_o_b[14]_add_13_OUT> created at line 0.
-    Found 23-bit adder for signal <GND_13_o_b[14]_add_15_OUT> created at line 0.
-    Found 22-bit adder for signal <GND_13_o_b[14]_add_17_OUT> created at line 0.
-    Found 21-bit adder for signal <GND_13_o_b[14]_add_19_OUT> created at line 0.
-    Found 20-bit adder for signal <GND_13_o_b[14]_add_21_OUT> created at line 0.
-    Found 19-bit adder for signal <GND_13_o_b[14]_add_23_OUT> created at line 0.
-    Found 18-bit adder for signal <GND_13_o_b[14]_add_25_OUT> created at line 0.
-    Found 17-bit adder for signal <GND_13_o_b[14]_add_27_OUT> created at line 0.
-    Found 16-bit adder for signal <GND_13_o_b[14]_add_29_OUT> created at line 0.
-    Found 30-bit comparator lessequal for signal <BUS_0001> created at line 0
-    Found 29-bit comparator lessequal for signal <BUS_0002> created at line 0
-    Found 28-bit comparator lessequal for signal <BUS_0003> created at line 0
-    Found 27-bit comparator lessequal for signal <BUS_0004> created at line 0
-    Found 26-bit comparator lessequal for signal <BUS_0005> created at line 0
-    Found 25-bit comparator lessequal for signal <BUS_0006> created at line 0
-    Found 24-bit comparator lessequal for signal <BUS_0007> created at line 0
-    Found 23-bit comparator lessequal for signal <BUS_0008> created at line 0
-    Found 22-bit comparator lessequal for signal <BUS_0009> created at line 0
-    Found 21-bit comparator lessequal for signal <BUS_0010> created at line 0
-    Found 20-bit comparator lessequal for signal <BUS_0011> created at line 0
-    Found 19-bit comparator lessequal for signal <BUS_0012> created at line 0
-    Found 18-bit comparator lessequal for signal <BUS_0013> created at line 0
-    Found 17-bit comparator lessequal for signal <BUS_0014> created at line 0
-    Found 16-bit comparator lessequal for signal <BUS_0015> created at line 0
-    Found 15-bit comparator lessequal for signal <BUS_0016> created at line 0
-    Summary:
-	inferred  15 Adder/Subtractor(s).
-	inferred  16 Comparator(s).
-	inferred 211 Multiplexer(s).
-Unit <div_15u_15u> synthesized.
 
 Synthesizing Unit <mem_controller>.
     Related source file is "C:/temp/EDA385/env/base_system/Astroid_EDK/pcores/snd_controller_v1_00_a/hdl/vhdl/mem_controller.vhd".
@@ -208,60 +246,50 @@ Unit <mem_controller> synthesized.
 HDL Synthesis Report
 
 Macro Statistics
-# Adders/Subtractors                                   : 18
- 15-bit adder                                          : 3
- 16-bit adder                                          : 1
- 17-bit adder                                          : 1
- 18-bit adder                                          : 1
- 19-bit adder                                          : 1
- 20-bit adder                                          : 1
- 21-bit adder                                          : 1
- 22-bit adder                                          : 1
- 23-bit adder                                          : 1
- 24-bit adder                                          : 1
- 25-bit adder                                          : 1
- 26-bit adder                                          : 1
- 27-bit adder                                          : 1
- 28-bit adder                                          : 1
- 29-bit adder                                          : 1
- 30-bit adder                                          : 1
-# Registers                                            : 14
- 1-bit register                                        : 4
- 15-bit register                                       : 9
- 2-bit register                                        : 1
-# Comparators                                          : 20
- 15-bit comparator equal                               : 2
+# Adders/Subtractors                                   : 9
+ 12-bit adder                                          : 3
+ 15-bit adder                                          : 2
+ 15-bit subtractor                                     : 1
+ 4-bit adder                                           : 2
+ 4-bit subtractor                                      : 1
+# Registers                                            : 66
+ 1-bit register                                        : 5
+ 12-bit register                                       : 3
+ 15-bit register                                       : 38
+ 2-bit register                                        : 18
+ 4-bit register                                        : 2
+# Comparators                                          : 6
+ 12-bit comparator greater                             : 1
+ 15-bit comparator equal                               : 1
  15-bit comparator greater                             : 1
- 15-bit comparator lessequal                           : 2
- 16-bit comparator lessequal                           : 1
- 17-bit comparator lessequal                           : 1
- 18-bit comparator lessequal                           : 1
- 19-bit comparator lessequal                           : 1
- 20-bit comparator lessequal                           : 1
- 21-bit comparator lessequal                           : 1
- 22-bit comparator lessequal                           : 1
- 23-bit comparator lessequal                           : 1
- 24-bit comparator lessequal                           : 1
- 25-bit comparator lessequal                           : 1
- 26-bit comparator lessequal                           : 1
- 27-bit comparator lessequal                           : 1
- 28-bit comparator lessequal                           : 1
- 29-bit comparator lessequal                           : 1
- 30-bit comparator lessequal                           : 1
-# Multiplexers                                         : 217
- 1-bit 2-to-1 multiplexer                              : 212
- 15-bit 2-to-1 multiplexer                             : 5
+ 15-bit comparator lessequal                           : 1
+ 4-bit comparator equal                                : 2
+# Multiplexers                                         : 7
+ 12-bit 4-to-1 multiplexer                             : 1
+ 15-bit 16-to-1 multiplexer                            : 2
+ 15-bit 2-to-1 multiplexer                             : 1
+ 2-bit 16-to-1 multiplexer                             : 1
+ 4-bit 2-to-1 multiplexer                              : 2
+# Xors                                                 : 8
+ 1-bit xor2                                            : 8
 
 =========================================================================
+INFO:Xst:1767 - HDL ADVISOR - Resource sharing has identified that some arithmetic operations in this design can share the same physical resources for reduced device utilization. For improved clock frequency you may try to disable resource sharing.
 
 =========================================================================
 *                       Advanced HDL Synthesis                          *
 =========================================================================
 
 
+Synthesizing (advanced) Unit <command_stack>.
+The following registers are absorbed into counter <writeptr>: 1 register on signal <writeptr>.
+The following registers are absorbed into accumulator <readptr>: 1 register on signal <readptr>.
+Unit <command_stack> synthesized (advanced).
+
 Synthesizing (advanced) Unit <pcm_generator>.
 The following registers are absorbed into counter <period_reg>: 1 register on signal <period_reg>.
-The following registers are absorbed into counter <count_reg>: 1 register on signal <count_reg>.
+The following registers are absorbed into counter <cyclecount_reg>: 1 register on signal <cyclecount_reg>.
+The following registers are absorbed into counter <samplecount_reg>: 1 register on signal <samplecount_reg>.
 Unit <pcm_generator> synthesized (advanced).
 
 Synthesizing (advanced) Unit <pdm_generator>.
@@ -272,69 +300,51 @@ Unit <pdm_generator> synthesized (advanced).
 Advanced HDL Synthesis Report
 
 Macro Statistics
-# Adders/Subtractors                                   : 15
- 15-bit adder                                          : 15
-# Counters                                             : 3
- 15-bit up counter                                     : 3
-# Registers                                            : 96
- Flip-Flops                                            : 96
-# Comparators                                          : 20
- 15-bit comparator equal                               : 2
+# Adders/Subtractors                                   : 5
+ 12-bit adder                                          : 1
+ 15-bit subtractor                                     : 1
+ 4-bit adder                                           : 2
+ 4-bit subtractor                                      : 1
+# Counters                                             : 5
+ 12-bit up counter                                     : 2
+ 15-bit up counter                                     : 2
+ 4-bit up counter                                      : 1
+# Accumulators                                         : 1
+ 4-bit up accumulator                                  : 1
+# Registers                                            : 593
+ Flip-Flops                                            : 593
+# Comparators                                          : 6
+ 12-bit comparator greater                             : 1
+ 15-bit comparator equal                               : 1
  15-bit comparator greater                             : 1
- 15-bit comparator lessequal                           : 2
- 16-bit comparator lessequal                           : 1
- 17-bit comparator lessequal                           : 1
- 18-bit comparator lessequal                           : 1
- 19-bit comparator lessequal                           : 1
- 20-bit comparator lessequal                           : 1
- 21-bit comparator lessequal                           : 1
- 22-bit comparator lessequal                           : 1
- 23-bit comparator lessequal                           : 1
- 24-bit comparator lessequal                           : 1
- 25-bit comparator lessequal                           : 1
- 26-bit comparator lessequal                           : 1
- 27-bit comparator lessequal                           : 1
- 28-bit comparator lessequal                           : 1
- 29-bit comparator lessequal                           : 1
- 30-bit comparator lessequal                           : 1
-# Multiplexers                                         : 243
- 1-bit 2-to-1 multiplexer                              : 242
- 15-bit 2-to-1 multiplexer                             : 1
+ 15-bit comparator lessequal                           : 1
+ 4-bit comparator equal                                : 2
+# Multiplexers                                         : 5
+ 12-bit 4-to-1 multiplexer                             : 1
+ 15-bit 16-to-1 multiplexer                            : 2
+ 2-bit 16-to-1 multiplexer                             : 1
+ 4-bit 2-to-1 multiplexer                              : 1
+# Xors                                                 : 8
+ 1-bit xor2                                            : 8
 
 =========================================================================
 
 =========================================================================
 *                         Low Level Synthesis                           *
 =========================================================================
-INFO:Xst:2261 - The FF/Latch <pcm_reg_0> in Unit <pcm_generator> is equivalent to the following 14 FFs/Latches, which will be removed : <pcm_reg_1> <pcm_reg_2> <pcm_reg_3> <pcm_reg_4> <pcm_reg_5> <pcm_reg_6> <pcm_reg_7> <pcm_reg_8> <pcm_reg_9> <pcm_reg_10> <pcm_reg_11> <pcm_reg_12> <pcm_reg_13> <pcm_reg_14> 
+INFO:Xst:2146 - In block <pcm_generator>, Counter <cyclecount_reg> <pdm1/count_reg> are equivalent, XST will keep only <cyclecount_reg>.
 
 Optimizing unit <system_snd_controller_0_wrapper> ...
 
 Optimizing unit <mem_controller> ...
 
+Optimizing unit <command_stack> ...
+
 Optimizing unit <pcm_generator> ...
-
-Optimizing unit <pdm_generator> ...
-
-Optimizing unit <div_15u_15u> ...
-WARNING:Xst:1710 - FF/Latch <snd_controller_0/pcm1/pdm1/pw_reg_14> (without init value) has a constant value of 0 in block <system_snd_controller_0_wrapper>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <snd_controller_0/pcm1/pdm1/pw_reg_13> (without init value) has a constant value of 0 in block <system_snd_controller_0_wrapper>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <snd_controller_0/pcm1/pdm1/pw_reg_12> (without init value) has a constant value of 0 in block <system_snd_controller_0_wrapper>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <snd_controller_0/pcm1/pdm1/pw_reg_10> (without init value) has a constant value of 0 in block <system_snd_controller_0_wrapper>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <snd_controller_0/pcm1/pdm1/pw_reg_9> (without init value) has a constant value of 0 in block <system_snd_controller_0_wrapper>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <snd_controller_0/pcm1/pdm1/pw_reg_7> (without init value) has a constant value of 0 in block <system_snd_controller_0_wrapper>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <snd_controller_0/pcm1/pdm1/pw_reg_6> (without init value) has a constant value of 0 in block <system_snd_controller_0_wrapper>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <snd_controller_0/pcm1/pdm1/pw_reg_4> (without init value) has a constant value of 0 in block <system_snd_controller_0_wrapper>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <snd_controller_0/pcm1/pdm1/pw_reg_3> (without init value) has a constant value of 0 in block <system_snd_controller_0_wrapper>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:2677 - Node <snd_controller_0/mem1/output_reg_waveform_1> of sequential type is unconnected in block <system_snd_controller_0_wrapper>.
-WARNING:Xst:2677 - Node <snd_controller_0/mem1/output_reg_waveform_0> of sequential type is unconnected in block <system_snd_controller_0_wrapper>.
-WARNING:Xst:1710 - FF/Latch <snd_controller_0/pcm1/pdm1/pw_reg_1> (without init value) has a constant value of 0 in block <system_snd_controller_0_wrapper>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <snd_controller_0/pcm1/pdm1/pw_reg_0> (without init value) has a constant value of 0 in block <system_snd_controller_0_wrapper>. This FF/Latch will be trimmed during the optimization process.
-INFO:Xst:2261 - The FF/Latch <snd_controller_0/pcm1/pdm1/pw_reg_11> in Unit <system_snd_controller_0_wrapper> is equivalent to the following 3 FFs/Latches, which will be removed : <snd_controller_0/pcm1/pdm1/pw_reg_8> <snd_controller_0/pcm1/pdm1/pw_reg_5> <snd_controller_0/pcm1/pdm1/pw_reg_2> 
 
 Mapping all equations...
 Building and optimizing final netlist ...
-Found area constraint ratio of 100 (+ 0) on block system_snd_controller_0_wrapper, actual ratio is 1.
+Found area constraint ratio of 100 (+ 0) on block system_snd_controller_0_wrapper, actual ratio is 12.
 
 Final Macro Processing ...
 
@@ -342,8 +352,8 @@ Final Macro Processing ...
 Final Register Report
 
 Macro Statistics
-# Registers                                            : 111
- Flip-Flops                                            : 111
+# Registers                                            : 643
+ Flip-Flops                                            : 643
 
 =========================================================================
 
@@ -366,23 +376,27 @@ Top Level Output File Name         : system_snd_controller_0_wrapper.ngc
 
 Primitive and Black Box Usage:
 ------------------------------
-# BELS                             : 284
+# BELS                             : 576
 #      GND                         : 1
-#      INV                         : 5
-#      LUT1                        : 14
-#      LUT2                        : 38
-#      LUT3                        : 18
-#      LUT4                        : 22
-#      LUT5                        : 22
-#      LUT6                        : 47
-#      MUXCY                       : 71
+#      INV                         : 20
+#      LUT1                        : 26
+#      LUT2                        : 34
+#      LUT3                        : 6
+#      LUT4                        : 44
+#      LUT5                        : 39
+#      LUT6                        : 149
+#      MUXCY                       : 91
+#      MUXF7                       : 64
+#      MUXF8                       : 32
 #      VCC                         : 1
-#      XORCY                       : 45
-# FlipFlops/Latches                : 111
-#      FD                          : 48
+#      XORCY                       : 69
+# FlipFlops/Latches                : 643
+#      FD                          : 15
 #      FDC                         : 3
-#      FDCE                        : 30
-#      FDRE                        : 30
+#      FDCE                        : 32
+#      FDE                         : 2
+#      FDR                         : 20
+#      FDRE                        : 571
 
 Device utilization summary:
 ---------------------------
@@ -391,16 +405,16 @@ Selected Device : 6slx16csg324-3
 
 
 Slice Logic Utilization: 
- Number of Slice Registers:             111  out of  18224     0%  
- Number of Slice LUTs:                  166  out of   9112     1%  
-    Number used as Logic:               166  out of   9112     1%  
+ Number of Slice Registers:             643  out of  18224     3%  
+ Number of Slice LUTs:                  318  out of   9112     3%  
+    Number used as Logic:               318  out of   9112     3%  
 
 Slice Logic Distribution: 
- Number of LUT Flip Flop pairs used:    195
-   Number with an unused Flip Flop:      84  out of    195    43%  
-   Number with an unused LUT:            29  out of    195    14%  
-   Number of fully used LUT-FF pairs:    82  out of    195    42%  
-   Number of unique control sets:         5
+ Number of LUT Flip Flop pairs used:    756
+   Number with an unused Flip Flop:     113  out of    756    14%  
+   Number with an unused LUT:           438  out of    756    57%  
+   Number of fully used LUT-FF pairs:   205  out of    756    27%  
+   Number of unique control sets:        24
 
 IO Utilization: 
  Number of IOs:                         162
@@ -429,7 +443,7 @@ Clock Information:
 -----------------------------------+-------------------------------------------------+-------+
 Clock Signal                       | Clock buffer(FF name)                           | Load  |
 -----------------------------------+-------------------------------------------------+-------+
-ACLK                               | NONE(snd_controller_0/mem1/output_reg_period_14)| 111   |
+ACLK                               | NONE(snd_controller_0/mem1/output_reg_period_14)| 643   |
 -----------------------------------+-------------------------------------------------+-------+
 INFO:Xst:2169 - HDL ADVISOR - Some clock signals were not automatically buffered by XST with BUFG/BUFR resources. Please use the buffer_type constraint in order to insert these buffers to the clock signals to help prevent skew problems.
 
@@ -441,9 +455,9 @@ Timing Summary:
 ---------------
 Speed Grade: -3
 
-   Minimum period: 4.747ns (Maximum Frequency: 210.640MHz)
-   Minimum input arrival time before clock: 2.001ns
-   Maximum output required time after clock: 2.992ns
+   Minimum period: 5.310ns (Maximum Frequency: 188.315MHz)
+   Minimum input arrival time before clock: 2.746ns
+   Maximum output required time after clock: 2.839ns
    Maximum combinational path delay: No path found
 
 Timing Details:
@@ -452,79 +466,79 @@ All values displayed in nanoseconds (ns)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'ACLK'
-  Clock period: 4.747ns (frequency: 210.640MHz)
-  Total number of paths / destination ports: 11335 / 171
+  Clock period: 5.310ns (frequency: 188.315MHz)
+  Total number of paths / destination ports: 30108 / 1241
 -------------------------------------------------------------------------
-Delay:               4.747ns (Levels of Logic = 9)
-  Source:            snd_controller_0/pcm1/command_reg_duration_2 (FF)
-  Destination:       snd_controller_0/pcm1/count_reg_0 (FF)
+Delay:               5.310ns (Levels of Logic = 11)
+  Source:            snd_controller_0/pcm1/samplecount_reg_0 (FF)
+  Destination:       snd_controller_0/pcm1/period_reg_13 (FF)
   Source Clock:      ACLK rising
   Destination Clock: ACLK rising
 
-  Data Path: snd_controller_0/pcm1/command_reg_duration_2 to snd_controller_0/pcm1/count_reg_0
+  Data Path: snd_controller_0/pcm1/samplecount_reg_0 to snd_controller_0/pcm1/period_reg_13
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FD:C->Q               2   0.447   0.981  snd_controller_0/pcm1/command_reg_duration_2 (snd_controller_0/pcm1/command_reg_duration_2)
-     LUT6:I0->O            1   0.203   0.000  snd_controller_0/pcm1/Mcompar_count_reg[14]_command_reg_duration[14]_equal_19_o_lut<0> (snd_controller_0/pcm1/Mcompar_count_reg[14]_command_reg_duration[14]_equal_19_o_lut<0>)
-     MUXCY:S->O            1   0.172   0.000  snd_controller_0/pcm1/Mcompar_count_reg[14]_command_reg_duration[14]_equal_19_o_cy<0> (snd_controller_0/pcm1/Mcompar_count_reg[14]_command_reg_duration[14]_equal_19_o_cy<0>)
-     MUXCY:CI->O           1   0.019   0.000  snd_controller_0/pcm1/Mcompar_count_reg[14]_command_reg_duration[14]_equal_19_o_cy<1> (snd_controller_0/pcm1/Mcompar_count_reg[14]_command_reg_duration[14]_equal_19_o_cy<1>)
-     MUXCY:CI->O           1   0.019   0.000  snd_controller_0/pcm1/Mcompar_count_reg[14]_command_reg_duration[14]_equal_19_o_cy<2> (snd_controller_0/pcm1/Mcompar_count_reg[14]_command_reg_duration[14]_equal_19_o_cy<2>)
-     MUXCY:CI->O           1   0.019   0.000  snd_controller_0/pcm1/Mcompar_count_reg[14]_command_reg_duration[14]_equal_19_o_cy<3> (snd_controller_0/pcm1/Mcompar_count_reg[14]_command_reg_duration[14]_equal_19_o_cy<3>)
-     MUXCY:CI->O          64   0.019   1.640  snd_controller_0/pcm1/Mcompar_count_reg[14]_command_reg_duration[14]_equal_19_o_cy<4> (snd_controller_0/pcm1/count_reg[14]_command_reg_duration[14]_equal_19_o)
-     LUT2:I1->O            1   0.205   0.000  snd_controller_0/pcm1/Mcount_count_reg_lut<0> (snd_controller_0/pcm1/Mcount_count_reg_lut<0>)
-     XORCY:LI->O           1   0.136   0.580  snd_controller_0/pcm1/Mcount_count_reg_xor<0> (snd_controller_0/pcm1/Mcount_count_reg)
-     LUT3:I2->O            1   0.205   0.000  snd_controller_0/pcm1/count_reg_0_dpot (snd_controller_0/pcm1/count_reg_0_dpot)
-     FDRE:D                    0.102          snd_controller_0/pcm1/count_reg_0
+     FD:C->Q               4   0.447   0.912  snd_controller_0/pcm1/samplecount_reg_0 (snd_controller_0/pcm1/samplecount_reg_0)
+     LUT4:I1->O            1   0.205   0.000  snd_controller_0/pcm1/Mcompar_command_reg_duration[14]_samplecount_reg[14]_LessThan_38_o_lut<0> (snd_controller_0/pcm1/Mcompar_command_reg_duration[14]_samplecount_reg[14]_LessThan_38_o_lut<0>)
+     MUXCY:S->O            1   0.172   0.000  snd_controller_0/pcm1/Mcompar_command_reg_duration[14]_samplecount_reg[14]_LessThan_38_o_cy<0> (snd_controller_0/pcm1/Mcompar_command_reg_duration[14]_samplecount_reg[14]_LessThan_38_o_cy<0>)
+     MUXCY:CI->O           1   0.019   0.000  snd_controller_0/pcm1/Mcompar_command_reg_duration[14]_samplecount_reg[14]_LessThan_38_o_cy<1> (snd_controller_0/pcm1/Mcompar_command_reg_duration[14]_samplecount_reg[14]_LessThan_38_o_cy<1>)
+     MUXCY:CI->O           1   0.019   0.000  snd_controller_0/pcm1/Mcompar_command_reg_duration[14]_samplecount_reg[14]_LessThan_38_o_cy<2> (snd_controller_0/pcm1/Mcompar_command_reg_duration[14]_samplecount_reg[14]_LessThan_38_o_cy<2>)
+     MUXCY:CI->O           1   0.019   0.000  snd_controller_0/pcm1/Mcompar_command_reg_duration[14]_samplecount_reg[14]_LessThan_38_o_cy<3> (snd_controller_0/pcm1/Mcompar_command_reg_duration[14]_samplecount_reg[14]_LessThan_38_o_cy<3>)
+     MUXCY:CI->O           1   0.019   0.000  snd_controller_0/pcm1/Mcompar_command_reg_duration[14]_samplecount_reg[14]_LessThan_38_o_cy<4> (snd_controller_0/pcm1/Mcompar_command_reg_duration[14]_samplecount_reg[14]_LessThan_38_o_cy<4>)
+     MUXCY:CI->O           1   0.019   0.000  snd_controller_0/pcm1/Mcompar_command_reg_duration[14]_samplecount_reg[14]_LessThan_38_o_cy<5> (snd_controller_0/pcm1/Mcompar_command_reg_duration[14]_samplecount_reg[14]_LessThan_38_o_cy<5>)
+     MUXCY:CI->O           1   0.019   0.000  snd_controller_0/pcm1/Mcompar_command_reg_duration[14]_samplecount_reg[14]_LessThan_38_o_cy<6> (snd_controller_0/pcm1/Mcompar_command_reg_duration[14]_samplecount_reg[14]_LessThan_38_o_cy<6>)
+     MUXCY:CI->O           5   0.019   0.000  snd_controller_0/pcm1/Mcompar_command_reg_duration[14]_samplecount_reg[14]_LessThan_38_o_cy<7> (snd_controller_0/pcm1/command_reg_duration[14]_samplecount_reg[14]_LessThan_38_o)
+     MUXCY:CI->O          53   0.258   1.568  snd_controller_0/pcm1/RD1_cy (snd_controller_0/fifo_rd)
+     LUT2:I1->O           15   0.205   0.981  snd_controller_0/pcm1/Mcount_period_reg_val1 (snd_controller_0/pcm1/Mcount_period_reg_val)
+     FDRE:R                    0.430          snd_controller_0/pcm1/period_reg_0
     ----------------------------------------
-    Total                      4.747ns (1.546ns logic, 3.201ns route)
-                                       (32.6% logic, 67.4% route)
+    Total                      5.310ns (1.850ns logic, 3.460ns route)
+                                       (34.8% logic, 65.2% route)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'ACLK'
-  Total number of paths / destination ports: 177 / 174
+  Total number of paths / destination ports: 712 / 710
 -------------------------------------------------------------------------
-Offset:              2.001ns (Levels of Logic = 1)
+Offset:              2.746ns (Levels of Logic = 1)
   Source:            ARESETN (PAD)
-  Destination:       snd_controller_0/pcm1/period_reg_14 (FF)
+  Destination:       snd_controller_0/mem1/output_reg_period_14 (FF)
   Destination Clock: ACLK rising
 
-  Data Path: ARESETN to snd_controller_0/pcm1/period_reg_14
+  Data Path: ARESETN to snd_controller_0/mem1/output_reg_period_14
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     LUT2:I0->O           30   0.203   1.263  snd_controller_0/pcm1/Mcount_count_reg_val1 (snd_controller_0/pcm1/Mcount_count_reg_val)
-     FDRE:R                    0.430          snd_controller_0/pcm1/count_reg_0
+     INV:I->O            599   0.206   2.110  snd_controller_0/mem1/ARESETN_inv1_INV_0 (snd_controller_0/fifo1/RST_inv)
+     FDRE:R                    0.430          snd_controller_0/fifo1/memory[0]_period_0
     ----------------------------------------
-    Total                      2.001ns (0.738ns logic, 1.263ns route)
-                                       (36.9% logic, 63.1% route)
+    Total                      2.746ns (0.636ns logic, 2.110ns route)
+                                       (23.2% logic, 76.8% route)
 
 =========================================================================
 Timing constraint: Default OFFSET OUT AFTER for Clock 'ACLK'
-  Total number of paths / destination ports: 339 / 43
+  Total number of paths / destination ports: 387 / 43
 -------------------------------------------------------------------------
-Offset:              2.992ns (Levels of Logic = 9)
-  Source:            snd_controller_0/pcm1/pdm1/pw_reg_11 (FF)
+Offset:              2.839ns (Levels of Logic = 7)
+  Source:            snd_controller_0/pcm1/pcm_reg_0 (FF)
   Destination:       JA<7> (PAD)
   Source Clock:      ACLK rising
 
-  Data Path: snd_controller_0/pcm1/pdm1/pw_reg_11 to JA<7>
+  Data Path: snd_controller_0/pcm1/pcm_reg_0 to JA<7>
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FD:C->Q               9   0.447   1.077  snd_controller_0/pcm1/pdm1/pw_reg_11 (snd_controller_0/pcm1/pdm1/pw_reg_11)
-     LUT4:I0->O            1   0.203   0.000  snd_controller_0/pcm1/pdm1/Mcompar_OUTPUT_lut<1> (snd_controller_0/pcm1/pdm1/Mcompar_OUTPUT_lut<1>)
-     MUXCY:S->O            1   0.172   0.000  snd_controller_0/pcm1/pdm1/Mcompar_OUTPUT_cy<1> (snd_controller_0/pcm1/pdm1/Mcompar_OUTPUT_cy<1>)
+     FDRE:C->Q             5   0.447   0.962  snd_controller_0/pcm1/pcm_reg_0 (snd_controller_0/pcm1/pcm_reg_0)
+     LUT4:I0->O            1   0.203   0.000  snd_controller_0/pcm1/pdm1/Mcompar_OUTPUT_lut<0> (snd_controller_0/pcm1/pdm1/Mcompar_OUTPUT_lut<0>)
+     MUXCY:S->O            1   0.172   0.000  snd_controller_0/pcm1/pdm1/Mcompar_OUTPUT_cy<0> (snd_controller_0/pcm1/pdm1/Mcompar_OUTPUT_cy<0>)
+     MUXCY:CI->O           1   0.019   0.000  snd_controller_0/pcm1/pdm1/Mcompar_OUTPUT_cy<1> (snd_controller_0/pcm1/pdm1/Mcompar_OUTPUT_cy<1>)
      MUXCY:CI->O           1   0.019   0.000  snd_controller_0/pcm1/pdm1/Mcompar_OUTPUT_cy<2> (snd_controller_0/pcm1/pdm1/Mcompar_OUTPUT_cy<2>)
      MUXCY:CI->O           1   0.019   0.000  snd_controller_0/pcm1/pdm1/Mcompar_OUTPUT_cy<3> (snd_controller_0/pcm1/pdm1/Mcompar_OUTPUT_cy<3>)
-     MUXCY:CI->O           1   0.019   0.000  snd_controller_0/pcm1/pdm1/Mcompar_OUTPUT_cy<4> (snd_controller_0/pcm1/pdm1/Mcompar_OUTPUT_cy<4>)
-     MUXCY:CI->O           1   0.019   0.000  snd_controller_0/pcm1/pdm1/Mcompar_OUTPUT_cy<5> (snd_controller_0/pcm1/pdm1/Mcompar_OUTPUT_cy<5>)
-     MUXCY:CI->O           1   0.019   0.000  snd_controller_0/pcm1/pdm1/Mcompar_OUTPUT_cy<6> (snd_controller_0/pcm1/pdm1/Mcompar_OUTPUT_cy<6>)
-     MUXCY:CI->O           1   0.213   0.579  snd_controller_0/pcm1/pdm1/Mcompar_OUTPUT_cy<7> (snd_controller_0/pcm1/pdm1/Mcompar_OUTPUT_cy<7>)
-     INV:I->O              0   0.206   0.000  snd_controller_0/pcm1/pdm1/Mcompar_OUTPUT_cy<7>_inv1_INV_0 (JA<0>)
+     MUXCY:CI->O           1   0.213   0.580  snd_controller_0/pcm1/pdm1/Mcompar_OUTPUT_cy<4> (snd_controller_0/pcm1/pdm1/Mcompar_OUTPUT_cy<4>)
+     LUT5:I4->O            0   0.205   0.000  snd_controller_0/pcm1/pdm1/Mcompar_OUTPUT_cy<5>_inv1 (JA<0>)
     ----------------------------------------
-    Total                      2.992ns (1.336ns logic, 1.656ns route)
-                                       (44.7% logic, 55.3% route)
+    Total                      2.839ns (1.297ns logic, 1.542ns route)
+                                       (45.7% logic, 54.3% route)
 
 =========================================================================
 
@@ -536,20 +550,20 @@ Clock to Setup on destination clock ACLK
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-ACLK           |    4.747|         |         |         |
+ACLK           |    5.310|         |         |         |
 ---------------+---------+---------+---------+---------+
 
 =========================================================================
 
 
-Total REAL time to Xst completion: 6.00 secs
-Total CPU time to Xst completion: 5.59 secs
+Total REAL time to Xst completion: 7.00 secs
+Total CPU time to Xst completion: 7.61 secs
  
 --> 
 
-Total memory usage is 272176 kilobytes
+Total memory usage is 272168 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings :   20 (   0 filtered)
+Number of warnings :    6 (   0 filtered)
 Number of infos    :    3 (   0 filtered)
 
