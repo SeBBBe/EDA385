@@ -40,37 +40,26 @@ int volatile *mix = (int *)0x7FC10000;
 #define NSE_WAVE 0b11
 
 sample_t boot[] = {
-		{C4, QUART, SQR_WAVE},
-		{D4, QUART, SQR_WAVE},
-		{E4, QUART, SQR_WAVE},
-		{F4, QUART, SQR_WAVE},
-		{G4, QUART, SQR_WAVE},
-		{A4, QUART, SQR_WAVE},
-		{B4, QUART, SQR_WAVE},
-		{C5, QUART, SQR_WAVE},
+		SQR(C4, EIGHT),
+		SQR(D4, EIGHT),
+		SQR(E4, EIGHT),
+		SQR(F4, EIGHT),
+		SQR(G4, EIGHT),
+		SQR(A4, EIGHT),
+		SQR(B4, EIGHT),
+		SQR(C5, EIGHT),
 };
 
 sample_t shootsnd[] = {
-		{30, 400, 0},
-		{25, 400, 0},
-		{20, 400, 0},
+		SQR(G5, SIXTEEN),
+		SQR(B5, SIXTEEN),
+		SQR(D6, SIXTEEN),
 };
 
 sample_t pup1snd[] = {
-		{168, 2000, 0},
-		{84, 2000, 0},
+		SQR(C4, QUART),
+		SQR(C5, QUART),
 };
-
-//sample_t shootsnd[] = {
-//		{168, 2, 0},
-//		{150, 2, 0},
-//		{134, 2, 0},
-//		{126, 2, 0},
-//		{113, 2, 0},
-//		{100, 2, 0},
-//		{89, 2, 0},
-//		{84, 2, 0},
-//};
 
 #define INTRO_REST {0, 11025, 0}
 #define INTRO_PIP {20, 300, 0}, \
@@ -122,28 +111,28 @@ sample_t gameover[] = {
 };
 
 sample_t kaboom[] = {
-		{400, 500, 0},
-		{300, 500, 0},
-		{200, 500, 0},
-		{300, 500, 0},
-		{400, 500, 0},
-		{300, 500, 0},
-		{200, 500, 0},
-		{150, 500, 0},
-		{400, 500, 0},
-		{400, 500, 0},
-		{300, 500, 0},
-		{500, 500, 0},
-		{600, 500, 0},
-		{700, 500, 0},
-		{500, 500, 0},
-		{600, 500, 0},
+		SQR(B1, SIXTEEN),
+		SQR(E2, SIXTEEN),
+		SQR(B2, SIXTEEN),
+		SQR(E2, SIXTEEN),
+		SQR(B1, SIXTEEN),
+		SQR(E2, SIXTEEN),
+		SQR(B2, SIXTEEN),
+		SQR(E3, SIXTEEN),
+		SQR(B1, SIXTEEN),
+		SQR(B1, SIXTEEN),
+		SQR(E2, SIXTEEN),
+		SQR(G1, SIXTEEN),
+		SQR(E1, SIXTEEN),
+		SQR(C1s, SIXTEEN),
+		SQR(G1, SIXTEEN),
+		SQR(E1, SIXTEEN),
 };
 
 sample_t kaboom_short[] = {
-		{500, 500, 0},
-		{400, 500, 0},
-		{300, 500, 0},
+		SQR(G1, SIXTEEN),
+		SQR(B1, SIXTEEN),
+		SQR(E2, SIXTEEN),
 };
 
 sample_t winsnd[] = {
@@ -157,17 +146,36 @@ sample_t winsnd[] = {
 };
 
 sample_t zeldasecret[] = {
-		{G4, HALF, SQR_WAVE},
-		{F4s, HALF, SQR_WAVE},
-		{D4s, HALF, SQR_WAVE},
-		{A3, HALF, SQR_WAVE},
-		{G3s, HALF, SQR_WAVE},
-		{E4, HALF, SQR_WAVE},
-		{G4s, HALF, SQR_WAVE},
-		{C5, WHOLE, SQR_WAVE},
+		SQR(G4, HALF),
+		SQR(F4s, HALF),
+		SQR(D4s, HALF),
+		SQR(A3, HALF),
+		SQR(G3s, HALF),
+		SQR(E4, HALF),
+		SQR(G4s, HALF),
+		SQR(C5, WHOLE),
 };
 
-#include "bman.h"
+sample_t bgm[] = {
+	SAW(A2, WHOLE),
+	SAW(D2, WHOLE),
+	SAW(A2, WHOLE),
+	SAW(D2, WHOLE),
+	SAW(A2, WHOLE),
+	SAW(D2, WHOLE),
+	SAW(A2, WHOLE),
+	SAW(D2, WHOLE),
+	SAW(A2, WHOLE),
+	SAW(D2, WHOLE),
+	SAW(A2, WHOLE),
+	SAW(D2, WHOLE),
+	SAW(A2, WHOLE),
+	SAW(D2, WHOLE),
+	SAW(A2, WHOLE),
+	SAW(D2, WHOLE),
+	SAW(A2, WHOLE),
+	SAW(D2, WHOLE),
+};
 
 sample_t *snd_current_loop;
 int snd_looplen;
@@ -189,23 +197,24 @@ void snd_init()
 	mus_looplen = 0;
 	mus_loopctr = 0;
 
-	*mix = 0x00000101;
+	*mix = 0x00010001;
 
 	MUS_PLAY(boot);
 }
 
+void snd_setvolume(int snd_att, int mus_att)
+{
+	*mix = snd_att | mus_att << 16;
+}
+
 void snd_update()
 {
-	xil_printf("update\r\n");
-
 	while(snd_current_loop && *snd)
 	{
 		if(snd_loopctr < snd_looplen)
 		{
 			*snd = (snd_current_loop[snd_loopctr].period) | (snd_current_loop[snd_loopctr].duration << 15) | (snd_current_loop[snd_loopctr].wave << 30);
 			snd_loopctr++;
-
-			xil_printf("snd advance\r\n");
 		}
 		else
 		{
@@ -215,14 +224,12 @@ void snd_update()
 		}
 	}
 
-	while(mus_current_loop && *snd)
+	while(mus_current_loop && *mus)
 	{
 		if(mus_loopctr < mus_looplen)
 		{
-			*snd = (mus_current_loop[mus_loopctr].period) | (mus_current_loop[mus_loopctr].duration << 15) | (mus_current_loop[mus_loopctr].wave << 30);
+			*mus = (mus_current_loop[mus_loopctr].period) | (mus_current_loop[mus_loopctr].duration << 15) | (mus_current_loop[mus_loopctr].wave << 30);
 			mus_loopctr++;
-
-			xil_printf("mus advance\r\n");
 		}
 		else
 		{
@@ -235,9 +242,13 @@ void snd_update()
 
 void snd_play(sample_t *loop, int len)
 {
+	int i;
+
 	snd_current_loop = loop;
 	snd_looplen = len;
 	snd_loopctr = 0;
+
+	for(i = 0; i < 16; i++) *snd = 0;
 
 	*snd = (snd_current_loop[snd_loopctr].period) | (snd_current_loop[snd_loopctr].duration << 15) | (snd_current_loop[snd_loopctr].wave << 30);
 	snd_loopctr++;
@@ -245,11 +256,15 @@ void snd_play(sample_t *loop, int len)
 
 void mus_play(sample_t *loop, int len)
 {
+	int i;
+
 	mus_current_loop = loop;
 	mus_looplen = len;
 	mus_loopctr = 0;
 
-	*snd = (mus_current_loop[mus_loopctr].period) | (mus_current_loop[mus_loopctr].duration << 15) | (mus_current_loop[mus_loopctr].wave << 30);
+	for(i = 0; i < 16; i++) *mus = 0;
+
+	*mus = (mus_current_loop[mus_loopctr].period) | (mus_current_loop[mus_loopctr].duration << 15) | (mus_current_loop[mus_loopctr].wave << 30);
 	mus_loopctr++;
 }
 

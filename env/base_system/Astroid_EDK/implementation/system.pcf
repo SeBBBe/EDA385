@@ -1,5 +1,5 @@
 //! **************************************************************************
-// Written by: Map P.28xd on Wed Oct 15 13:28:16 2014
+// Written by: Map P.28xd on Wed Oct 15 15:20:12 2014
 //! **************************************************************************
 
 SCHEMATIC START;
@@ -3630,9 +3630,9 @@ TIMEGRP clock_generator_0_clock_generator_0_SIG_DCM0_CLK0 = PIN
         "debug_module_0/debug_module_0/Use_AXI_IPIF.AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/INCLUDE_DPHASE_TIMER.dpto_cnt_2"
         BEL
         "debug_module_0/debug_module_0/Use_AXI_IPIF.AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/state_FSM_FFd1"
-        BEL "snd_mixer_0/snd_mixer_0/mem1/rvalid_reg" BEL
+        BEL "snd_mixer_0/snd_mixer_0/mem1/output_reg_vol1_3_1" BEL
+        "snd_mixer_0/snd_mixer_0/mem1/rvalid_reg" BEL
         "snd_mixer_0/snd_mixer_0/mem1/write_reg" BEL
-        "snd_mixer_0/snd_mixer_0/mem1/trigger_reg" BEL
         "snd_mixer_0/snd_mixer_0/mem1/output_reg_vol2_0" BEL
         "snd_mixer_0/snd_mixer_0/mem1/output_reg_vol2_1" BEL
         "snd_mixer_0/snd_mixer_0/mem1/output_reg_vol2_2" BEL
@@ -3641,6 +3641,14 @@ TIMEGRP clock_generator_0_clock_generator_0_SIG_DCM0_CLK0 = PIN
         "snd_mixer_0/snd_mixer_0/mem1/output_reg_vol2_5" BEL
         "snd_mixer_0/snd_mixer_0/mem1/output_reg_vol2_6" BEL
         "snd_mixer_0/snd_mixer_0/mem1/output_reg_vol2_7" BEL
+        "snd_mixer_0/snd_mixer_0/mem1/output_reg_vol2_8" BEL
+        "snd_mixer_0/snd_mixer_0/mem1/output_reg_vol2_9" BEL
+        "snd_mixer_0/snd_mixer_0/mem1/output_reg_vol2_10" BEL
+        "snd_mixer_0/snd_mixer_0/mem1/output_reg_vol2_11" BEL
+        "snd_mixer_0/snd_mixer_0/mem1/output_reg_vol2_12" BEL
+        "snd_mixer_0/snd_mixer_0/mem1/output_reg_vol2_13" BEL
+        "snd_mixer_0/snd_mixer_0/mem1/output_reg_vol2_14" BEL
+        "snd_mixer_0/snd_mixer_0/mem1/output_reg_vol2_15" BEL
         "snd_mixer_0/snd_mixer_0/mem1/output_reg_vol1_0" BEL
         "snd_mixer_0/snd_mixer_0/mem1/output_reg_vol1_1" BEL
         "snd_mixer_0/snd_mixer_0/mem1/output_reg_vol1_2" BEL
@@ -3649,41 +3657,56 @@ TIMEGRP clock_generator_0_clock_generator_0_SIG_DCM0_CLK0 = PIN
         "snd_mixer_0/snd_mixer_0/mem1/output_reg_vol1_5" BEL
         "snd_mixer_0/snd_mixer_0/mem1/output_reg_vol1_6" BEL
         "snd_mixer_0/snd_mixer_0/mem1/output_reg_vol1_7" BEL
-        "snd_mixer_0/snd_mixer_0/count_reg_0" BEL
-        "snd_mixer_0/snd_mixer_0/count_reg_1" BEL
-        "snd_mixer_0/snd_mixer_0/count_reg_2" BEL
-        "snd_mixer_0/snd_mixer_0/count_reg_3" BEL
-        "snd_mixer_0/snd_mixer_0/count_reg_4" BEL
-        "snd_mixer_0/snd_mixer_0/count_reg_5" BEL
-        "snd_mixer_0/snd_mixer_0/count_reg_6" BEL
-        "snd_mixer_0/snd_mixer_0/count_reg_7" BEL
+        "snd_mixer_0/snd_mixer_0/mem1/output_reg_vol1_8" BEL
+        "snd_mixer_0/snd_mixer_0/mem1/output_reg_vol1_9" BEL
+        "snd_mixer_0/snd_mixer_0/mem1/output_reg_vol1_10" BEL
+        "snd_mixer_0/snd_mixer_0/mem1/output_reg_vol1_11" BEL
+        "snd_mixer_0/snd_mixer_0/mem1/output_reg_vol1_12" BEL
+        "snd_mixer_0/snd_mixer_0/mem1/output_reg_vol1_13" BEL
+        "snd_mixer_0/snd_mixer_0/mem1/output_reg_vol1_14" BEL
+        "snd_mixer_0/snd_mixer_0/mem1/output_reg_vol1_15" BEL
+        "snd_mixer_0/snd_mixer_0/pcm_reg_0" BEL
+        "snd_mixer_0/snd_mixer_0/pcm_reg_1" BEL
+        "snd_mixer_0/snd_mixer_0/pcm_reg_2" BEL
+        "snd_mixer_0/snd_mixer_0/pcm_reg_3" BEL
+        "snd_mixer_0/snd_mixer_0/pcm_reg_4" BEL
+        "snd_mixer_0/snd_mixer_0/pcm_reg_5" BEL
+        "snd_mixer_0/snd_mixer_0/pcm_reg_6" BEL
+        "snd_mixer_0/snd_mixer_0/pcm_reg_7" BEL
+        "snd_mixer_0/snd_mixer_0/pcm_reg_8" BEL
+        "snd_mixer_0/snd_mixer_0/pcm_reg_9" BEL
+        "snd_mixer_0/snd_mixer_0/pcm_reg_10" BEL
+        "snd_mixer_0/snd_mixer_0/pcm_reg_11" BEL
         "snd_mixer_0/snd_mixer_0/ja_reg_0" BEL
-        "snd_mixer_0/snd_mixer_0/ja_reg_1" BEL
-        "snd_mixer_0/snd_mixer_0/ja_reg_2" BEL
-        "snd_mixer_0/snd_mixer_0/ja_reg_3" BEL
-        "snd_mixer_0/snd_mixer_0/ja_reg_4" BEL
-        "snd_mixer_0/snd_mixer_0/ja_reg_5" BEL
-        "snd_mixer_0/snd_mixer_0/ja_reg_6" BEL
-        "snd_mixer_0/snd_mixer_0/ja_reg_7" BEL
+        "snd_mixer_0/snd_mixer_0/pdm1/count_reg_0" BEL
+        "snd_mixer_0/snd_mixer_0/pdm1/count_reg_1" BEL
+        "snd_mixer_0/snd_mixer_0/pdm1/count_reg_2" BEL
+        "snd_mixer_0/snd_mixer_0/pdm1/count_reg_3" BEL
+        "snd_mixer_0/snd_mixer_0/pdm1/count_reg_4" BEL
+        "snd_mixer_0/snd_mixer_0/pdm1/count_reg_5" BEL
+        "snd_mixer_0/snd_mixer_0/pdm1/count_reg_6" BEL
+        "snd_mixer_0/snd_mixer_0/pdm1/count_reg_7" BEL
+        "snd_mixer_0/snd_mixer_0/pdm1/count_reg_8" BEL
+        "snd_mixer_0/snd_mixer_0/pdm1/count_reg_9" BEL
+        "snd_mixer_0/snd_mixer_0/pdm1/count_reg_10" BEL
+        "snd_mixer_0/snd_mixer_0/pdm1/count_reg_11" BEL
         "snd_controller_1/snd_controller_1/pcm1/samplecount_reg_2" BEL
         "snd_controller_1/snd_controller_1/pcm1/samplecount_reg_1" BEL
-        "snd_controller_1/snd_controller_1/pcm1/samplecount_reg_5" BEL
         "snd_controller_1/snd_controller_1/pcm1/samplecount_reg_3" BEL
         "snd_controller_1/snd_controller_1/pcm1/samplecount_reg_4" BEL
-        "snd_controller_1/snd_controller_1/pcm1/samplecount_reg_8" BEL
-        "snd_controller_1/snd_controller_1/pcm1/samplecount_reg_6" BEL
         "snd_controller_1/snd_controller_1/pcm1/samplecount_reg_7" BEL
-        "snd_controller_1/snd_controller_1/pcm1/samplecount_reg_11" BEL
+        "snd_controller_1/snd_controller_1/pcm1/samplecount_reg_5" BEL
+        "snd_controller_1/snd_controller_1/pcm1/samplecount_reg_6" BEL
+        "snd_controller_1/snd_controller_1/pcm1/samplecount_reg_8" BEL
         "snd_controller_1/snd_controller_1/pcm1/samplecount_reg_9" BEL
-        "snd_controller_1/snd_controller_1/pcm1/samplecount_reg_10" BEL
-        "snd_controller_1/snd_controller_1/pcm1/samplecount_reg_14" BEL
         "snd_controller_1/snd_controller_1/pcm1/samplecount_reg_12" BEL
+        "snd_controller_1/snd_controller_1/pcm1/samplecount_reg_10" BEL
+        "snd_controller_1/snd_controller_1/pcm1/samplecount_reg_11" BEL
         "snd_controller_1/snd_controller_1/pcm1/samplecount_reg_13" BEL
+        "snd_controller_1/snd_controller_1/pcm1/samplecount_reg_14" BEL
         "snd_controller_1/snd_controller_1/pcm1/samplecount_reg_0" BEL
         "snd_controller_1/snd_controller_1/mem1/rvalid_reg" BEL
         "snd_controller_1/snd_controller_1/mem1/write_reg" BEL
-        "snd_controller_1/snd_controller_1/pcm1/command_reg_waveform_0" BEL
-        "snd_controller_1/snd_controller_1/pcm1/command_reg_waveform_1" BEL
         "snd_controller_1/snd_controller_1/pcm1/command_reg_period_0" BEL
         "snd_controller_1/snd_controller_1/pcm1/command_reg_period_1" BEL
         "snd_controller_1/snd_controller_1/pcm1/command_reg_period_2" BEL
@@ -3714,6 +3737,8 @@ TIMEGRP clock_generator_0_clock_generator_0_SIG_DCM0_CLK0 = PIN
         "snd_controller_1/snd_controller_1/pcm1/command_reg_duration_12" BEL
         "snd_controller_1/snd_controller_1/pcm1/command_reg_duration_13" BEL
         "snd_controller_1/snd_controller_1/pcm1/command_reg_duration_14" BEL
+        "snd_controller_1/snd_controller_1/pcm1/command_reg_waveform_0" BEL
+        "snd_controller_1/snd_controller_1/pcm1/command_reg_waveform_1" BEL
         "snd_controller_1/snd_controller_1/pcm1/pcm_reg_0" BEL
         "snd_controller_1/snd_controller_1/pcm1/pcm_reg_1" BEL
         "snd_controller_1/snd_controller_1/pcm1/pcm_reg_2" BEL
@@ -3726,21 +3751,21 @@ TIMEGRP clock_generator_0_clock_generator_0_SIG_DCM0_CLK0 = PIN
         "snd_controller_1/snd_controller_1/pcm1/pcm_reg_9" BEL
         "snd_controller_1/snd_controller_1/pcm1/pcm_reg_10" BEL
         "snd_controller_1/snd_controller_1/pcm1/pcm_reg_11" BEL
-        "snd_controller_1/snd_controller_1/pcm1/period_reg_2" BEL
         "snd_controller_1/snd_controller_1/pcm1/period_reg_0" BEL
         "snd_controller_1/snd_controller_1/pcm1/period_reg_1" BEL
+        "snd_controller_1/snd_controller_1/pcm1/period_reg_2" BEL
         "snd_controller_1/snd_controller_1/pcm1/period_reg_5" BEL
         "snd_controller_1/snd_controller_1/pcm1/period_reg_3" BEL
         "snd_controller_1/snd_controller_1/pcm1/period_reg_4" BEL
-        "snd_controller_1/snd_controller_1/pcm1/period_reg_8" BEL
         "snd_controller_1/snd_controller_1/pcm1/period_reg_6" BEL
         "snd_controller_1/snd_controller_1/pcm1/period_reg_7" BEL
-        "snd_controller_1/snd_controller_1/pcm1/period_reg_11" BEL
-        "snd_controller_1/snd_controller_1/pcm1/period_reg_9" BEL
         "snd_controller_1/snd_controller_1/pcm1/period_reg_10" BEL
-        "snd_controller_1/snd_controller_1/pcm1/period_reg_14" BEL
+        "snd_controller_1/snd_controller_1/pcm1/period_reg_8" BEL
+        "snd_controller_1/snd_controller_1/pcm1/period_reg_9" BEL
+        "snd_controller_1/snd_controller_1/pcm1/period_reg_11" BEL
         "snd_controller_1/snd_controller_1/pcm1/period_reg_12" BEL
         "snd_controller_1/snd_controller_1/pcm1/period_reg_13" BEL
+        "snd_controller_1/snd_controller_1/pcm1/period_reg_14" BEL
         "snd_controller_1/snd_controller_1/pcm1/cyclecount_reg_0" BEL
         "snd_controller_1/snd_controller_1/pcm1/cyclecount_reg_1" BEL
         "snd_controller_1/snd_controller_1/pcm1/cyclecount_reg_2" BEL
@@ -4310,23 +4335,21 @@ TIMEGRP clock_generator_0_clock_generator_0_SIG_DCM0_CLK0 = PIN
         "snd_controller_1/snd_controller_1/mem1/output_reg_period_14" BEL
         "snd_controller_0/snd_controller_0/pcm1/samplecount_reg_2" BEL
         "snd_controller_0/snd_controller_0/pcm1/samplecount_reg_1" BEL
-        "snd_controller_0/snd_controller_0/pcm1/samplecount_reg_5" BEL
         "snd_controller_0/snd_controller_0/pcm1/samplecount_reg_3" BEL
         "snd_controller_0/snd_controller_0/pcm1/samplecount_reg_4" BEL
-        "snd_controller_0/snd_controller_0/pcm1/samplecount_reg_8" BEL
-        "snd_controller_0/snd_controller_0/pcm1/samplecount_reg_6" BEL
         "snd_controller_0/snd_controller_0/pcm1/samplecount_reg_7" BEL
-        "snd_controller_0/snd_controller_0/pcm1/samplecount_reg_11" BEL
+        "snd_controller_0/snd_controller_0/pcm1/samplecount_reg_5" BEL
+        "snd_controller_0/snd_controller_0/pcm1/samplecount_reg_6" BEL
+        "snd_controller_0/snd_controller_0/pcm1/samplecount_reg_8" BEL
         "snd_controller_0/snd_controller_0/pcm1/samplecount_reg_9" BEL
-        "snd_controller_0/snd_controller_0/pcm1/samplecount_reg_10" BEL
-        "snd_controller_0/snd_controller_0/pcm1/samplecount_reg_14" BEL
         "snd_controller_0/snd_controller_0/pcm1/samplecount_reg_12" BEL
+        "snd_controller_0/snd_controller_0/pcm1/samplecount_reg_10" BEL
+        "snd_controller_0/snd_controller_0/pcm1/samplecount_reg_11" BEL
         "snd_controller_0/snd_controller_0/pcm1/samplecount_reg_13" BEL
+        "snd_controller_0/snd_controller_0/pcm1/samplecount_reg_14" BEL
         "snd_controller_0/snd_controller_0/pcm1/samplecount_reg_0" BEL
         "snd_controller_0/snd_controller_0/mem1/rvalid_reg" BEL
         "snd_controller_0/snd_controller_0/mem1/write_reg" BEL
-        "snd_controller_0/snd_controller_0/pcm1/command_reg_waveform_0" BEL
-        "snd_controller_0/snd_controller_0/pcm1/command_reg_waveform_1" BEL
         "snd_controller_0/snd_controller_0/pcm1/command_reg_period_0" BEL
         "snd_controller_0/snd_controller_0/pcm1/command_reg_period_1" BEL
         "snd_controller_0/snd_controller_0/pcm1/command_reg_period_2" BEL
@@ -4357,6 +4380,8 @@ TIMEGRP clock_generator_0_clock_generator_0_SIG_DCM0_CLK0 = PIN
         "snd_controller_0/snd_controller_0/pcm1/command_reg_duration_12" BEL
         "snd_controller_0/snd_controller_0/pcm1/command_reg_duration_13" BEL
         "snd_controller_0/snd_controller_0/pcm1/command_reg_duration_14" BEL
+        "snd_controller_0/snd_controller_0/pcm1/command_reg_waveform_0" BEL
+        "snd_controller_0/snd_controller_0/pcm1/command_reg_waveform_1" BEL
         "snd_controller_0/snd_controller_0/pcm1/pcm_reg_0" BEL
         "snd_controller_0/snd_controller_0/pcm1/pcm_reg_1" BEL
         "snd_controller_0/snd_controller_0/pcm1/pcm_reg_2" BEL
@@ -4369,21 +4394,21 @@ TIMEGRP clock_generator_0_clock_generator_0_SIG_DCM0_CLK0 = PIN
         "snd_controller_0/snd_controller_0/pcm1/pcm_reg_9" BEL
         "snd_controller_0/snd_controller_0/pcm1/pcm_reg_10" BEL
         "snd_controller_0/snd_controller_0/pcm1/pcm_reg_11" BEL
-        "snd_controller_0/snd_controller_0/pcm1/period_reg_2" BEL
         "snd_controller_0/snd_controller_0/pcm1/period_reg_0" BEL
         "snd_controller_0/snd_controller_0/pcm1/period_reg_1" BEL
+        "snd_controller_0/snd_controller_0/pcm1/period_reg_2" BEL
         "snd_controller_0/snd_controller_0/pcm1/period_reg_5" BEL
         "snd_controller_0/snd_controller_0/pcm1/period_reg_3" BEL
         "snd_controller_0/snd_controller_0/pcm1/period_reg_4" BEL
-        "snd_controller_0/snd_controller_0/pcm1/period_reg_8" BEL
         "snd_controller_0/snd_controller_0/pcm1/period_reg_6" BEL
         "snd_controller_0/snd_controller_0/pcm1/period_reg_7" BEL
-        "snd_controller_0/snd_controller_0/pcm1/period_reg_11" BEL
-        "snd_controller_0/snd_controller_0/pcm1/period_reg_9" BEL
         "snd_controller_0/snd_controller_0/pcm1/period_reg_10" BEL
-        "snd_controller_0/snd_controller_0/pcm1/period_reg_14" BEL
+        "snd_controller_0/snd_controller_0/pcm1/period_reg_8" BEL
+        "snd_controller_0/snd_controller_0/pcm1/period_reg_9" BEL
+        "snd_controller_0/snd_controller_0/pcm1/period_reg_11" BEL
         "snd_controller_0/snd_controller_0/pcm1/period_reg_12" BEL
         "snd_controller_0/snd_controller_0/pcm1/period_reg_13" BEL
+        "snd_controller_0/snd_controller_0/pcm1/period_reg_14" BEL
         "snd_controller_0/snd_controller_0/pcm1/cyclecount_reg_0" BEL
         "snd_controller_0/snd_controller_0/pcm1/cyclecount_reg_1" BEL
         "snd_controller_0/snd_controller_0/pcm1/cyclecount_reg_2" BEL

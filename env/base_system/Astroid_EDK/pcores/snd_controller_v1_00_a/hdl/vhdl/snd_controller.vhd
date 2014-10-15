@@ -137,6 +137,6 @@ mem1 : entity work.mem_controller
 		TRIGGER => mem_trigger
 	);
 
-OUTPUT <= pcm_out;
+OUTPUT <= std_logic_vector(pcm_out);
 
 end implementation;

@@ -4,7 +4,7 @@ Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.09 secs
+Total CPU time to Xst completion: 0.08 secs
  
 --> 
 TABLE OF CONTENTS
@@ -67,9 +67,6 @@ Parsing package <types>.
 Parsing VHDL file "C:/temp/EDA385/env/base_system/Astroid_EDK/pcores/snd_controller_v1_00_a/hdl/vhdl/command_stack.vhd" into library snd_controller_v1_00_a
 Parsing entity <command_stack>.
 Parsing architecture <Behavioral> of entity <command_stack>.
-Parsing VHDL file "C:/temp/EDA385/env/base_system/Astroid_EDK/pcores/snd_controller_v1_00_a/hdl/vhdl/pdm_generator.vhd" into library snd_controller_v1_00_a
-Parsing entity <pdm_generator>.
-Parsing architecture <Behavioral> of entity <pdm_generator>.
 Parsing VHDL file "C:/temp/EDA385/env/base_system/Astroid_EDK/pcores/snd_controller_v1_00_a/hdl/vhdl/pcm_generator.vhd" into library snd_controller_v1_00_a
 Parsing entity <pcm_generator>.
 Parsing architecture <Behavioral> of entity <pcm_generator>.
@@ -94,8 +91,6 @@ Elaborating entity <snd_controller> (architecture <implementation>) with generic
 Elaborating entity <command_stack> (architecture <Behavioral>) from library <snd_controller_v1_00_a>.
 
 Elaborating entity <pcm_generator> (architecture <Behavioral>) from library <snd_controller_v1_00_a>.
-
-Elaborating entity <pdm_generator> (architecture <Behavioral>) from library <snd_controller_v1_00_a>.
 
 Elaborating entity <mem_controller> (architecture <Behavioral>) with generics from library <snd_controller_v1_00_a>.
 
@@ -196,31 +191,20 @@ Synthesizing Unit <pcm_generator>.
     Found 2-bit register for signal <command_reg_waveform>.
     Found 12-bit register for signal <pcm_reg>.
     Found 12-bit adder for signal <cyclecount_next> created at line 1241.
-    Found 15-bit adder for signal <period_reg[14]_GND_12_o_add_18_OUT> created at line 1241.
-    Found 15-bit adder for signal <samplecount_reg[14]_GND_12_o_add_21_OUT> created at line 1241.
-    Found 12-bit adder for signal <pcm_reg[11]_command_reg_period[11]_add_28_OUT> created at line 128.
-    Found 15-bit subtractor for signal <GND_12_o_GND_12_o_sub_17_OUT<14:0>> created at line 1308.
-    Found 12-bit 4-to-1 multiplexer for signal <pcm_reg[10]_PWR_14_o_mux_31_OUT> created at line 119.
-    Found 15-bit comparator equal for signal <period_reg[14]_GND_12_o_equal_18_o> created at line 110
-    Found 15-bit comparator lessequal for signal <samplecount_reg[14]_command_reg_duration[14]_LessThan_21_o> created at line 116
-    Found 15-bit comparator greater for signal <period_reg[14]_GND_12_o_LessThan_24_o> created at line 120
+    Found 15-bit adder for signal <period_reg[14]_GND_12_o_add_19_OUT> created at line 1241.
+    Found 15-bit adder for signal <samplecount_reg[14]_GND_12_o_add_22_OUT> created at line 1241.
+    Found 12-bit adder for signal <pcm_reg[11]_command_reg_period[11]_add_29_OUT> created at line 120.
+    Found 15-bit subtractor for signal <GND_12_o_GND_12_o_sub_18_OUT<14:0>> created at line 1308.
+    Found 12-bit 4-to-1 multiplexer for signal <pcm_reg[10]_PWR_14_o_mux_34_OUT> created at line 111.
+    Found 15-bit comparator equal for signal <period_reg[14]_GND_12_o_equal_19_o> created at line 102
+    Found 15-bit comparator lessequal for signal <samplecount_reg[14]_command_reg_duration[14]_LessThan_22_o> created at line 108
+    Found 15-bit comparator greater for signal <period_reg[14]_GND_12_o_LessThan_25_o> created at line 112
     Summary:
 	inferred   5 Adder/Subtractor(s).
 	inferred  86 D-type flip-flop(s).
 	inferred   3 Comparator(s).
 	inferred   2 Multiplexer(s).
 Unit <pcm_generator> synthesized.
-
-Synthesizing Unit <pdm_generator>.
-    Related source file is "C:/temp/EDA385/env/base_system/Astroid_EDK/pcores/snd_controller_v1_00_a/hdl/vhdl/pdm_generator.vhd".
-    Found 12-bit register for signal <count_reg>.
-    Found 12-bit adder for signal <count_next> created at line 1241.
-    Found 12-bit comparator greater for signal <OUTPUT> created at line 70
-    Summary:
-	inferred   1 Adder/Subtractor(s).
-	inferred  12 D-type flip-flop(s).
-	inferred   1 Comparator(s).
-Unit <pdm_generator> synthesized.
 
 Synthesizing Unit <mem_controller>.
     Related source file is "C:/temp/EDA385/env/base_system/Astroid_EDK/pcores/snd_controller_v1_00_a/hdl/vhdl/mem_controller.vhd".
@@ -246,20 +230,19 @@ Unit <mem_controller> synthesized.
 HDL Synthesis Report
 
 Macro Statistics
-# Adders/Subtractors                                   : 9
- 12-bit adder                                          : 3
+# Adders/Subtractors                                   : 8
+ 12-bit adder                                          : 2
  15-bit adder                                          : 2
  15-bit subtractor                                     : 1
  4-bit adder                                           : 2
  4-bit subtractor                                      : 1
-# Registers                                            : 66
+# Registers                                            : 65
  1-bit register                                        : 5
- 12-bit register                                       : 3
+ 12-bit register                                       : 2
  15-bit register                                       : 38
  2-bit register                                        : 18
  4-bit register                                        : 2
-# Comparators                                          : 6
- 12-bit comparator greater                             : 1
+# Comparators                                          : 5
  15-bit comparator equal                               : 1
  15-bit comparator greater                             : 1
  15-bit comparator lessequal                           : 1
@@ -270,8 +253,8 @@ Macro Statistics
  15-bit 2-to-1 multiplexer                             : 1
  2-bit 16-to-1 multiplexer                             : 1
  4-bit 2-to-1 multiplexer                              : 2
-# Xors                                                 : 8
- 1-bit xor2                                            : 8
+# Xors                                                 : 1
+ 12-bit xor2                                           : 1
 
 =========================================================================
 INFO:Xst:1767 - HDL ADVISOR - Resource sharing has identified that some arithmetic operations in this design can share the same physical resources for reduced device utilization. For improved clock frequency you may try to disable resource sharing.
@@ -292,10 +275,6 @@ The following registers are absorbed into counter <cyclecount_reg>: 1 register o
 The following registers are absorbed into counter <samplecount_reg>: 1 register on signal <samplecount_reg>.
 Unit <pcm_generator> synthesized (advanced).
 
-Synthesizing (advanced) Unit <pdm_generator>.
-The following registers are absorbed into counter <count_reg>: 1 register on signal <count_reg>.
-Unit <pdm_generator> synthesized (advanced).
-
 =========================================================================
 Advanced HDL Synthesis Report
 
@@ -305,16 +284,15 @@ Macro Statistics
  15-bit subtractor                                     : 1
  4-bit adder                                           : 2
  4-bit subtractor                                      : 1
-# Counters                                             : 5
- 12-bit up counter                                     : 2
+# Counters                                             : 4
+ 12-bit up counter                                     : 1
  15-bit up counter                                     : 2
  4-bit up counter                                      : 1
 # Accumulators                                         : 1
  4-bit up accumulator                                  : 1
 # Registers                                            : 593
  Flip-Flops                                            : 593
-# Comparators                                          : 6
- 12-bit comparator greater                             : 1
+# Comparators                                          : 5
  15-bit comparator equal                               : 1
  15-bit comparator greater                             : 1
  15-bit comparator lessequal                           : 1
@@ -324,15 +302,14 @@ Macro Statistics
  15-bit 16-to-1 multiplexer                            : 2
  2-bit 16-to-1 multiplexer                             : 1
  4-bit 2-to-1 multiplexer                              : 1
-# Xors                                                 : 8
- 1-bit xor2                                            : 8
+# Xors                                                 : 1
+ 12-bit xor2                                           : 1
 
 =========================================================================
 
 =========================================================================
 *                         Low Level Synthesis                           *
 =========================================================================
-INFO:Xst:2146 - In block <pcm_generator>, Counter <cyclecount_reg> <pdm1/count_reg> are equivalent, XST will keep only <cyclecount_reg>.
 
 Optimizing unit <system_snd_controller_0_wrapper> ...
 
@@ -376,16 +353,16 @@ Top Level Output File Name         : system_snd_controller_0_wrapper.ngc
 
 Primitive and Black Box Usage:
 ------------------------------
-# BELS                             : 576
+# BELS                             : 571
 #      GND                         : 1
 #      INV                         : 20
 #      LUT1                        : 26
-#      LUT2                        : 34
+#      LUT2                        : 45
 #      LUT3                        : 6
-#      LUT4                        : 44
-#      LUT5                        : 39
-#      LUT6                        : 149
-#      MUXCY                       : 91
+#      LUT4                        : 33
+#      LUT5                        : 35
+#      LUT6                        : 153
+#      MUXCY                       : 86
 #      MUXF7                       : 64
 #      MUXF8                       : 32
 #      VCC                         : 1
@@ -417,7 +394,7 @@ Slice Logic Distribution:
    Number of unique control sets:        24
 
 IO Utilization: 
- Number of IOs:                         162
+ Number of IOs:                         166
  Number of bonded IOBs:                   0  out of    232     0%  
 
 Specific Feature Utilization:
@@ -457,7 +434,7 @@ Speed Grade: -3
 
    Minimum period: 5.310ns (Maximum Frequency: 188.315MHz)
    Minimum input arrival time before clock: 2.746ns
-   Maximum output required time after clock: 2.839ns
+   Maximum output required time after clock: 1.303ns
    Maximum combinational path delay: No path found
 
 Timing Details:
@@ -467,28 +444,28 @@ All values displayed in nanoseconds (ns)
 =========================================================================
 Timing constraint: Default period analysis for Clock 'ACLK'
   Clock period: 5.310ns (frequency: 188.315MHz)
-  Total number of paths / destination ports: 30108 / 1241
+  Total number of paths / destination ports: 30124 / 1241
 -------------------------------------------------------------------------
 Delay:               5.310ns (Levels of Logic = 11)
   Source:            snd_controller_0/pcm1/samplecount_reg_0 (FF)
-  Destination:       snd_controller_0/pcm1/period_reg_13 (FF)
+  Destination:       snd_controller_0/pcm1/period_reg_14 (FF)
   Source Clock:      ACLK rising
   Destination Clock: ACLK rising
 
-  Data Path: snd_controller_0/pcm1/samplecount_reg_0 to snd_controller_0/pcm1/period_reg_13
+  Data Path: snd_controller_0/pcm1/samplecount_reg_0 to snd_controller_0/pcm1/period_reg_14
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
      FD:C->Q               4   0.447   0.912  snd_controller_0/pcm1/samplecount_reg_0 (snd_controller_0/pcm1/samplecount_reg_0)
-     LUT4:I1->O            1   0.205   0.000  snd_controller_0/pcm1/Mcompar_command_reg_duration[14]_samplecount_reg[14]_LessThan_38_o_lut<0> (snd_controller_0/pcm1/Mcompar_command_reg_duration[14]_samplecount_reg[14]_LessThan_38_o_lut<0>)
-     MUXCY:S->O            1   0.172   0.000  snd_controller_0/pcm1/Mcompar_command_reg_duration[14]_samplecount_reg[14]_LessThan_38_o_cy<0> (snd_controller_0/pcm1/Mcompar_command_reg_duration[14]_samplecount_reg[14]_LessThan_38_o_cy<0>)
-     MUXCY:CI->O           1   0.019   0.000  snd_controller_0/pcm1/Mcompar_command_reg_duration[14]_samplecount_reg[14]_LessThan_38_o_cy<1> (snd_controller_0/pcm1/Mcompar_command_reg_duration[14]_samplecount_reg[14]_LessThan_38_o_cy<1>)
-     MUXCY:CI->O           1   0.019   0.000  snd_controller_0/pcm1/Mcompar_command_reg_duration[14]_samplecount_reg[14]_LessThan_38_o_cy<2> (snd_controller_0/pcm1/Mcompar_command_reg_duration[14]_samplecount_reg[14]_LessThan_38_o_cy<2>)
-     MUXCY:CI->O           1   0.019   0.000  snd_controller_0/pcm1/Mcompar_command_reg_duration[14]_samplecount_reg[14]_LessThan_38_o_cy<3> (snd_controller_0/pcm1/Mcompar_command_reg_duration[14]_samplecount_reg[14]_LessThan_38_o_cy<3>)
-     MUXCY:CI->O           1   0.019   0.000  snd_controller_0/pcm1/Mcompar_command_reg_duration[14]_samplecount_reg[14]_LessThan_38_o_cy<4> (snd_controller_0/pcm1/Mcompar_command_reg_duration[14]_samplecount_reg[14]_LessThan_38_o_cy<4>)
-     MUXCY:CI->O           1   0.019   0.000  snd_controller_0/pcm1/Mcompar_command_reg_duration[14]_samplecount_reg[14]_LessThan_38_o_cy<5> (snd_controller_0/pcm1/Mcompar_command_reg_duration[14]_samplecount_reg[14]_LessThan_38_o_cy<5>)
-     MUXCY:CI->O           1   0.019   0.000  snd_controller_0/pcm1/Mcompar_command_reg_duration[14]_samplecount_reg[14]_LessThan_38_o_cy<6> (snd_controller_0/pcm1/Mcompar_command_reg_duration[14]_samplecount_reg[14]_LessThan_38_o_cy<6>)
-     MUXCY:CI->O           5   0.019   0.000  snd_controller_0/pcm1/Mcompar_command_reg_duration[14]_samplecount_reg[14]_LessThan_38_o_cy<7> (snd_controller_0/pcm1/command_reg_duration[14]_samplecount_reg[14]_LessThan_38_o)
+     LUT4:I1->O            1   0.205   0.000  snd_controller_0/pcm1/Mcompar_command_reg_duration[14]_samplecount_reg[14]_LessThan_41_o_lut<0> (snd_controller_0/pcm1/Mcompar_command_reg_duration[14]_samplecount_reg[14]_LessThan_41_o_lut<0>)
+     MUXCY:S->O            1   0.172   0.000  snd_controller_0/pcm1/Mcompar_command_reg_duration[14]_samplecount_reg[14]_LessThan_41_o_cy<0> (snd_controller_0/pcm1/Mcompar_command_reg_duration[14]_samplecount_reg[14]_LessThan_41_o_cy<0>)
+     MUXCY:CI->O           1   0.019   0.000  snd_controller_0/pcm1/Mcompar_command_reg_duration[14]_samplecount_reg[14]_LessThan_41_o_cy<1> (snd_controller_0/pcm1/Mcompar_command_reg_duration[14]_samplecount_reg[14]_LessThan_41_o_cy<1>)
+     MUXCY:CI->O           1   0.019   0.000  snd_controller_0/pcm1/Mcompar_command_reg_duration[14]_samplecount_reg[14]_LessThan_41_o_cy<2> (snd_controller_0/pcm1/Mcompar_command_reg_duration[14]_samplecount_reg[14]_LessThan_41_o_cy<2>)
+     MUXCY:CI->O           1   0.019   0.000  snd_controller_0/pcm1/Mcompar_command_reg_duration[14]_samplecount_reg[14]_LessThan_41_o_cy<3> (snd_controller_0/pcm1/Mcompar_command_reg_duration[14]_samplecount_reg[14]_LessThan_41_o_cy<3>)
+     MUXCY:CI->O           1   0.019   0.000  snd_controller_0/pcm1/Mcompar_command_reg_duration[14]_samplecount_reg[14]_LessThan_41_o_cy<4> (snd_controller_0/pcm1/Mcompar_command_reg_duration[14]_samplecount_reg[14]_LessThan_41_o_cy<4>)
+     MUXCY:CI->O           1   0.019   0.000  snd_controller_0/pcm1/Mcompar_command_reg_duration[14]_samplecount_reg[14]_LessThan_41_o_cy<5> (snd_controller_0/pcm1/Mcompar_command_reg_duration[14]_samplecount_reg[14]_LessThan_41_o_cy<5>)
+     MUXCY:CI->O           1   0.019   0.000  snd_controller_0/pcm1/Mcompar_command_reg_duration[14]_samplecount_reg[14]_LessThan_41_o_cy<6> (snd_controller_0/pcm1/Mcompar_command_reg_duration[14]_samplecount_reg[14]_LessThan_41_o_cy<6>)
+     MUXCY:CI->O           5   0.019   0.000  snd_controller_0/pcm1/Mcompar_command_reg_duration[14]_samplecount_reg[14]_LessThan_41_o_cy<7> (snd_controller_0/pcm1/command_reg_duration[14]_samplecount_reg[14]_LessThan_41_o)
      MUXCY:CI->O          53   0.258   1.568  snd_controller_0/pcm1/RD1_cy (snd_controller_0/fifo_rd)
      LUT2:I1->O           15   0.205   0.981  snd_controller_0/pcm1/Mcount_period_reg_val1 (snd_controller_0/pcm1/Mcount_period_reg_val)
      FDRE:R                    0.430          snd_controller_0/pcm1/period_reg_0
@@ -517,28 +494,22 @@ Offset:              2.746ns (Levels of Logic = 1)
 
 =========================================================================
 Timing constraint: Default OFFSET OUT AFTER for Clock 'ACLK'
-  Total number of paths / destination ports: 387 / 43
+  Total number of paths / destination ports: 47 / 47
 -------------------------------------------------------------------------
-Offset:              2.839ns (Levels of Logic = 7)
-  Source:            snd_controller_0/pcm1/pcm_reg_0 (FF)
-  Destination:       JA<7> (PAD)
+Offset:              1.303ns (Levels of Logic = 1)
+  Source:            snd_controller_0/mem1/write_reg (FF)
+  Destination:       S_AXI_WREADY (PAD)
   Source Clock:      ACLK rising
 
-  Data Path: snd_controller_0/pcm1/pcm_reg_0 to JA<7>
+  Data Path: snd_controller_0/mem1/write_reg to S_AXI_WREADY
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDRE:C->Q             5   0.447   0.962  snd_controller_0/pcm1/pcm_reg_0 (snd_controller_0/pcm1/pcm_reg_0)
-     LUT4:I0->O            1   0.203   0.000  snd_controller_0/pcm1/pdm1/Mcompar_OUTPUT_lut<0> (snd_controller_0/pcm1/pdm1/Mcompar_OUTPUT_lut<0>)
-     MUXCY:S->O            1   0.172   0.000  snd_controller_0/pcm1/pdm1/Mcompar_OUTPUT_cy<0> (snd_controller_0/pcm1/pdm1/Mcompar_OUTPUT_cy<0>)
-     MUXCY:CI->O           1   0.019   0.000  snd_controller_0/pcm1/pdm1/Mcompar_OUTPUT_cy<1> (snd_controller_0/pcm1/pdm1/Mcompar_OUTPUT_cy<1>)
-     MUXCY:CI->O           1   0.019   0.000  snd_controller_0/pcm1/pdm1/Mcompar_OUTPUT_cy<2> (snd_controller_0/pcm1/pdm1/Mcompar_OUTPUT_cy<2>)
-     MUXCY:CI->O           1   0.019   0.000  snd_controller_0/pcm1/pdm1/Mcompar_OUTPUT_cy<3> (snd_controller_0/pcm1/pdm1/Mcompar_OUTPUT_cy<3>)
-     MUXCY:CI->O           1   0.213   0.580  snd_controller_0/pcm1/pdm1/Mcompar_OUTPUT_cy<4> (snd_controller_0/pcm1/pdm1/Mcompar_OUTPUT_cy<4>)
-     LUT5:I4->O            0   0.205   0.000  snd_controller_0/pcm1/pdm1/Mcompar_OUTPUT_cy<5>_inv1 (JA<0>)
+     FDC:C->Q              3   0.447   0.650  snd_controller_0/mem1/write_reg (snd_controller_0/mem1/write_reg)
+     INV:I->O              0   0.206   0.000  snd_controller_0/mem1/S_AXI_WREADY1_INV_0 (S_AXI_WREADY)
     ----------------------------------------
-    Total                      2.839ns (1.297ns logic, 1.542ns route)
-                                       (45.7% logic, 54.3% route)
+    Total                      1.303ns (0.653ns logic, 0.650ns route)
+                                       (50.1% logic, 49.9% route)
 
 =========================================================================
 
@@ -557,7 +528,7 @@ ACLK           |    5.310|         |         |         |
 
 
 Total REAL time to Xst completion: 7.00 secs
-Total CPU time to Xst completion: 7.61 secs
+Total CPU time to Xst completion: 7.13 secs
  
 --> 
 
@@ -565,5 +536,5 @@ Total memory usage is 272168 kilobytes
 
 Number of errors   :    0 (   0 filtered)
 Number of warnings :    6 (   0 filtered)
-Number of infos    :    3 (   0 filtered)
+Number of infos    :    2 (   0 filtered)
 

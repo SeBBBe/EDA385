@@ -40,6 +40,8 @@ int main()
 
     xil_printf("main loop\n\r");
 
+    int seed = c & 0xFF;
+
     /*int f = 100;
 
     while(1)
@@ -56,7 +58,7 @@ int main()
     	for(i = 0; i < l; i++);
     }*/
 
-    game_main();
+    game_main(seed);
 
     cleanup_platform();
 

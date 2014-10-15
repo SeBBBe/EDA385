@@ -65,10 +65,9 @@ void win()
 *	Change Win song? Add bgm?
 *	Add end game with mothership spawning bullets towards ship and spawning astroids.
 *	Add credit screen with names
-*	Add character graphics.
 *
 */
-void game_main()
+void game_main(int seed)
 {
 	int i;
 
@@ -77,7 +76,7 @@ void game_main()
 	snd_init();
 
 	go_initialize();
-	srand(1339);
+	srand(*dip & 32 ? 1339 : seed);
 
 	bullet_speed = 10;
 	pup_has_already_spawned = 0;
@@ -133,7 +132,12 @@ void game_main()
 	for (i = 0; i < 5; i++){
 		go_createasteroid(1);
 	}
-	go_createpowerupn(1,600,650);
+
+	//go_createpowerupn(1,600,650);
+
+	snd_setvolume(1, 2);
+
+	//MUS_PLAY(bgm);
 
 	while(1)
 	{
@@ -192,8 +196,6 @@ void game_main()
 		if (shoot_limit > 0) shoot_limit--;
 		if (go_currentstate == STATE_DEAD) game_over();
 		if (go_currentstate == STATE_VICT || (*dip & 8)) win();
-
-		if(*dip & 32) go_debug();
 
 		vga_clear();
 		go_draw();

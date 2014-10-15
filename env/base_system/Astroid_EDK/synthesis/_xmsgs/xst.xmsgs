@@ -2891,6 +2891,9 @@
 <msg type="info" file="Xst" num="2260" delta="new" >The FF/Latch &lt;<arg fmt="%s" index="1">vector1/line_controller0/vga_counter1/vsync_reg</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">axi_lite_slave_0</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">FF/Latch</arg> : <arg fmt="%s" index="4">&lt;vector1/line_controller0/vga_counter1/vsync_reg_1&gt; </arg>
 </msg>
 
+<msg type="info" file="Xst" num="2260" delta="new" >The FF/Latch &lt;<arg fmt="%s" index="1">snd_mixer_0/mem1/output_reg_vol1_3</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">snd_mixer_0</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">FF/Latch</arg> : <arg fmt="%s" index="4">&lt;snd_mixer_0/mem1/output_reg_vol1_3_1&gt; </arg>
+</msg>
+
 <msg type="info" file="Xst" num="2260" delta="new" >The FF/Latch &lt;<arg fmt="%s" index="1">axi_timer_0/TC_CORE_I/TIMER_CONTROL_I/TCSR1_GENERATE[21].TCSR1_FF_I</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">axi_timer_0</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">FF/Latch</arg> : <arg fmt="%s" index="4">&lt;axi_timer_0/TC_CORE_I/TIMER_CONTROL_I/TCSR0_GENERATE[21].TCSR0_FF_I&gt; </arg>
 </msg>
 
@@ -3162,6 +3165,9 @@
 </msg>
 
 <msg type="info" file="Xst" num="2260" delta="new" >The FF/Latch &lt;<arg fmt="%s" index="1">vector1/GEN_LINE_CONTROLLERS[4].line_controllerX/vga_counter1/vsync_reg</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">axi_lite_slave_0</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">FF/Latch</arg> : <arg fmt="%s" index="4">&lt;vector1/GEN_LINE_CONTROLLERS[4].line_controllerX/vga_counter1/vsync_reg_1&gt; </arg>
+</msg>
+
+<msg type="info" file="Xst" num="2260" delta="new" >The FF/Latch &lt;<arg fmt="%s" index="1">snd_mixer_0/mem1/output_reg_vol1_3</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">snd_mixer_0</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">FF/Latch</arg> : <arg fmt="%s" index="4">&lt;snd_mixer_0/mem1/output_reg_vol1_3_1&gt; </arg>
 </msg>
 
 <msg type="info" file="Xst" num="2260" delta="new" >The FF/Latch &lt;<arg fmt="%s" index="1">axi_timer_0/TC_CORE_I/TIMER_CONTROL_I/TCSR1_GENERATE[21].TCSR1_FF_I</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">axi_timer_0</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">FF/Latch</arg> : <arg fmt="%s" index="4">&lt;axi_timer_0/TC_CORE_I/TIMER_CONTROL_I/TCSR0_GENERATE[21].TCSR0_FF_I&gt; </arg>

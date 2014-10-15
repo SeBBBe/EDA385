@@ -1,4 +1,5 @@
 VHDL snd_mixer_v1_00_a C:\temp\EDA385\env\base_system\Astroid_EDK\pcores\snd_mixer_v1_00_a/hdl/vhdl/snd_mixer.vhd
 VHDL snd_mixer_v1_00_a C:\temp\EDA385\env\base_system\Astroid_EDK\pcores\snd_mixer_v1_00_a/hdl/vhdl/types.vhd
 VHDL snd_mixer_v1_00_a C:\temp\EDA385\env\base_system\Astroid_EDK\pcores\snd_mixer_v1_00_a/hdl/vhdl/mem_controller.vhd
+VHDL snd_mixer_v1_00_a C:\temp\EDA385\env\base_system\Astroid_EDK\pcores\snd_mixer_v1_00_a/hdl/vhdl/pdm_generator.vhd
 vhdl work ../hdl/system_snd_mixer_0_wrapper.vhd

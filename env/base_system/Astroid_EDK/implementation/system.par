@@ -1,7 +1,7 @@
 Release 14.2 par P.28xd (nt64)
 Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
 
-NEPTUNUS-2::  Wed Oct 15 13:28:21 2014
+NEPTUNUS-2::  Wed Oct 15 15:20:16 2014
 
 par -w -ol high system_map.ncd system.ncd system.pcf 
 
@@ -35,16 +35,16 @@ Device speed data version:  "PRODUCTION 1.22 2012-07-09".
 Device Utilization Summary:
 
 Slice Logic Utilization:
-  Number of Slice Registers:                 5,588 out of  18,224   30%
-    Number used as Flip Flops:               5,584
+  Number of Slice Registers:                 5,621 out of  18,224   30%
+    Number used as Flip Flops:               5,617
     Number used as Latches:                      0
     Number used as Latch-thrus:                  0
     Number used as AND/OR logics:                4
-  Number of Slice LUTs:                      6,495 out of   9,112   71%
-    Number used as logic:                    5,563 out of   9,112   61%
-      Number using O6 output only:           3,633
-      Number using O5 output only:             419
-      Number using O5 and O6:                1,511
+  Number of Slice LUTs:                      6,511 out of   9,112   71%
+    Number used as logic:                    5,587 out of   9,112   61%
+      Number using O6 output only:           3,642
+      Number using O5 output only:             427
+      Number using O5 and O6:                1,518
       Number used as ROM:                        0
     Number used as Memory:                     822 out of   2,176   37%
       Number used as Dual Port RAM:            118
@@ -56,18 +56,18 @@ Slice Logic Utilization:
         Number using O6 output only:           631
         Number using O5 output only:             1
         Number using O5 and O6:                 72
-    Number used exclusively as route-thrus:    110
-      Number with same-slice register load:     73
-      Number with same-slice carry load:        37
+    Number used exclusively as route-thrus:    102
+      Number with same-slice register load:     63
+      Number with same-slice carry load:        39
       Number with other load:                    0
 
 Slice Logic Distribution:
-  Number of occupied Slices:                 2,195 out of   2,278   96%
-  Nummber of MUXCYs used:                    1,916 out of   4,556   42%
-  Number of LUT Flip Flop pairs used:        7,427
-    Number with an unused Flip Flop:         2,487 out of   7,427   33%
-    Number with an unused LUT:                 932 out of   7,427   12%
-    Number of fully used LUT-FF pairs:       4,008 out of   7,427   53%
+  Number of occupied Slices:                 2,232 out of   2,278   97%
+  Nummber of MUXCYs used:                    1,932 out of   4,556   42%
+  Number of LUT Flip Flop pairs used:        7,613
+    Number with an unused Flip Flop:         2,622 out of   7,613   34%
+    Number with an unused LUT:               1,102 out of   7,613   14%
+    Number of fully used LUT-FF pairs:       3,889 out of   7,613   51%
     Number of slice register sites lost
       to control set restrictions:               0 out of  18,224    0%
 
@@ -80,7 +80,7 @@ Slice Logic Distribution:
 IO Utilization:
   Number of bonded IOBs:                        34 out of     232   14%
     Number of LOCed IOBs:                       34 out of      34  100%
-    IOB Flip Flops:                             21
+    IOB Flip Flops:                             13
 
 Specific Feature Utilization:
   Number of RAMB16BWERs:                        30 out of      32   93%
@@ -101,8 +101,8 @@ Specific Feature Utilization:
     Number used as ILOGIC2s:                     2
     Number used as ISERDES2s:                    0
   Number of IODELAY2/IODRP2/IODRP2_MCBs:         0 out of     248    0%
-  Number of OLOGIC2/OSERDES2s:                  19 out of     248    7%
-    Number used as OLOGIC2s:                    19
+  Number of OLOGIC2/OSERDES2s:                  11 out of     248    4%
+    Number used as OLOGIC2s:                    11
     Number used as OSERDES2s:                    0
   Number of BSCANs:                              1 out of       4   25%
   Number of BUFHs:                               0 out of     128    0%
@@ -128,44 +128,8 @@ Finished initial Timing Analysis.  REAL time: 10 secs
 
 WARNING:Par:288 - The signal
    axi4lite_0/axi4lite_0/mi_converter_bank/gen_conv_slot[5].clock_conv_inst/gen_async_readwrite.asyncfifo_rw/U0/xst_fifo_generator/gaxi_full
-   _lite.gread_ch.grdch2.axi_rdch/grf.rf/gntv_or_sync_fifo.mem/gdm.dm/Mram_RAM2_RAMD_D1_O has no load.  PAR will not attempt to route this
-   signal.
-WARNING:Par:288 - The signal
-   axi4lite_0/axi4lite_0/mi_converter_bank/gen_conv_slot[5].clock_conv_inst/gen_async_readwrite.asyncfifo_rw/U0/xst_fifo_generator/gaxi_full
-   _lite.gread_ch.grdch2.axi_rdch/grf.rf/gntv_or_sync_fifo.mem/gdm.dm/Mram_RAM5_RAMD_D1_O has no load.  PAR will not attempt to route this
-   signal.
-WARNING:Par:288 - The signal
-   axi4lite_0/axi4lite_0/mi_converter_bank/gen_conv_slot[5].clock_conv_inst/gen_async_readwrite.asyncfifo_rw/U0/xst_fifo_generator/gaxi_full
-   _lite.gread_ch.grdch2.axi_rdch/grf.rf/gntv_or_sync_fifo.mem/gdm.dm/Mram_RAM4_RAMD_D1_O has no load.  PAR will not attempt to route this
-   signal.
-WARNING:Par:288 - The signal
-   axi4lite_0/axi4lite_0/mi_converter_bank/gen_conv_slot[5].clock_conv_inst/gen_async_readwrite.asyncfifo_rw/U0/xst_fifo_generator/gaxi_full
    _lite.gread_ch.grdch2.axi_rdch/grf.rf/gntv_or_sync_fifo.mem/gdm.dm/Mram_RAM6_RAMD_D1_O has no load.  PAR will not attempt to route this
    signal.
-WARNING:Par:288 - The signal
-   axi4lite_0/axi4lite_0/mi_converter_bank/gen_conv_slot[5].clock_conv_inst/gen_async_readwrite.asyncfifo_rw/U0/xst_fifo_generator/gaxi_full
-   _lite.gread_ch.grdch2.axi_rdch/grf.rf/gntv_or_sync_fifo.mem/gdm.dm/Mram_RAM3_RAMD_D1_O has no load.  PAR will not attempt to route this
-   signal.
-WARNING:Par:288 - The signal
-   axi4lite_0/axi4lite_0/mi_converter_bank/gen_conv_slot[5].clock_conv_inst/gen_async_readwrite.asyncfifo_rw/U0/xst_fifo_generator/gaxi_full
-   _lite.gread_ch.grdch2.axi_rdch/grf.rf/gntv_or_sync_fifo.mem/gdm.dm/Mram_RAM1_RAMB_D1_DPO has no load.  PAR will not attempt to route this
-   signal.
-WARNING:Par:288 - The signal
-   axi4lite_0/axi4lite_0/mi_converter_bank/gen_conv_slot[5].clock_conv_inst/gen_async_readwrite.asyncfifo_rw/U0/xst_fifo_generator/gaxi_full
-   _lite.gread_ch.grdch2.axi_rdch/grf.rf/gntv_or_sync_fifo.mem/gdm.dm/Mram_RAM1_RAMD_D1_O has no load.  PAR will not attempt to route this
-   signal.
-WARNING:Par:288 - The signal bram_cntlr_0_BRAM_PORT_BRAM_Addr<30> has no load.  PAR will not attempt to route this signal.
-WARNING:Par:288 - The signal bram_cntlr_0_BRAM_PORT_BRAM_Addr<31> has no load.  PAR will not attempt to route this signal.
-WARNING:Par:288 - The signal
-   axi4lite_0/axi4lite_0/mi_converter_bank/gen_conv_slot[5].clock_conv_inst/gen_async_readwrite.asyncfifo_rw/U0/xst_fifo_generator/gaxi_full
-   _lite.gwrite_ch.gwdch2.axi_wdch/grf.rf/gntv_or_sync_fifo.mem/gdm.dm/Mram_RAM5_RAMD_D1_O has no load.  PAR will not attempt to route this
-   signal.
-WARNING:Par:288 - The signal
-   axi4lite_0/axi4lite_0/mi_converter_bank/gen_conv_slot[5].clock_conv_inst/gen_async_readwrite.asyncfifo_rw/U0/xst_fifo_generator/gaxi_full
-   _lite.gwrite_ch.gwdch2.axi_wdch/grf.rf/gntv_or_sync_fifo.mem/gdm.dm/Mram_RAM6_RAMD_D1_O has no load.  PAR will not attempt to route this
-   signal.
-WARNING:Par:288 - The signal axi4lite_0_M_WSTRB<0> has no load.  PAR will not attempt to route this signal.
-WARNING:Par:288 - The signal axi4lite_0_M_WSTRB<10> has no load.  PAR will not attempt to route this signal.
 WARNING:Par:288 - The signal
    axi4lite_0/axi4lite_0/mi_converter_bank/gen_conv_slot[5].clock_conv_inst/gen_async_readwrite.asyncfifo_rw/U0/xst_fifo_generator/gaxi_full
    _lite.gwrite_ch.gwdch2.axi_wdch/grf.rf/gntv_or_sync_fifo.mem/gdm.dm/Mram_RAM1_RAMA_D1_DPO has no load.  PAR will not attempt to route
@@ -184,26 +148,62 @@ WARNING:Par:288 - The signal
    signal.
 WARNING:Par:288 - The signal
    axi4lite_0/axi4lite_0/mi_converter_bank/gen_conv_slot[5].clock_conv_inst/gen_async_readwrite.asyncfifo_rw/U0/xst_fifo_generator/gaxi_full
-   _lite.gwrite_ch.gwdch2.axi_wdch/grf.rf/gntv_or_sync_fifo.mem/gdm.dm/Mram_RAM2_RAMD_D1_O has no load.  PAR will not attempt to route this
+   _lite.gread_ch.grdch2.axi_rdch/grf.rf/gntv_or_sync_fifo.mem/gdm.dm/Mram_RAM1_RAMB_D1_DPO has no load.  PAR will not attempt to route this
    signal.
 WARNING:Par:288 - The signal
    axi4lite_0/axi4lite_0/mi_converter_bank/gen_conv_slot[5].clock_conv_inst/gen_async_readwrite.asyncfifo_rw/U0/xst_fifo_generator/gaxi_full
-   _lite.gwrite_ch.gwdch2.axi_wdch/grf.rf/gntv_or_sync_fifo.mem/gdm.dm/Mram_RAM4_RAMD_D1_O has no load.  PAR will not attempt to route this
+   _lite.gread_ch.grdch2.axi_rdch/grf.rf/gntv_or_sync_fifo.mem/gdm.dm/Mram_RAM1_RAMD_D1_O has no load.  PAR will not attempt to route this
    signal.
+WARNING:Par:288 - The signal
+   axi4lite_0/axi4lite_0/mi_converter_bank/gen_conv_slot[5].clock_conv_inst/gen_async_readwrite.asyncfifo_rw/U0/xst_fifo_generator/gaxi_full
+   _lite.gread_ch.grdch2.axi_rdch/grf.rf/gntv_or_sync_fifo.mem/gdm.dm/Mram_RAM5_RAMD_D1_O has no load.  PAR will not attempt to route this
+   signal.
+WARNING:Par:288 - The signal
+   axi4lite_0/axi4lite_0/mi_converter_bank/gen_conv_slot[5].clock_conv_inst/gen_async_readwrite.asyncfifo_rw/U0/xst_fifo_generator/gaxi_full
+   _lite.gread_ch.grdch2.axi_rdch/grf.rf/gntv_or_sync_fifo.mem/gdm.dm/Mram_RAM3_RAMD_D1_O has no load.  PAR will not attempt to route this
+   signal.
+WARNING:Par:288 - The signal
+   axi4lite_0/axi4lite_0/mi_converter_bank/gen_conv_slot[5].clock_conv_inst/gen_async_readwrite.asyncfifo_rw/U0/xst_fifo_generator/gaxi_full
+   _lite.gread_ch.grdch2.axi_rdch/grf.rf/gntv_or_sync_fifo.mem/gdm.dm/Mram_RAM4_RAMD_D1_O has no load.  PAR will not attempt to route this
+   signal.
+WARNING:Par:288 - The signal
+   axi4lite_0/axi4lite_0/mi_converter_bank/gen_conv_slot[5].clock_conv_inst/gen_async_readwrite.asyncfifo_rw/U0/xst_fifo_generator/gaxi_full
+   _lite.gread_ch.grdch2.axi_rdch/grf.rf/gntv_or_sync_fifo.mem/gdm.dm/Mram_RAM2_RAMD_D1_O has no load.  PAR will not attempt to route this
+   signal.
+WARNING:Par:288 - The signal bram_cntlr_0_BRAM_PORT_BRAM_Addr<30> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal axi4lite_0_M_WSTRB<0> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal axi4lite_0_M_WSTRB<10> has no load.  PAR will not attempt to route this signal.
 WARNING:Par:288 - The signal
    axi4lite_0/axi4lite_0/mi_converter_bank/gen_conv_slot[5].clock_conv_inst/gen_async_readwrite.asyncfifo_rw/U0/xst_fifo_generator/gaxi_full
    _lite.gwrite_ch.gwdch2.axi_wdch/grf.rf/gntv_or_sync_fifo.mem/gdm.dm/Mram_RAM3_RAMD_D1_O has no load.  PAR will not attempt to route this
    signal.
+WARNING:Par:288 - The signal
+   axi4lite_0/axi4lite_0/mi_converter_bank/gen_conv_slot[5].clock_conv_inst/gen_async_readwrite.asyncfifo_rw/U0/xst_fifo_generator/gaxi_full
+   _lite.gwrite_ch.gwdch2.axi_wdch/grf.rf/gntv_or_sync_fifo.mem/gdm.dm/Mram_RAM6_RAMD_D1_O has no load.  PAR will not attempt to route this
+   signal.
+WARNING:Par:288 - The signal
+   axi4lite_0/axi4lite_0/mi_converter_bank/gen_conv_slot[5].clock_conv_inst/gen_async_readwrite.asyncfifo_rw/U0/xst_fifo_generator/gaxi_full
+   _lite.gwrite_ch.gwdch2.axi_wdch/grf.rf/gntv_or_sync_fifo.mem/gdm.dm/Mram_RAM2_RAMD_D1_O has no load.  PAR will not attempt to route this
+   signal.
+WARNING:Par:288 - The signal
+   axi4lite_0/axi4lite_0/mi_converter_bank/gen_conv_slot[5].clock_conv_inst/gen_async_readwrite.asyncfifo_rw/U0/xst_fifo_generator/gaxi_full
+   _lite.gwrite_ch.gwdch2.axi_wdch/grf.rf/gntv_or_sync_fifo.mem/gdm.dm/Mram_RAM5_RAMD_D1_O has no load.  PAR will not attempt to route this
+   signal.
+WARNING:Par:288 - The signal bram_cntlr_0_BRAM_PORT_BRAM_Addr<31> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal
+   axi4lite_0/axi4lite_0/mi_converter_bank/gen_conv_slot[5].clock_conv_inst/gen_async_readwrite.asyncfifo_rw/U0/xst_fifo_generator/gaxi_full
+   _lite.gwrite_ch.gwdch2.axi_wdch/grf.rf/gntv_or_sync_fifo.mem/gdm.dm/Mram_RAM4_RAMD_D1_O has no load.  PAR will not attempt to route this
+   signal.
 Starting Router
 
 
-Phase  1  : 44273 unrouted;      REAL time: 12 secs 
+Phase  1  : 44400 unrouted;      REAL time: 12 secs 
 
-Phase  2  : 33264 unrouted;      REAL time: 13 secs 
+Phase  2  : 33383 unrouted;      REAL time: 13 secs 
 
-Phase  3  : 15178 unrouted;      REAL time: 25 secs 
+Phase  3  : 15335 unrouted;      REAL time: 25 secs 
 
-Phase  4  : 15195 unrouted; (Setup:0, Hold:0, Component Switching Limit:0)     REAL time: 27 secs 
+Phase  4  : 15337 unrouted; (Setup:0, Hold:0, Component Switching Limit:0)     REAL time: 27 secs 
 
 Updating file: system.ncd with current fully routed design.
 
@@ -219,7 +219,7 @@ Phase  9  : 0 unrouted; (Setup:0, Hold:0, Component Switching Limit:0)     REAL 
 
 Phase 10  : 0 unrouted; (Setup:0, Hold:0, Component Switching Limit:0)     REAL time: 52 secs 
 Total REAL time to Router completion: 52 secs 
-Total CPU time to Router completion: 53 secs 
+Total CPU time to Router completion: 52 secs 
 
 Partition Implementation Status
 -------------------------------
@@ -238,18 +238,18 @@ Generating Clock Report
 |        Clock Net    |   Resource   |Locked|Fanout|Net Skew(ns)|Max Delay(ns)|
 +---------------------+--------------+------+------+------------+-------------+
 |bram_cntlr_0_BRAM_PO |              |      |      |            |             |
-|         RT_BRAM_Clk |  BUFGMUX_X2Y3| No   | 1278 |  0.548     |  1.394      |
+|         RT_BRAM_Clk |  BUFGMUX_X2Y3| No   | 1270 |  0.548     |  1.395      |
 +---------------------+--------------+------+------+------------+-------------+
 |clock_generator_0_CL |              |      |      |            |             |
-|               KOUT1 |  BUFGMUX_X2Y2| No   |  635 |  0.524     |  1.370      |
+|               KOUT1 |  BUFGMUX_X2Y2| No   |  641 |  0.521     |  1.367      |
 +---------------------+--------------+------+------+------------+-------------+
 |debug_module_0_MBDEB |              |      |      |            |             |
-|        UG_0_Dbg_Clk | BUFGMUX_X3Y13| No   |   57 |  0.057     |  0.903      |
+|        UG_0_Dbg_Clk | BUFGMUX_X3Y13| No   |   60 |  0.058     |  0.910      |
 +---------------------+--------------+------+------+------------+-------------+
 |debug_module_0_MBDEB |              |      |      |            |             |
-|     UG_0_Dbg_Update |         Local|      |   18 |  1.523     |  3.046      |
+|     UG_0_Dbg_Update |         Local|      |   20 |  3.591     |  4.686      |
 +---------------------+--------------+------+------+------------+-------------+
-|          GCLK_IBUFG |         Local|      |    4 |  3.327     |  6.677      |
+|          GCLK_IBUFG |         Local|      |    4 |  2.548     |  7.072      |
 +---------------------+--------------+------+------+------------+-------------+
 
 * Net Skew is the difference between the minimum and maximum routing
@@ -269,35 +269,35 @@ Asterisk (*) preceding a constraint indicates it was not met.
   Constraint                                |    Check    | Worst Case |  Best Case | Timing |   Timing   
                                             |             |    Slack   | Achievable | Errors |    Score   
 ----------------------------------------------------------------------------------------------------------
-  TS_clock_generator_0_clock_generator_0_SI | SETUP       |     0.035ns|     6.464ns|       0|           0
-  G_DCM0_CLKFX = PERIOD TIMEGRP         "cl | HOLD        |     0.288ns|            |       0|           0
+  TS_clock_generator_0_clock_generator_0_SI | SETUP       |     0.036ns|     9.964ns|       0|           0
+  G_DCM0_CLK0 = PERIOD TIMEGRP         "clo | HOLD        |     0.283ns|            |       0|           0
+  ck_generator_0_clock_generator_0_SIG_DCM0 |             |            |            |        |            
+  _CLK0" TS_sys_clk_pin         HIGH 50%    |             |            |            |        |            
+----------------------------------------------------------------------------------------------------------
+  TS_clock_generator_0_clock_generator_0_SI | SETUP       |     0.037ns|     6.462ns|       0|           0
+  G_DCM0_CLKFX = PERIOD TIMEGRP         "cl | HOLD        |     0.249ns|            |       0|           0
   ock_generator_0_clock_generator_0_SIG_DCM |             |            |            |        |            
   0_CLKFX" TS_sys_clk_pin *         1.53846 |             |            |            |        |            
   154 HIGH 50%                              |             |            |            |        |            
 ----------------------------------------------------------------------------------------------------------
-  TS_clock_generator_0_clock_generator_0_SI | SETUP       |     0.120ns|     9.880ns|       0|           0
-  G_DCM0_CLK0 = PERIOD TIMEGRP         "clo | HOLD        |     0.334ns|            |       0|           0
-  ck_generator_0_clock_generator_0_SIG_DCM0 |             |            |            |        |            
-  _CLK0" TS_sys_clk_pin         HIGH 50%    |             |            |            |        |            
-----------------------------------------------------------------------------------------------------------
-  TS_sys_clk_pin = PERIOD TIMEGRP "sys_clk_ | SETUP       |     4.897ns|     5.103ns|       0|           0
-  pin" 100 MHz HIGH 50%                     | HOLD        |     0.865ns|            |       0|           0
+  TS_sys_clk_pin = PERIOD TIMEGRP "sys_clk_ | SETUP       |     6.088ns|     3.912ns|       0|           0
+  pin" 100 MHz HIGH 50%                     | HOLD        |     1.123ns|            |       0|           0
                                             | MINLOWPULSE |     4.660ns|     5.340ns|       0|           0
 ----------------------------------------------------------------------------------------------------------
-  TS_axi4lite_0_async_clock_conv = MAXDELAY | SETUP       |     7.217ns|     2.783ns|       0|           0
-   FROM TIMEGRP "RAMS" TO TIMEGRP         " | HOLD        |     0.818ns|            |       0|           0
+  TS_axi4lite_0_async_clock_conv = MAXDELAY | SETUP       |     6.741ns|     3.259ns|       0|           0
+   FROM TIMEGRP "RAMS" TO TIMEGRP         " | HOLD        |     0.872ns|            |       0|           0
   axi4lite_0_async_clock_conv_FFDEST" 10 ns |             |            |            |        |            
    DATAPATHONLY                             |             |            |            |        |            
 ----------------------------------------------------------------------------------------------------------
-  PATH "TS_TIG_microblaze_0_Reset_path" TIG | SETUP       |         N/A|     2.197ns|     N/A|           0
+  PATH "TS_TIG_microblaze_0_Reset_path" TIG | SETUP       |         N/A|     2.629ns|     N/A|           0
 ----------------------------------------------------------------------------------------------------------
-  PATH "TS_axi4lite_0_reset_resync_path" TI | SETUP       |         N/A|     3.455ns|     N/A|           0
+  PATH "TS_axi4lite_0_reset_resync_path" TI | SETUP       |         N/A|     3.844ns|     N/A|           0
   G                                         |             |            |            |        |            
 ----------------------------------------------------------------------------------------------------------
-  PATH "TS_TIG_microblaze_0_dlmb_POR_FF_I_p | SETUP       |         N/A|     1.681ns|     N/A|           0
+  PATH "TS_TIG_microblaze_0_dlmb_POR_FF_I_p | SETUP       |         N/A|     1.976ns|     N/A|           0
   ath" TIG                                  |             |            |            |        |            
 ----------------------------------------------------------------------------------------------------------
-  PATH "TS_TIG_microblaze_0_ilmb_POR_FF_I_p | SETUP       |         N/A|     1.899ns|     N/A|           0
+  PATH "TS_TIG_microblaze_0_ilmb_POR_FF_I_p | SETUP       |         N/A|     2.716ns|     N/A|           0
   ath" TIG                                  |             |            |            |        |            
 ----------------------------------------------------------------------------------------------------------
 
@@ -312,10 +312,10 @@ Derived Constraints for TS_sys_clk_pin
 |           Constraint          | Requirement |-------------+-------------|-------------+-------------|-------------+-------------|
 |                               |             |   Direct    | Derivative  |   Direct    | Derivative  |   Direct    | Derivative  |
 +-------------------------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+
-|TS_sys_clk_pin                 |     10.000ns|      5.340ns|      9.945ns|            0|            0|            3|       493687|
-| TS_clock_generator_0_clock_gen|      6.500ns|      6.464ns|          N/A|            0|            0|       175886|            0|
+|TS_sys_clk_pin                 |     10.000ns|      5.340ns|      9.964ns|            0|            0|            3|       497662|
+| TS_clock_generator_0_clock_gen|      6.500ns|      6.462ns|          N/A|            0|            0|       175886|            0|
 | erator_0_SIG_DCM0_CLKFX       |             |             |             |             |             |             |             |
-| TS_clock_generator_0_clock_gen|     10.000ns|      9.880ns|          N/A|            0|            0|       317801|            0|
+| TS_clock_generator_0_clock_gen|     10.000ns|      9.964ns|          N/A|            0|            0|       321776|            0|
 | erator_0_SIG_DCM0_CLK0        |             |             |             |             |             |             |             |
 +-------------------------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+
 
@@ -333,8 +333,8 @@ All signals are completely routed.
 
 WARNING:Par:283 - There are 20 loadless signals in this design. This design will cause Bitgen to issue DRC warnings.
 
-Total REAL time to PAR completion: 57 secs 
-Total CPU time to PAR completion: 55 secs 
+Total REAL time to PAR completion: 55 secs 
+Total CPU time to PAR completion: 54 secs 
 
 Peak Memory Usage:  524 MB
 

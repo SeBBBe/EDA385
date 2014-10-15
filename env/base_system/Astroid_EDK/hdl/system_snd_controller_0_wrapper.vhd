@@ -33,7 +33,7 @@ entity system_snd_controller_0_wrapper is
     S_AXI_RRESP : out std_logic_vector(1 downto 0);
     S_AXI_RVALID : out std_logic;
     S_AXI_RREADY : in std_logic;
-    JA : out std_logic_vector(7 downto 0)
+    OUTPUT : out std_logic_vector(11 downto 0)
   );
 end system_snd_controller_0_wrapper;
 
@@ -66,7 +66,7 @@ architecture STRUCTURE of system_snd_controller_0_wrapper is
       S_AXI_RRESP : out std_logic_vector(1 downto 0);
       S_AXI_RVALID : out std_logic;
       S_AXI_RREADY : in std_logic;
-      JA : out std_logic_vector(7 downto 0)
+      OUTPUT : out std_logic_vector(11 downto 0)
     );
   end component;
 
@@ -99,7 +99,7 @@ begin
       S_AXI_RRESP => S_AXI_RRESP,
       S_AXI_RVALID => S_AXI_RVALID,
       S_AXI_RREADY => S_AXI_RREADY,
-      JA => JA
+      OUTPUT => OUTPUT
     );
 
 end architecture STRUCTURE;

@@ -33,8 +33,8 @@ entity system_snd_mixer_0_wrapper is
     S_AXI_RRESP : out std_logic_vector(1 downto 0);
     S_AXI_RVALID : out std_logic;
     S_AXI_RREADY : in std_logic;
-    INPUT1 : in std_logic_vector(7 downto 0);
-    INPUT2 : in std_logic_vector(7 downto 0);
+    INPUT1 : in std_logic_vector(11 downto 0);
+    INPUT2 : in std_logic_vector(11 downto 0);
     JA : out std_logic_vector(7 downto 0)
   );
 end system_snd_mixer_0_wrapper;
@@ -68,8 +68,8 @@ architecture STRUCTURE of system_snd_mixer_0_wrapper is
       S_AXI_RRESP : out std_logic_vector(1 downto 0);
       S_AXI_RVALID : out std_logic;
       S_AXI_RREADY : in std_logic;
-      INPUT1 : in std_logic_vector(7 downto 0);
-      INPUT2 : in std_logic_vector(7 downto 0);
+      INPUT1 : in std_logic_vector(11 downto 0);
+      INPUT2 : in std_logic_vector(11 downto 0);
       JA : out std_logic_vector(7 downto 0)
     );
   end component;

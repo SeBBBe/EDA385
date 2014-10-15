@@ -22,7 +22,7 @@
  PORT VGA_RED = axi_lite_slave_0_VGA_RED, DIR = O, VEC = [2:0]
  PORT VGA_GREEN = axi_lite_slave_0_VGA_GREEN, DIR = O, VEC = [2:0]
  PORT VGA_BLUE = axi_lite_slave_0_VGA_BLUE, DIR = O, VEC = [1:0]
- PORT JA = snd_mixer_0_JA, DIR = O, VEC = [7:0]
+ PORT JA = snd_mixer_0_JA_0, DIR = O, VEC = [7:0]
 
 
 BEGIN snd_mixer
@@ -32,9 +32,9 @@ BEGIN snd_mixer
  PARAMETER C_S_AXI_RNG00_HIGHADDR = 0x7FC1FFFF
  BUS_INTERFACE S_AXI = axi4lite_0
  PORT ACLK = clk_100_0000MHz
- PORT INPUT2 = snd_controller_1_JA
- PORT INPUT1 = snd_controller_0_JA
- PORT JA = snd_mixer_0_JA
+ PORT INPUT1 = snd_controller_0_OUTPUT
+ PORT INPUT2 = snd_controller_1_OUTPUT
+ PORT JA = snd_mixer_0_JA_0
 END
 
 BEGIN snd_controller
@@ -44,7 +44,7 @@ BEGIN snd_controller
  PARAMETER C_S_AXI_RNG00_HIGHADDR = 0x7FC0FFFF
  BUS_INTERFACE S_AXI = axi4lite_0
  PORT ACLK = clk_100_0000MHz
- PORT JA = snd_controller_1_JA
+ PORT OUTPUT = snd_controller_1_OUTPUT
 END
 
 BEGIN snd_controller
@@ -54,7 +54,7 @@ BEGIN snd_controller
  PARAMETER C_S_AXI_RNG00_HIGHADDR = 0x7f40ffff
  BUS_INTERFACE S_AXI = axi4lite_0
  PORT ACLK = clk_100_0000MHz
- PORT JA = snd_controller_0_JA
+ PORT OUTPUT = snd_controller_0_OUTPUT
 END
 
 BEGIN proc_sys_reset

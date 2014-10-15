@@ -49,8 +49,8 @@ architecture STRUCTURE of system is
       S_AXI_RRESP : out std_logic_vector(1 downto 0);
       S_AXI_RVALID : out std_logic;
       S_AXI_RREADY : in std_logic;
-      INPUT1 : in std_logic_vector(7 downto 0);
-      INPUT2 : in std_logic_vector(7 downto 0);
+      INPUT1 : in std_logic_vector(11 downto 0);
+      INPUT2 : in std_logic_vector(11 downto 0);
       JA : out std_logic_vector(7 downto 0)
     );
   end component;
@@ -78,7 +78,7 @@ architecture STRUCTURE of system is
       S_AXI_RRESP : out std_logic_vector(1 downto 0);
       S_AXI_RVALID : out std_logic;
       S_AXI_RREADY : in std_logic;
-      JA : out std_logic_vector(7 downto 0)
+      OUTPUT : out std_logic_vector(11 downto 0)
     );
   end component;
 
@@ -105,7 +105,7 @@ architecture STRUCTURE of system is
       S_AXI_RRESP : out std_logic_vector(1 downto 0);
       S_AXI_RVALID : out std_logic;
       S_AXI_RREADY : in std_logic;
-      JA : out std_logic_vector(7 downto 0)
+      OUTPUT : out std_logic_vector(11 downto 0)
     );
   end component;
 
@@ -2254,9 +2254,9 @@ architecture STRUCTURE of system is
   signal proc_sys_reset_0_Dcm_locked : std_logic;
   signal proc_sys_reset_0_Interconnect_aresetn : std_logic_vector(0 to 0);
   signal proc_sys_reset_0_MB_Reset : std_logic;
-  signal snd_controller_0_JA : std_logic_vector(7 downto 0);
-  signal snd_controller_1_JA : std_logic_vector(7 downto 0);
-  signal snd_mixer_0_JA : std_logic_vector(7 downto 0);
+  signal snd_controller_0_OUTPUT : std_logic_vector(11 downto 0);
+  signal snd_controller_1_OUTPUT : std_logic_vector(11 downto 0);
+  signal snd_mixer_0_JA_0 : std_logic_vector(7 downto 0);
 
   attribute BOX_TYPE : STRING;
   attribute BOX_TYPE of system_snd_mixer_0_wrapper : component is "user_black_box";
@@ -2291,7 +2291,7 @@ begin
   VGA_RED <= axi_lite_slave_0_VGA_RED;
   VGA_GREEN <= axi_lite_slave_0_VGA_GREEN;
   VGA_BLUE <= axi_lite_slave_0_VGA_BLUE;
-  JA <= snd_mixer_0_JA;
+  JA <= snd_mixer_0_JA_0;
   pgassign1(9 downto 9) <= clk_100_0000MHz(0 to 0);
   pgassign1(8 downto 8) <= clk_100_0000MHz(0 to 0);
   pgassign1(7 downto 7) <= clk_100_0000MHz(0 to 0);
@@ -2337,9 +2337,9 @@ begin
       S_AXI_RRESP => axi4lite_0_M_RRESP(1 downto 0),
       S_AXI_RVALID => axi4lite_0_M_RVALID(0),
       S_AXI_RREADY => axi4lite_0_M_RREADY(0),
-      INPUT1 => snd_controller_0_JA,
-      INPUT2 => snd_controller_1_JA,
-      JA => snd_mixer_0_JA
+      INPUT1 => snd_controller_0_OUTPUT,
+      INPUT2 => snd_controller_1_OUTPUT,
+      JA => snd_mixer_0_JA_0
     );
 
   snd_controller_1 : system_snd_controller_1_wrapper
@@ -2365,7 +2365,7 @@ begin
       S_AXI_RRESP => axi4lite_0_M_RRESP(3 downto 2),
       S_AXI_RVALID => axi4lite_0_M_RVALID(1),
       S_AXI_RREADY => axi4lite_0_M_RREADY(1),
-      JA => snd_controller_1_JA
+      OUTPUT => snd_controller_1_OUTPUT
     );
 
   snd_controller_0 : system_snd_controller_0_wrapper
@@ -2391,7 +2391,7 @@ begin
       S_AXI_RRESP => axi4lite_0_M_RRESP(5 downto 4),
       S_AXI_RVALID => axi4lite_0_M_RVALID(2),
       S_AXI_RREADY => axi4lite_0_M_RREADY(2),
-      JA => snd_controller_0_JA
+      OUTPUT => snd_controller_0_OUTPUT
     );
 
   proc_sys_reset_0 : system_proc_sys_reset_0_wrapper
