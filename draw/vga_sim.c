@@ -179,7 +179,13 @@ vgapos_t vga_get_height()
   return SIM_HEIGHT;
 }
 
+keymap_t repeat;
+
 keymap_t input_get_keys()
 {
-  return input;
+  keymap_t result = input & ~(repeat);
+
+  repeat = input;
+
+  return result;
 }
