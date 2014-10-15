@@ -40,10 +40,10 @@ entity pcm_generator is
 		CLK : in std_logic;
 		RST : in std_logic;
 		
+		EMPTY : in std_logic;
+		RD : out std_logic;
 		INPUT : in command_t;
-		TRIGGER : in std_logic;
 		
-		DONE : out std_logic;
 		OUTPUT : out std_logic
 	);
 end pcm_generator;
@@ -53,20 +53,17 @@ architecture Behavioral of pcm_generator is
 signal pcm_reg : pcm_t;
 signal pcm_next : pcm_t;
 
-signal period_reg : pcm_t;
-signal period_next : pcm_t;
+signal period_reg : time_t;
+signal period_next : time_t;
 
-signal count_reg : pcm_t;
-signal count_next : pcm_t;
+signal cyclecount_reg : pcm_t;
+signal cyclecount_next : pcm_t;
+
+signal samplecount_reg : time_t;
+signal samplecount_next : time_t;
 
 signal command_reg : command_t;
 signal command_next : command_t;
-
-signal done_reg : std_logic;
-signal done_next : std_logic;
-
-signal pdm_trigger : std_logic;
-signal pdm_done : std_logic;
 
 begin
 
@@ -76,13 +73,9 @@ begin
 			RST => RST,
 			
 			PCM => pcm_reg,
-			TRIGGER => pdm_trigger,
-			DONE => pdm_done,
 			
 			OUTPUT => OUTPUT
 		);
-
-DONE <= done_reg;
 
 process(CLK, RST)
 begin
@@ -90,60 +83,62 @@ begin
 		if RST = '0' then
 			pcm_reg <= (others => '0');
 			period_reg <= (others => '0');
-			count_reg <= (others => '0');
+			cyclecount_reg <= (others => '0');
+			samplecount_reg <= (others => '0');
 			command_reg <= EMPTY_COMMAND;
-			done_reg <= '1';
 		else
 			pcm_reg <= pcm_next;
 			period_reg <= period_next;
-			count_reg <= count_next;
+			cyclecount_reg <= cyclecount_next;
+			samplecount_reg <= samplecount_next;
 			command_reg <= command_next;
-			done_reg <= done_next;
 		end if;
 	end if;
 end process;
 
-process(INPUT, TRIGGER, pdm_done, count_reg, period_reg, command_reg, pcm_reg, done_reg)
+process(INPUT, EMPTY, cyclecount_reg, samplecount_reg, period_reg, command_reg, pcm_reg)
+variable done : boolean;
 begin
-	count_next <= count_reg;
+	cyclecount_next <= cyclecount_reg + 1;
+	samplecount_next <= samplecount_reg;
 	period_next <= period_reg;
 	command_next <= command_reg;
 	pcm_next <= pcm_reg;
-	pdm_trigger <= '0';
-	done_next <= done_reg;
+	RD <= '0';
 	
-	if pdm_done = '1' then
-		period_next <= period_reg + 1;
-		count_next <= count_reg + 1;
-		
-		if period_reg < command_reg.period / 2 then
-			pcm_next <= PCM_MIN;
-		else
-			pcm_next <= PCM_MAX;
-		end if;
-		
-		pdm_trigger <= '1';
-		
-		if period_reg = command_reg.period then
+	if cyclecount_reg = PCM_MIN then
+		if period_reg = command_reg.period - 1 then
 			period_next <= (others => '0');
+		else
+			period_next <= period_reg + 1;
 		end if;
 		
-		if count_reg = command_reg.duration then
-			count_next <= (others => '0');
-			pcm_next <= (others => '0');
-			done_next <= '1';
-			command_next <= EMPTY_COMMAND;
-			pdm_trigger <= '0';
+		if samplecount_reg < command_reg.duration then
+			samplecount_next <= samplecount_reg + 1;
+			
+			if command_reg.waveform = SQR_WAVE then
+				if period_reg < command_reg.period / 2 then
+					pcm_next <= PCM_MIN;
+				else
+					pcm_next <= PCM_MAX;
+				end if;
+			elsif command_reg.waveform = SAW_WAVE then
+				pcm_next <= pcm_reg + command_reg.period(12-1 downto 0);
+			elsif command_reg.waveform = TRI_WAVE then
+				pcm_next <= pcm_reg + command_reg.period(12-1 downto 0);
+			else
+				pcm_next <= (pcm_reg rol 4) + command_reg.period(12-1 downto 0);
+			end if;
+		else
+			pcm_next <= PCM_MIN;
 		end if;
 	end if;
 
-	if TRIGGER = '1' then
-		count_next <= (others => '0');
-		period_next <= (others => '0');
+	if samplecount_reg >= command_reg.duration and EMPTY = '0' then
+		RD <= '1';
 		command_next <= INPUT;
-		pcm_next <= (others => '0');
-		pdm_trigger <= '1';
-		done_next <= '0';
+		samplecount_next <= (others => '0');
+		period_next <= (others => '0');
 	end if;
 end process;
 

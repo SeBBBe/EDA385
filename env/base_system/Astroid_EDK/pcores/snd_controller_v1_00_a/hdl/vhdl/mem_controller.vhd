@@ -46,7 +46,7 @@ entity mem_controller is
     S_AXI_RVALID : out std_logic;
     S_AXI_RREADY : in  std_logic;
 	 
-	 DONE : in std_logic;
+	 FULL : in std_logic;
 	 OUTPUT : out command_t;
 	 TRIGGER : out std_logic
 	 );
@@ -70,7 +70,7 @@ begin
 
 S_AXI_ARREADY <= '1';
 S_AXI_RVALID <= rvalid_reg;
-S_AXI_RDATA <= (others => '0') when DONE = '0' else (others => '1');
+S_AXI_RDATA <= (others => not FULL);
 S_AXI_RRESP <= (others => '0');
 
 S_AXI_AWREADY <= '1';

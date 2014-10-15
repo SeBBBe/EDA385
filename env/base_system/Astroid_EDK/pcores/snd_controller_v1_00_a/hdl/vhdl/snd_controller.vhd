@@ -67,7 +67,26 @@ signal mem_output : command_t;
 signal snd_done : std_logic;
 signal snd_output : std_logic;
 
+signal fifo_empty : std_logic;
+signal fifo_rd : std_logic;
+signal fifo_output : command_t;
+signal fifo_full : std_logic;
+
 begin
+
+fifo1 : entity work.command_stack
+	port map
+	(
+		CLK => ACLK,
+		RST => ARESETN,
+		
+		RD => fifo_rd,
+		WR => mem_trigger,
+		OUTPUT => fifo_output,
+		INPUT => mem_output,
+		EMPTY => fifo_empty,
+		FULL => fifo_full
+	);
 
 pcm1 : entity work.pcm_generator
 	port map
@@ -75,10 +94,10 @@ pcm1 : entity work.pcm_generator
 		CLK => ACLK,
 		RST => ARESETN,
 		
-		INPUT => mem_output,
-		TRIGGER => mem_trigger,
+		EMPTY => fifo_empty,
+		RD => fifo_rd,
+		INPUT => fifo_output,
 		
-		DONE => snd_done,
 		OUTPUT => snd_output
 	);
 
@@ -112,7 +131,7 @@ mem1 : entity work.mem_controller
 		S_AXI_RVALID => S_AXI_RVALID,
 		S_AXI_RREADY => S_AXI_RREADY,
 		
-		DONE => snd_done,
+		FULL => fifo_full,
 		OUTPUT => mem_output,
 		TRIGGER => mem_trigger
 	);

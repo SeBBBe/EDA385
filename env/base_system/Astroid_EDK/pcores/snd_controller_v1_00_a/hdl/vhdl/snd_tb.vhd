@@ -96,7 +96,7 @@ BEGIN
 		S_AXI_WVALID <= '0';
 		S_AXI_BREADY <= '1';
 		
-		wait until S_AXI_RDATA(0) = '0';
+		wait until clk = '0';
 	end process;
 
 END;
