@@ -62,10 +62,14 @@ void win()
 
 
 /*TODO BY JAW
-*	Change Win song? Add bgm?
-*	Add end game with mothership spawning bullets towards ship and spawning astroids.
-*	Add credit screen with names
+*	BUGzgzgZ: STARZ OBJECT STILL EXISTS
 *
+*	Change Win song? Add bgm?
+*	Add credit screen with that displays after win screen,
+*	 // DISPLAY: C R E D I T S and the the group names.
+*	 // text graphic is made but not applied.
+*
+*	Add end game with mothership spawning bullets towards ship and spawning astroids.
 */
 void game_main(int seed)
 {
@@ -195,7 +199,10 @@ void game_main(int seed)
 
 		if (shoot_limit > 0) shoot_limit--;
 		if (go_currentstate == STATE_DEAD) game_over();
-		if (go_currentstate == STATE_VICT || (*dip & 8)) win();
+		if (go_currentstate == STATE_VICT || (*dip & 8)){
+
+			win();
+		}
 
 		vga_clear();
 		go_draw();
