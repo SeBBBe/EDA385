@@ -22,7 +22,7 @@ int volatile *mix = (int *)0x7FC10000;
 #define SND_PLAY(X) snd_play(X, sizeof(X) / sizeof(*X))
 #define MUS_PLAY(X) mus_play(X, sizeof(X) / sizeof(*X))
 
-#define SAMPLE_RATE 44100
+#define SAMPLE_RATE 24415
 #define BPM 160
 #define WHOLE (SAMPLE_RATE * 60) / BPM
 #define HALF WHOLE/2
@@ -32,32 +32,7 @@ int volatile *mix = (int *)0x7FC10000;
 
 #define REST 0
 
-#define A1 802
-
-#define F2 505
-
-#define G2 450
-#define G2s 425
-
-#define A2s 378
-
-#define G3s 212
-
-#define A3 200
-
-#define C4  168
-#define C4s 159
-#define D4  150
-#define D4s 142
-#define E4  134
-#define F4  126
-#define F4s 119
-#define G4  113
-#define G4s 106
-#define A4  100
-#define A4s  95
-#define B4   89
-#define C5   84
+#include "notes.h"
 
 #define SQR_WAVE 0b00
 #define SAW_WAVE 0b01
@@ -65,14 +40,14 @@ int volatile *mix = (int *)0x7FC10000;
 #define NSE_WAVE 0b11
 
 sample_t boot[] = {
-		{168, 2000, SQR_WAVE},
-		{150, 2000, SQR_WAVE},
-		{134, 2000, SQR_WAVE},
-		{126, 2000, SQR_WAVE},
-		{113, 2000, SQR_WAVE},
-		{100, 2000, SQR_WAVE},
-		{89, 2000, SQR_WAVE},
-		{84, 2000, SQR_WAVE},
+		{C4, QUART, SQR_WAVE},
+		{D4, QUART, SQR_WAVE},
+		{E4, QUART, SQR_WAVE},
+		{F4, QUART, SQR_WAVE},
+		{G4, QUART, SQR_WAVE},
+		{A4, QUART, SQR_WAVE},
+		{B4, QUART, SQR_WAVE},
+		{C5, QUART, SQR_WAVE},
 };
 
 sample_t shootsnd[] = {
@@ -221,12 +196,16 @@ void snd_init()
 
 void snd_update()
 {
-	if(snd_current_loop && *snd)
+	xil_printf("update\r\n");
+
+	while(snd_current_loop && *snd)
 	{
 		if(snd_loopctr < snd_looplen)
 		{
 			*snd = (snd_current_loop[snd_loopctr].period) | (snd_current_loop[snd_loopctr].duration << 15) | (snd_current_loop[snd_loopctr].wave << 30);
 			snd_loopctr++;
+
+			xil_printf("snd advance\r\n");
 		}
 		else
 		{
@@ -236,12 +215,14 @@ void snd_update()
 		}
 	}
 
-	if(mus_current_loop && *snd)
+	while(mus_current_loop && *snd)
 	{
 		if(mus_loopctr < mus_looplen)
 		{
 			*snd = (mus_current_loop[mus_loopctr].period) | (mus_current_loop[mus_loopctr].duration << 15) | (mus_current_loop[mus_loopctr].wave << 30);
 			mus_loopctr++;
+
+			xil_printf("mus advance\r\n");
 		}
 		else
 		{
