@@ -47,15 +47,15 @@ void go_resetobject(int i)
 		objects[i].yvel = 0;
 		objects[i].xaccel = 0;
 		objects[i].yaccel = 0;
+		objects[i].scale = 0;
+		objects[i].scaleaccel = 0;
 		objects[i].angle = 0;
 		objects[i].anglespeed = 0;
+		objects[i].hp = 0;
 		objects[i].poly_points = 0;
 		objects[i].enabled = 0;
 		objects[i].identifier = 0;
 		objects[i].hitbox_size = 0;
-		objects[i].scale = 0;
-		objects[i].scaleaccel = 0;
-		objects[i].hp = 0;
 }
 
 void go_initialize()
