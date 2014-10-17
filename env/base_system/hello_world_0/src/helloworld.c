@@ -20,7 +20,7 @@ int main()
     XTmrCtr_Initialize(&timer, 0);
 
     //read input data
-    xil_printf("start\n\r");
+    //xil_printf("start\n\r");
 
     while(!*vga);
 
@@ -36,9 +36,9 @@ int main()
 
     XTmrCtr_Stop(&timer, 0);
     int c = XTmrCtr_GetValue(&timer, 0);
-    xil_printf("bin clock cycles = %d\n\r", c);
+    //xil_printf("bin clock cycles = %d\n\r", c);
 
-    xil_printf("main loop\n\r");
+    //xil_printf("main loop\n\r");
 
     int seed = c & 0xFF;
 

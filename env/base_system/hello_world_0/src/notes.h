@@ -87,6 +87,3 @@
 #define B7 6
 #define C8 5
 
-#define SQR(X, Y) {X, Y, SQR_WAVE}
-#define SAW(X, Y) {4096 / X, Y, SAW_WAVE}
-#define NSE(X, Y) {X, Y, NSE_WAVE}

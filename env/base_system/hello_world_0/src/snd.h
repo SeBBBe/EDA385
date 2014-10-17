@@ -39,6 +39,13 @@ int volatile *mix = (int *)0x7FC10000;
 #define TRI_WAVE 0b10
 #define NSE_WAVE 0b11
 
+#define SET_LOOP 0xFFFFFFFF
+
+#define SQR(X, Y) {X, Y, SQR_WAVE}
+#define SAW(X, Y) {4096 / X, Y, SAW_WAVE}
+#define NSE(X, Y) {X, Y, NSE_WAVE}
+#define LOOP {0, 0, SET_LOOP}
+
 sample_t boot[] = {
 		SQR(C4, EIGHT),
 		SQR(D4, EIGHT),
@@ -156,26 +163,13 @@ sample_t zeldasecret[] = {
 		SQR(C5, WHOLE),
 };
 
-sample_t bgm[] = {
-	SAW(A2, WHOLE),
-	SAW(D2, WHOLE),
-	SAW(A2, WHOLE),
-	SAW(D2, WHOLE),
-	SAW(A2, WHOLE),
-	SAW(D2, WHOLE),
-	SAW(A2, WHOLE),
-	SAW(D2, WHOLE),
-	SAW(A2, WHOLE),
-	SAW(D2, WHOLE),
-	SAW(A2, WHOLE),
-	SAW(D2, WHOLE),
-	SAW(A2, WHOLE),
-	SAW(D2, WHOLE),
-	SAW(A2, WHOLE),
-	SAW(D2, WHOLE),
-	SAW(A2, WHOLE),
-	SAW(D2, WHOLE),
-};
+#undef REST
+#define REST(X) NSE(0, X)
+
+#undef BPM
+#define BPM 60
+
+#include "nyan.h"
 
 sample_t *snd_current_loop;
 int snd_looplen;
@@ -184,6 +178,8 @@ int snd_loopctr;
 sample_t *mus_current_loop;
 int mus_looplen;
 int mus_loopctr;
+
+int mus_setpoint;
 
 void mus_play(sample_t *loop, int len);
 
@@ -228,14 +224,26 @@ void snd_update()
 	{
 		if(mus_loopctr < mus_looplen)
 		{
+			if(mus_current_loop[mus_loopctr].wave == SET_LOOP)
+			{
+				mus_loopctr++;
+				mus_setpoint = mus_loopctr;
+			}
+
 			*mus = (mus_current_loop[mus_loopctr].period) | (mus_current_loop[mus_loopctr].duration << 15) | (mus_current_loop[mus_loopctr].wave << 30);
 			mus_loopctr++;
 		}
-		else
+		else if(mus_setpoint == 0)
 		{
 			mus_current_loop = 0;
 			mus_looplen = 0;
 			mus_loopctr = 0;
+		}
+		else
+		{
+			mus_loopctr = mus_setpoint;
+			*mus = (mus_current_loop[mus_loopctr].period) | (mus_current_loop[mus_loopctr].duration << 15) | (mus_current_loop[mus_loopctr].wave << 30);
+			mus_loopctr++;
 		}
 	}
 }
@@ -261,6 +269,7 @@ void mus_play(sample_t *loop, int len)
 	mus_current_loop = loop;
 	mus_looplen = len;
 	mus_loopctr = 0;
+	mus_setpoint = 0;
 
 	for(i = 0; i < 16; i++) *mus = 0;
 

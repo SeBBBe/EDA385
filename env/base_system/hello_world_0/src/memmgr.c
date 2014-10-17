@@ -141,7 +141,7 @@ void* memmgr_alloc(ulong nbytes)
         {
             if ((p = get_mem_from_pool(nquantas)) == 0)
             {
-            	xil_printf("OOM!\r\n");
+            	//xil_printf("OOM!\r\n");
                 return 0;
             }
         }

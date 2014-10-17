@@ -45,191 +45,70 @@ void game_over()
 
 void win()
 {
-	vgapoint_t *poly = copy_poly(4, graphic_vict);
-	offset(4, poly, vga_get_width()/2 - 150, vga_get_height()/2 - 150);
-
 	MUS_PLAY(winsnd);
+
+	int i;
+
+	for(i = 0; i < MAX_OBJECTS; i++)
+	{
+		go_resetobject(i);
+	}
+
+	int posx = 0;
+	int posy = 0;
+	int scale = 0.01;
+
+	game_object_t* LTAO = go_getempty();
+	LTAO->poly = TAO;
+	LTAO->poly_points = 35;
+	LTAO->identifier = OI_LOGO;
+	LTAO->enabled = 1;
+	LTAO->scale = scale;
+	LTAO->location.x = posx;
+	LTAO->location.y = posy+50;
+
+	game_object_t* LAALI = go_getempty();
+	LAALI->poly = AALI;
+	LAALI->poly_points = 18;
+	LAALI->identifier = OI_LOGO;
+	LAALI->enabled = 1;
+	LAALI->scale = scale;
+	LAALI->location.x = posx+700;
+	LAALI->location.y = posy+200;
+
+
+	game_object_t* LFAB = go_getempty();
+	LFAB->poly = FABIAN;
+	LFAB->poly_points = 50;
+	LFAB->identifier = OI_LOGO;
+	LFAB->enabled = 1;
+	LFAB->scale = scale;
+	LFAB->location.x = posx+300;
+	LFAB->location.y = posy;
+
+
+	game_object_t* LZHAO = go_getempty();
+	LZHAO->poly = ZHAO;
+	LZHAO->poly_points = 32;
+	LZHAO->identifier = OI_LOGO;
+	LZHAO->enabled = 1;
+	LZHAO->scale = scale;
+	LZHAO->location.x = posx+300;
+	LZHAO->location.y = posy+300;
+
+
 
 	while(1)
 	{
-		vga_clear();
-		snd_update();
-		vga_addpoly_color(4, poly, 0b00111000);
+		go_tick();
 		vga_sync();
+		snd_update();
+		vga_clear();
+		go_draw();
 	}
-//		int posx = 0;
-//		int posy = 0;
-//		int centerx = 350;
-//		int centery = 250;
-//		int scale = 0.01;
-//		int scaleaccel = 0.01;
-//		int angle = 3.14;
-//		int anglespeed = 0.03;
-//
-//		game_object_t* LC = go_getempty();
-//		LC->poly = CC;
-//		LC->poly_points = 6;
-//		LC->identifier = OI_LOGO;
-//		LC->enabled = 1;
-//		LC->anglespeed = anglespeed;
-//		LC->angle = angle;
-//		LC->scale = scale;
-//		LC->scaleaccel = scaleaccel;
-//		LC->center_point.x = centerx;
-//		LC->center_point.y = centery;
-//		LC->location.x = posx;
-//		LC->location.y = posy;
-//
-//		vga_addpoly_color(4, LC->poly, 0);
-//
-//		game_object_t* LR = go_getempty();
-//		LR->poly = RR;
-//		LR->poly_points = 9;
-//		LR->identifier = OI_LOGO;
-//		LR->enabled = 1;
-//		LR->scale = scale;
-//		LR->location.x = posx;
-//		LR->location.y = posy - 80;
-//		LR->anglespeed = anglespeed;
-//		LR->center_point.x = centerx;
-//		LR->center_point.y = centery;
-//		LR->scaleaccel = scaleaccel;
-//		LR->angle = angle;
-//
-//		game_object_t* LE = go_getempty();
-//		LE->poly = EE;
-//		LE->poly_points = 9;
-//		LE->identifier = OI_LOGO;
-//		LE->enabled = 1;
-//		LE->scale = scale;
-//		LE->location.x = posx + 60;
-//		LE->location.y = posy - 80;
-//		LE->anglespeed = anglespeed;
-//		LE->center_point.x = centerx;
-//		LE->center_point.y = centery;
-//		LE->scaleaccel = scaleaccel;
-//		LE->angle = angle;
-//
-//		game_object_t* LD = go_getempty();
-//		LD->poly = DD;
-//		LD->poly_points = 6;
-//		LD->identifier = OI_LOGO;
-//		LD->enabled = 1;
-//		LD->scale = scale;
-//		LD->location.x = posx + 130;
-//		LD->location.y = posy - 80;
-//		LD->anglespeed = anglespeed;
-//		LD->center_point.x = centerx;
-//		LD->center_point.y = centery;
-//		LD->scaleaccel = scaleaccel;
-//		LD->angle = angle;
-//
-//		game_object_t* LI = go_getempty();
-//		LI->poly = II;
-//		LI->poly_points = 8;
-//		LI->identifier = OI_LOGO;
-//		LI->enabled = 1;
-//		LI->scale = scale;
-//		LI->location.x = posx + 190;
-//		LI->location.y = posy - 100;
-//		LI->anglespeed = anglespeed;
-//		LI->center_point.x = centerx;
-//		LI->center_point.y = centery;
-//		LI->scaleaccel = scaleaccel;
-//		LI->angle = angle;
-//
-//		game_object_t* LT = go_getempty();
-//		LT->poly = TT;
-//		LT->poly_points = 5;
-//		LT->identifier = OI_LOGO;
-//		LT->enabled = 1;
-//		LT->scale = scale;
-//		LT->location.x = posx+250;
-//		LT->location.y = posy-100;
-//		LT->anglespeed = anglespeed;
-//		LT->center_point.x = centerx;
-//		LT->center_point.y = centery;
-//		LT->scaleaccel = scaleaccel;
-//		LT->angle = angle;
-//
-//		game_object_t* LS = go_getempty();
-//		LS->poly = SS;
-//		LS->poly_points = 10;
-//		LS->identifier = OI_LOGO;
-//		LS->enabled = 1;
-//		LS->scale = scale;
-//		LS->location.x = posx+350;
-//		LS->location.y = posy-59;
-//		LS->anglespeed = anglespeed;
-//		LS->center_point.x = centerx;
-//		LS->center_point.y = centery;
-//		LS->scaleaccel = scaleaccel;
-//		LS->angle = angle;
-//
-//		int i;
-//		for (i = 0; i < 60 * 3; i++)
-//		{
-//			snd_update();
-//			vga_sync();
-//			vga_clear();
-//		}
-//
-//		for (i = 0; i < 60 * 5; i++)
-//		{
-//			go_tick();
-//			vga_sync();
-//
-//			snd_update();
-//
-//			vga_clear();
-//			go_draw();
-//		}
 
 
-	//	game_object_t* LTAO = go_getempty();
-	//	LTAO->poly = TAO;
-	//	LTAO->poly_points = 35;
-	//	LTAO->identifier = OI_LOGO;
-	//	LTAO->enabled = 1;
-	//	LTAO->scale = scale;
-	//	LTAO->location.x = posx;
-	//	LTAO->location.y = posy+50;
 
-	//	game_object_t* LFIG = go_getempty();
-	//	LFIG->poly = FIGURE;
-	//	LFIG->poly_points = 20;
-	//	LFIG->identifier = OI_LOGO;
-	//	LFIG->enabled = 1;
-	//	LFIG->scale = scale;
-	//	LFIG->location.x = posx+300;
-	//	LFIG->location.y = posy;
-
-	//	game_object_t* LAALI = go_getempty();
-	//	LAALI->poly = AALI;
-	//	LAALI->poly_points = 18;
-	//	LAALI->identifier = OI_LOGO;
-	//	LAALI->enabled = 1;
-	//	LAALI->scale = scale;
-	//	LAALI->location.x = posx+300;
-	//	LAALI->location.y = posy+100;
-
-	//	game_object_t* LFAB = go_getempty();
-	//	LFAB->poly = FABIAN;
-	//	LFAB->poly_points = 50;
-	//	LFAB->identifier = OI_LOGO;
-	//	LFAB->enabled = 1;
-	//	LFAB->scale = scale;
-	//	LFAB->location.x = posx;
-	//	LFAB->location.y = posy;
-
-	//	game_object_t* LZHAO = go_getempty();
-	//	LZHAO->poly = ZHAO;
-	//	LZHAO->poly_points = 32;
-	//	LZHAO->identifier = OI_LOGO;
-	//	LZHAO->enabled = 1;
-	//	LZHAO->scale = scale;
-	//	LZHAO->location.x = posx;
-	//	LZHAO->location.y = posy;
 
 
 //	LC->enabled = 0;
@@ -278,6 +157,7 @@ void game_main(int seed)
 		thelogo->scale = 0.01;
 		thelogo->scaleaccel = 0.01;
 
+
 		for (i = 0; i < 60 * 3; i++)
 		{
 			snd_update();
@@ -317,9 +197,9 @@ void game_main(int seed)
 
 	//go_createpowerupn(1,600,650);
 
-	snd_setvolume(1, 2);
+	snd_setvolume(1, 3);
 
-	//MUS_PLAY(bgm);
+	MUS_PLAY(nyan);
 
 	while(1)
 	{

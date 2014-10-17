@@ -39,6 +39,8 @@ int vga_addpoly_color2(int num_points, vgapoint_t *points, color_t color, int ra
 {
   int i;
   
+  if(num_points <= 0) return 0;
+
   if(line_index + num_points >= VGA_MAX_LINES) return 0;
 
   for(i = 0; i < num_points; i++)

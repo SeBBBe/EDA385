@@ -71,7 +71,9 @@ void go_initialize()
 
 	go_currentstate = 0;
 
-	xil_printf("objects = %x\r\n", objects);
+	currentpos = 0;
+
+	//xil_printf("objects = %x\r\n", objects);
 }
 
 //Called when a hit was detected between object hit1 and hit2
@@ -98,21 +100,27 @@ void go_hashit(int hit1, int hit2)
 					go_createasteroidxy(2, objects[hit2].location.x, objects[hit2].location.y);
 					go_createasteroidxy(2, objects[hit2].location.x, objects[hit2].location.y);
 					go_createasteroidxy(2, objects[hit2].location.x, objects[hit2].location.y);
+
+					if( (rand() % 100) < 20  && pup_has_already_spawned == 0){
+						go_createpowerupn(1, objects[hit2].location.x, objects[hit2].location.y);
+						pup_has_already_spawned = 1;
+					}
 				}
 				else if (objects[hit2].identifier == OI_AST2)
 				{
 					go_createasteroidxy(3, objects[hit2].location.x, objects[hit2].location.y);
 					go_createasteroidxy(3, objects[hit2].location.x, objects[hit2].location.y);
 					go_createasteroidxy(3, objects[hit2].location.x, objects[hit2].location.y);
+
+					if( (rand() % 100) < 5  && pup_has_already_spawned == 0){
+						go_createpowerupn(1, objects[hit2].location.x, objects[hit2].location.y);
+						pup_has_already_spawned = 1;
+					}
 				}
 
 				objects[hit2].enabled = 0;
 				memmgr_free(objects[hit2].poly);
 				SND_PLAY(kaboom);
-				if( (rand() % 100) < 5  && pup_has_already_spawned == 0){
-					go_createpowerupn(1, objects[hit2].location.x, objects[hit2].location.y);
-					pup_has_already_spawned = 1;
-				}
 			}else{
 				SND_PLAY(kaboom_short);
 			}
@@ -252,10 +260,11 @@ game_object_t* go_getempty(){
 	while(objects[currentpos].enabled) //this will freeze if max number is reached
 	{
 		currentpos++;
-		if (currentpos > MAX_OBJECTS) currentpos = 0;
+		if (currentpos >= MAX_OBJECTS) currentpos = 0;
 	}
 	int r = currentpos;
 	currentpos++;
+	if (currentpos >= MAX_OBJECTS) currentpos = 0;
 	go_resetobject(r);
 	return &objects[r];
 }
@@ -368,17 +377,4 @@ void go_createbullet(game_object_t *source, float angle)
 	bullet_o->poly_points = 2;
 	bullet_o->hp = 90;
 	bullet_o->identifier = OI_BULLET;
-}
-
-void go_debug()
-{
-	int i;
-
-	for (i = 0; i < MAX_OBJECTS; i++)
-	{
-		if (objects[i].enabled)
-		{
-			xil_printf("object %d: ID %d, HP %d, poly_points %d, poly %x\r\n", i, objects[i].identifier, objects[i].hp, objects[i].poly_points, objects[i].poly);
-		}
-	}
 }
