@@ -6,7 +6,7 @@ Command Line: platgen -p xc6slx16csg324-3 -lang vhdl -intstyle default -lp
 C:/Xilinx/BSP/Nexys3_AXI_BSB_Support/lib/ -msg __xps/ise/xmsgprops.lst
 system.mhs 
 
-Parse C:/temp/EDA385/env/base_system/Astroid_EDK/system.mhs ...
+Parse C:/temp/EDA385/EDA385/env/base_system/Astroid_EDK/system.mhs ...
 
 Read MPD definitions ...
 
@@ -90,7 +90,7 @@ IPNAME: axi_interconnect, INSTANCE: axi4lite_0 - 1 master(s) : 10 slave(s)
 Checking port drivers...
 WARNING:EDK:4181 - PORT: Peripheral_Reset, CONNECTOR:
    proc_sys_reset_0_Peripheral_Reset - floating connection -
-   C:\temp\EDA385\env\base_system\Astroid_EDK\system.mhs line 69 
+   C:\temp\EDA385\EDA385\env\base_system\Astroid_EDK\system.mhs line 69 
 
 Performing Clock DRCs...
 
@@ -200,16 +200,79 @@ Managing hardware (BBD-specified) netlist files ...
 
 Managing cache ...
 IPNAME:snd_mixer INSTANCE:snd_mixer_0 -
-C:\temp\EDA385\env\base_system\Astroid_EDK\system.mhs line 28 - Copying cache
-implementation netlist
+C:\temp\EDA385\EDA385\env\base_system\Astroid_EDK\system.mhs line 28 - Copying
+cache implementation netlist
+IPNAME:snd_controller INSTANCE:snd_controller_1 -
+C:\temp\EDA385\EDA385\env\base_system\Astroid_EDK\system.mhs line 40 - Copying
+cache implementation netlist
+IPNAME:snd_controller INSTANCE:snd_controller_0 -
+C:\temp\EDA385\EDA385\env\base_system\Astroid_EDK\system.mhs line 50 - Copying
+cache implementation netlist
+IPNAME:proc_sys_reset INSTANCE:proc_sys_reset_0 -
+C:\temp\EDA385\EDA385\env\base_system\Astroid_EDK\system.mhs line 60 - Copying
+cache implementation netlist
+IPNAME:lmb_v10 INSTANCE:microblaze_0_ilmb -
+C:\temp\EDA385\EDA385\env\base_system\Astroid_EDK\system.mhs line 74 - Copying
+cache implementation netlist
+IPNAME:lmb_bram_if_cntlr INSTANCE:microblaze_0_i_bram_ctrl -
+C:\temp\EDA385\EDA385\env\base_system\Astroid_EDK\system.mhs line 81 - Copying
+cache implementation netlist
+IPNAME:lmb_v10 INSTANCE:microblaze_0_dlmb -
+C:\temp\EDA385\EDA385\env\base_system\Astroid_EDK\system.mhs line 90 - Copying
+cache implementation netlist
+IPNAME:lmb_bram_if_cntlr INSTANCE:microblaze_0_d_bram_ctrl -
+C:\temp\EDA385\EDA385\env\base_system\Astroid_EDK\system.mhs line 97 - Copying
+cache implementation netlist
+IPNAME:bram_block INSTANCE:microblaze_0_bram_block -
+C:\temp\EDA385\EDA385\env\base_system\Astroid_EDK\system.mhs line 106 - Copying
+cache implementation netlist
+IPNAME:microblaze INSTANCE:microblaze_0 -
+C:\temp\EDA385\EDA385\env\base_system\Astroid_EDK\system.mhs line 113 - Copying
+cache implementation netlist
+IPNAME:mdm INSTANCE:debug_module_0 -
+C:\temp\EDA385\EDA385\env\base_system\Astroid_EDK\system.mhs line 137 - Copying
+cache implementation netlist
+IPNAME:lmb_bram_if_cntlr INSTANCE:bram_cntlr_1 -
+C:\temp\EDA385\EDA385\env\base_system\Astroid_EDK\system.mhs line 164 - Copying
+cache implementation netlist
+IPNAME:lmb_bram_if_cntlr INSTANCE:bram_cntlr_0 -
+C:\temp\EDA385\EDA385\env\base_system\Astroid_EDK\system.mhs line 173 - Copying
+cache implementation netlist
+IPNAME:bram_block INSTANCE:bram_block_0 -
+C:\temp\EDA385\EDA385\env\base_system\Astroid_EDK\system.mhs line 182 - Copying
+cache implementation netlist
+IPNAME:axi_timer INSTANCE:axi_timer_0 -
+C:\temp\EDA385\EDA385\env\base_system\Astroid_EDK\system.mhs line 189 - Copying
+cache implementation netlist
+IPNAME:axi_lite_slave INSTANCE:axi_lite_slave_0 -
+C:\temp\EDA385\EDA385\env\base_system\Astroid_EDK\system.mhs line 200 - Copying
+cache implementation netlist
+IPNAME:axi_gpio INSTANCE:axi_gpio_0 -
+C:\temp\EDA385\EDA385\env\base_system\Astroid_EDK\system.mhs line 219 - Copying
+cache implementation netlist
+IPNAME:axi_interconnect INSTANCE:axi4lite_0 -
+C:\temp\EDA385\EDA385\env\base_system\Astroid_EDK\system.mhs line 229 - Copying
+cache implementation netlist
+IPNAME:axi_uartlite INSTANCE:rs232_uart_1 -
+C:\temp\EDA385\EDA385\env\base_system\Astroid_EDK\system.mhs line 237 - Copying
+cache implementation netlist
+IPNAME:axi_gpio INSTANCE:push_buttons_4bits -
+C:\temp\EDA385\EDA385\env\base_system\Astroid_EDK\system.mhs line 252 - Copying
+cache implementation netlist
+IPNAME:axi_gpio INSTANCE:dip_switches_8bits -
+C:\temp\EDA385\EDA385\env\base_system\Astroid_EDK\system.mhs line 266 - Copying
+cache implementation netlist
 
 Elaborating instances ...
 IPNAME:bram_block INSTANCE:microblaze_0_bram_block -
-C:\temp\EDA385\env\base_system\Astroid_EDK\system.mhs line 106 - elaborating IP
+C:\temp\EDA385\EDA385\env\base_system\Astroid_EDK\system.mhs line 106 -
+elaborating IP
 IPNAME:bram_block INSTANCE:bram_block_0 -
-C:\temp\EDA385\env\base_system\Astroid_EDK\system.mhs line 182 - elaborating IP
+C:\temp\EDA385\EDA385\env\base_system\Astroid_EDK\system.mhs line 182 -
+elaborating IP
 IPNAME:clock_generator INSTANCE:clock_generator_0 -
-C:\temp\EDA385\env\base_system\Astroid_EDK\system.mhs line 149 - elaborating IP
+C:\temp\EDA385\EDA385\env\base_system\Astroid_EDK\system.mhs line 149 -
+elaborating IP
 ClkGen elaborate status: PASSED
 ----------------------------------------
 ----------------------------------------
@@ -217,7 +280,7 @@ ClkGen elaborate status: PASSED
 Writing HDL for elaborated instances ...
 
 Inserting wrapper level ...
-Completion time: 0.00 seconds
+Completion time: 1.00 seconds
 
 Constructing platform-level connectivity ...
 Completion time: 0.00 seconds
@@ -233,74 +296,13 @@ Running XST synthesis ...
 INFO:EDK:4211 - The following instances are synthesized with XST. The MPD option
    IMP_NETLIST=TRUE indicates that a NGC file is to be produced using XST
    synthesis. IMP_NETLIST=FALSE (default) instances are not synthesized. 
-INSTANCE:snd_controller_1 -
-C:\temp\EDA385\env\base_system\Astroid_EDK\system.mhs line 40 - Running XST
-synthesis
-INSTANCE:snd_controller_0 -
-C:\temp\EDA385\env\base_system\Astroid_EDK\system.mhs line 50 - Running XST
-synthesis
-INSTANCE:proc_sys_reset_0 -
-C:\temp\EDA385\env\base_system\Astroid_EDK\system.mhs line 60 - Running XST
-synthesis
-INSTANCE:microblaze_0_ilmb -
-C:\temp\EDA385\env\base_system\Astroid_EDK\system.mhs line 74 - Running XST
-synthesis
-INSTANCE:microblaze_0_i_bram_ctrl -
-C:\temp\EDA385\env\base_system\Astroid_EDK\system.mhs line 81 - Running XST
-synthesis
-INSTANCE:microblaze_0_dlmb -
-C:\temp\EDA385\env\base_system\Astroid_EDK\system.mhs line 90 - Running XST
-synthesis
-INSTANCE:microblaze_0_d_bram_ctrl -
-C:\temp\EDA385\env\base_system\Astroid_EDK\system.mhs line 97 - Running XST
-synthesis
-INSTANCE:microblaze_0_bram_block -
-C:\temp\EDA385\env\base_system\Astroid_EDK\system.mhs line 106 - Running XST
-synthesis
-INSTANCE:microblaze_0 - C:\temp\EDA385\env\base_system\Astroid_EDK\system.mhs
-line 113 - Running XST synthesis
-INSTANCE:debug_module_0 - C:\temp\EDA385\env\base_system\Astroid_EDK\system.mhs
-line 137 - Running XST synthesis
 INSTANCE:clock_generator_0 -
-C:\temp\EDA385\env\base_system\Astroid_EDK\system.mhs line 149 - Running XST
-synthesis
-INSTANCE:bram_cntlr_1 - C:\temp\EDA385\env\base_system\Astroid_EDK\system.mhs
-line 164 - Running XST synthesis
-INSTANCE:bram_cntlr_0 - C:\temp\EDA385\env\base_system\Astroid_EDK\system.mhs
-line 173 - Running XST synthesis
-INSTANCE:bram_block_0 - C:\temp\EDA385\env\base_system\Astroid_EDK\system.mhs
-line 182 - Running XST synthesis
-INSTANCE:axi_timer_0 - C:\temp\EDA385\env\base_system\Astroid_EDK\system.mhs
-line 189 - Running XST synthesis
-INSTANCE:axi_lite_slave_0 -
-C:\temp\EDA385\env\base_system\Astroid_EDK\system.mhs line 200 - Running XST
-synthesis
-INSTANCE:axi_gpio_0 - C:\temp\EDA385\env\base_system\Astroid_EDK\system.mhs line
-219 - Running XST synthesis
-INSTANCE:axi4lite_0 - C:\temp\EDA385\env\base_system\Astroid_EDK\system.mhs line
-229 - Running XST synthesis
-INSTANCE:rs232_uart_1 - C:\temp\EDA385\env\base_system\Astroid_EDK\system.mhs
-line 237 - Running XST synthesis
-INSTANCE:push_buttons_4bits -
-C:\temp\EDA385\env\base_system\Astroid_EDK\system.mhs line 252 - Running XST
-synthesis
-INSTANCE:dip_switches_8bits -
-C:\temp\EDA385\env\base_system\Astroid_EDK\system.mhs line 266 - Running XST
-synthesis
+C:\temp\EDA385\EDA385\env\base_system\Astroid_EDK\system.mhs line 149 - Running
+XST synthesis
 
 Running NGCBUILD ...
-IPNAME:system_microblaze_0_ilmb_wrapper INSTANCE:microblaze_0_ilmb -
-C:\temp\EDA385\env\base_system\Astroid_EDK\system.mhs line 74 - Running NGCBUILD
-IPNAME:system_microblaze_0_dlmb_wrapper INSTANCE:microblaze_0_dlmb -
-C:\temp\EDA385\env\base_system\Astroid_EDK\system.mhs line 90 - Running NGCBUILD
-IPNAME:system_microblaze_0_wrapper INSTANCE:microblaze_0 -
-C:\temp\EDA385\env\base_system\Astroid_EDK\system.mhs line 113 - Running
-NGCBUILD
 IPNAME:system_clock_generator_0_wrapper INSTANCE:clock_generator_0 -
-C:\temp\EDA385\env\base_system\Astroid_EDK\system.mhs line 149 - Running
-NGCBUILD
-IPNAME:system_axi4lite_0_wrapper INSTANCE:axi4lite_0 -
-C:\temp\EDA385\env\base_system\Astroid_EDK\system.mhs line 229 - Running
+C:\temp\EDA385\EDA385\env\base_system\Astroid_EDK\system.mhs line 149 - Running
 NGCBUILD
 INFO:EDK:3509 - NCF files should not be modified as they will be regenerated.
    If any constraint needs to be overridden, this should be done by modifying
@@ -308,4 +310,4 @@ INFO:EDK:3509 - NCF files should not be modified as they will be regenerated.
 
 Rebuilding cache ...
 
-Total run time: 332.00 seconds
+Total run time: 23.00 seconds

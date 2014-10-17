@@ -1,6 +1,6 @@
-VHDL snd_controller_v1_00_a C:\temp\EDA385\env\base_system\Astroid_EDK\pcores\snd_controller_v1_00_a/hdl/vhdl/snd_controller.vhd
-VHDL snd_controller_v1_00_a C:\temp\EDA385\env\base_system\Astroid_EDK\pcores\snd_controller_v1_00_a/hdl/vhdl/types.vhd
-VHDL snd_controller_v1_00_a C:\temp\EDA385\env\base_system\Astroid_EDK\pcores\snd_controller_v1_00_a/hdl/vhdl/mem_controller.vhd
-VHDL snd_controller_v1_00_a C:\temp\EDA385\env\base_system\Astroid_EDK\pcores\snd_controller_v1_00_a/hdl/vhdl/pcm_generator.vhd
-VHDL snd_controller_v1_00_a C:\temp\EDA385\env\base_system\Astroid_EDK\pcores\snd_controller_v1_00_a/hdl/vhdl/command_stack.vhd
+VHDL snd_controller_v1_00_a C:\temp\EDA385\EDA385\env\base_system\Astroid_EDK\pcores\snd_controller_v1_00_a/hdl/vhdl/snd_controller.vhd
+VHDL snd_controller_v1_00_a C:\temp\EDA385\EDA385\env\base_system\Astroid_EDK\pcores\snd_controller_v1_00_a/hdl/vhdl/types.vhd
+VHDL snd_controller_v1_00_a C:\temp\EDA385\EDA385\env\base_system\Astroid_EDK\pcores\snd_controller_v1_00_a/hdl/vhdl/mem_controller.vhd
+VHDL snd_controller_v1_00_a C:\temp\EDA385\EDA385\env\base_system\Astroid_EDK\pcores\snd_controller_v1_00_a/hdl/vhdl/pcm_generator.vhd
+VHDL snd_controller_v1_00_a C:\temp\EDA385\EDA385\env\base_system\Astroid_EDK\pcores\snd_controller_v1_00_a/hdl/vhdl/command_stack.vhd
 vhdl work ../hdl/system_snd_controller_1_wrapper.vhd

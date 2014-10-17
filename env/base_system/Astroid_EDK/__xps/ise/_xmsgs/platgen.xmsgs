@@ -44,7 +44,7 @@
 <msg type="info" file="EDK" num="4130" delta="old" >IPNAME: <arg fmt="%s" index="1">bram_block</arg>, INSTANCE:<arg fmt="%s" index="2">bram_block_0</arg> - <arg fmt="%s" index="3">tool</arg> is overriding <arg fmt="%s" index="4">PARAMETER</arg> <arg fmt="%s" index="5">C_MEMSIZE</arg> value to <arg fmt="%s" index="6">0x4000</arg> - <arg fmt="%s" index="7">C:\Xilinx\14.2\ISE_DS\EDK\hw\XilinxProcessorIPLib\pcores\bram_block_v1_00_a\data\bram_block_v2_1_0.mpd line 77</arg> 
 </msg>
 
-<msg type="warning" file="EDK" num="4181" delta="old" >PORT: <arg fmt="%s" index="1">Peripheral_Reset</arg>, CONNECTOR: <arg fmt="%s" index="2">proc_sys_reset_0_Peripheral_Reset</arg> - floating connection - <arg fmt="%s" index="3">C:\temp\EDA385\env\base_system\Astroid_EDK\system.mhs line 69</arg> 
+<msg type="warning" file="EDK" num="4181" delta="new" >PORT: <arg fmt="%s" index="1">Peripheral_Reset</arg>, CONNECTOR: <arg fmt="%s" index="2">proc_sys_reset_0_Peripheral_Reset</arg> - floating connection - <arg fmt="%s" index="3">C:\temp\EDA385\EDA385\env\base_system\Astroid_EDK\system.mhs line 69</arg> 
 </msg>
 
 <msg type="info" file="EDK" num="4130" delta="old" >IPNAME: <arg fmt="%s" index="1">lmb_bram_if_cntlr</arg>, INSTANCE:<arg fmt="%s" index="2">microblaze_0_i_bram_ctrl</arg> - <arg fmt="%s" index="3">tcl</arg> is overriding <arg fmt="%s" index="4">PARAMETER</arg> <arg fmt="%s" index="5">C_MASK</arg> value to <arg fmt="%s" index="6">0x40008000</arg> - <arg fmt="%s" index="7">C:\Xilinx\14.2\ISE_DS\EDK\hw\XilinxProcessorIPLib\pcores\lmb_bram_if_cntlr_v3_10_a\data\lmb_bram_if_cntlr_v2_1_0.mpd line 91</arg> 

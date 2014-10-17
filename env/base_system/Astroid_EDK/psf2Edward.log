@@ -7,7 +7,7 @@ IPNAME: axi_interconnect, INSTANCE: axi4lite_0 - 1 master(s) : 10 slave(s)
 Checking port drivers...
 WARNING:EDK:4181 - PORT: Peripheral_Reset, CONNECTOR:
    proc_sys_reset_0_Peripheral_Reset - floating connection -
-   C:\temp\EDA385\env\base_system\Astroid_EDK\system.mhs line 69 
+   C:\temp\EDA385\EDA385\env\base_system\Astroid_EDK\system.mhs line 69 
 
 Performing Clock DRCs...
 
